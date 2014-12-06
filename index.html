@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Exabyte</title>
+        
+	<meta name="description" content=""/>
+	<meta name="keywords" content="" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<!-- Add JS libraries -->
+	<script type="text/javascript" src="site_media/js/bootstrap.min.js"></script>
+	
+	<!-- This supports IE 9 placeholders -->
+	<script type="text/javascript" src="site_media/js/jquery.placeholder.js"></script>
+	<script type="text/javascript" src="site_media/js/video-background.js"></script>
+	
+    <!-- CSS & Fonts -->   
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" type="text/css" media="screen" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="site_media/css/exabyte.css" type="text/css" media="screen" />
+    
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" media="screen" />
+    
+    
+</head>
+
+<body>
+
+<style>
+   .placeholder { font-size:15px; color: #999; }
+</style>
+
+<!-- Navigation Start -->
+<div class="top-navigation" role="navigation" data-spy="affix" data-offset-top="114" data-offset-bottom="0">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid top-navigation">
+			<div class="container">
+			  
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#exabyte-navigation">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="index.html">
+			      	<div class="exabyte-logo"></div>
+			      </a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="exabyte-navigation">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a href="use-cases.html">Use Cases</a></li>
+			        <li><a href="about.html">About</a></li>
+			        <li><a href="pricing.html">Pricing</a></li>
+			        <li>
+			        	<div style="padding:13px;">
+							<a href="login.html" class="btn btn-default">Log In</a>
+							<a href="sign-up.html" class="btn btn-primary">Sign Up</a>
+						</div>
+					</li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			    
+			</div><!-- /.container -->
+		</div><!-- /.container-fluid -->
+		
+	</nav>
+</div>
+<!-- Navigation End -->
+
+<div class="container-body">
+
+<div class="container-full" id="hero-video-container">
+	<video autoplay loop muted id="home-bg-video">
+			<source src="site_media/video/exabyte-bg-video.mp4" type="video/mp4">
+			<source src="site_media/video/exabyte-bg-video.webm" type="video/webm">
+	</video>
+	<div class="container content-area">
+		<div class="row">
+			<div class="col-md-7 col-sm-6">
+					<h1 class="top0">Easy-to-use supercomputing</h1>
+					<p class="lead">
+						Researchers in enterprise and academia use Exabyte.io to get direct technical insights through supercomputing simulation.
+					</p>
+					<a href="" class="btn-bordered-light btn-bordered-lg" data-toggle="modal" data-target="#exabyte-video">Watch Video</a>
+			</div>
+			<div class="col-md-5 col-sm-6">
+				<div class="form-container">
+	               	<div class="form-container-header">Start your FREE Trial</div>
+	               	<form role="form">
+	               	
+	               		<!-- 1st Step of Signup -->
+	               		<label class="sr-only" for="userName">Username</label>
+	               		<input type="text" class="form-control field-signup bottom20" id="userName" placeholder="Username">
+	               		
+	               		<label class="sr-only" for="emailAddress">Email Address</label>
+	               		<input type="text" class="form-control field-signup bottom20" id="emailAddress" placeholder="Email Address">
+	               		
+	               		<label class="sr-only" for="phoneNumber">Phone Number</label>
+	               		<input type="email" class="form-control field-signup bottom20" id="phoneNumber" placeholder="Phone Number">
+	               		
+	               		<label class="sr-only" for="passWord">Password</label>
+	               		<input type="text" class="form-control field-signup bottom20" id="passWord" placeholder="Password">
+	               		
+	               		<input class="btn btn-lg btn-warning btn-block" type="button" value="Get Started ">
+						
+						<!-- error alert -->
+						<div class="alert-error top5 hide">Please fill in all fields</div>
+						
+						<!-- success alert -->
+						<div class="alert-success top5 hide">Success! You'll hear from us soon.</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Computing Types start -->
+	<div class="container">  	
+	    <div class="row top40">
+	
+	        <div class="col-sm-4 bottom20">
+	        <div>
+	        	<img src="site_media/img/simulation-density.jpg" style="width:100%;">
+	        </div>
+	        <div>
+	        	<h4 class="top20">Density Functional Theory</h4>
+				<p class="feature-description">
+				Electronic properties of materials. Based on <a href="http://quantum-espresso.org/" target="_blank">Quantum ESPRESSO</a>, an integrated suite of open source computer codes for electronic-structure calculations and materials modeling at the nanoscale.
+				</p>
+	        </div>
+				
+	        </div>
+	        
+	        <div class="col-sm-4 bottom20">
+				<div>
+					<img src="site_media/img/simulation-molecular.jpg" style="width:100%;">
+				</div>
+	        <div>
+	        	<h4 class="top20">Molecular Modeling</h4>
+				<p class="feature-description">
+				Atomistic simulation of molecules and crystals. Based on <a href="http://lammps.sandia.gov/" target="_blank">LAMMPS</a>, open-source molecular dynamics code for solid-state materials, biomolecules/polymers and coarse-grained or mesoscopic systems.
+				</p>
+	        </div>
+	        </div>
+	        
+	        <div class="col-sm-4 bottom20">
+				<div>
+					<img src="site_media/img/simulation-fluid.jpg" style="width:100%;">
+	        	</div>
+	        <div>
+	        	<h4 class="top20">Fluid Dynamics</h4>
+				<p class="feature-description">
+					Macroscopic simulations of fluid flows. Based on <a href="http://openfoam.com/" target="_blank">OpenFOAM</a>, an open source software package simulating complex flow patterns, turbulence, heat transfer, solid dynamics and electromagnetic processes
+				</p>
+	        </div>
+	        </div>
+	    </div>
+	</div>
+
+<!-- Computing Types end -->
+
+<hr>
+
+<!-- Features Start -->
+
+	<div class="container top60">
+		
+	    <div class="row">
+	
+	        <div class="col-sm-4 bottom20 align-center">
+	        <div>
+	        	<img src="site_media/img/features-interface.svg">
+	        </div>
+	        <div>
+	        	<h4 class="top20">Intuitive User Interface</h4>
+				<p class="feature-description">
+					Built-in visualization and input data validation. Focus on results: do science, not computer science.
+				</p>
+	        </div>
+				
+	        </div>
+	        
+	        <div class="col-sm-4 bottom20 align-center">
+				<div>
+					<img src="site_media/img/features-realtime.svg" style="width:100px; height:100px;">
+				</div>
+	        <div>
+	        	<h4 class="top20">Realtime Status Tracking</h4>
+				<p class="feature-description">
+					Monitor key metrics of your simulation in real time. High performance and high throughput.
+				</p>
+	        </div>
+	        </div>
+	        
+	        <div class="col-sm-4 bottom20 align-center">
+				<div>
+					<img src="site_media/img/features-scalable.svg" style="width:100px; height:100px;">
+	        	</div>
+	        <div>
+	        	<h4 class="top20">Scalable Computing</h4>
+				<p class="feature-description">
+					Point-click access to thousands of CPUs. Eliminate spendings on infrastructure and administration.
+				</p>
+	        </div>
+	        </div>
+	    </div>
+	</div>
+
+<!-- Features end -->
+
+<hr>
+
+<!-- Use Cases Start -->
+
+<div class="container top40">
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="align-center bottom20">Use Cases</h3>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="highlight-boxes-lg">
+				<li>
+					<a href="use-cases.html">
+						<img src="site_media/img/case-chemical.svg">
+						<h3 class="top20 bottom0">Chemical Engineering</h3>
+					</a>
+				</li>
+				<li>
+					<a href="use-cases.html">
+						<img src="site_media/img/case-drug.svg">
+						<h3 class="top20 bottom0">Drug Discovery</h3>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="highlight-boxes-sm" style="margin-top:-1px;">
+				<li>
+					<a href="use-cases.html">
+						<img src="site_media/img/case-petrol.svg" style="height:100px;">
+						<h4 class="top20 bottom0">Petroleum Engineering</h4>
+					</a>
+				</li>
+				<li>
+					<a href="use-cases.html">
+						<img src="site_media/img/case-auto.svg" style="height:100px;">
+						<h4 class="top20 bottom0">Aero / Auto</h4>
+					</a>
+				</li>
+				<li>
+					<a href="use-cases.html">
+						<img src="site_media/img/case-genomics.svg"  style="height:100px;">
+						<h4 class="top20 bottom0">Genomics</h4>
+					</a>
+				</li>
+				<li>
+					<a href="use-cases.html">
+						<img src="site_media/img/case-finance.svg" style="height:100px;">
+						<h4 class="top20 bottom0">Finance</h4>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+
+<!-- Use Cases end -->
+
+
+<!-- Testimonials start -->
+
+<div class="container-fluid top40">  	
+    <div class="row">
+    
+			    <div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
+			      <ol class="carousel-indicators">
+			        <li data-target="#testimonials-carousel" data-slide-to="0" class="active"></li>
+			        <li data-target="#testimonials-carousel" data-slide-to="1"></li>
+			        <li data-target="#testimonials-carousel" data-slide-to="2"></li>
+			      </ol>
+			      <div class="carousel-inner" role="listbox">
+			        <div class="item active">
+			          <div>"I'd rather be doing Science than figuring out why this code does not compile!"</div>
+						<div class="testimonials-source">&ndash; Aaron B, UC Berkeley</div>
+			        </div>
+			        <div class="item">
+			           <div>"Web technology is the path forward for high performance computing."</div>
+						<div class="testimonials-source">&ndash; Chris A, Stanford</div>
+			        </div>
+			        <div class="item">
+			           <div>"With Exabyte we are able to simulate materials we make in our lab with much higher fidelity."</div>
+			          	<div class="testimonials-source">&ndash; Edward L, Cornell University</div>
+			        </div>
+			      </div>
+			      <a class="left carousel-control" href="#testimonials-carousel" role="button" data-slide="prev">
+			        <span class="glyphicon glyphicon-chevron-left"></span>
+			        <span class="sr-only">Previous</span>
+			      </a>
+			      <a class="right carousel-control" href="#testimonials-carousel" role="button" data-slide="next">
+			        <span class="glyphicon glyphicon-chevron-right"></span>
+			        <span class="sr-only">Next</span>
+			      </a>
+			    </div>
+  
+    </div>
+</div>
+
+<!-- Testimonials end -->
+
+<!-- Partner logos start -->
+
+<div class="container top40">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="align-center bottom0">Partners</h3>
+			<hr>
+		</div>
+	</div>
+	<div class="row top40 bottom20">
+		<div class="col-md-3 col-sm-6 col-xs-6 bottom40">
+			<div class="align-center">
+				<img src="site_media/img/partners-ibm.png" style="width:80%;">
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-6 bottom40">
+			<div class="align-center">
+				<img src="site_media/img/partners-rackspace.png" style="width:80%;">
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-6 bottom40">
+			<div class="align-center">
+				<img src="site_media/img/partners-aws.png" style="width:80%;">
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 col-xs-6 bottom40">
+			<div class="align-center">
+				<img src="site_media/img/partners-softlayer.png" style="width:80%;">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Partner logos end -->
+
+</div>
+
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="center-content top20 bottom20">
+                	<div class="bottom10">
+						<a href="terms-of-service.html">Terms of Service</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="contact-us.html">Contact Us</a>
+                	</div>
+                    &copy 2015 Exabyte.io. All rights reserved.
+                </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+<script>
+$(function() {
+    $('input, textarea').placeholder();
+});
+
+// IE 8
+
+document.createElement('video');
+
+</script>
+
+
+
+
+
+<!-- Modal -->
+	<div class="modal fade" id="exabyte-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">What is Exabyte.io?</h4>
+	      </div>
+	      <div class="modal-body" style="padding:0px; margin-bottom:0px;">
+			        <iframe width="100%" height="336" src="//www.youtube.com/embed/0RasOPDpQRQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	
+<!-- Video Test -->
+
+
+
+</body>
+</html>
+
+
