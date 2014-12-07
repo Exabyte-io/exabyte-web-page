@@ -127,7 +127,8 @@ h1,h2,h3,h4,h5,h6 {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #666;
+    background-color: #333;
+    border-radius:4px;
     color: #fff;
 }
 
@@ -239,8 +240,8 @@ h1,h2,h3,h4,h5,h6 {
 .exabyte-logo {
 	display:block;
 	background:url(../img/logo-exabyte.png);
-	width:159px;
-	height:34px;
+	width:150px;
+	height:32px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
