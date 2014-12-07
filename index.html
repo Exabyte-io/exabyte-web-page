@@ -37,9 +37,25 @@
    .placeholder { font-size:15px; color: #999; }
 </style>
 
+<script>
+
+$(window).scroll(function() {    
+
+   $("#navbar-default").removeClass("navbar-bg-image");
+
+   var scroll = $(window).scrollTop();
+
+   if (scroll <= 75) {
+      $("#navbar-default").addClass("navbar-bg-image");
+      console.log("THE EVENT");
+   }
+});
+
+</script>
+
 <!-- Navigation Start -->
 <div class="top-navigation" role="navigation" data-spy="affix" data-offset-top="114" data-offset-bottom="0">
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default" style="z-index:101;">
 		<div class="container-fluid top-navigation">
 			<div class="container">
 
