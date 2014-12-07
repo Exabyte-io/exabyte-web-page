@@ -164,12 +164,13 @@ h1,h2,h3,h4,h5,h6 {
 
 .pricing-column {
 	margin-bottom:40px;
+	padding: 0px 30px;
 	text-align:center;
 }
 
 .pricing-row {
-	padding:12px 10px;
-	font-size:14px;
+	padding:16px 12px;
+	font-size:18px;
 	color: #888;
 }
 
@@ -185,11 +186,12 @@ h1,h2,h3,h4,h5,h6 {
 
 .pricing-col-header {
 	margin:0px;
-	padding:10px;
+	padding:20px;
 	background:#777;
 	color:#fff;
 	text-align:center;
 	position: relative;
+	border-radius: 4px 4px 0 0;
 }
 
 .pricing-header-basic {
