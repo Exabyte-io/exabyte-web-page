@@ -41,13 +41,12 @@
 
 $(window).scroll(function() {    
 
-   $("#navbar-default").removeClass("navbar-bg-image");
+   $(".navbar-default").removeClass("navbar-bg-image");
 
    var scroll = $(window).scrollTop();
 
-   if (scroll <= 75) {
-      $("#navbar-default").addClass("navbar-bg-image");
-      console.log("THE EVENT");
+   if (scroll >= 75) {
+      $(".navbar-default").addClass("navbar-bg-image");
    }
 });
 
