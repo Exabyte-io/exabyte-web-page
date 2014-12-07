@@ -127,9 +127,10 @@ h1,h2,h3,h4,h5,h6 {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #333;
-    border-radius:4px;
-    color: #fff;
+    background-color: #fff;
+    /*border-radius:4px;*/
+    border-bottom: 1px solid #666;
+    color: #666;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -140,7 +141,7 @@ h1,h2,h3,h4,h5,h6 {
 .navbar-default .navbar-nav > li > a:focus {
     background-color: #fff;
     color: #666;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
 }
 
 .navbar-nav > li > a {
