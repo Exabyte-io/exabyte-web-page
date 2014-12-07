@@ -110,7 +110,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .navbar-bg-image {
 	background-color:#333;
-	background:url(../img/homepage-hero.jpg);
+	background:url(../img/homepage-hero-dark.jpg);
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/homepage-hero-dark.jpg', sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/homepage-hero-dark.jpg', sizingMethod='scale')";
 }
@@ -333,9 +333,30 @@ h1,h2,h3,h4,h5,h6 {
 	text-align:center;
 }
 
-.btn-bordered-dark:hover {
+.btn-bordered-dark:hover,
+.btn-bordered-dark:active,
+.btn-bordered-dark:focus {
 	background:#486eac;
 	color:#fff;
+	text-decoration:none;
+}
+
+.btn-bordered-info {
+	display:inline-block;
+	padding:6px 18px;
+	border:1px solid #96d2ff;
+	border-radius: 4px;
+	color:#96d2ff;
+	text-decoration:none;
+	text-align:center;
+}
+
+.btn-bordered-info:hover,
+.btn-bordered-info:active,
+.btn-bordered-info:focus {
+	background:#fff;
+	border:1px solid #fff;
+	color:#333;
 	text-decoration:none;
 }
 
@@ -418,7 +439,7 @@ h1,h2,h3,h4,h5,h6 {
 
 #testimonials-carousel {
 	background:#507dc3;
-	background:url(../img/homepage-hero.jpg);
+	background:url(../img/homepage-hero-dark.jpg);
 	background-position:center;
 	color:#fff;
 	font-size:30px;
