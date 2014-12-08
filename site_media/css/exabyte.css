@@ -7,7 +7,7 @@ body {
 	color:#666;
 	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size:15px;
-	line-height: 23px;  
+	line-height: 23px;
 }
 
 .container-body {
@@ -16,7 +16,7 @@ body {
 	margin:0px;
 }
 
-h1,h2,h3,h4,h5,h6 { 
+h1,h2,h3,h4,h5,h6 {
 	color:#333;
 }
 
@@ -146,7 +146,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .navbar-nav > li > a {
 	font-size:16px;
-	font-weight:400;
+	font-weight:300;
 	padding-left:20px;
 	padding-right:20px;
 	padding-top: 20px;
@@ -267,10 +267,10 @@ h1,h2,h3,h4,h5,h6 {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	margin-top:4px; 
-	
+	margin-top:4px;
+
 }
-	
+
 
 .hero-homepage {
 	background:#333;
@@ -286,7 +286,7 @@ h1,h2,h3,h4,h5,h6 {
 	padding-top:20px;
 	padding-bottom:20px;
 	}
-	
+
 .hero-homepage h1 {
 	font-size:42px;
 	font-weight:200;
@@ -422,14 +422,14 @@ h1,h2,h3,h4,h5,h6 {
 	margin-top:0px;
 	margin-bottom:10px;
 	}
-	
+
 .feature-description {
 	font-size: 16px;
 	line-height: 26px;
 	font-weight: 300;
 	color:#666;
 	}
-	
+
 .feature-description-sm {
 	font-size: 15px;
 	line-height: 22px;
@@ -635,7 +635,7 @@ label {font-weight:600;}
 	z-index: -100;
 	background:#333;
 	background-size: cover;
-	opacity: 0.4; 
+	opacity: 0.4;
 }
 
 video {display:block;}
@@ -662,32 +662,32 @@ video {display:block;}
 }
 
 @media (min-width: 401px) and (max-width: 767px) {
-	
+
 	#testimonials-carousel {
 		font-size:22px;
 		padding-left:80px;
 		padding-right:80px;
 	}
-	
+
 	.highlight-boxes li {
 		width:100%;
 		display:block;
 		}
 
 	.affix {position: static;}
-	
+
 	.highlight-boxes-lg li a {width: 100%;}
 	.highlight-boxes-sm li a {width: 50%;}
-	
+
 	#hero-video-container .content-area h1 {font-size:36px; margin-bottom:20px;}
 	#hero-video-container .content-area .lead {font-size:19px;}
 	#hero-video-container .content-area { text-align:center;}
 	#hero-video-container { text-align:center; height:700px;}
-	
+
 }
 
 @media (min-width: 0px) and (max-width: 400px) {
-	
+
 	#testimonials-carousel {
 		font-size:18px !important;
 		padding-left:40px !important;
@@ -695,25 +695,25 @@ video {display:block;}
 		padding-top:40px !important;
 		padding-bottom: 60px !important;
 	}
-	
+
 	.highlight-boxes li {
 		width:100%;
 		display:block;
 		}
-	
+
 	#testimonials-carousel {
 		margin-top:20px;
 	}
 
 	.affix {position: static;}
-	
+
 	.highlight-boxes-lg li a {width: 100%;}
 	.highlight-boxes-sm li a {width: 100%;}
-	
+
 	#hero-video-container .content-area h1 {font-size:34px !important; margin-bottom:20px; text-align:center;}
 	#hero-video-container .content-area .lead {font-size:18px; text-align:center;}
 	#hero-video-container { text-align:center; height:720px;}
-	
+
 }
 
 .col-centered{
