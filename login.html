@@ -98,13 +98,12 @@
    <script>
     function post_to_platform_login() {
 
-        var name = jQuery('#inputUsername').val();
-        var password = jQuery('#inputPassword').val();
+      var name = jQuery('#inputUsername').val();
+      var password = jQuery('#inputPassword').val();
 
-        window.location.href = 'https://platform.exabyte.io/login?u=' + name + '&p=' + password;
-        console.log(window.location.href);
+      window.location.href = 'https://platform.exabyte.io/login?u=' + name + '&p=' + password;
 
-        return false;
+      return false;
 
     }
     </script>

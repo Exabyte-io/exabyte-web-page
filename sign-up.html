@@ -63,7 +63,7 @@
             <h1 class="top40 bottom40">Sign up for Exabyte</h1>
               <!-- <div class="alert alert-danger alert-slim top10">All fields are required.</div> -->
 
-              <form role="form">
+            <form role="form" onsubmit="return post_to_platform_register();">
               <label>Selected Plan</label>
               <div class="form-group">
                 <select class="form-control">
@@ -86,6 +86,9 @@
                 <div class="form-group">
                   <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password2" placeholder="Confirm Password">
+                </div>
 
                 <div class="top10">
                   <button type="submit" class="btn btn-lg btn-primary" style="padding-left:40px; padding-right:40px;">Get Started</button>
@@ -101,6 +104,27 @@
     </div>
 
     <!--#include virtual="_footer.html" -->
+
+   <script>
+    function post_to_platform_register() {
+
+      var name = jQuery('#userName').val();
+      var email = jQuery('#emailAddress').val();
+      var phone = jQuery('#phoneNumber').val();
+      var password = jQuery('#password').val();
+      var password2 = jQuery('#password2').val();
+
+      window.location.href = 'https://platform.exabyte.io/register?' +
+                              'u='  + name + '&' +
+                              'e='  + email + '&' +
+                              'ph=' + phone + '&' +
+                              'p='  + password + '&' +
+                              'p2=' + password2;
+
+      return false;
+
+    }
+    </script>
 
   </body>
 </html>
