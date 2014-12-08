@@ -1,31 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Exabyte.io - virtual materials lab</title>
 
-    <meta name="description" content=""/>
-    <meta name="keywords" content="" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <!--  Favicon -->
-    <link rel="shortcut icon" href="site_media/img/favicon.ico" type="image/x-icon" />
-
-    <!-- Add jQuery library -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-    <!-- Add JS libraries -->
-    <script type="text/javascript" src="site_media/js/bootstrap.min.js"></script>
-
-    <!-- This supports IE 9 placeholders -->
-    <script type="text/javascript" src="site_media/js/jquery.placeholder.js"></script>
-    <script type="text/javascript" src="site_media/js/video-background.js"></script>
-
-      <!-- CSS & Fonts -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" type="text/css" media="screen" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="site_media/css/exabyte.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" media="screen" />
+    <!--#include virtual="_head_content.html" -->
 
   </head>
 
@@ -77,101 +54,50 @@
     <!-- Navigation End -->
 
     <!-- Container-Body start -->
-		<div class="container-body">
+    <div class="container-body">
 
-			<div class="container">
-				<div class="row top40 bottom40">
-
-					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-						<div class="well">
-							<h1 class="top40 bottom40">Login</h1>
-							<!-- <div class="alert alert-danger alert-slim top10">Error message for incorrect logins.</div> -->
-
-							<form role="form">
-							  <div class="form-group">
-							    <!-- <label for="loginUsername">Username</label> -->
-							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
-							  </div>
-							  <div class="form-group">
-							    <!-- <label for="exampleInputPassword1">Password</label> -->
-							    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-							  </div>
-
-							  <div class="pull-right"><a href="forgot-password.html">Forgot Password?</a></div>
-
-							  <div class="checkbox" style="display:inline-block; margin-top:0px;">
-							    <label>
-							      <input type="checkbox"> Remember me
-							    </label>
-							  </div>
-							  <div class="top10">
-							  	<button type="submit" class="btn btn-lg btn-primary" style="padding-left:40px; padding-right:40px;">Submit</button>
-						      </div>
-							</form>
-
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-		<!-- Container-Body end -->
-
-    <!-- footer -->
-    <div class="footer">
       <div class="container">
-          <div class="row">
-            <div class="col-sm-2 col-sm-offset-3" style="margin-left:30%">
+        <div class="row top40 bottom40">
 
-              <div class="col-header top30">Exabyte</div>
-              <div class="top10 bottom10">
-                <a href="about.html">About</a>
-                <br>
-                <a href="use-cases.html">Use Cases</a>
-                <br>
-                <a href="testimonials.html">Testimonials</a>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="col-header top30">Sign Up</div>
-              <div class="top10 bottom10">
-                <a href="pricing.html">Pricing</a>
-                <br>
-                <a href="login.html">Log In</a>
-                <br>
-                <a href="sign-up.html">Sign Up</a>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="col-header top30">Information</div>
-              <div class="top10 bottom10">
-                <a href="contact-us.html">Contact Us</a>
-                <br>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <br>
-                <a href="privacy-policy.html">Privacy Policy</a>
-              </div>
-            </div>
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="well">
+              <h1 class="top40 bottom40">Login</h1>
+              <!-- <div class="alert alert-danger alert-slim top10">Error message for incorrect logins.</div> -->
 
-            <div class="col-sm-12">
-              <div class="top40 bottom20 align-center">
-                &copy 2015 Exabyte.io. All rights reserved.
-              </div>
+              <form role="form">
+                <div class="form-group">
+                  <!-- <label for="loginUsername">Username</label> -->
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="exampleInputPassword1">Password</label> -->
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <div class="pull-right"><a href="forgot-password.html">Forgot Password?</a></div>
+
+                <div class="checkbox" style="display:inline-block; margin-top:0px;">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div>
+                <div class="top10">
+                  <button type="submit" class="btn btn-lg btn-primary" style="padding-left:40px; padding-right:40px;">Submit</button>
+                  </div>
+              </form>
+
             </div>
+          </div>
         </div>
+
       </div>
+
     </div>
+    <!-- Container-Body end -->
 
-	  <script>
-	    $(function() {
-	        $('input, textarea').placeholder();
-	    });
-	    // IE 8
-	    document.createElement('video');
-	  </script>
+    <!--#include virtual="_footer.html" -->
 
-	</body>
+  </body>
 </html>
 
 
