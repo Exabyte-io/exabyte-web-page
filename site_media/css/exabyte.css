@@ -455,6 +455,7 @@ h1,h2,h3,h4,h5,h6 {
 	background-position:center;
 	color:#fff;
 	font-size:30px;
+	line-height:38px;
 	font-weight:300;
 	text-align:center;
 	padding-left:140px;
@@ -665,6 +666,7 @@ video {display:block;}
 	
 	#testimonials-carousel {
 		font-size:22px;
+		line-height:30px;
 		padding-left:80px;
 		padding-right:80px;
 	}
