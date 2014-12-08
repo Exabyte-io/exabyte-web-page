@@ -56,14 +56,17 @@
     <div class="container-body">
 
       <div class="container">
-        <div class="row top20 bottom40">
+        <div class="row top40 bottom40">
 
           <div class="col-md-6 col-md-offset-1 col-sm-8">
-            <h3>Contact Us</h3>
-            <div class="well">
-              <div class="alert alert-danger alert-slim top10">Error message.</div>
 
-              <form role="form">
+            <div class="well">
+
+              <h3 class="bottom20">Contact Us</h3>
+
+              <!-- <div class="alert alert-danger alert-slim top10">Error message.</div> -->
+
+              <form role="form" onsubmit="return post_to_parse();">
                 <div class="form-group">
                   <label for="senderName">Name</label>
                   <input type="text" class="form-control" id="senderName" placeholder="">
@@ -78,7 +81,7 @@
                   <textarea style="height:140px;" type="text" class="form-control" id="senderMessage"></textarea>
                 </div>
 
-                <div class="top10">
+                <div class="top30">
                   <button type="submit" class="btn btn-lg btn-primary" style="padding-left:40px; padding-right:40px;">Send Message</button>
                   </div>
               </form>
@@ -88,7 +91,7 @@
 
           <div class="col-md-4 col-sm-4">
             <div class="bottom20">
-              <h4 class="top50">Connect With Us</h4>
+              <h4 >Connect With Us</h4>
               <a href="https://www.facebook.com/home.php" target="_blank"><i class="fa fa-facebook-square fa-2"></i></a>
               <a href="https://github.com/Exabyte-io" target="_blank"><i class="fa fa-github-square fa-2 left5"></i></a>
             </div>
@@ -110,6 +113,51 @@
     </div>
 
     <!--#include virtual="_footer.html" -->
+
+    <!-- PARSE FORM HANDLER -->
+    <script>
+    function post_to_parse() {
+
+        Parse.initialize("ATMsrRPxE7MzFHdfogThm2iQvCasbcpkexKQ4hLh", "dHaZ0sBZGkO153TtGQrBBDdn5Mxtrg5O1vbZAkWj");
+        var TestObject = Parse.Object.extend("SignUpUsers");
+        var testObject = new TestObject();
+        var name = jQuery('#senderName').val();
+        var email = jQuery('#senderEmail').val();
+        var message = jQuery('#senderMessage').val();
+        testObject.save({
+          name: name,
+          email: email,
+          message: message,
+        }).then(function(object) {
+          console.log('Message sent successfully!')
+          jQuery('#senderName').val('');
+          jQuery('#senderEmail').val('');
+          jQuery('#senderMessage').val('');
+        });
+
+        jQuery("#myModal").modal("show");
+        return false;
+    }
+    </script>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" id="exabyte-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Thank you!</h4>
+          </div>
+          <div class="modal-body" style="padding:40px; margin-bottom:40px;">
+            <div class="text-center">
+              <i class="fa fa-thumbs-o-up fa-5x"></i>
+              <h3>We will be in touch with you shortly</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
 
   </body>
 </html>
