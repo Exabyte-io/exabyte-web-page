@@ -157,6 +157,19 @@ h1,h2,h3,h4,h5,h6 {
     border-color: #ccc;
 }
 
+.navbar-default .btn-default {
+	border-color:#fff;
+}
+
+.navbar-default .btn-default:hover,
+.navbar-default .btn-default:active,
+.navbar-default .btn-default:focus {
+  background:transparent;
+  color:#fff;
+  text-decoration:none;
+  border-color: #fff;
+}
+
 /*
 --------------- Pricing start ---------------*/
 
@@ -193,15 +206,21 @@ h1,h2,h3,h4,h5,h6 {
 	color:#fff;
 	text-align:center;
 	position: relative;
-	border-radius: 4px 4px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.pricing-header-free {
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  color:#333;
 }
 
 .pricing-header-basic {
-	background:#486eac;
+	background:#284166;
 }
 
 .pricing-header-advance {
-	background:#5f5ab4;
+	background:#f59119;
 }
 
 .pricing-popular {
@@ -297,16 +316,6 @@ h1,h2,h3,h4,h5,h6 {
 	padding-top:20px;
 	padding-bottom:20px;
 	}
-
-
-.btn-default:hover,
-.btn-default:active,
-.btn-default:focus {
-	background:transparent;
-	color:#fff;
-	text-decoration:none;
-	border-color: #fff;
-}
 
 .btn-bordered-light {
 	display:inline-block;
@@ -547,8 +556,8 @@ ul.highlight-boxes-sm {
 /*--------- Bootstrap Modifiers ---------*/
 
 .btn-primary {
-	background:#486eac;
-	border:#3c5f96;
+	background:#314b76;
+	border:#284166;
 }
 
 .btn-primary:hover,
@@ -556,7 +565,7 @@ ul.highlight-boxes-sm {
 .btn-primary.active,
 .btn-primary.disabled,
 .btn-primary[disabled] {
-  background:#3c5f96;
+  background:#284166;
 }
 
 .btn-warning {
