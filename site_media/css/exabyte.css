@@ -654,6 +654,19 @@ video {display:block;}
 
 @media (min-width: 1200px) {
 
+	.modal-lg
+	{
+	    width: 1280px;
+	    height: 900px;
+	}
+
+	/* Adjust youtube video height */
+	.modal-vertical-centered {
+	  transform: translate(0, 10%) !important;
+	  -ms-transform: translate(0, 10%) !important; /* IE 9 */
+	  -webkit-transform: translate(0, 10%) !important; /* Safari and Chrome */
+	}
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -662,6 +675,14 @@ video {display:block;}
 	}
 
 	#hero-video-container { text-align:center; min-height:700px;}
+
+	/* Adjust youtube video height */
+	.modal-vertical-centered {
+	  transform: translate(0, 20%) !important;
+	  -ms-transform: translate(0, 20%) !important; /* IE 9 */
+	  -webkit-transform: translate(0, 20%) !important; /* Safari and Chrome */
+	}
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -669,6 +690,14 @@ video {display:block;}
 	#hero-video-container { text-align:center; height:720px;}
 	#hero-video-container .content-area h1 {font-size:38px; margin-bottom:20px;}
 	#hero-video-container .content-area .lead {font-size:20px;}
+
+	/* Adjust youtube video height */
+	.modal-vertical-centered {
+	  transform: translate(0, 40%) !important;
+	  -ms-transform: translate(0, 40%) !important; /* IE 9 */
+	  -webkit-transform: translate(0, 40%) !important; /* Safari and Chrome */
+	}
+
 }
 
 @media (min-width: 401px) and (max-width: 767px) {
@@ -700,6 +729,13 @@ video {display:block;}
 	 .top-navigation {
     background-color:#304a75;
   }
+
+	/* Adjust youtube video height */
+	.modal-vertical-centered {
+	  transform: translate(0, 50%) !important;
+	  -ms-transform: translate(0, 50%) !important; /* IE 9 */
+	  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+	}
 
 }
 
@@ -737,6 +773,13 @@ video {display:block;}
 	  background-color:#304a75;
 	}
 
+	/* Adjust youtube video height */
+	.modal-vertical-centered {
+	  transform: translate(0, 50%) !important;
+	  -ms-transform: translate(0, 50%) !important; /* IE 9 */
+	  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+	}
+
 }
 
 .col-centered {
@@ -760,8 +803,3 @@ video {display:block;}
 	background-color: rgba(238, 238, 238, 0.45) !important;
 }
 
-.modal-vertical-centered {
-  transform: translate(0, 50%) !important;
-  -ms-transform: translate(0, 50%) !important; /* IE 9 */
-  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
-}
