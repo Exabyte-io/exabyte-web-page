@@ -331,15 +331,14 @@ email us directly at 'info@exabyte.io' to get:
   <!--#include virtual="_footer.html" -->
 
   <!-- Modal -->
-    <div class="modal fade" id="exabyte-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+    <div class="modal vcenter" id="exabyte-video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-vertical-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">What is Exabyte.io?</h4>
-          </div>
           <div class="modal-body" style="padding:0px; margin-bottom:0px;">
-                <iframe width="100%" height="336" src="//www.youtube.com/embed/0RasOPDpQRQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            <!-- 16:9 aspect ratio -->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/0RasOPDpQRQ?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>

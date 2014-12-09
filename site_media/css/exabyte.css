@@ -759,3 +759,9 @@ video {display:block;}
 .disabled {
 	background-color: rgba(238, 238, 238, 0.45) !important;
 }
+
+.modal-vertical-centered {
+  transform: translate(0, 50%) !important;
+  -ms-transform: translate(0, 50%) !important; /* IE 9 */
+  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+}
