@@ -83,7 +83,7 @@ h1,h2,h3,h4,h5,h6 {
 	display:block;
 }
 
-.lead { color:#999;}
+.lead { color:#999; line-height: 36px;}
 
 .alert-slim {
 	padding:4px 10px;
@@ -660,7 +660,7 @@ video {display:block;}
 	#testimonials-carousel {
 		margin-top:40px;
 	}
-	
+
 	#hero-video-container { text-align:center; min-height:700px;}
 }
 
@@ -694,9 +694,9 @@ video {display:block;}
 	#hero-video-container .content-area .lead {font-size:19px;}
 	#hero-video-container .content-area { text-align:center;}
 	#hero-video-container { text-align:center; height:700px !important;}
-	
+
 	.navbar-toggle .icon-bar {background-color:#fff !important;}
-	
+
 	 .top-navigation {
     background-color:#304a75;
   }
@@ -730,16 +730,32 @@ video {display:block;}
 	#hero-video-container .content-area h1 {font-size:34px !important; margin-bottom:20px; text-align:center;}
 	#hero-video-container .content-area .lead {font-size:18px; text-align:center;}
 	#hero-video-container { text-align:center; height:720px;}
-	
+
 	.navbar-toggle .icon-bar {background-color:#fff !important;}
-		
+
 	.top-navigation {
 	  background-color:#304a75;
 	}
 
 }
 
-.col-centered{
+.col-centered {
     float: none;
     margin: 0 auto;
+}
+
+.value-props .top0 {
+	padding-left: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: 300;
+	border: 1px solid rgba(238, 238, 238, 0.9);
+}
+
+.value-props .disabled {
+	border: 1px solid rgba(238, 238, 238, 0.9);
+}
+
+.disabled {
+	background-color: rgba(238, 238, 238, 0.45) !important;
 }
