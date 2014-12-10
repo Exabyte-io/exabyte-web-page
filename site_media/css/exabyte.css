@@ -546,19 +546,23 @@ ul.highlight-boxes-sm {
 .footer {
 	background: #666;
 	color: #bbb;
-	Padding:20px;
+	padding:20px;
 	text-align:left;
 	line-height: 15pt;
 	}
 
 .footer .col-header {
 	text-transform: uppercase;
-	}
+}
 
 .footer a {
 	font-size: 10pt;
 	color:#ddd;
-	}
+}
+
+.footer-items {
+	padding-left: 100px;
+}
 
 /*--------- Bootstrap Modifiers ---------*/
 
