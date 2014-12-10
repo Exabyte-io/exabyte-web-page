@@ -33,6 +33,12 @@ email us directly at 'info@exabyte.io' to get:
             $(".navbar-default").addClass("navbar-bg-image");
          }
       });
+      /* Scrolling on click */
+      function scrollWin() {
+        var height = $(window).height() - 60;
+        // window.scrollBy(0, height);
+        $('html, body').animate({scrollTop:height}, 750, 'swing');
+      }
     </script>
 
     <!-- Navigation Start -->
@@ -96,8 +102,10 @@ email us directly at 'info@exabyte.io' to get:
             </div>
           </div>
         </div>
-        <div style="position: absolute; bottom:15px; width:100%; text-align:center;">
-          <img src="site_media/img/icon-down-arrow.png" style="opacity: .15;">
+        <div style="position: absolute; bottom:35px; width:100%; text-align:center;">
+          <a class="btn-bordered-light btn-bordered-lg" style="opacity: .30; border-radius: 25px; padding:10px;" onclick="scrollWin()">
+            <img width="60%" src="site_media/img/icon-down-arrow.png" style="opacity: .15;">
+          </a>
         </div>
       </div>
 
