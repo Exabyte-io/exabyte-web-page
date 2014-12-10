@@ -649,6 +649,10 @@ label {font-weight:600;}
 	opacity: 0.4;
 }
 
+#hero-video-container .content-area a {
+	margin:5px;
+}
+
 video {display:block;}
 
 
