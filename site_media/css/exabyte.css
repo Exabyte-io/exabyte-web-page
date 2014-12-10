@@ -810,3 +810,19 @@ video {display:block;}
 	background-color: rgba(238, 238, 238, 0.45) !important;
 }
 
+.button-scroll {
+	position: absolute;
+	bottom:15px;
+	width:100%;
+	text-align:center;
+}
+
+.button-scroll a {
+	opacity: .30;
+	border-radius: 25px;
+	padding:10px;
+}
+
+.button-scroll a img {
+	opacity: .15;
+}
