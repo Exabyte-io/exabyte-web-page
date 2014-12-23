@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!--#include virtual="_head_content.html" -->
+
+  </head>
+
+  <body>
+
+    <style>
+       .placeholder { font-size:15px; color: #999; }
+    </style>
+
+    <!-- Navigation Start -->
+    <div class="top-navigation" role="navigation" data-spy="affix" data-offset-top="114" data-offset-bottom="0">
+      <nav class="navbar navbar-default navbar-bg-image" style="z-index:101;">
+        <div class="container-fluid top-navigation">
+          <div class="container">
+
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#exabyte-navigation">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                  <div class="exabyte-logo"></div>
+                </a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="exabyte-navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="use-cases.html">Use Cases</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li>
+                    <div style="padding:13px;">
+                      <a href="login.html" class="btn btn-bordered-light">Log In</a>
+                      <a href="sign-up.html" class="btn btn-default">Sign Up</a>
+                    </div>
+                  </li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+
+          </div><!-- /.container -->
+        </div><!-- /.container-fluid -->
+
+      </nav>
+    </div>
+    <!-- Navigation End -->
+
+    <div class="container-body">
+
+      <div class="container">
+        <div class="row top40 bottom40">
+
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="well">
+            <h1 class="top40 bottom40">Sign up</h1>
+              <!-- <div class="alert alert-danger alert-slim top10">All fields are required.</div> -->
+
+            <form role="form" onsubmit="return post_to_platform_register();">
+              <!-- <label class="bottom10">Selected Plan</label> -->
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Choose a Plan</option>
+                  <option>FREE</option>
+                  <option>Basic</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+
+                <div class="form-group">
+                  <input type="username" class="form-control" id="userName" placeholder="Username">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="emailAddress" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                  <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number (10 digits)">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password" placeholder="Password (6 characters minimum)">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password2" placeholder="Confirm Password">
+                </div>
+
+                <div class="top20">
+                  <button type="submit" class="btn btn-lg btn-primary" style="padding-left:40px; padding-right:40px;">Get Started</button>
+                  </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--#include virtual="_footer.html" -->
+
+   <script>
+    function post_to_platform_register() {
+
+      var name = jQuery('#userName').val();
+      var email = jQuery('#emailAddress').val();
+      var phone = jQuery('#phoneNumber').val();
+      var password = jQuery('#password').val();
+      var password2 = jQuery('#password2').val();
+
+      window.location.href = 'https://platform.exabyte.io/register?' +
+                              'u='  + name + '&' +
+                              'e='  + email + '&' +
+                              'ph=' + phone + '&' +
+                              'p='  + password + '&' +
+                              'p2=' + password2;
+
+      return false;
+
+    }
+    </script>
+
+  </body>
+</html>
+
+
