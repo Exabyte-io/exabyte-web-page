@@ -16,6 +16,10 @@ body {
 	margin:0px;
 }
 
+.lifted {
+	margin-bottom:-60px;
+}
+
 h1,h2,h3,h4,h5,h6 {
 	color:#333;
 }
@@ -826,3 +830,6 @@ video {display:block;}
 .button-scroll a img {
 	opacity: .15;
 }
+
+
+/* FONTS */
