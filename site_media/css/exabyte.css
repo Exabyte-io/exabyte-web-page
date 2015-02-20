@@ -3,7 +3,7 @@
 ----------------------------- Base Classes ---------------------------------*/
 
 body {
-	background:#666;
+	background: #2F4A75;
 	color:#666;
 	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size:15px;
@@ -548,7 +548,8 @@ ul.highlight-boxes-sm {
 }
 
 .footer {
-	background: #666;
+	background: #2F4A75;
+	background:url(../img/homepage-hero-dark.jpg);
 	color: #bbb;
 	padding:20px;
 	text-align:left;
