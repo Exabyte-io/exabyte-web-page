@@ -39,8 +39,16 @@ Listen 81
 </VirtualHost>
 ```
 
-run `a2enmod include`
-run `service apache2 restart`
+then run
+
+```bash
+chmod a+rX /root/
+a2dissite default
+a2enmod include
+a2ensite exabyte.io
+a2ensite exabyte.io_old
+service apache2 restart
+```
 
 # Directives for Apache2 setup on Mac
 
