@@ -32,7 +32,7 @@ Listen 81
 /etc/apache2/sites-available/exabyte.io_old
 
 ```
-<VirtualHost 198.89.100.172:81>
+<VirtualHost *:81>
     ServerName exabyte.io_old
     ServerAlias www.exabyte.io_old
     DocumentRoot /root/public_html/exabyte.io
