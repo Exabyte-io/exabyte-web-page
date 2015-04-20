@@ -6,6 +6,9 @@
 Listen 80
 Listen 81
 
+NameVirtualHost *:80
+NameVirtualHost *:81
+
 <IfModule mod_ssl.c>
     Listen 443
 </IfModule>
@@ -21,7 +24,7 @@ Listen 81
 <VirtualHost *:80>
     ServerName exabyte.io
     ServerAlias www.exabyte.io
-    DocumentRoot /root/public_html/exabyte.io/new
+    DocumentRoot /root/public_html/exabyte.io/
 
     Options Indexes FollowSymLinks MultiViews Includes
     AddType text/html .html
@@ -33,9 +36,44 @@ Listen 81
 
 ```
 <VirtualHost *:81>
-    ServerName exabyte.io_old
-    ServerAlias www.exabyte.io_old
-    DocumentRoot /root/public_html/exabyte.io
+    ServerName exabyte.io
+    ServerAlias www.exabyte.io
+    DocumentRoot /root/public_html/exabyte.io_old
+    <Directory /root/files>
+        AllowOverride AuthConfig
+    Order allow,deny
+    Allow from all
+    </Directory>
+</VirtualHost>
+```
+
+/etc/apache2/sites-available/files.exabyte.io
+
+```
+<VirtualHost *:81>
+    ServerName files.exabyte.io
+    ServerAlias www.files.exabyte.io
+    DocumentRoot /root/files
+    <Directory /root/files>
+        AllowOverride AuthConfig
+    Order allow,deny
+    Allow from all
+    </Directory>
+</VirtualHost>
+```
+
+/etc/apache2/sites-available/docs.exabyte.io
+
+```
+<VirtualHost *:81>
+    ServerName docs.exabyte.io
+    ServerAlias www.docs.exabyte.io
+    DocumentRoot /root/exabyte-public-documentation/site
+    <Directory /root/exabyte-public-documentation/site>
+        AllowOverride AuthConfig
+    Order allow,deny
+    Allow from all
+    </Directory>
 </VirtualHost>
 ```
 
@@ -47,6 +85,8 @@ a2dissite default
 a2enmod include
 a2ensite exabyte.io
 a2ensite exabyte.io_old
+a2ensite files.exabyte.io
+a2ensite docs.exabyte.io
 service apache2 restart
 ```
 
@@ -65,7 +105,7 @@ edit /etc/apache2/users/username.conf, add:
 </Directory>
 ```
 
-do 
+do
 
 ```bash
 sudo apachetcl graceful
