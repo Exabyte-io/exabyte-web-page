@@ -1,31 +1,80 @@
+var loader = (function () {
+    var count;
+    function load (array) {
+     count = array.length;
+     $.each(array, function(i, link) {
+         var img = new Image();
+             img.src = link;
+             img.onload = imageLoaded;
+     });
+    }
+
+    function imageLoaded () {
+     count--;
+     if (count == 0) {
+         ready();
+     }
+    }
+
+    function ready () {
+     $(document).ready(function () {
+        // hide preloder and show main content
+        console.log('loaded');
+     });
+    }
+
+    return {
+     require: load
+    }
+})();
+
+loader.require([
+ 'img/boeing.png',
+ 'img/lab.jpeg',
+]);
+
 $(document).ready(function () {
     SimpleCarousel.init();
     dumbRouter.init();
+    newsletter.init();
 });
 
 // This simple carousel for header background
 var SimpleCarousel = {
     init: function () {
-    var bCls = {
-            isActive: true,
-            val: 'boeing active'
-        },
-        lCls = {
-            isActive: false,
-            val: 'lab active'
-        };
+        var slides = [
+                {
+                    val: 'boeing active'
+                },
+                {
+                    val: 'lab active'
+                }
+            ],
+            i = 0,
+            isPaused = false,
+            changeSlide = function (target) {
+                setTimeout( function () {
+                    if (!$('#header').hasClass('subpage')) {
+                        $('#header').removeClass().addClass('image dim').addClass(target.val);
+                    }
+                }, 500);
+            };
 
         setInterval(function () {
-            if (bCls.isActive) {
-                $('#header').removeClass(bCls.val).addClass(lCls.val);
-                bCls.isActive = false;
-                lCls.isActive = true;
-            } else if (lCls.isActive) {
-                $('#header').removeClass(lCls.val).addClass(bCls.val);
-                bCls.isActive = true;
-                lCls.isActive = false;
+            changeSlide(slides[i]);
+            if ( i < slides.length - 1) {
+                i++;
+            } else {
+                i = 0;
             }
-        }, 8000)
+        }, 8000);
+
+        $(document).on('click', '.carousel-btns li', function () {
+            isPaused = true,
+            t = $(this).data('target');
+            changeSlide(slides[t]);
+            i = t;
+        });
     }
 };
 
@@ -41,7 +90,13 @@ var dumbRouter = {
             $('div[class$="-head"]').hide().css({ opacity: 0 });
             $('#header').removeClass();
             $(this).parent('.nav').find('li').removeClass('active');
-            $(this).addClass('active');
+            if (!$(this).hasClass('footer-link')) {
+                $(this).addClass('active');
+            } else {
+                debugger;
+                $('.navbar-nav li').removeClass('active');
+                $('.navbar-nav li a[data-page="'+ $(this).data('page') +'"]').parent('li').addClass('active');
+            }
             selector = $(this).data('page') ? $(this).data('page') : $(this).find('a').data('page');
             headTitle = $(this).data('header') ? $(this).data('header') : $(this).find('a').data('header');
             headCls = $(this).data('cls') ? $(this).data('cls') : $(this).find('a').data('cls');
@@ -54,18 +109,34 @@ var dumbRouter = {
         $(document).on('click', '.logo a', changeFunction);
         $(document).on('click', '#footer a', changeFunction);
 
-        // $('.scroll-btn-wrap').hover(
-        //     function() {
-        //         $('.scroll-btn-inner').animate({ top: 0}, 250)
-        //     },
-        //     function() {
-        //         $('.scroll-btn-inner').animate({ top: -25}, 250)
-        //     }
-        // );
-
-
         $(document).on('click', '.navbar-nav li a', function(event) {
             $(".navbar-collapse").collapse('hide');
+        });
+    }
+};
+
+// Function for newsletter form on footer
+var newsletter = {
+    init: function () {
+        var send = function () {
+            var input = $('.newsletter-input'),
+                email = input.val();
+
+            if (input[0].checkValidity()) {
+                $('.navbar-nav li a[data-page=".contact-page"]').click();
+
+                $('.contact-email').val(email);
+                $('.contact-message').val('Hey! I wanna get a news');
+                input.val('');
+            }
+        };
+
+        $(document).on('click', '.newsletter-btn', send);
+
+        $(document).on('keyup', '.newsletter-input', function (e) {
+            if (e.keyCode == 13) {
+                send();
+            }
         });
     }
 };
