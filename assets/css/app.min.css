@@ -393,14 +393,14 @@ h3 {
 
 #header.image.boeing {
     background-position: center center;
-    background-image: url(../../img/boeing.png);
+    background-image: url(../../img/airplane-factory.png);
     background-size: cover;
     opacity: 0;
 }
 
 #header.image.lab {
     background-position: center center;
-    background-image: url(../../img/lab.jpeg);
+    background-image: url(../../img/semiconductor-fab.jpeg);
     background-size: cover;
     opacity: 0;
 }
