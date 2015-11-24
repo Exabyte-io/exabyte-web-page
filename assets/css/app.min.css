@@ -144,7 +144,7 @@ html,body {
 body {
     color: #555659;
     -webkit-font-smoothing: antialiased;
-    font-family: Lato,sans-serif;
+    font-family: Campton, sans-serif;
     font-size: 16px;
     font-size: 1.6rem
 }
@@ -357,11 +357,16 @@ h3 {
 }
 
 .hoverExtend:hover:before,.hoverExtend.active:before {
-    left: -10px
+    left: -10px;
 }
 
 .hoverExtend:hover:after,.hoverExtend.active:after {
-    right: -10px
+    right: -10px;
+}
+
+#main-content {
+    opacity: 0;
+    display: none;
 }
 
 #header {
@@ -405,8 +410,34 @@ h3 {
     opacity: 0;
 }
 
+#header.image.chemical {
+    background-position: center center;
+    background-image: url(../../img/chemical-plant.jpeg);
+    background-size: cover;
+    opacity: 0;
+}
+
+#header.image.factory {
+    background-position: center center;
+    background-image: url(../../img/battery-factory.jpeg);
+    background-size: cover;
+    opacity: 0;
+}
+
+#header.image.solar {
+    background-position: center center;
+    background-image: url(../../img/solar-plant.jpeg);
+    background-size: cover;
+    opacity: 0;
+}
+
+
+
 #header.image.boeing.active,
-#header.image.lab.active {
+#header.image.lab.active,
+#header.image.chemical.active,
+#header.image.factory.active,
+#header.image.solar.active {
     opacity: 1;
 }
 
@@ -577,7 +608,7 @@ h3 {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     height: 10px;
-    margin: 0 0 0 -10px;
+    margin: 0 0 0 -40px;
     display: block;
     bottom: 20px;
     left: 50%;
@@ -2087,36 +2118,144 @@ h3 {
 }
 
 @-ms-keyframes move {
-    0%   { left: 12.5px; }
-    8.5%  { left: 12.5px; }
-    18%  { left: 85px; }
-    25.5%  { left: 85px; }
-    34% { left: 100px; }
-    42.5% { left: 100px; }
-    51% { left: 115px; }
-    59.5% { left: 115px; }
-    68% { left: 145px; }
-    76.5% { left: 145px; }
-    85% { left: 90px; }
-    93.5% { left: 90px; }
-    100%  { left: 12.5px; }
+    0%   { left: 110px; }
+    8.5%  { left: 110px; }
+    18%  { left: 13px; }
+    25.5%  { left: 13px; }
+    34% { left: 85px; }
+    42.5% { left: 85px; }
+    51% { left: 100px; }
+    59.5% { left: 100px; }
+    68% { left: 115px; }
+    76.5% { left: 115px; }
+    85% { left: 145px; }
+    93.5% { left: 145px; }
+    100%  { left: 110px; }
 }
 
 @-moz-keyframes move {
-    0%   { left: 12.5px; }
-    8.5%  { left: 12.5px; }
-    18%  { left: 85px; }
-    25.5%  { left: 85px; }
-    34% { left: 100px; }
-    42.5% { left: 100px; }
-    51% { left: 115px; }
-    59.5% { left: 115px; }
-    68% { left: 145px; }
-    76.5% { left: 145px; }
-    85% { left: 90px; }
-    93.5% { left: 90px; }
-    100%  { left: 12.5px; }
+    0%   { left: 110px; }
+    8.5%  { left: 110px; }
+    18%  { left: 13px; }
+    25.5%  { left: 13px; }
+    34% { left: 85px; }
+    42.5% { left: 85px; }
+    51% { left: 100px; }
+    59.5% { left: 100px; }
+    68% { left: 115px; }
+    76.5% { left: 115px; }
+    85% { left: 145px; }
+    93.5% { left: 145px; }
+    100%  { left: 110px; }
 }
+
+/*
+ * CSS loader adopted from:
+ *   http://codepen.io/jczimm/pen/vEBpoL
+ *   and modified
+ */
+
+.spinner-wrap {
+  position: relative;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2%;
+}
+
+.css-loader {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  width: 100px;
+}
+
+.spinner-wrap.in .css-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  width: 100px;
+}
+
+.css-loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.circular {
+  -webkit-animation: rotate 1.5s linear infinite;
+          animation: rotate 1.5s linear infinite;
+  height: 100%;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 2.5s ease-in-out infinite;
+          animation: dash 2.5s ease-in-out infinite;
+  stroke-linecap: round;
+  stroke: rgba(10, 54, 119, 0.7);
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124;
+  }
+}
+
+
+
 
 
 @media (min-width: 768px) {
@@ -2147,6 +2286,31 @@ h3 {
     }
 }
 
+@media (max-width: 550px) {
+    .vscroll .pre-text {
+        left: 4%;
+    }
+
+    .vscroll .vscroll-items {
+        left: 7%;
+    }
+
+    .metrics .submetric h2 .pub-ent,
+    .metrics .submetric h2 .rs-lab {
+        top: -15px;
+        left: 50%;
+    }
+
+    .metrics .submetric h2 .pub-ent {
+        margin-left: -90px;
+    }
+
+    .metrics .submetric h2 .rs-lab {
+        margin-left: -70px;
+        right: auto;
+    }
+}
+
 @media (max-width: 520px) {
     .latestPosts .i {
         width:100%
@@ -2162,6 +2326,16 @@ h3 {
 
     .iconsListing .i {
         width: 33.3%
+    }
+}
+
+@media (max-width: 420px) {
+    .vscroll .pre-text {
+        left: 1%;
+    }
+
+    .vscroll .vscroll-items {
+        left: 4%;
     }
 }
 
@@ -2242,13 +2416,19 @@ h3 {
         width: auto
     }
 
+    .vscroll {
+        width: 380px;
+    }
+
     .vscroll .pre-text {
+        left: 8%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
     }
 
     .vscroll .vscroll-items {
+        left: 10%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
@@ -2698,8 +2878,4 @@ h3 {
     font-style: normal;
     font-weight: 300;
     src: local('Campton Light'), local('Campton-Light'), url(../fonts/campton/Campton.Light.otf) format("opentype");
-}
-
-body {
-    font-family: Campton,sans-serif;
 }
