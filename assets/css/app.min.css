@@ -2037,6 +2037,9 @@ h3 {
     position: absolute;
     top: 0;
     left: 110px;
+}
+
+.vscroll.active .pre-text {
     -webkit-animation: move 20s infinite;
     -moz-animation: move 20s infinite;
     -ms-animation: move 20s infinite;
@@ -2048,6 +2051,9 @@ h3 {
     position: absolute;
     top: 0;
     left: 127.5px;
+}
+
+.vscroll.active .vscroll-items {
     -webkit-animation: scroll 20s infinite;
     -moz-animation: scroll 20s infinite;
     -ms-animation: scroll 20s infinite;

@@ -40,13 +40,14 @@ loader.require([
 ]);
 
 $(document).ready(function () {
-    SimpleCarousel.init();
+    simpleCarousel.init();
     dumbRouter.init();
     newsletter.init();
+    onScrollDown.init();
 });
 
 // This simple carousel for header background
-var SimpleCarousel = {
+var simpleCarousel = {
     init: function () {
         var slides = [
                 {
@@ -156,38 +157,14 @@ var newsletter = {
     }
 };
 
-// Function for newsletter form on footer
-var newsletter = {
-    init: function () {
-        var send = function () {
-            var input = $('.newsletter-input'),
-                email = input.val();
-
-            if (input[0].checkValidity()) {
-                $('.navbar-nav li a[data-page=".contact-page"]').click();
-
-                $('.contact-email').val(email);
-                $('.contact-message').val('Greetings! I would like to receive your newsletter to stay up to date. I would consider using exabyte.io for ... .');
-                input.val('');
-            }
-        };
-
-        $(document).on('click', '.newsletter-btn', send);
-
-        $(document).on('keyup', '.newsletter-input', function (e) {
-            if (e.keyCode == 13) {
-                send();
-            }
-        });
-    }
-};
-
-// Endable title animation on scrolling
+// Enable title animation on scrolling
 var onScrollDown = {
     init: function () {
         $(window).scroll(function() {
-           if($(window).scrollTop() + $(window).height() == $(document).height()) {
-               alert("bottom!");
+           if($(window).scrollTop() >= 300) {
+                if(!$('.vscroll').hasClass('active')) {
+                    $('.vscroll').addClass('active');
+                }
            }
         });
     }
