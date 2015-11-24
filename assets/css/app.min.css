@@ -636,6 +636,10 @@ h3 {
     background-color: #fff;
 }
 
+#header .carousel-btns li.active {
+    background-color: #fff;
+}
+
 .section {
     padding: 85px 0;
 }

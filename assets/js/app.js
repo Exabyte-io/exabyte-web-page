@@ -68,7 +68,10 @@ var simpleCarousel = {
             ],
             i = 1,
             isPaused = false,
-            changeSlide = function (target) {
+            changeSlide = function (target, i) {
+                var currItem = $('.carousel-btns li');
+                currItem.removeClass('active');
+                $(currItem[i]).addClass('active');
                 setTimeout( function () {
                     if (!$('#header').hasClass('subpage')) {
                         $('#header').removeClass().addClass('image dim').addClass(target.val);
@@ -77,7 +80,7 @@ var simpleCarousel = {
             };
 
         setInterval(function () {
-            changeSlide(slides[i]);
+            changeSlide(slides[i], i);
             if ( i < slides.length - 1) {
                 i++;
             } else {
@@ -86,9 +89,10 @@ var simpleCarousel = {
         }, 8000);
 
         $(document).on('click', '.carousel-btns li', function () {
-            isPaused = true,
-            t = $(this).data('target');
-            changeSlide(slides[t]);
+            var t = $(this).data('target');
+            isPaused = true;
+            changeSlide(slides[t], t);
+            t++;
             i = t;
         });
     }
