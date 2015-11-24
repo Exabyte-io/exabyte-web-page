@@ -50,10 +50,10 @@ var SimpleCarousel = {
     init: function () {
         var slides = [
                 {
-                    val: 'boeing active'
+                    val: 'lab active'
                 },
                 {
-                    val: 'lab active'
+                    val: 'solar active'
                 },
                 {
                     val: 'chemical active'
@@ -62,10 +62,10 @@ var SimpleCarousel = {
                     val: 'factory active'
                 },
                 {
-                    val: 'solar active'
+                    val: 'boeing active'
                 }
             ],
-            i = 0,
+            i = 1,
             isPaused = false,
             changeSlide = function (target) {
                 setTimeout( function () {

@@ -2037,9 +2037,9 @@ h3 {
     position: absolute;
     top: 0;
     left: 110px;
-    -webkit-animation: move 12s infinite;
-    -moz-animation: move 12s infinite;
-    -ms-animation: move 12s infinite;
+    -webkit-animation: move 20s infinite;
+    -moz-animation: move 20s infinite;
+    -ms-animation: move 20s infinite;
 }
 
 .vscroll .vscroll-items {
@@ -2048,9 +2048,9 @@ h3 {
     position: absolute;
     top: 0;
     left: 127.5px;
-    -webkit-animation: scroll 12s infinite;
-    -moz-animation: scroll 12s infinite;
-    -ms-animation: scroll 12s infinite;
+    -webkit-animation: scroll 20s infinite;
+    -moz-animation: scroll 20s infinite;
+    -ms-animation: scroll 20s infinite;
 }
 
 @-webkit-keyframes scroll {
@@ -2104,8 +2104,8 @@ h3 {
 @-webkit-keyframes move {
     0%   { left: 110px; }
     8.5%  { left: 110px; }
-    18%  { left: 13px; }
-    25.5%  { left: 13px; }
+    18%  { left: 14px; }
+    25.5%  { left: 14px; }
     34% { left: 85px; }
     42.5% { left: 85px; }
     51% { left: 100px; }
@@ -2114,14 +2114,16 @@ h3 {
     76.5% { left: 115px; }
     85% { left: 145px; }
     93.5% { left: 145px; }
+    95.5% { left: 14px; }
+    97% { left: 14px; }
     100%  { left: 110px; }
 }
 
 @-ms-keyframes move {
     0%   { left: 110px; }
     8.5%  { left: 110px; }
-    18%  { left: 13px; }
-    25.5%  { left: 13px; }
+    18%  { left: 14px; }
+    25.5%  { left: 14px; }
     34% { left: 85px; }
     42.5% { left: 85px; }
     51% { left: 100px; }
@@ -2130,14 +2132,16 @@ h3 {
     76.5% { left: 115px; }
     85% { left: 145px; }
     93.5% { left: 145px; }
+    95.5% { left: 14px; }
+    97% { left: 14px; }
     100%  { left: 110px; }
 }
 
 @-moz-keyframes move {
     0%   { left: 110px; }
     8.5%  { left: 110px; }
-    18%  { left: 13px; }
-    25.5%  { left: 13px; }
+    18%  { left: 14px; }
+    25.5%  { left: 14px; }
     34% { left: 85px; }
     42.5% { left: 85px; }
     51% { left: 100px; }
@@ -2146,6 +2150,8 @@ h3 {
     76.5% { left: 115px; }
     85% { left: 145px; }
     93.5% { left: 145px; }
+    95.5% { left: 14px; }
+    97% { left: 14px; }
     100%  { left: 110px; }
 }
 
