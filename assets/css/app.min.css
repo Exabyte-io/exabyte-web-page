@@ -398,21 +398,21 @@ h3 {
 
 #header.image.boeing {
     background-position: center center;
-    background-image: url(../../img/airplane-factory.png);
+    background-image: url(../../img/airplane-factory.jpg);
     background-size: cover;
     opacity: 0;
 }
 
 #header.image.lab {
     background-position: center center;
-    background-image: url(../../img/semiconductor-fab.jpeg);
+    background-image: url(../../img/semiconductor-fab.jpg);
     background-size: cover;
     opacity: 0;
 }
 
 #header.image.chemical {
     background-position: center center;
-    background-image: url(../../img/chemical-plant.jpeg);
+    background-image: url(../../img/chemical-plant.jpg);
     background-size: cover;
     opacity: 0;
 }
@@ -426,7 +426,7 @@ h3 {
 
 #header.image.solar {
     background-position: center center;
-    background-image: url(../../img/solar-plant.jpeg);
+    background-image: url(../../img/solar-plant.jpg);
     background-size: cover;
     opacity: 0;
 }

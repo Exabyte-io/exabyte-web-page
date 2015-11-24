@@ -32,11 +32,11 @@ var loader = (function () {
 })();
 
 loader.require([
- 'img/airplane-factory.png',
- 'img/battery-factory.jpeg',
- 'img/chemical-plant.jpeg',
- 'img/semiconductor-fab.jpeg',
- 'img/solar-plant.jpeg'
+    'img/airplane-factory.jpg',
+    'img/battery-factory.jpeg',
+    'img/chemical-plant.jpg',
+    'img/semiconductor-fab.jpg',
+    'img/solar-plant.jpg'
 ]);
 
 $(document).ready(function () {
