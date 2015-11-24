@@ -126,7 +126,7 @@ var newsletter = {
                 $('.navbar-nav li a[data-page=".contact-page"]').click();
 
                 $('.contact-email').val(email);
-                $('.contact-message').val('Hey! I wanna get a news');
+                $('.contact-message').val('Greetings! I would like to receive your newsletter to stay up to date. I would consider using exabyte.io for ... .');
                 input.val('');
             }
         };
