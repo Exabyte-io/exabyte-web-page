@@ -92,7 +92,6 @@ var simpleCarousel = {
             var t = $(this).data('target');
             isPaused = true;
             changeSlide(slides[t], t);
-            t++;
             i = t;
         });
     }
