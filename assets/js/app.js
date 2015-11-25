@@ -121,8 +121,8 @@ var dumbRouter = {
                 $('.navbar-nav li').removeClass('active');
                 $('.navbar-nav li a[data-page="'+ $(this).data('page') +'"]').parent('li').addClass('active');
             } else {
-                $(this).addClass('active');
                 $(this).parent('.nav').find('li').removeClass('active');
+                $(this).addClass('active');
             }
 
             if ($(this).attr('title') == 'Home' || $(this).find('a').attr('title') == 'Home') {
