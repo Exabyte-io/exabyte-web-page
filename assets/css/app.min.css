@@ -390,45 +390,34 @@ h3 {
 }
 
 #header.image {
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
     -webkit-transition: all 1.2s ease;
     -moz-transition: all 1.2s ease;
     -ms-transition: all 1.2s ease;
     -o-transition: all 1.2s ease;
+    transition: all 1.2s ease;
 }
 
 #header.image.boeing {
-    background-position: center center;
     background-image: url(../../img/airplane-factory.jpg);
-    background-size: cover;
-    opacity: 0;
 }
 
 #header.image.lab {
-    background-position: center center;
     background-image: url(../../img/semiconductor-fab.jpg);
-    background-size: cover;
-    opacity: 0;
 }
 
 #header.image.chemical {
-    background-position: center center;
     background-image: url(../../img/chemical-plant.jpg);
-    background-size: cover;
-    opacity: 0;
 }
 
 #header.image.factory {
-    background-position: center center;
     background-image: url(../../img/battery-factory.jpeg);
-    background-size: cover;
-    opacity: 0;
 }
 
 #header.image.solar {
-    background-position: center center;
     background-image: url(../../img/solar-plant.jpg);
-    background-size: cover;
-    opacity: 0;
 }
 
 
@@ -622,9 +611,10 @@ h3 {
     border-radius: 50%;
     cursor: pointer;
     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
+    -moz-transition: all 0.5ms ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     margin-right: 5px;
 }
 
@@ -2309,11 +2299,11 @@ h3 {
 }
 
 @media (max-width: 550px) {
-    .vscroll .pre-text {
+    .vscroll.active .pre-text {
         left: 4%;
     }
 
-    .vscroll .vscroll-items {
+    .vscroll.active .vscroll-items {
         left: 7%;
     }
 
@@ -2352,14 +2342,16 @@ h3 {
 }
 
 @media (max-width: 420px) {
-    .vscroll .pre-text {
+    .vscroll.active .pre-text {
         left: 1%;
     }
 
-    .vscroll .vscroll-items {
+    .vscroll.active .vscroll-items {
         left: 4%;
     }
 }
+
+
 
 @media (max-width: 767px) {
     #header .form .btn,#header .form .input {
@@ -2438,7 +2430,7 @@ h3 {
         width: auto
     }
 
-    .vscroll {
+    .vscroll.active {
         width: 380px;
     }
 
@@ -2454,6 +2446,54 @@ h3 {
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
+    }
+}
+
+@media (max-width: 385px) {
+    .vscroll-wrap {
+        font-size: 3.5rem;
+    }
+
+    .vscroll.active {
+        width: 300px;
+        height: 38px;
+    }
+
+    .vscroll.active .pre-text {
+        left: 0%;
+    }
+
+    .vscroll.active .vscroll-items {
+        left: 24%;
+        width: 250px;
+    }
+
+    #header .wrap h2 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .vscroll-wrap {
+        font-size: 3.5rem;
+    }
+
+    .vscroll.active {
+        width: 300px;
+        height: 38px;
+    }
+
+    .vscroll.active .pre-text {
+        left: 0%;
+    }
+
+    .vscroll.active .vscroll-items {
+        left: 24%;
+        width: 250px;
+    }
+
+    #header .wrap h2 {
+        font-size: 4.5rem;
     }
 }
 
