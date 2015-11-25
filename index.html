@@ -288,15 +288,13 @@
                         <form role="form" onsubmit="return post_to_parse();">
                             <div class="col-xs-12 col-sm-7 col-md-7">
                                 <div class="col-xs-12 form-group">
-                                    <label class="sr-only" for="contact-name">Name</label>
                                     <input type="text" name="name" placeholder="Name..." class="contact-name form-control" id="contact-name">
                                 </div>
-                                <div class="col-xs-12 form-group has-error">
-                                    <label class="sr-only" for="contact-email">Email</label>
+                                <div class="col-xs-12 form-group">
                                     <input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
+                                    <div class="col-xs-12 text-danger">Please, enter correct email</div>
                                 </div>
                                 <div class="col-xs-12 form-group">
-                                    <label class="sr-only" for="contact-message">Message</label>
                                     <textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
                                 </div>
 
@@ -513,17 +511,19 @@
             var name = jQuery('#contact-name').val();
             var email = jQuery('#contact-email').val();
             var message = jQuery('#contact-message').val();
-            testObject.save({
-              name: name,
-              email: email,
-              message: message,
-            }).then(function(object) {
-              console.log('Message sent successfully!')
-              jQuery('#contact-name').val('');
-              jQuery('#contact-email').val('');
-              jQuery('#contact-message').val('');
-            });
-            jQuery("#myModal").modal("show");
+            if (formValidation.validateForm(name, email, message)) {
+                testObject.save({
+                    name: name,
+                    email: email,
+                    message: message,
+                }).then(function(object) {
+                    jQuery('#contact-name').val('');
+                    jQuery('#contact-email').val('');
+                    jQuery('#contact-message').val('');
+                });
+                jQuery("#myModal").modal("show");
+            }
+
             return false;
         }
     </script>

@@ -186,21 +186,18 @@ var onScrollDown = {
 
 // Contact scroll validation
 var formValidation = {
-    init: function () {
+    validateForm: function (name, email, message) {
         var validateEmail = function (email) {
             var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             return re.test(email);
         };
 
-        $(document).on('click', '.mainForm submit', function (e) {
-            e.preventDefault();
-            var email = $('#contact-email').val();
+        if (validateEmail(email)) {
+            $('.mainForm .text-danger').hide();
+        } else {
+            $('.mainForm .text-danger').show();
+        }
 
-            // if (validateEmail(email)) {
-
-            // } else (
-
-            // )
-        });
+        return false;
     }
 };
