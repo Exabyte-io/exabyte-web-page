@@ -190,14 +190,30 @@ var formValidation = {
         var validateEmail = function (email) {
             var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
             return re.test(email);
-        };
+        },
+        result = [];
 
-        if (validateEmail(email)) {
-            $('.mainForm .text-danger').hide();
+        if ($.trim(name) != '') {
+            $('#contact-name').parent().find('.text-danger').hide();
+            result.push(true)
         } else {
-            $('.mainForm .text-danger').show();
+            $('#contact-name').parent().find('.text-danger').show();
         }
 
-        return false;
+        if (validateEmail(email)) {
+            $('#contact-email').parent().find('.text-danger').hide();
+            result.push(true)
+        } else {
+            $('#contact-email').parent().find('.text-danger').show();
+        }
+
+        if ($.trim(message) != '') {
+            $('#contact-message').parent().find('.text-danger').hide();
+            result.push(true)
+        } else {
+            $('#contact-message').parent().find('.text-danger').show();
+        }
+
+        return result[0] && result[1] && result[2] ? true : false;
     }
 };
