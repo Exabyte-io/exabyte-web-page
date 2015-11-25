@@ -1663,10 +1663,15 @@ h3 {
     color: #36373c
 }
 
+.mainForm .text-danger {
+    margin: 10px 0 0 0;
+    display: none;
+}
+
 .mainForm textarea.form-control {
     min-height: 275px;
     padding: 30px 32px 0 32px;
-    resize: none
+    resize: none;
 }
 
 .mainForm .submit {
@@ -2436,14 +2441,14 @@ h3 {
         width: 380px;
     }
 
-    .vscroll .pre-text {
+    .vscroll.active .pre-text {
         left: 8%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
     }
 
-    .vscroll .vscroll-items {
+    .vscroll.active .vscroll-items {
         left: 10%;
         -webkit-animation: none;
         -moz-animation: none;
