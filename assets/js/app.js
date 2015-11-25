@@ -112,7 +112,6 @@ var dumbRouter = {
             if (!$(this).hasClass('footer-link')) {
                 $(this).addClass('active');
             } else {
-                debugger;
                 $('.navbar-nav li').removeClass('active');
                 $('.navbar-nav li a[data-page="'+ $(this).data('page') +'"]').parent('li').addClass('active');
             }
@@ -141,13 +140,11 @@ var newsletter = {
             var input = $('.newsletter-input'),
                 email = input.val();
 
-            if (input[0].checkValidity()) {
                 $('.navbar-nav li a[data-page=".contact-page"]').click();
 
                 $('.contact-email').val(email);
                 $('.contact-message').val('Greetings! I would like to receive your newsletter to stay up to date. I would consider using exabyte.io for ... .');
                 input.val('');
-            }
         };
 
         $(document).on('click', '.newsletter-btn', send);
@@ -169,6 +166,27 @@ var onScrollDown = {
                     $('.vscroll').addClass('active');
                 }
            }
+        });
+    }
+};
+
+// Contact scroll validation
+var formValidation = {
+    init: function () {
+        var validateEmail = function (email) {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+            return re.test(email);
+        };
+
+        $(document).on('click', '.mainForm submit', function (e) {
+            e.preventDefault();
+            var email = $('#contact-email').val();
+
+            // if (validateEmail(email)) {
+
+            // } else (
+
+            // )
         });
     }
 };
