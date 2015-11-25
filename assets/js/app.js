@@ -164,7 +164,7 @@ var newsletter = {
 var onScrollDown = {
     init: function () {
         $(window).scroll(function() {
-           if($(window).scrollTop() >= 300) {
+           if($(window).scrollTop() >= 200) {
                 if(!$('.vscroll').hasClass('active')) {
                     $('.vscroll').addClass('active');
                 }
