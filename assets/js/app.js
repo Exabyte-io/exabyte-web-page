@@ -51,19 +51,19 @@ var simpleCarousel = {
     i: 1,
     slides: [
         {
-            val: 'lab active'
+            val: 'lab'
         },
         {
-            val: 'solar active'
+            val: 'solar'
         },
         {
-            val: 'chemical active'
+            val: 'chemical'
         },
         {
-            val: 'factory active'
+            val: 'factory'
         },
         {
-            val: 'boeing active'
+            val: 'boeing'
         }
     ],
     changeSlide: function (target, i) {
@@ -73,7 +73,7 @@ var simpleCarousel = {
         simpleCarousel.i = i;
         setTimeout( function () {
             if (!$('#header').hasClass('subpage')) {
-                $('#header').removeClass().addClass('image dim').addClass(target.val);
+                $('#header').removeClass().addClass('image dim').addClass(target.val).addClass('active');
             }
         }, 500);
     },
