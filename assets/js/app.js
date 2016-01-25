@@ -112,10 +112,18 @@ var dumbRouter = {
                 headCls,
                 haedTitle;
 
+            // catch links that redirect to platform.exabyte.io
+            if ($(this).find('a').attr('href') &&
+                $(this).find('a').attr('href').indexOf("platform.exabyte.io") > 0 ||
+                $(this).attr('href') &&
+                $(this).attr('href').indexOf("platform.exabyte.io") > 0) {
+                console.log($(this).attr('href'));
+                return;
+            }
+
             $('div[class$="-page"]').hide().css({ opacity: 0 });
             $('div[class$="-head"]').hide().css({ opacity: 0 });
             $('#header').removeClass();
-
 
             if ($(this).hasClass('footer-link') || $(this).hasClass('exabyte-logo')) {
                 $('.navbar-nav li').removeClass('active');
