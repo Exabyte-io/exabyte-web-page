@@ -104,6 +104,21 @@ var simpleCarousel = {
     }
 };
 
+// checks whether the a JQuery click target has a link contained in a list
+var _checkURLlinks = function (target, array) {
+    for (var i = 0; i < array.length; i++) {
+        element = array[i];
+        console.log(element);
+        if (
+            target.find('a').attr('href') &&
+            target.find('a').attr('href').indexOf(element) > 0 ||
+            target.attr('href') &&
+            target.attr('href').indexOf(element) > 0)
+            return true;
+    };
+    return false;
+}
+
 // Function for page navigation
 var dumbRouter = {
     init: function () {
@@ -111,12 +126,14 @@ var dumbRouter = {
             var selector,
                 headCls,
                 haedTitle;
-
-            // catch links that redirect to platform.exabyte.io
-            if ($(this).find('a').attr('href') &&
-                $(this).find('a').attr('href').indexOf("platform.exabyte.io") > 0 ||
-                $(this).attr('href') &&
-                $(this).attr('href').indexOf("platform.exabyte.io") > 0) {
+            console.log($(this));
+            // catch links that redirect to
+            if (_checkURLlinks($(this),
+                [
+                    "platform.exabyte.io",
+                    "exabyte.docsend.com",
+                    "angel.co"
+                ])) {
                 console.log($(this).attr('href'));
                 return;
             }
