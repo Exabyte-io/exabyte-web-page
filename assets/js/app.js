@@ -109,7 +109,6 @@ var simpleCarousel = {
 var _checkURLlinks = function (target, array) {
     for (var i = 0; i < array.length; i++) {
         element = array[i];
-        console.log(element);
         if (
             target.find('a').attr('href') &&
             target.find('a').attr('href').indexOf(element) > 0 ||
@@ -123,7 +122,6 @@ var _checkURLlinks = function (target, array) {
 // click on subpage hash from url
 var goToPathname = function () {
     var pathname = window.location.hash.replace("#", "");
-    console.log("----", pathname);
     $("a[data-page='." + pathname + "-page']").click()
 }
 
@@ -134,7 +132,6 @@ var dumbRouter = {
             var selector,
                 headCls,
                 haedTitle;
-            console.log($(this));
             // catch links that redirect to
             if (_checkURLlinks($(this),
                 [
@@ -142,7 +139,6 @@ var dumbRouter = {
                     "exabyte.docsend.com",
                     "angel.co"
                 ])) {
-                console.log($(this).attr('href'));
                 return;
             }
 
