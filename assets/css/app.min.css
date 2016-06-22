@@ -1935,7 +1935,8 @@ h3 {
 }
 
 .about-text {
-    font-variant: small-caps;
+    /* font-variant: small-caps; */
+    padding-bottom: 30px;
 }
 
 .privacy p,
