@@ -1935,7 +1935,7 @@ h3 {
 }
 
 .about-text {
-    /* font-variant: small-caps; */
+    font-variant: small-caps;
     padding-bottom: 30px;
 }
 
@@ -2018,6 +2018,7 @@ h3 {
     text-align: justify;
     padding: 0px 10px;
     margin-bottom: 70px;
+    text-transform: lowercase;
 }
 
 .centered-pills { text-align:center; }
