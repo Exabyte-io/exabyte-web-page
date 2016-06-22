@@ -44,6 +44,7 @@ $(document).ready(function () {
     dumbRouter.init();
     newsletter.init();
     onScrollDown.init();
+    goToPathname();
 });
 
 // This simple carousel for header background
@@ -117,6 +118,13 @@ var _checkURLlinks = function (target, array) {
             return true;
     };
     return false;
+}
+
+// click on subpage hash from url
+var goToPathname = function () {
+    var pathname = window.location.hash.replace("#", "");
+    console.log("----", pathname);
+    $("a[data-page='." + pathname + "-page']").click()
 }
 
 // Function for page navigation
