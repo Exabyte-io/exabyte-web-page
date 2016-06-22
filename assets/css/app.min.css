@@ -1985,7 +1985,8 @@ h3 {
  */
 
 .team-item .team-photo {
-    height: 175px;
+    width: 70%;
+    max-width: 200px;
     padding: 8px;
     border: 1px solid #eee;
     -moz-border-radius: 50%;
@@ -2008,7 +2009,8 @@ h3 {
 .team-item .team-desc {
     margin-top: 5px;
     font-size: 1.37rem;
-    line-height: 25px;
+    line-height: 20px;
+    text-align: justify;
     padding: 0px 10px;
 }
 
