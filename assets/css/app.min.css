@@ -1985,7 +1985,7 @@ h3 {
  */
 
 .team-item .team-photo {
-    height: 175px;
+    width: 175px;
     padding: 8px;
     border: 1px solid #eee;
     -moz-border-radius: 50%;
