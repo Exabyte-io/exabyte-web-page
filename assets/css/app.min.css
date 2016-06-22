@@ -2005,6 +2005,10 @@ h3 {
     font-size: 16px;
 }
 
+.team-item p.team-title {
+    margin-bottom: 12px;
+}
+
 .team-item .team-desc {
     margin-top: 5px;
     font-size: 1.37rem;
