@@ -2964,7 +2964,7 @@ h3 {
 }
 
 .case-study > a > i.fa:hover {
-    font-size: 11em;
+    font-size: 10em;
     color: rgba(10, 54, 119, 1.0);
     margin-bottom: 50px
 }
@@ -2973,9 +2973,19 @@ h3 {
     text-align: justify;
 }
 
+.case-study > p.centered-text {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .case-study > p b a {
-    color: rgba(10, 54, 119, 1.0) !important;
+    color: rgba(10, 54, 119, 0.8) !important;
     font-weight: bold !important;
+}
+
+.case-study > p.centered-text b a:hover {
+    color: rgba(10, 54, 119, 1.0) !important;
+    text-decoration: underline
 }
 
 .case-study > p a {
