@@ -2977,3 +2977,8 @@ h3 {
     color: rgba(10, 54, 119, 1.0) !important;
     font-weight: bold !important;
 }
+
+.case-study > p a {
+    color: green !important;
+    font-weight: bold !important;
+}
