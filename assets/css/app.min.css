@@ -2956,3 +2956,24 @@ h3 {
     font-weight: 300;
     src: local('Campton Light'), local('Campton-Light'), url(../fonts/campton/Campton.Light.otf) format("opentype");
 }
+
+.case-study > a > i.fa {
+    font-size: 10em;
+    color: rgba(10, 54, 119, 0.8);
+    margin-bottom: 50px
+}
+
+.case-study > a > i.fa:hover {
+    font-size: 11em;
+    color: rgba(10, 54, 119, 1.0);
+    margin-bottom: 50px
+}
+
+.case-study > p {
+    text-align: justify;
+}
+
+.case-study > p b a {
+    color: rgba(10, 54, 119, 1.0) !important;
+    font-weight: bold !important;
+}
