@@ -374,11 +374,7 @@ h3 {
     min-height: 600px;
     color: #fff;
     font-variant: small-caps;
-    background: -webkit-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    background: -o-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    background: -moz-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    background: linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.55);
+    background: rgba(10, 54, 119, 0.8);
 }
 
 #header.singleColor {
@@ -1879,7 +1875,7 @@ h3 {
     font-size: 20px;
 }
 
-#footer .wrap .form .newsletter-btn {
+.form .newsletter-btn {
     position: absolute;
     right: 16px;
     top: 13px;
@@ -2991,4 +2987,189 @@ h3 {
 .case-study > p a {
     color: green !important;
     font-weight: bold !important;
+}
+
+
+/* SECURITY */
+.security-page .header {
+    background-color: #395D94;
+    height:200px;
+    background: -webkit-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
+    background: -o-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
+    background: -moz-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
+    background: linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
+}
+
+.security-page .header h2 {
+    color: white;
+    margin: 0px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.security-page {
+    text-transform: uppercase;
+}
+
+.security-page blockquote {
+    border:none;
+    margin-bottom: 3em;
+}
+
+.security-page .p {
+    margin-bottom: 1em;
+}
+
+.security-page .section p {
+    line-height: 24px;
+    margin: 0 0 1em 0;
+}
+
+p.lead {
+    /*font-size: 18px;*/
+    /*color: black;*/
+    /*line-height: 1.6em;*/
+    /*padding:0px 24px;*/
+    /*margin-bottom: 3em;*/
+}
+
+.security-page .title {
+    margin: 1.5em 0em 1.5em;
+}
+
+.security-page .section h2 {
+    margin-bottom: 0px;
+}
+
+.feature {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2.5em 3em 1em;
+    margin-bottom: 2em;
+}
+
+.feature i {
+    margin-bottom: 0.5em;
+    font-size: 1.8em;
+}
+
+.feature p {
+    min-height: 5em;
+    margin-bottom: 1em;
+}
+
+.feature i:first-child {
+    margin-bottom: 0.5em;
+    font-size: 3em;
+}
+
+.security-datacenters {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.security-datacenters p.lead {
+    color: gray;
+}
+
+/* BLUE BACKGROUND */
+.exablue {
+    background-color: #395D94;
+    color:white;
+}
+
+.exablue .title {
+    margin-top: 0em;
+}
+
+.exablue h2 {
+    color: white;
+}
+
+.exablue p.text-muted {
+    color: #9CAFC9;
+}
+
+.security-page  section.security-contact {
+    padding-top: 0em;
+}
+
+.security-page section.security-contact .contact {
+    padding-top: 0em;
+}
+
+.security-page section.security-contact h2 {
+    line-height: 1.3em;
+    margin-bottom: 2em;
+}
+
+.security-page section.security-contact span.underline {
+    border-bottom: 4px solid #eee;
+    text-decoration: none;
+}
+
+.security-page section.security-contact p {
+    margin-bottom: 1em;
+}
+
+
+.security-page section.security-contact input {
+    border: 3px solid #eee;
+    box-shadow: none;
+    padding: 25px;
+    font-size: 1.3em;
+}
+
+.security-page .form .newsletter-btn {
+    background: none;
+    right: 38px;
+    top: 16px;
+    font-size: 24px;
+    color: #ccc;
+}
+
+.security-page .form .newsletter-btn:hover {
+    color: #395D94;
+}
+
+.security-page .newsletter-input:focus,
+.security-page .newsletter-input:hover,
+.security-page .newsletter-input:hover .newsletter-btn {
+    color: #395D94;
+    border-color: #395D94;
+}
+
+.security-page .newsletter-input:focus,
+.security-page .form .newsletter-input:focus .newsletter-btn {
+    color: #395D94;
+}
+
+.datacenter-logo {
+    height:50px;
+    width:150px;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center center;
+    filter: grayscale(1.0);
+}
+
+.aws {
+    background-image: url('../../img/aws.png');
+    filter: grayscale(1.0);
+}
+
+.rackspace {
+    background-image: url('../../img/rackspace.png');
+    filter: grayscale(1.0);
+}
+
+.softlayer {
+    background-image: url('../../img/softlayer.png');
+    filter: grayscale(1.0);
+}
+
+.azure {
+    background-image: url('../../img/azure.png');
+    filter: grayscale(1.0);
 }
