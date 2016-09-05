@@ -627,7 +627,10 @@ h3 {
 }
 
 .section {
-    padding: 85px 0;
+    padding: 45px 0;
+    @media (min-width: 768px) {
+        padding: 85px 0;
+    }
 }
 
 .section.gray {
@@ -786,12 +789,10 @@ h3 {
 
 #header.subpage h2 {
     text-transform: uppercase;
-    margin: 232px 0 0 0;
-    font-size: 120px;
-    font-size: 12rem;
+    margin: 100px 0 30px 0;
+    font-size: 5rem;
     font-weight: 900;
     color: #fff;
-    line-height: 90px
 }
 
 .blockquote-lg {
@@ -2375,10 +2376,9 @@ h3 {
     }
 
     #header.subpage h2 {
-        margin: 80px 0 0 0;
+        margin: 80px 0 20px 0;
         font-size: 60px;
-        font-size: 6rem;
-        line-height: 46px
+        font-size: 3rem;
     }
 
     #header.image {
@@ -3020,11 +3020,6 @@ h3 {
     margin-bottom: 1em;
 }
 
-.security-page .section p {
-    line-height: 24px;
-    margin: 0 0 1em 0;
-}
-
 p.lead {
     /*font-size: 18px;*/
     /*color: black;*/
@@ -3037,6 +3032,10 @@ p.lead {
     margin: 1.5em 0em 1.5em;
 }
 
+.security-page .title p {
+    margin-bottom: 20px;
+}
+
 .security-page .section h2 {
     margin-bottom: 0px;
 }
@@ -3047,6 +3046,11 @@ p.lead {
     text-align: center;
     padding: 2.5em 3em 1em;
     margin-bottom: 2em;
+    min-height: 250px;
+    position: relative;
+    @media (min-width: 768px) {
+        min-height: 260px;
+    }
 }
 
 .feature i {
@@ -3054,14 +3058,27 @@ p.lead {
     font-size: 1.8em;
 }
 
+.feature h3 {
+    font-size: 16px;
+    margin:0 0 10px 0;
+}
+
 .feature p {
-    min-height: 5em;
+    min-height: 3em;
     margin-bottom: 1em;
+    font-size: 12px;
+    color: #999;
+    line-height: 18px;
 }
 
 .feature i:first-child {
     margin-bottom: 0.5em;
     font-size: 3em;
+}
+
+.feature i:last-child {
+    position: absolute;
+    bottom: 0px;
 }
 
 .security-datacenters {
@@ -3087,7 +3104,11 @@ p.lead {
     color: white;
 }
 
-.exablue p.text-muted {
+.exablue h3 {
+    color: #fff;
+}
+
+.exablue p {
     color: #9CAFC9;
 }
 
@@ -3112,7 +3133,6 @@ p.lead {
 .security-page section.security-contact p {
     margin-bottom: 1em;
 }
-
 
 .security-page section.security-contact input {
     border: 3px solid #eee;
