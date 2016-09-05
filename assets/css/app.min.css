@@ -2991,41 +2991,17 @@ h3 {
 
 
 /* SECURITY */
-.security-page .header {
-    background-color: #395D94;
-    height:200px;
-    background: -webkit-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    background: -o-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    background: -moz-linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-    background: linear-gradient(rgba(10, 54, 119, 0.8), #28529C);
-}
-
-.security-page .header h2 {
-    color: white;
-    margin: 0px;
-    padding-top: 100px;
-    text-align: center;
-}
-
 .security-page {
-    text-transform: uppercase;
+    font-variant: small-caps;
 }
 
 .security-page blockquote {
     border:none;
-    margin-bottom: 3em;
+    margin: 3em 0em;
 }
 
 .security-page .p {
     margin-bottom: 1em;
-}
-
-p.lead {
-    /*font-size: 18px;*/
-    /*color: black;*/
-    /*line-height: 1.6em;*/
-    /*padding:0px 24px;*/
-    /*margin-bottom: 3em;*/
 }
 
 .security-page .title {
@@ -3034,6 +3010,7 @@ p.lead {
 
 .security-page .title p {
     margin-bottom: 20px;
+    font-size: 17px;
 }
 
 .security-page .section h2 {
@@ -3044,7 +3021,7 @@ p.lead {
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
-    padding: 2.5em 3em 1em;
+    padding: 2.5em 3em 0em;
     margin-bottom: 2em;
     min-height: 250px;
     position: relative;
@@ -3059,7 +3036,7 @@ p.lead {
 }
 
 .feature h3 {
-    font-size: 16px;
+    font-size: 17px;
     margin:0 0 10px 0;
 }
 
@@ -3069,16 +3046,18 @@ p.lead {
     font-size: 12px;
     color: #999;
     line-height: 18px;
+    font-size: 17px;
 }
 
 .feature i:first-child {
     margin-bottom: 0.5em;
-    font-size: 3em;
+    font-size: 5em;
 }
 
 .feature i:last-child {
     position: absolute;
     bottom: 0px;
+    right: 15px;
 }
 
 .security-datacenters {
@@ -3096,6 +3075,10 @@ p.lead {
     color:white;
 }
 
+.exablue .feature {
+    min-height: 270px;
+}
+
 .exablue .title {
     margin-top: 0em;
 }
@@ -3110,6 +3093,7 @@ p.lead {
 
 .exablue p {
     color: #9CAFC9;
+
 }
 
 .security-page  section.security-contact {
@@ -3122,7 +3106,7 @@ p.lead {
 
 .security-page section.security-contact h2 {
     line-height: 1.3em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .security-page section.security-contact span.underline {
@@ -3165,31 +3149,55 @@ p.lead {
     color: #395D94;
 }
 
+.security-authentication .feature {
+    min-height: 280px;
+}
+
+.security-datacenters {
+    margin: 4em 0em 0em;
+}
+
+.security-datacenters p {
+    margin-bottom: 0em;
+}
+
 .datacenter-logo {
-    height:50px;
-    width:150px;
+    height:90px;
     background-size: contain;
     background-repeat:no-repeat;
     background-position: center center;
-    filter: grayscale(1.0);
+    margin-bottom: 2em;
+    opacity: 0.6;
 }
 
 .aws {
     background-image: url('../../img/aws.png');
-    filter: grayscale(1.0);
 }
 
 .rackspace {
     background-image: url('../../img/rackspace.png');
-    filter: grayscale(1.0);
 }
 
 .softlayer {
     background-image: url('../../img/softlayer.png');
-    filter: grayscale(1.0);
 }
 
 .azure {
     background-image: url('../../img/azure.png');
-    filter: grayscale(1.0);
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin:-60px 0 0 -40px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 }

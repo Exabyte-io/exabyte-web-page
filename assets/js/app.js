@@ -22,7 +22,7 @@ var loader = (function () {
             setTimeout(function () {
                 $('.spinner-wrap').hide();
                 $('#main-content').show().animate({ opacity: 1 }, 900);
-            }, 1000);
+            }, 500);
         });
     }
 
