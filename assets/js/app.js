@@ -1,33 +1,34 @@
 var loader = (function () {
     var count;
-    function load (array) {
-     count = array.length;
-     $.each(array, function(i, link) {
-         var img = new Image();
-             img.src = link;
-             img.onload = imageLoaded;
-     });
+
+    function load(array) {
+        count = array.length;
+        $.each(array, function (i, link) {
+            var img = new Image();
+            img.src = link;
+            img.onload = imageLoaded;
+        });
     }
 
-    function imageLoaded () {
-     count--;
-     if (count == 0) {
-         ready();
-     }
+    function imageLoaded() {
+        count--;
+        if (count == 0) {
+            ready();
+        }
     }
 
-    function ready () {
+    function ready() {
         $(document).ready(function () {
-            // hide preloder and show main content
+            // hide preloader and show main content
             setTimeout(function () {
                 $('.spinner-wrap').hide();
-                $('#main-content').show().animate({ opacity: 1 }, 900);
-            }, 1000);
+                $('#main-content').show().animate({opacity: 1}, 900);
+            }, 100);
         });
     }
 
     return {
-     require: load
+        require: load
     }
 })();
 
@@ -72,7 +73,7 @@ var simpleCarousel = {
         currItem.removeClass('active');
         $(currItem[i]).addClass('active');
         simpleCarousel.i = i;
-        setTimeout( function () {
+        setTimeout(function () {
             if (!$('#header').hasClass('subpage')) {
                 $('#header').removeClass().addClass('image dim').addClass(target.val).addClass('active');
             }
@@ -81,7 +82,7 @@ var simpleCarousel = {
     init: function () {
         setInterval(function () {
             simpleCarousel.changeSlide(simpleCarousel.slides[simpleCarousel.i], simpleCarousel.i);
-            if ( simpleCarousel.i < simpleCarousel.slides.length - 1) {
+            if (simpleCarousel.i < simpleCarousel.slides.length - 1) {
                 simpleCarousel.i++;
             } else {
                 simpleCarousel.i = 0;
@@ -115,62 +116,64 @@ var _checkURLlinks = function (target, array) {
             target.attr('href') &&
             target.attr('href').indexOf(element) > 0)
             return true;
-    };
+    }
+    ;
     return false;
-}
+};
 
 // click on subpage hash from url
 var goToPathname = function () {
     var pathname = window.location.hash.replace("#", "");
     $("a[data-page='." + pathname + "-page']").click()
-}
+};
+
+var changeFunction = function () {
+    var selector,
+        headCls,
+        headTitle;
+    // catch links that redirect to
+    if (_checkURLlinks($(this),
+            [
+                "platform.exabyte.io",
+                "exabyte.docsend.com",
+                "angel.co"
+            ])) {
+        return;
+    }
+
+    $('div[class$="-page"]').hide().css({opacity: 0});
+    $('div[class$="-head"]').hide().css({opacity: 0});
+    $('#header').removeClass();
+
+    if ($(this).hasClass('footer-link') || $(this).hasClass('exabyte-logo')) {
+        $('.navbar-nav li').removeClass('active');
+        $('.navbar-nav li a[data-page="' + $(this).data('page') + '"]').parent('li').addClass('active');
+    } else {
+        $(this).parent('.nav').find('li').removeClass('active');
+        $(this).addClass('active');
+    }
+
+    if ($(this).attr('title') == 'Home' || $(this).find('a').attr('title') == 'Home') {
+        simpleCarousel.goSlide(0);
+    }
+
+    selector = $(this).data('page') ? $(this).data('page') : $(this).find('a').data('page');
+    headTitle = $(this).data('header') ? $(this).data('header') : $(this).find('a').data('header');
+    headCls = $(this).data('cls') ? $(this).data('cls') : $(this).find('a').data('cls');
+    $('#header').addClass(headCls).find(headTitle).show().css({opacity: 1});
+    $(selector).show().animate({opacity: 1}, 600);
+    $('html, body').animate({scrollTop: 0}, '500', 'swing');
+};
 
 // Function for page navigation
 var dumbRouter = {
     init: function () {
-        var changeFunction = function() {
-            var selector,
-                headCls,
-                haedTitle;
-            // catch links that redirect to
-            if (_checkURLlinks($(this),
-                [
-                    "platform.exabyte.io",
-                    "exabyte.docsend.com",
-                    "angel.co"
-                ])) {
-                return;
-            }
-
-            $('div[class$="-page"]').hide().css({ opacity: 0 });
-            $('div[class$="-head"]').hide().css({ opacity: 0 });
-            $('#header').removeClass();
-
-            if ($(this).hasClass('footer-link') || $(this).hasClass('exabyte-logo')) {
-                $('.navbar-nav li').removeClass('active');
-                $('.navbar-nav li a[data-page="'+ $(this).data('page') +'"]').parent('li').addClass('active');
-            } else {
-                $(this).parent('.nav').find('li').removeClass('active');
-                $(this).addClass('active');
-            }
-
-            if ($(this).attr('title') == 'Home' || $(this).find('a').attr('title') == 'Home') {
-                simpleCarousel.goSlide(0);
-            }
-
-            selector = $(this).data('page') ? $(this).data('page') : $(this).find('a').data('page');
-            headTitle = $(this).data('header') ? $(this).data('header') : $(this).find('a').data('header');
-            headCls = $(this).data('cls') ? $(this).data('cls') : $(this).find('a').data('cls');
-            $('#header').addClass(headCls).find(headTitle).show().css({opacity: 1});
-            $(selector).show().animate({ opacity: 1 }, 600);
-            $('html, body').animate({scrollTop:0}, '500', 'swing');
-        };
 
         $(document).on('click', '.navbar-nav li', changeFunction);
         $(document).on('click', '.logo a', changeFunction);
         $(document).on('click', '#footer a', changeFunction);
 
-        $(document).on('click', '.navbar-nav li a', function(event) {
+        $(document).on('click', '.navbar-nav li a', function (event) {
             $(".navbar-collapse").collapse('hide');
         });
     }
@@ -183,11 +186,11 @@ var newsletter = {
             var input = $('.newsletter-input'),
                 email = input.val();
 
-                $('.navbar-nav li a[data-page=".contact-page"]').click();
+            $('.navbar-nav li a[data-page=".contact-page"]').click();
 
-                $('.contact-email').val(email);
-                $('.contact-message').val('Greetings! I would like to receive your newsletter to stay up to date. I would consider using exabyte.io for ... .');
-                input.val('');
+            $('.contact-email').val(email);
+            $('.contact-message').val('Greetings! I would like to find out more about your product. I am particularly interested in ...');
+            input.val('');
         };
 
         $(document).on('click', '.newsletter-btn', send);
@@ -203,12 +206,12 @@ var newsletter = {
 // Enable title animation on scrolling
 var onScrollDown = {
     init: function () {
-        $(window).scroll(function() {
-           if($(window).scrollTop() >= 200) {
-                if(!$('.vscroll').hasClass('active')) {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 200) {
+                if (!$('.vscroll').hasClass('active')) {
                     $('.vscroll').addClass('active');
                 }
-           }
+            }
         });
     }
 };
@@ -217,10 +220,10 @@ var onScrollDown = {
 var formValidation = {
     validateForm: function (name, email, message) {
         var validateEmail = function (email) {
-            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            return re.test(email);
-        },
-        result = [];
+                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                return re.test(email);
+            },
+            result = [];
 
         if ($.trim(name) != '') {
             $('#contact-name').parent().find('.text-danger').hide();
