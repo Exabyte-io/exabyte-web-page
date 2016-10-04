@@ -44,7 +44,7 @@ $(document).ready(function () {
     simpleCarousel.init();
     dumbRouter.init();
     newsletter.init();
-    onScrollDown.init();
+    cssTitleSlider.init();
     goToPathname();
 });
 
@@ -202,6 +202,16 @@ var newsletter = {
         });
     }
 };
+
+// Enable title slider animation
+var cssTitleSlider = {
+    init: function () {
+        if (!$('.vscroll').hasClass('active')) {
+            $('.vscroll').addClass('active');
+        }
+    }
+};
+
 
 // Enable title animation on scrolling
 var onScrollDown = {
