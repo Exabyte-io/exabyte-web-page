@@ -481,7 +481,7 @@ h3 {
 #header .navbar-nav {
     text-transform: uppercase;
     font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700
 }
 
@@ -3392,4 +3392,10 @@ div[class$="-head"]:not(.main-head) {
     }
 }
 
+#screencast-link {
+    margin-top: 30px;
+}
+
+#screencast-link.a {
+    font-size: 90%
 }

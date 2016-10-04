@@ -52,6 +52,19 @@
         ga('create', "UA-69270713-2", 'auto');
         ga('send', 'pageview');
     </script>
+
+    <!-- Hotjar -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:282335,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
 </head>
 <body>
     <!--[if lt IE 7]>
@@ -95,10 +108,10 @@
                                    data-cls="subpage" title="Case Studies">Case Studies</a></li>
                             <li><a href="#about" data-page=".about-page" data-header=".about-head" data-cls="subpage"
                                    title="About">About</a></li>
-                            <li><a href="#contact" data-page=".contact-page" data-header=".contact-head"
-                                   data-cls="subpage" title="Contact">Contact</a></li>
                             <li><a href="#security" data-page=".security-page" data-header=".security-head"
                                    data-cls="subpage" title="Security">Security</a></li>
+                            <li><a href="#contact" data-page=".contact-page" data-header=".contact-head"
+                                   data-cls="subpage" title="Contact">Contact</a></li>
                             <!-- sign in and sign up links -->
                             <li><a href="https://platform.exabyte.io/register"> Sign up</a></li>
                             <li><a href="https://platform.exabyte.io/login"> Sign in</a></li>
@@ -107,13 +120,18 @@
                 </div>
 
                 <div class="text-center wrap main-head">
-                    <h2 style="text-transform: uppercase; margin-bottom: 40px;">Materials discovery cloud</h2>
-                    <h3>
-                        <p>
-                            We are a team of top tier scientists and engineers building the fastest way to develop new
-                            materials from concept to product
-                        </p>
-                    </h3>
+                    <div>
+                        <h2 style="text-transform: uppercase; margin-bottom: 40px;">Materials discovery cloud</h2>
+                        <h3>
+                            <p>
+                                We are a team of top tier scientists and engineers building the fastest way to develop new
+                                materials from concept to product
+                            </p>
+                        </h3>
+                    </div>
+                    <div id="screencast-link">
+                        <a href="#screencast">how it works</a>
+                    </div>
                 </div>
 
                 <ul class="carousel-btns list-inline">
@@ -215,7 +233,7 @@
                     <header class="text-center">
                         <div class="row">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                                <h2 class="exb-color">SIMPLICITY, SCALE, ACCURACY</h2>
+                                <h2 class="exb-color">SIMPLICITY, SCALE, PRECISION</h2>
                             </div>
                         </div>
                     </header>
@@ -224,13 +242,13 @@
                             <h3 class="exb-color">
                                 Semiconductors
                             </h3>
-                            <p class="tip-text">Materials scientists in high productivity research are using our
-                                massively scalable simulation capabilities to design new semiconductors with improved
+                            <p class="tip-text">Materials scientists in high productivity research use our
+                                massively scalable simulation capabilities to design new materials and processes
                                 physical properties.</p>
                         </div>
                         <div class="col-sm-6 i">
                             <h3 class="exb-color">
-                                Materials Engineering
+                                Energy Storage
                             </h3>
                             <p class="tip-text">Experimental researchers in artificial engineering of electronic
                                 materials are using our platform to speed up prototyping of novel layered thin film
@@ -238,13 +256,13 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div id="screencast" class="row">
                         <div class="col-lg-10 col-lg-offset-1">
                             <div class="notebook">
                                 <!-- Notebook -->
-                                <img src="img/macbook.png" alt="#" width="968" height="510" class="img-responsive">
+                                <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
                                 <div class="image">
-                                    <img src="img/screenshot.png" alt="#" width="968" height="510"
+                                    <img style="margin-top: 3px" src="img/screencast.gif" alt="#" width="968" height="510"
                                          class="img-responsive">
                                 </div>
                             </div>
@@ -1111,6 +1129,7 @@
                                 <a href="#contact" class="footer-link" data-page=".contact-page" data-cls="subpage"
                                    title="Contact">Contact</a>
                                 <a href="https://angel.co/exabyte-io/jobs"> Jobs</a>
+                                <a href="https://blog.exabyte.io"> Blog</a>
                                 <a href="#privacy" class="footer-link" data-page=".privacy-page" data-cls="subpage"
                                    title="Privacy">Privacy</a>
                             </div>
