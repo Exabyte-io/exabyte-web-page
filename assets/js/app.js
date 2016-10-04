@@ -123,7 +123,10 @@ var _checkURLlinks = function (target, array) {
 
 // click on subpage hash from url
 var goToPathname = function () {
+    // exclude anchors that are not pages
+    var excludeNames = ["screencast"];
     var pathname = window.location.hash.replace("#", "");
+    if (excludeNames.indexOf(pathname) > 0) return;
     $("a[data-page='." + pathname + "-page']").click()
 };
 
@@ -135,6 +138,7 @@ var changeFunction = function () {
     if (_checkURLlinks($(this),
             [
                 "platform.exabyte.io",
+                "blog.exabyte.io",
                 "exabyte.docsend.com",
                 "angel.co"
             ])) {
