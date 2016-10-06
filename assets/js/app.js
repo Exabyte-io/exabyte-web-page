@@ -138,6 +138,7 @@ var changeFunction = function () {
     if (_checkURLlinks($(this),
             [
                 "platform.exabyte.io",
+                "docs.exabyte.io",
                 "blog.exabyte.io",
                 "exabyte.docsend.com",
                 "angel.co"
