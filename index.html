@@ -12,10 +12,14 @@
 ================================================================
 -->
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <title>Exabyte.io - Materials Discovery Cloud</title>
@@ -27,56 +31,87 @@
     <link rel="stylesheet" href="assets/css/app.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <!-- Google fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic'
+          rel='stylesheet' type='text/css'>
     <!-- Google analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', "UA-69270713-2", 'auto');
         ga('send', 'pageview');
     </script>
+
+    <!-- Hotjar -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:282335,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
 </head>
 <body>
     <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Preloader -->
 
     <div class="spinner-wrap">
-        <div class="css-loader">
+        <img class="spinner" src="img/exalogo.png" alt="" width="50" height="50">
+        <!--<div class="css-loader">
             <svg class="circular" viewBox="25 25 50 50">
-              <circle class="path" cx="50" cy="50" r="8" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                <circle class="path" cx="50" cy="50" r="8" fill="none" stroke-width="2" stroke-miterlimit="10"/>
             </svg>
-        </div>
+        </div>-->
     </div>
 
     <!-- Header -->
     <div id="main-content">
-        <header id="header"  class="image dim lab active">
+        <header id="header" class="image dim lab active">
             <div class="container">
                 <div class="navbar" role="navigation">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle visible-xs" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                         <h1 class="logo">
-                            <a href="#home" data-page=".main-page" data-header=".main-head" data-cls="image dim lab active" title="Home" class="exabyte-logo"></a>
+                            <a href="#home" data-page=".main-page" data-header=".main-head"
+                               data-cls="image dim lab active" title="Home" class="exabyte-logo"></a>
                         </h1>
                     </div>
 
                     <nav class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <!-- <li><a href="https://exabyte.docsend.com/view/syitiek"> Case study</a></li> -->
-                            <li><a href="#case-study"  data-page=".case-study-page" data-header=".case-study-head" data-cls="subpage" title="Case Studies">Case Studies</a></li>
-                            <li><a href="#about"  data-page=".about-page" data-header=".about-head" data-cls="subpage" title="About">About</a></li>
-                            <li><a href="#contact"  data-page=".contact-page"  data-header=".contact-head" data-cls="subpage" title="Contact">Contact</a></li>
+                            <li><a href="#case-study" data-page=".case-study-page" data-header=".case-study-head"
+                                   data-cls="subpage" title="Case Studies">Case Studies</a></li>
+                            <li><a href="#about" data-page=".about-page" data-header=".about-head" data-cls="subpage"
+                                   title="About">About</a></li>
+                            <li><a href="#security" data-page=".security-page" data-header=".security-head"
+                                   data-cls="subpage" title="Security">Security</a></li>
+                            <li><a href="#contact" data-page=".contact-page" data-header=".contact-head"
+                                   data-cls="subpage" title="Contact">Contact</a></li>
                             <!-- sign in and sign up links -->
                             <li><a href="https://platform.exabyte.io/register"> Sign up</a></li>
                             <li><a href="https://platform.exabyte.io/login"> Sign in</a></li>
@@ -85,11 +120,18 @@
                 </div>
 
                 <div class="text-center wrap main-head">
-                    <h2 style="text-transform: uppercase; margin-bottom: 40px;">Materials discovery cloud</h2>
-                    <h3>
-                        <p>We are a team of top tier scientists and engineers building
-                        the fastest way to discover new materials</p>
-                    </h3>
+                    <div>
+                        <h2 style="text-transform: uppercase; margin-bottom: 40px;">Materials discovery cloud</h2>
+                        <h3>
+                            <p>
+                                We are a team of top tier scientists and engineers building the fastest way to develop new
+                                materials from concept to product
+                            </p>
+                        </h3>
+                    </div>
+                    <div id="screencast-link">
+                        <a href="#screencast">how it works</a>
+                    </div>
                 </div>
 
                 <ul class="carousel-btns list-inline">
@@ -121,11 +163,13 @@
                                             <div class="item">alloys</div>
                                         </div>
                                     </div>
-                                     DESIGNED BY <strong>SOFTWARE</strong>
+                                    DESIGNED BY <strong>SOFTWARE</strong>
                                 </h2>
                                 <p>
-                                    We merge together the powers of <b class="exb-color">nanoscale simulations</b> and <b class="exb-color">cloud computing</b>
-                                    to develop new, better materials. In our vision the world of tomorrow is created not through long and expensive physical tests, but through fast and accurate models.
+                                    We merge together the powers of <b class="exb-color">nanoscale simulations</b> and
+                                    <b class="exb-color">cloud computing</b>
+                                    to develop new, better materials. In our vision the world of tomorrow is created not
+                                    through long and expensive physical tests, but through fast and accurate models.
                                 </p>
                             </div>
                         </div>
@@ -158,7 +202,9 @@
                     </header>
                     <div class="row submetric text-center">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                            <h2 class="exb-color"><strong>10x </strong><div class="pub-ent">public enterprise</div></h2>
+                            <h2 class="exb-color"><strong>10x </strong>
+                                <div class="pub-ent">public enterprise</div>
+                            </h2>
                             <p>
                                 <b class="exb-color">more</b> virtual tests for materials discovery
                                 <br>
@@ -168,7 +214,9 @@
                     </div>
                     <div class="row submetric text-center">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                            <h2 class="exb-color"><strong>5x </strong><div class="rs-lab">research lab</div></h2>
+                            <h2 class="exb-color"><strong>5x </strong>
+                                <div class="rs-lab">research lab</div>
+                            </h2>
                             <p>
                                 <b class="exb-color">shorter</b> turnaround time for prototyping
                                 <br>
@@ -185,7 +233,7 @@
                     <header class="text-center">
                         <div class="row">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                                <h2 class="exb-color">SIMPLICITY, SCALE, ACCURACY</h2>
+                                <h2 class="exb-color">SIMPLICITY, SCALE, PRECISION</h2>
                             </div>
                         </div>
                     </header>
@@ -194,23 +242,28 @@
                             <h3 class="exb-color">
                                 Semiconductors
                             </h3>
-                            <p class="tip-text">Materials scientists in high productivity research are using our massively scalable simulation capabilities to design new semiconductors with improved physical properties.</p>
+                            <p class="tip-text">Materials scientists in high productivity research use our
+                                massively scalable simulation capabilities to design new materials and processes
+                                physical properties.</p>
                         </div>
                         <div class="col-sm-6 i">
                             <h3 class="exb-color">
-                                Materials Engineering
+                                Energy Storage
                             </h3>
-                            <p  class="tip-text">Experimental researchers in artificial engineering of electronic materials are using our platform to speed up prototyping of novel layered thin film oxide compounds.</p>
+                            <p class="tip-text">Experimental researchers in artificial engineering of electronic
+                                materials are using our platform to speed up prototyping of novel layered thin film
+                                oxide compounds.</p>
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div id="screencast" class="row">
                         <div class="col-lg-10 col-lg-offset-1">
                             <div class="notebook">
                                 <!-- Notebook -->
-                                <img src="img/macbook.png" alt="#" width="968" height="510" class="img-responsive">
+                                <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
                                 <div class="image">
-                                    <img src="img/screenshot.png" alt="#" width="968" height="510" class="img-responsive">
+                                    <img style="margin-top: 3px" src="img/screencast.gif" alt="#" width="968" height="510"
+                                         class="img-responsive">
                                 </div>
                             </div>
                         </div>
@@ -220,16 +273,19 @@
         </div>
 
 
-
-
         <div class="about-page">
             <div class="section about-text">
                 <div class="container">
                     <div class="row text-center blquote">
-                        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-                            <blockquote class="blockquote-lg">Exabyte.io is buiding a novel computer-aided way to design and discover new advanced materials. We develop high accuracy simulation techniques and make them available through a hosted environment in the cloud.</blockquote>
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <blockquote class="blockquote-lg">Exabyte.io is building a novel computer-aided way to design
+                                and discover advanced materials. We develop high accuracy simulation techniques and
+                                make them available through a hosted environment in the cloud.
+                            </blockquote>
                             <br>
-                            <a href="https://exabyte.docsend.com/view/h6pyq7d"> learn more</a>
+                            <a href="https://exabyte.docsend.com/view/h6pyq7d"> brief overview</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="https://blog.exabyte.io"> read our blog</a>
                         </div>
                     </div>
                 </div>
@@ -248,102 +304,106 @@
                     <div class="row">
 
                         <!-- Member -->
-                        <div class="col-md-4 col-sm-4 team-item text-center">
+                        <div class="col-md-6 col-sm-6 team-item text-center">
                             <img class="team-photo" src="img/roster/timur.png">
                             <div>
                                 <h4 class="team-name">Timur</h4>
                                 <p class="team-title">Founder/CEO</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="https://www.linkedin.com/in/timurbazhirov" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                        <li><a class="team-link github" href="http://www.github.com/timurbazhirov" target="_blank"><i class="fa fa-github-square"></i></a></li>
+                                        <li><a class="team-link linkedin"
+                                               href="https://www.linkedin.com/in/timurbazhirov" target="_blank"><i
+                                            class="fa fa-linkedin-square"></i></a></li>
+                                        <li><a class="team-link github" href="http://www.github.com/timurbazhirov"
+                                               target="_blank"><i class="fa fa-github-square"></i></a></li>
                                     </ul>
                                 </div>
-                                <p class="team-desc">Timur started Exabyte.io in May of 2014, after obtaining a Ph.D. degree in physics at UC Berkeley under Marvin L. Cohen. Timur published 15 peer-reviewed articles on computational studies of materials cited over 150 times. His research was focused on high-fidelity first-principles simulation techniques for semiconductors and superconductors. Timur graduated with honors from Moscow Institute of Physics and Technology, is a regular reviewer of Physical Review Letters, speaks Russian, Tatar, Fortran, Bash, Python and Javascript, and practices Brazilian jiu-jitsu.</p>
+                                <p class="team-desc">Timur started Exabyte.io in May of 2014, after obtaining a Ph.D.
+                                    degree in physics at UC Berkeley under Marvin L. Cohen. Timur published 15
+                                    peer-reviewed articles on computational studies of materials cited over 150 times.
+                                    His research was focused on high-fidelity first-principles simulation techniques for
+                                    semiconductors and superconductors. Timur graduated with honors from Moscow
+                                    Institute of Physics and Technology, is a regular reviewer of Physical Review
+                                    Letters, speaks Russian, Tatar, Fortran, Bash, Python and Javascript, and practices
+                                    Brazilian jiu-jitsu.</p>
                             </div>
                         </div>
 
                         <!-- Member -->
-                        <div class="col-md-4 col-sm-4 team-item text-center">
-                            <img class="team-photo" src="img/roster/mohammed.png">
-                            <div>
-                                <h4 class="team-name">Mohammad</h4>
-                                <p class="team-title">Lead Engineer</p>
-                                <div class="centered-pills">
-                                    <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="http://www.linkedin.com/in/mohammad-mohammadi-aaa48046" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                        <li><a class="team-link github" href="http://www.github.com/mohammadidinani" target="_blank"><i class="fa fa-github-square"></i></a></li>
-                                    </ul>
-                                </div>
-                                <p class="team-desc">Mohammad is leading the development of high-performance cloud infrastructure since 2015, when he decided to merge his entrepreneurial efforts in building cloud supercomputer with Exabyte.io. He holds a Ph.D. degree in Telecommunication Engineering and has 10 years of experience in cloud computing including large-scale grid computing, scalable storage, and on-premise infrastructure. His prior research was in efficient resource management in distributed computing. Mohammad speaks Persian, Bash, Python and JavaScript and plays Badminton in his spare time.</p>
-                            </div>
-                        </div>
-
-                        <!-- Member -->
-                        <div class="col-md-4 col-sm-4 team-item text-center">
-                            <img class="team-photo" src="img/roster/radik.png">
-                            <div>
-                                <h4 class="team-name">Radik </h4>
-                                <p class="team-title">Lead Developer</p>
-                                <div class="centered-pills">
-                                    <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="https://www.linkedin.com/in/radikft" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                        <li><a class="team-link github" href="http://www.github.com/radik" target="_blank"><i class="fa fa-github-square"></i></a></li>
-                                    </ul>
-                                </div>
-                                <p class="team-desc">Radik is a software engineer with 8 years of experience in the development of enterprise-grade web applications. Some of his prior efforts power the electronic government platform deployed in over 50 municipal regions of Russia. Radik joined Exabyte.io in February of 2015 and now leads the company's work on web development. Graduated with honors from Kazan Federal University, majoring in Mathematics. Radik likes to share his knowledge with others and has over 35k viewers on youtube. Online education-enthusiast and avid runner.</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="row">
-
-                        <!-- Member -->
-                        <div class="col-md-4 col-sm-4 team-item text-center">
+                        <div class="col-md-6 col-sm-6 team-item text-center">
                             <img class="team-photo" src="img/roster/michael.png">
                             <div>
                                 <h4 class="team-name">Michael</h4>
                                 <p class="team-title">Vice-president of science</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="https://www.linkedin.com/in/michael-haverty-68a2b11" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                        <li><a class="team-link github" href="http://www.github.com/mghav" target="_blank"><i class="fa fa-github-square"></i></a></li>
+                                        <li><a class="team-link linkedin"
+                                               href="https://www.linkedin.com/in/michael-haverty-68a2b11"
+                                               target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                                        <li><a class="team-link github" href="http://www.github.com/mghav"
+                                               target="_blank"><i class="fa fa-github-square"></i></a></li>
                                     </ul>
                                 </div>
-                                <p class="team-desc">Michael is a computational materials scientist with 15 years of semiconductor industry experience at designing and using physics and chemistry models at Intel. He worked with experimentalists to pre-screen materials, optimize their properties, and enable technology scaling. Stanford graduate, Michael chaired or served industry-level and private research grant organizations. His work spanned variety of materials with a focus on atomic-scale modeling techniques and resulted in 4 US patents and 15 publications.</p>
+                                <p class="team-desc">Michael is a computational materials scientist with 15 years of
+                                    semiconductor industry experience at designing and using physics and chemistry
+                                    models at Intel. He worked with experimentalists to pre-screen materials, optimize
+                                    their properties, and enable technology scaling. Stanford graduate, Michael chaired
+                                    or served industry-level and private research grant organizations. His work spanned
+                                    variety of materials with a focus on atomic-scale modeling techniques and resulted
+                                    in 4 US patents and 15 publications.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <!-- Member -->
+                        <div class="col-md-6 col-sm-6 team-item text-center">
+                            <img class="team-photo" src="img/roster/mohammed.png">
+                            <div>
+                                <h4 class="team-name">Mohammad</h4>
+                                <p class="team-title">Lead Engineer</p>
+                                <div class="centered-pills">
+                                    <ul class="nav nav-pills">
+                                        <li><a class="team-link linkedin"
+                                               href="http://www.linkedin.com/in/mohammad-mohammadi-aaa48046"
+                                               target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                                        <li><a class="team-link github" href="http://www.github.com/mohammadidinani"
+                                               target="_blank"><i class="fa fa-github-square"></i></a></li>
+                                    </ul>
+                                </div>
+                                <p class="team-desc">Mohammad is leading the development of high-performance cloud
+                                    infrastructure since 2015, when he decided to merge his entrepreneurial efforts in
+                                    building cloud supercomputers with Exabyte.io. He holds a Ph.D. degree in
+                                    Telecommunication Engineering and has 10 years of experience in cloud computing
+                                    including large-scale grid computing, scalable storage, and on-premise
+                                    infrastructure. His prior research was in efficient resource management in
+                                    distributed computing. Mohammad speaks Persian, Bash, Python and JavaScript and
+                                    plays Badminton in his spare time.</p>
                             </div>
                         </div>
 
                         <!-- Member -->
-                        <div class="col-md-4 col-sm-4 team-item text-center">
-                            <img class="team-photo" src="img/roster/arya.png">
+                        <div class="col-md-6 col-sm-6 team-item text-center">
+                            <img class="team-photo" src="img/roster/radik.png">
                             <div>
-                                <h4 class="team-name">Arya </h4>
-                                <p class="team-title">Software Engineer</p>
+                                <h4 class="team-name">Radik </h4>
+                                <p class="team-title">Lead Developer</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="https://de.linkedin.com/in/arya-mazaheri-a4a12a47" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                        <li><a class="team-link github" href="http://www.github.com/aryamazaheri" target="_blank"><i class="fa fa-github-square"></i></a></li>
+                                        <li><a class="team-link linkedin" href="https://www.linkedin.com/in/radikft"
+                                               target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                                        <li><a class="team-link github" href="http://www.github.com/radik"
+                                               target="_blank"><i class="fa fa-github-square"></i></a></li>
                                     </ul>
                                 </div>
-                                <p class="team-desc">Arya is a computer scientist currently pursuing his Ph.D. at Technical University of Darmstadt and UC Berkeley with a focus on parallel programming and performance tuning, and using his expertise to contribute to development of novel materials simulation techniques at Exabyte.io. He joined Exabyte.io in early 2016 to apply his academic knowledge to challenging tasks and large-scale real-world problems. Arya speaks Persian and German and codes in Python, C/C++ and Julia. Loves photography and expresses his ideas through it.</p>
-                            </div>
-                        </div>
-
-                        <!-- Member -->
-                        <div class="col-md-4 col-sm-4 team-item text-center">
-                            <img class="team-photo" src="img/roster/derry.png">
-                            <div>
-                                <h4 class="team-name">Derry </h4>
-                                <p class="team-title">UX/UI Designer</p>
-                                <div class="centered-pills">
-                                    <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="http://www.linkedin.com/in/derrybirkett" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                        <li><a class="team-link github" href="http://www.github.com/derrybirkett" target="_blank"><i class="fa fa-github-square"></i></a></li>
-                                    </ul>
-                                </div>
-                                <p class="team-desc">Derry is a UX/UI engineer with 15 years experience in web design. He has worked for startups to blue-chips in London, Dublin, Florence, Bologna, Malaga and Barcelona, as well as launched companies of his own. He joined Exabyte early 2016 on a mission to make materials design user-friendly and accessible to many more people around the world. Derry holds a Bachelor's degree in Information Design from the University of Bristol, speaks Spanish and Italian, consumes coffee and APIs, and loves skating in line along the beachfront.</p>
+                                <p class="team-desc">Radik is a software engineer with 8 years of experience in the
+                                    development of enterprise-grade web applications. Some of his prior efforts power
+                                    the electronic government platform deployed in over 50 municipal regions of Russia.
+                                    Radik joined Exabyte.io in February of 2015 and now leads the company's work on web
+                                    development. Graduated with honors from Kazan Federal University, majoring in
+                                    Mathematics. Radik likes to share his knowledge with others and has over 35k viewers
+                                    on youtube. Online education-enthusiast and avid runner.</p>
                             </div>
                         </div>
 
@@ -366,58 +426,75 @@
                                 <p class="team-title">Scientific Advisor</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="http://civet.berkeley.edu/cohen" target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
+                                        <li><a class="team-link linkedin" href="http://civet.berkeley.edu/cohen"
+                                               target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
                                     </ul>
                                 </div>
                                 <p class="team-desc">
-                                    Professor of Physics at UC Berkeley. Author of over 800 technical publications and one of the world's most cited physicists. Recipient of numerous awards and distinctions. Shares wisdom on nanoscale simulation techniques.
+                                    Professor of Physics at UC Berkeley. Author of over 800 technical publications and
+                                    one of the world's most cited physicists. Recipient of numerous awards and
+                                    distinctions. Shares wisdom on nanoscale simulation techniques.
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-3 team-item text-center">
-                          <img class="team-photo" src="img/team-steven.jpg">
-                          <div>
-                              <h4 class="team-name">Steven Louie</h4>
-                              <p class="team-title">Scientific Advisor</p>
-                              <div class="centered-pills">
-                                  <ul class="nav nav-pills">
-                                      <li><a class="team-link linkedin" href="http://civet.berkeley.edu/louie/sglouie/" target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
-                                  </ul>
-                              </div>
-                              <p class="team-desc">
-                                  Senior faculty scientist in the Materials Sciences Division at Lawrence Berkeley Laboratory. Globally recognized expert in materials with <a href="https://scholar.google.com/citations?user=m0u9N18AAAAJ" target="_blank">h-index</a> 124. Gives advice on nanoscale simulation techniques.
-                              </p>
-                          </div>
+                            <img class="team-photo" src="img/team-steven.jpg">
+                            <div>
+                                <h4 class="team-name">Steven Louie</h4>
+                                <p class="team-title">Scientific Advisor</p>
+                                <div class="centered-pills">
+                                    <ul class="nav nav-pills">
+                                        <li><a class="team-link linkedin"
+                                               href="http://civet.berkeley.edu/louie/sglouie/" target="_blank"><i
+                                            class="fa fa-info-circle fa-2"></i></a></li>
+                                    </ul>
+                                </div>
+                                <p class="team-desc">
+                                    Senior faculty scientist in the Materials Sciences Division at Lawrence Berkeley
+                                    Laboratory. Globally recognized expert in materials with <a
+                                    href="https://scholar.google.com/citations?user=m0u9N18AAAAJ" target="_blank">h-index</a>
+                                    124. Gives advice on nanoscale simulation techniques.
+                                </p>
+                            </div>
                         </div>
                         <div class="col-md-3 col-sm-3 team-item text-center">
-                          <img class="team-photo" src="img/team-chris.jpg">
-                          <div>
-                              <h4 class="team-name">Chris Kemp</h4>
-                              <p class="team-title">Advisor</p>
-                              <div class="centered-pills">
-                                  <ul class="nav nav-pills">
-                                      <li><a class="team-link linkedin" href="http://en.wikipedia.org/wiki/Chris_C._Kemp" target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
-                                  </ul>
-                              </div>
-                              <p class="team-desc">
-                                  Founder and leading mind behind OpenStack. Previously - CTO of NASA, founder and CEO of Nebula, Escapia and Netran. Providing guidance on business and technological aspects of cloud computing.
-                              </p>
-                          </div>
+                            <img class="team-photo" src="img/team-chris.jpg">
+                            <div>
+                                <h4 class="team-name">Chris Kemp</h4>
+                                <p class="team-title">Advisor</p>
+                                <div class="centered-pills">
+                                    <ul class="nav nav-pills">
+                                        <li><a class="team-link linkedin"
+                                               href="http://en.wikipedia.org/wiki/Chris_C._Kemp" target="_blank"><i
+                                            class="fa fa-info-circle fa-2"></i></a></li>
+                                    </ul>
+                                </div>
+                                <p class="team-desc">
+                                    Founder and leading mind behind OpenStack. Previously - CTO of NASA, founder and CEO
+                                    of Nebula, Escapia and Netran. Providing guidance on business and technological
+                                    aspects of cloud computing.
+                                </p>
+                            </div>
                         </div>
                         <div class="col-md-3 col-sm-3 team-item text-center">
-                          <img class="team-photo" src="img/team-nikita.jpg">
-                          <div>
-                              <h4 class="team-name">Nikita Shamgunov</h4>
-                              <p class="team-title">Advisor</p>
-                              <div class="centered-pills">
-                                  <ul class="nav nav-pills">
-                                      <li><a class="team-link linkedin" href="https://www.linkedin.com/profile/view?id=3005082" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-                                  </ul>
-                              </div>
-                              <p class="team-desc">
-                                  Founder and CTO of MemSQL. Previously at Facebook and Microsoft. Expert in distrubuted systems. Computer Science Ph.D., ACM ICPC winner. Providing guidance on business and technological aspects of big data. More <a href="http://www.memsql.com/company/" target="_blank">here</a>.
-                              </p>
-                          </div>
+                            <img class="team-photo" src="img/team-nikita.jpg">
+                            <div>
+                                <h4 class="team-name">Nikita Shamgunov</h4>
+                                <p class="team-title">Advisor</p>
+                                <div class="centered-pills">
+                                    <ul class="nav nav-pills">
+                                        <li><a class="team-link linkedin"
+                                               href="https://www.linkedin.com/profile/view?id=3005082"
+                                               target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                                    </ul>
+                                </div>
+                                <p class="team-desc">
+                                    Founder and CTO of MemSQL. Previously at Facebook and Microsoft. Expert in
+                                    distrubuted systems. Computer Science Ph.D., ACM ICPC winner. Providing guidance on
+                                    business and technological aspects of big data. More <a
+                                    href="http://www.memsql.com/company/" target="_blank">here</a>.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -438,28 +515,35 @@
                                 <p class="team-title">Seed</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
-                                        <li><a class="team-link linkedin" href="http://alchemistaccelerator.com" target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
+                                        <li><a class="team-link linkedin" href="http://alchemistaccelerator.com"
+                                               target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
                                     </ul>
                                 </div>
                                 <p class="team-desc">
-                                    Business incubator focused on accelerating startups whose revenue comes from enterprises, backed by: Draper Fisher Jurvetson, Khosla Ventures, US Venture Partners, Foundation Capital, Cisco Systems, SAP Ventures, and Salesforce.com.
+                                    Business incubator focused on accelerating startups whose revenue comes from
+                                    enterprises, backed by: Draper Fisher Jurvetson, Khosla Ventures, US Venture
+                                    Partners, Foundation Capital, Cisco Systems, SAP Ventures, and Salesforce.com.
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 team-item text-center">
-                          <img class="team-photo" src="img/impulse-vc-logo.jpg">
-                          <div>
-                              <h4 class="team-name">Impulse VC</h4>
-                              <p class="team-title">Seed</p>
-                              <div class="centered-pills">
-                                  <ul class="nav nav-pills">
-                                      <li><a class="team-link linkedin" href="http://impulsevc.com" target="_blank"><i class="fa fa-info-circle fa-2"></i></a></li>
-                                  </ul>
-                              </div>
-                              <p class="team-desc">
-                                  Impulse VC is a seed stage venture capital firm headquartered in Moscow, Russia, with a global focus on technological internet companies. The set of limited parnters of the firm includes well-known engineers and highly successful international businessmen.
-                              </p>
-                          </div>
+                            <img class="team-photo" src="img/impulse-vc-logo.jpg">
+                            <div>
+                                <h4 class="team-name">Impulse VC</h4>
+                                <p class="team-title">Seed</p>
+                                <div class="centered-pills">
+                                    <ul class="nav nav-pills">
+                                        <li><a class="team-link linkedin" href="http://impulsevc.com" target="_blank"><i
+                                            class="fa fa-info-circle fa-2"></i></a></li>
+                                    </ul>
+                                </div>
+                                <p class="team-desc">
+                                    Impulse VC is a seed stage venture capital firm headquartered in Moscow, Russia,
+                                    with a global focus on technological internet companies. The set of limited parnters
+                                    of the firm includes well-known engineers and highly successful international
+                                    businessmen.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -482,33 +566,40 @@
                         <form role="form" onsubmit="return post_to_parse();">
                             <div class="col-xs-12 col-sm-7 col-md-7">
                                 <div class="col-xs-12 form-group">
-                                    <input type="text" name="name" placeholder="Name..." class="contact-name form-control" id="contact-name">
+                                    <input type="text" name="name" placeholder="Name..."
+                                           class="contact-name form-control" id="contact-name">
                                     <div class="col-xs-12 text-danger">Please enter a name</div>
                                 </div>
                                 <div class="col-xs-12 form-group">
-                                    <input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
+                                    <input type="text" name="email" placeholder="Email..."
+                                           class="contact-email form-control" id="contact-email">
                                     <div class="col-xs-12 text-danger">Please enter a valid email</div>
                                 </div>
                                 <div class="col-xs-12 form-group">
-                                    <textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
+                                    <textarea name="message" placeholder="Message..."
+                                              class="contact-message form-control" id="contact-message"></textarea>
                                     <div class="col-xs-12 text-danger">Please enter a message</div>
                                 </div>
 
                                 <div class="col-xs-12 i">
-                                    <button type="submit" class="btn btn-exagray submit btn-effect">Send message</button>
+                                    <button type="submit" class="btn btn-exagray submit btn-effect">Send message
+                                    </button>
                                 </div>
                             </div>
-                             <div class="col-xs-12 col-md-5 col-sm-5 contact-address">
-                                 <div class="map">
-                                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5185074855603!2d-122.41425238374114!3d37.777886679758836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580834864161b%3A0x82abab0491e6b762!2s1161+Mission+St%2C+San+Francisco%2C+CA+94103!5e0!3m2!1sen!2sus!4v1461635977280" width="100%" height="370" frameborder="0" style="border:1px solid #ccc;"></iframe>
-                                 </div>
-                                 <div class="address">
+                            <div class="col-xs-12 col-md-5 col-sm-5 contact-address">
+                                <div class="map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5185074855603!2d-122.41425238374114!3d37.777886679758836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580834864161b%3A0x82abab0491e6b762!2s1161+Mission+St%2C+San+Francisco%2C+CA+94103!5e0!3m2!1sen!2sus!4v1461635977280"
+                                        width="100%" height="370" frameborder="0"
+                                        style="border:1px solid #ccc;"></iframe>
+                                </div>
+                                <div class="address">
                                     <p><i class="fa fa-map-marker"></i> 1161 Mission street, 1st floor</p>
                                     <p><i class="fa" style="margin-right: 6px;"></i>San Francisco, CA 94103</p>
                                     <p><i class="fa fa-phone"></i> +1 (510) 473-7770</p>
                                     <p><i class="fa fa-envelope-o"></i> info@exabyte.io</p>
-                                 </div>
-                          </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -531,17 +622,237 @@
                             <a href="https://exabyte.docsend.com/view/syitiek" target="_blank">
                                 <i class="fa fa-cubes"></i>
                             </a>
-                            <p class="centered-text"><b><a href="https://exabyte.docsend.com/view/syitiek" target="_blank">High-throughput study of new metallic alloys</a></b>.<p>
-                            <p> A team of researchers from <a href="http://intermolecular.com" target="_blank">Intermolecular Inc.</a> studied 296 promising metallic alloys using 10,656 CPUs, taking only 7 minutes to start, and 38 total hours to obtain high fidelity results.</p>
+                            <p class="centered-text"><b><a href="https://exabyte.docsend.com/view/syitiek"
+                                                           target="_blank">High-throughput study of new metallic
+                                alloys</a></b>.
+                            <p>
+                            <p> A team of researchers from <a href="http://intermolecular.com" target="_blank">Intermolecular
+                                Inc.</a> studied 296 promising metallic alloys using 10,656 CPUs, taking only 7 minutes
+                                to start, and 38 total hours to obtain high fidelity results.</p>
                         </div>
                         <div class="col-xs-12 col-md-6 i case-study">
                             <a href="https://exabyte.docsend.com/view/q7kbxab" target="_blank">
                                 <i class="fa fa-battery-3"></i>
                             </a>
-                            <p class="centered-text"><b><a href="https://exabyte.docsend.com/view/q7kbxab" target="_blank">Study of solid-state battery materials</a></b>.</p>
-                            <p>Professor Adelstein at the <a href="http://sfsu.edu" target="_blank">San Francisco State University</a> presents benchmarks against a Lawrence Livermore Lab system and an in-house one, finding exabyte.io to be 2-3x faster.</p>
+                            <p class="centered-text"><b><a href="https://exabyte.docsend.com/view/q7kbxab"
+                                                           target="_blank">Study of solid-state battery
+                                materials</a></b>.</p>
+                            <p>Professor Adelstein at the <a href="http://sfsu.edu" target="_blank">San Francisco State
+                                University</a> presents benchmarks against a Lawrence Livermore Lab system and an
+                                in-house one, finding exabyte.io to be 2-3x faster.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="security-page">
+
+            <section class="section">
+                <div class="container">
+
+                    <!-- Introduction -->
+                    <div class="row text-center blquote">
+                        <div class="col-md-offset-2 col-md-8">
+                            <blockquote class="blockquote-lg">
+                                Security and privacy of your data is our <strong>first</strong> priority. We designed
+                                our product to
+                                the highest standards of data protection. Below we highlight some of the
+                                features that we adopt to keep your data safe.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Confidentiality -->
+                    <header class="text-center title">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="exb-color">Confidentiality</h2>
+                                <p class="text-muted">Nobody but you can access your data</p>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="security-confidentiality">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-cast-connected"></i>
+                                    <h3>Encryption in transfer with high-grade SSL/TLS</h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-shield-security"></i>
+                                    <h3>Encryption at rest with 256-bit AES and kernel-encrypted hard drives </h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-view-dashboard"></i>
+                                    <h3>Private simulations on isolated clusters protected by firewall</h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-md-offset-2">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-lock"></i>
+                                    <h3>Secure and comprehensive key management system</h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-cloud-done"></i>
+                                    <h3>Security features inherited from our cloud datacenters</h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="security-datacenters">
+                            <p class="lead text-muted text-center">our secure datacenters</p>
+                            <div class="row">
+                                <div class="datacenter text-center col-xs-6 col-sm-6 col-md-3">
+                                    <div class="aws datacenter-logo"></div>
+                                </div>
+                                <div class="datacenter text-center col-xs-6 col-sm-6 col-md-3">
+                                    <div class="softlayer datacenter-logo"></div>
+                                </div>
+                                <div class="datacenter text-center col-xs-6 col-sm-6 col-md-3">
+                                    <div class="rackspace datacenter-logo"></div>
+                                </div>
+                                <div class="datacenter text-center col-xs-6 col-sm-6 col-md-3">
+                                    <div class="azure datacenter-logo"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </section>
+
+            <!-- Availability -->
+            <section class="section exablue">
+                <div class="container">
+
+                    <!-- Confidentiality -->
+                    <header class="text-center title">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="exb-color">Availability</h2>
+                                <p class="text-muted">Safe backups, another layer of protection</p>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="security-availability">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-time-restore-setting"></i>
+                                    <h3>Complete Data backups<br>performed daily</h3>
+
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-dns"></i>
+                                    <h3>Redundant highly-available storage system</h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-view-comfy"></i>
+                                    <h3>Distributed high-performant systems architecture</h3>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </section>
+
+            <!-- Authentication -->
+            <section class="section">
+                <div class="container">
+                    <!-- Confidentiality -->
+                    <header class="text-center title">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="exb-color">Authentication and Authorization</h2>
+                                <p class="text-muted">Secure access and control of user-level permissions</p>
+                            </div>
+                        </div>
+                    </header>
+
+                    <section class="security-authentication">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-blur"></i>
+                                    <h3>Password complexity <br>and identity verification</h3>
+                                    <p>Secure login</p>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-code-setting"></i>
+                                    <h3>Key-based secure <br>shell authentication</h3>
+                                    <p>4096-bit encryption</p>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <div class="feature">
+                                    <i class="zmdi zmdi-accounts-alt"></i>
+                                    <h3>Flexible permission <br>management scheme</h3>
+                                    <p>Secure collaboration</p>
+                                    <i class="zmdi zmdi-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Contact-->
+            <section class="section security-contact">
+                <div class="container">
+                    <!-- Confidentiality -->
+                    <header class="text-center title">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="exb-color">Contact us for more information</h2>
+                                <p class="text-muted">We support private cloud, on-premises installation, and can
+                                    provide details upon request.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="form">
+                                    <input type="email" class="form-control newsletter-input"
+                                           placeholder="Enter your preferred email">
+                                    <button class="submit zmdi zmdi-arrow-right newsletter-btn"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
                 </div>
             </section>
         </div>
@@ -550,110 +861,191 @@
             <section class="section">
                 <div class="container privacy">
                     <div class="row">
-                          <div class="col-md-3 col-md-offset-1 col-sm-4 head">
+                        <div class="col-md-3 col-md-offset-1 col-sm-4 head">
                             <h3>Privacy Policy</h3>
-                            Last Updated: Feb 3, 2016.
-                          </div>
-                          <div class="col-md-7 col-sm-8 text">
+                            Last Updated: Sep 3, 2016.
+                        </div>
+                        <div class="col-md-7 col-sm-8 text">
                             <h3>Collection and Use of Personal Information</h3>
                             <p>
-                            Personal information is data that can be used to uniquely identify or contact a single person.
+                                Personal information is data that can be used to uniquely identify or contact a single
+                                person.
                             </p>
                             <p>
-                            You may be asked to provide your personal information anytime you are in contact with Exabyte or an affiliate. Exabyte and its affiliates may share this personal information with each other and use it consistent with this Privacy Policy. We also reserve the right to combine and compare this information to provide and improve our products, services, content, and advertising.
+                                You may be asked to provide your personal information anytime you are in contact with
+                                Exabyte or an affiliate. Exabyte and its affiliates may share this personal information
+                                with each other and use it consistent with this Privacy Policy. We also reserve the
+                                right to combine and compare this information to provide and improve our products,
+                                services, content, and advertising.
                             </p>
                             <p>
-                            Here are some examples of the types of personal information Exabyte may collect and how we may use it.
+                                Here are some examples of the types of personal information Exabyte may collect and how
+                                we may use it.
                             </p>
 
                             <h3>What personal information we collect</h3>
                             <ul>
-                              <li>When user creates a profile and registers to use our products, purchases a product, downloads a software update, books a tour with a registered Guide, or participates in an online survey, we may collect a variety of information, including users name, mailing address, phone number, email address, contact preferences, credit card information and usage information.</li>
-                              <br>
-                              <li>When users share content with family and friends or invite others to join them for Exabyte activities, Exabyte may collect the information users provide about those people such as name, mailing address, email address, and phone number.</li>
+                                <li>When user creates a profile and registers to use our products, purchases a product,
+                                    downloads a software update, books a tour with a registered Guide, or participates
+                                    in an online survey, we may collect a variety of information, including users name,
+                                    mailing address, phone number, email address, contact preferences, credit card
+                                    information and usage information.
+                                </li>
+                                <br>
+                                <li>When users share content with family and friends or invite others to join them for
+                                    Exabyte activities, Exabyte may collect the information users provide about those
+                                    people such as name, mailing address, email address, and phone number.
+                                </li>
                             </ul>
 
                             <h3>How Exabyte may use its clients personal information</h3>
                             <ul>
-                              <li>The personal information we collect allows us to keep users posted on latest product announcements, software updates and upcoming events. It also helps us to improve our services, content, and advertising. If users don't want to be on our mailing list, they can opt out anytime by updating their preferences and settings.</li>
-                              <br>
-                              <li>We also use personal information to help us develop, deliver, and improve our products, services, content, and advertising.</li>
-                              <br>
-                              <li>If you enter into a sweepstake, contest, or similar promotion we may use the information you provide to administer those programs.</li>
+                                <li>The personal information we collect allows us to keep users posted on latest product
+                                    announcements, software updates and upcoming events. It also helps us to improve our
+                                    services, content, and advertising. If users don't want to be on our mailing list,
+                                    they can opt out anytime by updating their preferences and settings.
+                                </li>
+                                <br>
+                                <li>We also use personal information to help us develop, deliver, and improve our
+                                    products, services, content, and advertising.
+                                </li>
+                                <br>
+                                <li>If you enter into a sweepstake, contest, or similar promotion we may use the
+                                    information you provide to administer those programs.
+                                </li>
                             </ul>
 
                             <h3>Collection and Use of Non-Personal Information</h3>
                             <p>
-                              We also collect non-personal information, which is defined as data in a form that does not permit direct association with any specific individual. We may collect, use, transfer, and disclose non-personal information for any purpose. The following are some examples of non-personal information that we collect and how we may use it:
+                                We also collect non-personal information, which is defined as data in a form that does
+                                not permit direct association with any specific individual. We may collect, use,
+                                transfer, and disclose non-personal information for any purpose. The following are some
+                                examples of non-personal information that we collect and how we may use it:
                             </p>
                             <ul>
-                              <li>We may collect information such as occupation, language, zip code, area code, unique device identifier, location, and the time zone where an Exabyte product is used so that we can better understand customer behavior and improve our products, services, and advertising.</li>
-                              <br>
-                              <li>We also may collect information regarding customer activities on our website, mobile application, and from our other products and services. This information is aggregated and used to help us provide more useful information to our customers and to understand which parts of our website, products, and services are of most interest. Aggregated data is considered non-personal information for the purposes of this Privacy Policy.</li>
+                                <li>We may collect information such as occupation, language, zip code, area code, unique
+                                    device identifier, location, and the time zone where an Exabyte product is used so
+                                    that we can better understand customer behavior and improve our products, services,
+                                    and advertising.
+                                </li>
+                                <br>
+                                <li>We also may collect information regarding customer activities on our website, mobile
+                                    application, and from our other products and services. This information is
+                                    aggregated and used to help us provide more useful information to our customers and
+                                    to understand which parts of our website, products, and services are of most
+                                    interest. Aggregated data is considered non-personal information for the purposes of
+                                    this Privacy Policy.
+                                </li>
                             </ul>
                             <p>
-                              If we do combine non-personal information with personal information the combined information will be treated as personal information for as long as it remains combined.
+                                If we do combine non-personal information with personal information the combined
+                                information will be treated as personal information for as long as it remains combined.
                             </p>
                             <p>
-                              As is true of most websites, we gather some information automatically and store it in log files. This information includes Internet Protocol (IP) addresses, browser type and language, Internet service provider (ISP), referring and exit pages, operating system, date/time stamp, and clickstream data.
+                                As is true of most websites, we gather some information automatically and store it in
+                                log files. This information includes Internet Protocol (IP) addresses, browser type and
+                                language, Internet service provider (ISP), referring and exit pages, operating system,
+                                date/time stamp, and clickstream data.
                             </p>
                             <p>
-                              We use this information to understand and analyze trends, to administer the site, to learn about user behavior on the site, and to gather demographic information about our user base as a whole. Exabyte may use this information in our marketing and advertising services.
+                                We use this information to understand and analyze trends, to administer the site, to
+                                learn about user behavior on the site, and to gather demographic information about our
+                                user base as a whole. Exabyte may use this information in our marketing and advertising
+                                services.
                             </p>
 
                             <h3>Disclosure to Third Parties and Service Providers</h3>
                             <p>
-                              At times Exabyte may make certain personal information available to strategic partners that work with Exabyte to provide products and services, or that help Exabyte to market to customers. Personal information will only be shared by Exabyte to provide or improve our products, services and advertising; it will not be shared with third parties for their marketing purposes. These companies are obligated to protect your information and may be located wherever Exabyte operates.
+                                At times Exabyte may make certain personal information available to strategic partners
+                                that work with Exabyte to provide products and services, or that help Exabyte to market
+                                to customers. Personal information will only be shared by Exabyte to provide or improve
+                                our products, services and advertising; it will not be shared with third parties for
+                                their marketing purposes. These companies are obligated to protect your information and
+                                may be located wherever Exabyte operates.
                             </p>
 
                             <h3>Others</h3>
                             <p>
-                              It may be necessary - by law, legal process, litigation, and/or requests from public and governmental authorities within or outside your country of residence - for Exabyte to disclose your personal information. We may also disclose information about you if we determine that for purposes of national security, law enforcement, or other issues of public importance, disclosure is necessary or appropriate.
+                                It may be necessary - by law, legal process, litigation, and/or requests from public and
+                                governmental authorities within or outside your country of residence - for Exabyte to
+                                disclose your personal information. We may also disclose information about you if we
+                                determine that for purposes of national security, law enforcement, or other issues of
+                                public importance, disclosure is necessary or appropriate.
                             </p>
                             <p>
-                              We may also disclose information about you if we determine that disclosure is reasonably necessary to enforce our terms and conditions or protect our operations or users. Additionally, in the event of a reorganization, merger, or sale we may transfer any and all personal information we collect to the relevant third party.
+                                We may also disclose information about you if we determine that disclosure is reasonably
+                                necessary to enforce our terms and conditions or protect our operations or users.
+                                Additionally, in the event of a reorganization, merger, or sale we may transfer any and
+                                all personal information we collect to the relevant third party.
                             </p>
 
                             <h3>Protection of Personal Information</h3>
                             <p>
-                              Exabyte takes precautions - including administrative, technical, and physical measures - to safeguard your personal information against loss, theft, and misuse, as well as against unauthorized access, disclosure, alteration, and destruction.
+                                Exabyte takes precautions - including administrative, technical, and physical measures -
+                                to safeguard your personal information against loss, theft, and misuse, as well as
+                                against unauthorized access, disclosure, alteration, and destruction.
                             </p>
 
                             <h3>Integrity and Retention of Personal Information</h3>
                             <p>
-                              Exabyte makes it easy for you to keep your personal information accurate, complete, and up to date. We will retain your personal information for the period necessary to fulfill the purposes outlined in this Privacy Policy unless a longer retention period is required or permitted by law.
+                                Exabyte makes it easy for you to keep your personal information accurate, complete, and
+                                up to date. We will retain your personal information for the period necessary to fulfill
+                                the purposes outlined in this Privacy Policy unless a longer retention period is
+                                required or permitted by law.
                             </p>
 
                             <h3>Access to Personal Information</h3>
                             <p>
-                              You can help ensure that your contact information and preferences are accurate, complete, and up to date by logging in to your account. For other personal information, we make good faith efforts to provide you with access so you can request that we correct the data if it is inaccurate or delete the data if Exabyte is not required to retain it by law or for legitimate business purposes. We may decline to process requests that are unreasonably repetitive, require disproportionate technical effort, jeopardize the privacy of others, are extremely impractical, or for which access is not otherwise required by local law. Access, correction, or deletion requests can be made to the regional Privacy email addresses.
+                                You can help ensure that your contact information and preferences are accurate,
+                                complete, and up to date by logging in to your account. For other personal information,
+                                we make good faith efforts to provide you with access so you can request that we correct
+                                the data if it is inaccurate or delete the data if Exabyte is not required to retain it
+                                by law or for legitimate business purposes. We may decline to process requests that are
+                                unreasonably repetitive, require disproportionate technical effort, jeopardize the
+                                privacy of others, are extremely impractical, or for which access is not otherwise
+                                required by local law. Access, correction, or deletion requests can be made to the
+                                regional Privacy email addresses.
                             </p>
 
                             <h3>Children</h3>
                             <p>
-                              We do not knowingly collect personal information from children under 13. If we learn that we have collected the personal information of a child under 13 we will take steps to delete the information as soon as possible.
+                                We do not knowingly collect personal information from children under 13. If we learn
+                                that we have collected the personal information of a child under 13 we will take steps
+                                to delete the information as soon as possible.
                             </p>
 
                             <h3>Third-Party Sites and Services</h3>
                             <p>
-                              Exabyte websites, products, applications, and services may contain links to third-party websites, products, and services. Our products and services may also use or offer products or services from third parties. Information collected by third parties, which may include such things as location data or contact details, is governed by their privacy practices. We encourage you to learn about the privacy practices of those third parties.
+                                Exabyte websites, products, applications, and services may contain links to third-party
+                                websites, products, and services. Our products and services may also use or offer
+                                products or services from third parties. Information collected by third parties, which
+                                may include such things as location data or contact details, is governed by their
+                                privacy practices. We encourage you to learn about the privacy practices of those third
+                                parties.
                             </p>
 
                             <h3>International Users</h3>
                             <p>
-                              Information you provide may be transferred or accessed by entities around the world as described in this Privacy Policy. Exabyte abides by the "safe harbor" framework set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information collected by organizations in the European Economic Area and Switzerland.
+                                Information you provide may be transferred or accessed by entities around the world as
+                                described in this Privacy Policy. Exabyte abides by the "safe harbor" framework set
+                                forth by the U.S. Department of Commerce regarding the collection, use, and retention of
+                                personal information collected by organizations in the European Economic Area and
+                                Switzerland.
                             </p>
 
                             <h3>Our Companywide Commitment to Your Privacy</h3>
                             <p>
-                              To make sure your personal information is secure, we communicate our privacy and security guidelines to Exabyte employees and strictly enforce privacy safeguards within the company.
+                                To make sure your personal information is secure, we communicate our privacy and
+                                security guidelines to Exabyte employees and strictly enforce privacy safeguards within
+                                the company.
                             </p>
 
                             <h3>Privacy Questions</h3>
                             <p>
-                              If you have questions or concerns about our Privacy Policy, please contact us at <a href="mailto:info@exabyte.io">info@exabyte.io</a>.
+                                If you have questions or concerns about our Privacy Policy, please contact us at <a
+                                href="mailto:info@exabyte.io">info@exabyte.io</a>.
                             </p>
-                      </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -667,9 +1059,9 @@
                         <div class="col-xs-6 col-sm-3 i">
                             <h2>exabyte.io</h2>
                             <div class="content">
-                                1161 Mission street, suite 505<br />
-                                San Francisco, CA 94103<br />
-                                +1 (510) 473-7770<br />
+                                1161 Mission street, suite 505<br/>
+                                San Francisco, CA 94103<br/>
+                                +1 (510) 473-7770<br/>
                                 info@exabyte.io
                             </div>
                         </div>
@@ -684,10 +1076,12 @@
                         <div class="col-xs-6 col-sm-3 i">
                             <h2>company</h2>
                             <div class="content">
-                                <a href="#about" class="footer-link" data-page=".about-page" data-cls="subpage" title="About">About</a>
-                                <a href="#contact"   class="footer-link" data-page=".contact-page" data-cls="subpage" title="Contact">Contact</a>
+                                <a href="#about" class="footer-link" data-page=".about-page" data-cls="subpage"
+                                   title="About">About</a>
+                                <a href="#contact" class="footer-link" data-page=".contact-page" data-cls="subpage"
+                                   title="Contact">Contact</a>
                                 <a href="https://angel.co/exabyte-io/jobs"> Jobs</a>
-                                <a href="#privacy"   class="footer-link" data-page=".privacy-page" data-cls="subpage" title="Privacy">Privacy</a>
+                                <a href="https://blog.exabyte.io"> Blog</a>
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-3 i">
@@ -696,6 +1090,9 @@
                                 <!-- sign in and sign up links -->
                                 <a href="https://platform.exabyte.io/register"> Sign up</a>
                                 <a href="https://platform.exabyte.io/login"> Sign in</a>
+                                <a href="https://docs.exabyte.io/billing/pricing-and-service-levels/"> Pricing</a>
+                                <a href="#privacy" class="footer-link" data-page=".privacy-page" data-cls="subpage"
+                                   title="Privacy"> Privacy</a>
                             </div>
                         </div>
                     </div>
@@ -709,20 +1106,22 @@
         </footer>
     </div>
 
-     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-      <div class="modal-dialog" style="margin-top: 15%;">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Thank you!</h4>
-          </div>
-          <div class="modal-body" style="padding:60px; margin-bottom:40px;">
-            <div class="text-center">
-              <h3>We will be in touch with you shortly</h3>
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+         style="display: none;">
+        <div class="modal-dialog" style="margin-top: 15%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Thank you!</h4>
+                </div>
+                <div class="modal-body" style="padding:60px; margin-bottom:40px;">
+                    <div class="text-center">
+                        <h3>We will be in touch with you shortly</h3>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <!-- JS -->
     <script src="assets/js/jquery-1.11.2.min.js"></script>
@@ -744,7 +1143,7 @@
                     name: name,
                     email: email,
                     message: message,
-                }).then(function(object) {
+                }).then(function (object) {
                     jQuery('#contact-name').val('');
                     jQuery('#contact-email').val('');
                     jQuery('#contact-message').val('');
