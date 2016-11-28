@@ -2080,129 +2080,191 @@ div[class$="-head"]:not(.main-head) {
     -ms-animation: scroll 20s infinite;
 }
 
+/*
+ * The code below was used in Chrome console to generate scroll animation
+```js
+a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
+    top: ${Math.floor(i/2)*-44}px;
+}`);}; a.join("\n")
+```
+ */
 @-webkit-keyframes scroll {
     0% {
-        top: 0;
+        top: 0px;
     }
-    8.5% {
-        top: 0;
+    5.5% {
+        top: 0px;
     }
-    17% {
+    11% {
         top: -44px;
     }
-    25.5% {
+    16.5% {
         top: -44px;
     }
-    34% {
+    22% {
         top: -88px;
     }
-    42.5% {
+    27.5% {
         top: -88px;
     }
-    51% {
+    33% {
         top: -132px;
     }
-    59.5% {
+    38.5% {
         top: -132px;
     }
-    68% {
+    44% {
         top: -176px;
     }
-    76.5% {
+    49.5% {
         top: -176px;
     }
-    85% {
+    55% {
         top: -220px;
+    }
+    60.5% {
+        top: -220px;
+    }
+    66% {
+        top: -264px;
+    }
+    71.5% {
+        top: -264px;
+    }
+    77% {
+        top: -308px;
+    }
+    82.5% {
+        top: -308px;
+    }
+    88% {
+        top: -352px;
     }
     93.5% {
-        top: -220px;
+        top: -352px;
     }
     100% {
-        top: 0;
+        top: 0px;
     }
 }
 
 @-moz-keyframes scroll {
     0% {
-        top: 0;
+        top: 0px;
     }
-    8.5% {
-        top: 0
+    5.5% {
+        top: 0px;
     }
-    17% {
+    11% {
         top: -44px;
     }
-    25.5% {
+    16.5% {
         top: -44px;
     }
-    34% {
+    22% {
         top: -88px;
     }
-    42.5% {
+    27.5% {
         top: -88px;
     }
-    51% {
+    33% {
         top: -132px;
     }
-    59.5% {
+    38.5% {
         top: -132px;
     }
-    68% {
+    44% {
         top: -176px;
     }
-    76.5% {
+    49.5% {
         top: -176px;
     }
-    85% {
+    55% {
         top: -220px;
+    }
+    60.5% {
+        top: -220px;
+    }
+    66% {
+        top: -264px;
+    }
+    71.5% {
+        top: -264px;
+    }
+    77% {
+        top: -308px;
+    }
+    82.5% {
+        top: -308px;
+    }
+    88% {
+        top: -352px;
     }
     93.5% {
-        top: -220px;
+        top: -352px;
     }
     100% {
-        top: 0;
+        top: 0px;
     }
 }
 
 @-ms-keyframes scroll {
     0% {
-        top: 0;
+        top: 0px;
     }
-    8.5% {
-        top: 0
+    5.5% {
+        top: 0px;
     }
-    17% {
+    11% {
         top: -44px;
     }
-    25.5% {
+    16.5% {
         top: -44px;
     }
-    34% {
+    22% {
         top: -88px;
     }
-    42.5% {
+    27.5% {
         top: -88px;
     }
-    51% {
+    33% {
         top: -132px;
     }
-    59.5% {
+    38.5% {
         top: -132px;
     }
-    68% {
+    44% {
         top: -176px;
     }
-    76.5% {
+    49.5% {
         top: -176px;
     }
-    85% {
+    55% {
         top: -220px;
+    }
+    60.5% {
+        top: -220px;
+    }
+    66% {
+        top: -264px;
+    }
+    71.5% {
+        top: -264px;
+    }
+    77% {
+        top: -308px;
+    }
+    82.5% {
+        top: -308px;
+    }
+    88% {
+        top: -352px;
     }
     93.5% {
-        top: -220px;
+        top: -352px;
     }
     100% {
-        top: 0;
+        top: 0px;
     }
 }
 
@@ -2210,43 +2272,58 @@ div[class$="-head"]:not(.main-head) {
     0% {
         left: 110px;
     }
-    8.5% {
+    5.5% {
         left: 110px;
     }
-    18% {
+    11% {
         left: 14px;
     }
-    25.5% {
+    16.5% {
         left: 14px;
     }
-    34% {
+    22% {
+        left: 65px;
+    }
+    27.5% {
+        left: 65px;
+    }
+    33% {
         left: 85px;
     }
-    42.5% {
+    38.5% {
         left: 85px;
     }
-    51% {
-        left: 100px;
-    }
-    59.5% {
-        left: 100px;
-    }
-    68% {
+    44% {
         left: 115px;
     }
-    76.5% {
+    49.5% {
         left: 115px;
     }
-    85% {
+    55% {
+        left: 115px;
+    }
+    60.5% {
+        left: 115px;
+    }
+    66% {
         left: 145px;
+    }
+    71.5% {
+        left: 145px;
+    }
+    77% {
+        left: 115px;
+    }
+    82.5% {
+        left: 115px;
+    }
+    88% {
+        left: 115px;
     }
     93.5% {
-        left: 145px;
+        left: 115px;
     }
-    95.5% {
-        left: 14px;
-    }
-    97% {
+    96.5% {
         left: 14px;
     }
     100% {
@@ -2258,43 +2335,58 @@ div[class$="-head"]:not(.main-head) {
     0% {
         left: 110px;
     }
-    8.5% {
+    5.5% {
         left: 110px;
     }
-    18% {
+    11% {
         left: 14px;
     }
-    25.5% {
+    16.5% {
         left: 14px;
     }
-    34% {
+    22% {
+        left: 65px;
+    }
+    27.5% {
+        left: 65px;
+    }
+    33% {
         left: 85px;
     }
-    42.5% {
+    38.5% {
         left: 85px;
     }
-    51% {
-        left: 100px;
-    }
-    59.5% {
-        left: 100px;
-    }
-    68% {
+    44% {
         left: 115px;
     }
-    76.5% {
+    49.5% {
         left: 115px;
     }
-    85% {
+    55% {
+        left: 115px;
+    }
+    60.5% {
+        left: 115px;
+    }
+    66% {
         left: 145px;
+    }
+    71.5% {
+        left: 145px;
+    }
+    77% {
+        left: 115px;
+    }
+    82.5% {
+        left: 115px;
+    }
+    88% {
+        left: 115px;
     }
     93.5% {
-        left: 145px;
+        left: 115px;
     }
-    95.5% {
-        left: 14px;
-    }
-    97% {
+    96.5% {
         left: 14px;
     }
     100% {
@@ -2306,43 +2398,58 @@ div[class$="-head"]:not(.main-head) {
     0% {
         left: 110px;
     }
-    8.5% {
+    5.5% {
         left: 110px;
     }
-    18% {
+    11% {
         left: 14px;
     }
-    25.5% {
+    16.5% {
         left: 14px;
     }
-    34% {
+    22% {
+        left: 65px;
+    }
+    27.5% {
+        left: 65px;
+    }
+    33% {
         left: 85px;
     }
-    42.5% {
+    38.5% {
         left: 85px;
     }
-    51% {
-        left: 100px;
-    }
-    59.5% {
-        left: 100px;
-    }
-    68% {
+    44% {
         left: 115px;
     }
-    76.5% {
+    49.5% {
         left: 115px;
     }
-    85% {
+    55% {
+        left: 115px;
+    }
+    60.5% {
+        left: 115px;
+    }
+    66% {
         left: 145px;
+    }
+    71.5% {
+        left: 145px;
+    }
+    77% {
+        left: 115px;
+    }
+    82.5% {
+        left: 115px;
+    }
+    88% {
+        left: 115px;
     }
     93.5% {
-        left: 145px;
+        left: 115px;
     }
-    95.5% {
-        left: 14px;
-    }
-    97% {
+    96.5% {
         left: 14px;
     }
     100% {
@@ -3197,9 +3304,14 @@ div[class$="-head"]:not(.main-head) {
     min-height: 250px;
     position: relative;
 
-    @media (min-width: 768px) {
-        min-height:  260px;
-    }
+@media (min-width: 768px) {
+    min-height:
+
+260px
+
+;
+}
+
 }
 
 .feature i {
@@ -3254,7 +3366,7 @@ div[class$="-head"]:not(.main-head) {
 
 .exablue .feature {
     min-height: 270px;
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .exablue .title {

@@ -87,7 +87,7 @@ var simpleCarousel = {
             } else {
                 simpleCarousel.i = 0;
             }
-        }, 8000);
+        }, 20000);
 
         $(document).on('click', '.carousel-btns li', function () {
             var t = $(this).data('target');
