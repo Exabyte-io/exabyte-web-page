@@ -55,14 +55,20 @@
 
     <!-- Hotjar -->
     <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:282335,hjsv:5};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                    (h.hj.q = h.hj.q || []).push(arguments)
+                };
+            h._hjSettings = {
+                hjid: 282335,
+                hjsv: 5
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
-        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
 
 </head>
@@ -110,10 +116,8 @@
                                    title="About">About</a></li>
                             <li><a href="#security" data-page=".security-page" data-header=".security-head"
                                    data-cls="subpage" title="Security">Security</a></li>
-                            <li><a href="#contact" data-page=".contact-page" data-header=".contact-head"
-                                   data-cls="subpage" title="Contact">Contact</a></li>
-                            <!-- sign in and sign up links -->
-                            <li><a href="https://platform.exabyte.io/register"> Sign up</a></li>
+                            <!-- sign in and docs links -->
+                            <li><a href="https://docs.exabyte.io/">Documentation</a></li>
                             <li><a href="https://platform.exabyte.io/login"> Sign in</a></li>
                         </ul>
                     </nav>
@@ -131,7 +135,11 @@
                         </h3>
                     </div>
                     <div id="screencast-link">
-                        <a href="#screencast">how it works</a>
+                        <a href="#screencast"
+                           class="btn btn-outline">how it works</a>
+                        <a href="https://platform.exabyte.io/register"
+                           target="_blank"
+                           class="btn btn-outline-bckgrnd">create account</a>
                     </div>
                 </div>
 
@@ -242,31 +250,66 @@
                         </div>
                     </header>
                     <div class="row text-center">
-                        <div class="col-sm-6 i">
+                        <div class="col-sm-4 i">
                             <h3 class="exb-color">
-                                Semiconductors
+                                Semiconductor
+                            </h3>
+                            <p class="tip-text">Emerging memory technology and TCAD
+                                benefit from our unique toolchain, with QuantumWise ATK<sup>TM</sup> on-demand as
+                                latest addition.</p>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <h3 class="exb-color">
+                                Aero/auto/manufacturing
                             </h3>
                             <p class="tip-text">Materials scientists in high productivity research use our
-                                massively scalable simulation capabilities to design new materials and processes
-                                physical properties.</p>
+                                massively scalable simulation capabilities to design new lightweight metallic
+                                alloys.
+                            </p>
                         </div>
-                        <div class="col-sm-6 i">
+                        <div class="col-sm-4 i">
                             <h3 class="exb-color">
                                 Energy Storage
                             </h3>
-                            <p class="tip-text">Experimental researchers in artificial engineering of electronic
-                                materials are using our platform to speed up prototyping of novel layered thin film
-                                oxide compounds.</p>
+                            <p class="tip-text">Artificial engineering of electronic materials uses our platform to
+                                speed up prototyping of novel layered thin film oxide compounds.
+                            </p>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <h3 class="exb-color">
+                                Oil & Gas
+                            </h3>
+                            <p class="tip-text">High-throughput virtual screening in the cloud enables chemists,
+                                materials scientists and data scientists to design catalysts together.
+                            </p>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <h3 class="exb-color">
+                                Chemical Engineering
+                            </h3>
+                            <p class="tip-text">
+                                We facilitate rapid adoption of hybrid cloud computing and novel techniques for
+                                computational chemistry and cheminformatics at scale.
+                            </p>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <h3 class="exb-color">
+                                Pharmaceuticals
+                            </h3>
+                            <p class="tip-text">We enable large scale molecular modeling and electronic structure
+                                studies to accelerate small-molecule drug discovery.
+                            </p>
                         </div>
                     </div>
-
+                    <hr>
                     <div id="screencast" class="row">
                         <div class="col-lg-10 col-lg-offset-1">
                             <div class="notebook">
                                 <!-- Notebook -->
                                 <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
                                 <div class="image">
-                                    <img style="margin-top: 3px" src="img/screencast.gif" alt="#" width="968" height="510"
+                                    <img style="margin-top: 3px" src="img/screencast.gif" alt="#" width="968"
+                                         height="510"
                                          class="img-responsive">
                                 </div>
                             </div>
@@ -282,14 +325,18 @@
                 <div class="container">
                     <div class="row text-center blquote">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                            <blockquote class="blockquote-lg">Exabyte.io is building a novel computer-aided way to design
-                                and discover advanced materials. We develop high accuracy simulation techniques and
-                                make them available through a hosted environment in the cloud.
+                            <blockquote class="blockquote-lg">Exabyte.io powers the adoption of high-performance cloud
+                                computing for design and discovery of advanced materials, devices and chemicals from
+                                nanoscale. We combine high fidelity simulation techniques, large-scale data analytics
+                                and machine learning tools into a hosted environment available for public, private
+                                and hybrid cloud deployments.
                             </blockquote>
                             <br>
                             <a href="https://exabyte.docsend.com/view/h6pyq7d"> brief overview</a>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="https://blog.exabyte.io"> read our blog</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="https://docs.exabyte.io/getting-started/content-highlights/"> read documentation</a>
                         </div>
                     </div>
                 </div>
