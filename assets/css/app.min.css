@@ -277,6 +277,27 @@ h3 {
     background: rgba(237, 236, 236, 1.0);
 }
 
+.btn-outline {
+    background: transparent;
+    border: 1px solid white;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background: rgba(237, 236, 236, 0.35);
+}
+
+.btn-outline-bckgrnd {
+    background: transparent;
+    border: 1px solid white;
+    background: rgba(237, 236, 236, 0.35);
+}
+
+.btn-outline-bckgrnd:hover,
+.btn-outline-bckgrnd:focus {
+    background: rgba(237, 236, 236, 0.5);
+}
+
 .btn-lg {
     padding: 25px 65px
 }
@@ -578,7 +599,7 @@ h3 {
 #header .wrap h3 {
     margin: 0;
     font-size: 22px;
-    font-size: 2.5rem
+    font-size: 2.2rem
 }
 
 #header.subpage .carousel-btns {
@@ -744,6 +765,7 @@ h3 {
 
 .functions .tip-text {
     padding: 0 50px;
+    text-align: justify;
 }
 
 .metrics {
