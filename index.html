@@ -70,7 +70,6 @@
             a.appendChild(r);
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
-
 </head>
 <body>
     <!--[if lt IE 7]>
@@ -128,7 +127,7 @@
                         <h2 style="text-transform: uppercase; margin-bottom: 40px;">Materials discovery cloud</h2>
                         <h3>
                             <p>
-                                The fastest way to develop new materials, devices and chemicals from concept to
+                                the fastest way to develop new materials and chemicals <br> from concept to
                                 product through high-fidelity simulations, large-scale data
                                 analytics and machine learning.
                             </p>
@@ -154,6 +153,29 @@
         </header>
 
         <div class="main-page">
+            <section class="section i functions">
+                <div class="container">
+                    <div id="screencast" class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <div class="notebook">
+                                <!-- Notebook -->
+                                <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
+                                <div class="image">
+                                    <img style="margin-top: 3px" data-gifffer="img/screencast.gif" alt="#" width="968"
+                                         height="510"
+                                         class="img-responsive">
+
+                                    <div class="btn-group" style="margin-top: -50px"; role="group">
+                                        <button type="button" class="btn btn-exagray">web interface</button>
+                                        <button type="button" class="btn btn-exagray">command line</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
             <!-- Features -->
             <section class="section features">
                 <div class="container">
@@ -301,20 +323,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr>
-                    <div id="screencast" class="row">
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <div class="notebook">
-                                <!-- Notebook -->
-                                <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
-                                <div class="image">
-                                    <img style="margin-top: 3px" src="img/screencast.gif" alt="#" width="968"
-                                         height="510"
-                                         class="img-responsive">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
         </div>
@@ -641,7 +650,7 @@
                             <img class="team-photo" src="img/alchemist-accelerator-logo.jpg">
                             <div>
                                 <h4 class="team-name">Alchemist Accelerator</h4>
-                                <p class="team-title">Seed</p>
+                                <p class="team-title">Pre-seed</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
                                         <li><a class="team-link linkedin" href="http://alchemistaccelerator.com"
@@ -659,7 +668,7 @@
                             <img class="team-photo" src="img/impulse-vc-logo.jpg">
                             <div>
                                 <h4 class="team-name">Impulse VC</h4>
-                                <p class="team-title">Seed</p>
+                                <p class="team-title">Pre-seed</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
                                         <li><a class="team-link linkedin" href="http://impulsevc.com" target="_blank"><i
@@ -668,7 +677,7 @@
                                 </div>
                                 <p class="team-desc">
                                     Impulse VC is a seed stage venture capital firm headquartered in Moscow, Russia,
-                                    with a global focus on technological internet companies. The set of limited parnters
+                                    with a global focus on technological internet companies. The set of limited partners
                                     of the firm includes well-known engineers and highly successful international
                                     businessmen.
                                 </p>
@@ -1257,6 +1266,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/scrollr.min.js"></script>
     <script src="https://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+    <script src="assets/js/gifffer.min.js"></script>
     <script src="assets/js/app.js"></script>
 
     <script>
@@ -1281,6 +1291,10 @@
             }
 
             return false;
+        }
+        // enable Gifffer
+        window.onload = function () {
+            Gifffer();
         }
     </script>
 </body>
