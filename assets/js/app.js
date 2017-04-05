@@ -34,10 +34,11 @@ var loader = (function () {
 
 loader.require([
     'img/airplane-factory.jpg',
-    'img/battery-factory.jpeg',
-    'img/chemical-plant.jpg',
-    'img/semiconductor-fab.jpg',
-    'img/solar-plant.jpg'
+    'img/screencast.gif'
+//    'img/battery-factory.jpeg',
+//    'img/chemical-plant.jpg',
+//    'img/semiconductor-fab.jpg',
+//    'img/solar-plant.jpg'
 ]);
 
 $(document).ready(function () {
