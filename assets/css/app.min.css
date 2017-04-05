@@ -783,7 +783,9 @@ h3 {
 }
 
 .metrics .submetric h2 .pub-ent,
-.metrics .submetric h2 .rs-lab {
+.metrics .submetric h2 .pub-ent a,
+.metrics .submetric h2 .rs-lab,
+.metrics .submetric h2 .rs-lab a {
     font-size: 2.5rem;
     color: #ccc;
     margin-top: -20px;
