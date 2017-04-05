@@ -160,20 +160,49 @@
                             <div class="notebook">
                                 <!-- Notebook -->
                                 <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
-                                <div class="image">
-                                    <img style="margin-top: 3px" data-gifffer="img/screencast.gif" alt="#" width="968"
-                                         height="510"
+                                <div class="image" id="command-line">
+                                    <img style="margin-top: 3px"
+                                         data-gifffer="img/screencast-1.gif" alt="#"
                                          class="img-responsive">
-
-                                    <div class="btn-group" style="margin-top: -50px"; role="group">
-                                        <button type="button" class="btn btn-exagray">web interface</button>
-                                        <button type="button" class="btn btn-exagray">command line</button>
-                                    </div>
+                                </div>
+                                <div class="image" id="web-interface">
+                                    <img style="margin-top: 3px"
+                                         data-gifffer="img/screencast.gif" alt="#"
+                                         class="img-responsive">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <header class="text-center" style="margin-bottom: 20px;">
+                    <div class="btn-group" role="group">
+                        <button id="web-interface-trigger" type="button" class="btn btn-outline-bckgrnd"
+                                onclick="showGif('web-interface')">web interface
+                        </button>
+                        <button id="command-line-trigger" type="button" class="btn btn-outline"
+                                onclick="showGif('command-line')">command line
+                        </button>
+                        <script>
+                            /*
+                             * Button handler function
+                             */
+                            function showGif(name) {
+                                console.log(name);
+                                if (name == "web-interface") {
+                                    $("#command-line").addClass("hidden");
+                                    $("#web-interface").removeClass("hidden");
+                                    $("#web-interface-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
+                                    $("#command-line-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                                } else {
+                                    $("#command-line").removeClass("hidden");
+                                    $("#web-interface").addClass("hidden");
+                                    $("#command-line-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
+                                    $("#web-interface-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                                }
+                            }
+                        </script>
+                    </div>
+                </header>
             </section>
             <hr>
             <!-- Features -->
@@ -1239,7 +1268,7 @@
 
             <!-- Copyright -->
             <div class="copyright">
-                <div class="text-center">&copy; 2016 Exabyte Inc. All rights reserved.</div>
+                <div class="text-center">&copy; 2017 Exabyte Inc. All rights reserved.</div>
             </div>
         </footer>
     </div>
@@ -1296,6 +1325,9 @@
         window.onload = function () {
             Gifffer();
         }
+        jQuery(window).resize(function (event) {
+            // TODO: add logic for resizing gifffers
+        });
     </script>
 </body>
 </html>
