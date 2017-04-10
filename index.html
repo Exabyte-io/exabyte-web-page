@@ -70,7 +70,6 @@
             a.appendChild(r);
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
-
 </head>
 <body>
     <!--[if lt IE 7]>
@@ -128,7 +127,7 @@
                         <h2 style="text-transform: uppercase; margin-bottom: 40px;">Materials discovery cloud</h2>
                         <h3>
                             <p>
-                                The fastest way to develop new materials, devices and chemicals from concept to
+                                the fastest way to develop new materials and chemicals <br> from concept to
                                 product through high-fidelity simulations, large-scale data
                                 analytics and machine learning.
                             </p>
@@ -154,6 +153,60 @@
         </header>
 
         <div class="main-page">
+            <section class="section i functions">
+                <div class="container">
+                    <div id="screencast" class="row">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <div class="notebook">
+                                <!-- Notebook -->
+                                <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
+                                <div class="image" id="command-line">
+                                    <img style="margin-top: 3px"
+                                         data-gifffer="img/screencast-1.gif" data-gifffer-width="100%"
+                                         data-gifffer-height="100%" alt="#"
+                                         class="img-responsive">
+                                </div>
+                                <div class="image" id="web-interface">
+                                    <img style="margin-top: 3px"
+                                         data-gifffer="img/screencast.gif" data-gifffer-width="100%"
+                                         data-gifffer-height="100%" alt="#"
+                                         class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <header class="text-center" style="margin-bottom: 20px;">
+                    <div class="btn-group" role="group">
+                        <button id="web-interface-trigger" type="button" class="btn btn-outline-bckgrnd"
+                                onclick="showGif('web-interface')">web interface
+                        </button>
+                        <button id="command-line-trigger" type="button" class="btn btn-outline"
+                                onclick="showGif('command-line')">command line
+                        </button>
+                        <script>
+                            /*
+                             * Button handler function
+                             */
+                            function showGif(name) {
+                                console.log(name);
+                                if (name == "web-interface") {
+                                    $("#command-line").addClass("hidden");
+                                    $("#web-interface").removeClass("hidden");
+                                    $("#web-interface-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
+                                    $("#command-line-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                                } else {
+                                    $("#command-line").removeClass("hidden");
+                                    $("#web-interface").addClass("hidden");
+                                    $("#command-line-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
+                                    $("#web-interface-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                                }
+                            }
+                        </script>
+                    </div>
+                </header>
+            </section>
+            <hr>
             <!-- Features -->
             <section class="section features">
                 <div class="container">
@@ -197,7 +250,7 @@
                         </div>
                         <div class="col-sm-4 i">
                             <span class="x-icon-formula"></span>
-                            <p>original models that deliver high accuracy actionable insights in short time</p>
+                            <p>high-fidelity multi-scale models delivering actionable insights in short time</p>
                         </div>
                     </div>
                 </div>
@@ -250,48 +303,58 @@
                         </div>
                     </header>
                     <div class="row text-center">
-                        <div class="col-md-4 col-sm-6 i">
-                            <h3 class="exb-color">
-                                Semiconductor
-                            </h3>
-                            <p class="tip-text">Emerging memory technology and TCAD
-                                benefit from our unique toolchain, with QuantumWise ATK<sup>TM</sup> on-demand as
-                                latest addition.</p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 i">
-                            <h3 class="exb-color">
-                                Manufacturing
-                            </h3>
-                            <p class="tip-text">Materials scientists in high productivity research use our
-                                massively scalable simulation capabilities to design new lightweight metallic
-                                alloys.
-                            </p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 i">
-                            <h3 class="exb-color">
-                                Energy Storage
-                            </h3>
-                            <p class="tip-text">Artificial engineering of electronic materials uses our platform to
-                                speed up prototyping of novel layered thin film oxide compounds.
-                            </p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 i">
-                            <h3 class="exb-color">
-                                Oil & Gas
-                            </h3>
-                            <p class="tip-text">High-throughput virtual screening in the cloud enables chemists,
-                                materials scientists and data scientists to design catalysts together.
-                            </p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 i">
-                            <h3 class="exb-color">
-                                Chemical Engineering
-                            </h3>
-                            <p class="tip-text">
-                                We facilitate rapid adoption of hybrid cloud computing and novel techniques for
-                                computational chemistry and cheminformatics at scale.
-                            </p>
-                        </div>
+                        <a href="https://docs.exabyte.io/tutorials/semiconductors/III-Vs-band-gap/" target="_blank">
+                            <div class="col-md-4 col-sm-6 i">
+                                <h3 class="exb-color">
+                                    Semiconductor
+                                </h3>
+                                <p class="tip-text">Emerging memory technology and TCAD
+                                    benefit from our unique toolchain, with QuantumWise ATK<sup>TM</sup> on-demand as
+                                    latest addition.</p>
+                            </div>
+                        </a>
+                        <a href="https://exabyte.io/#case-study" target="_blank">
+                            <div class="col-md-4 col-sm-6 i">
+                                <h3 class="exb-color">
+                                    Manufacturing
+                                </h3>
+                                <p class="tip-text">Materials scientists in high productivity research use our
+                                    massively scalable simulation capabilities to design new lightweight metallic
+                                    alloys.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="https://exabyte.io/#case-study" target="_blank">
+                            <div class="col-md-4 col-sm-6 i">
+                                <h3 class="exb-color">
+                                    Energy Storage
+                                </h3>
+                                <p class="tip-text">Artificial engineering of electronic materials uses our platform to
+                                    speed up prototyping of novel layered thin film oxide compounds.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="https://docs.exabyte.io/rest-api/endpoints/materials/" target="_blank">
+                            <div class="col-md-4 col-sm-6 i">
+                                <h3 class="exb-color">
+                                    Oil & Gas
+                                </h3>
+                                <p class="tip-text">High-throughput virtual screening in the cloud enables chemists,
+                                    materials scientists and data scientists to design catalysts together.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="https://docs.exabyte.io/compute/overview/" target="_blank">
+                            <div class="col-md-4 col-sm-6 i">
+                                <h3 class="exb-color">
+                                    Chemical Engineering
+                                </h3>
+                                <p class="tip-text">
+                                    We facilitate rapid adoption of hybrid cloud computing and novel techniques for
+                                    computational chemistry and cheminformatics at scale.
+                                </p>
+                            </div>
+                        </a>
                         <div class="col-md-4 col-sm-6 i">
                             <h3 class="exb-color">
                                 Pharmaceuticals
@@ -301,20 +364,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr>
-                    <div id="screencast" class="row">
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <div class="notebook">
-                                <!-- Notebook -->
-                                <img src="img/macbook-crop.png" alt="#" width="968" height="510" class="img-responsive">
-                                <div class="image">
-                                    <img style="margin-top: 3px" src="img/screencast.gif" alt="#" width="968"
-                                         height="510"
-                                         class="img-responsive">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
         </div>
@@ -326,10 +376,9 @@
                     <div class="row text-center blquote">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                             <blockquote class="blockquote-lg">Exabyte.io powers the adoption of high-performance cloud
-                                computing for design and discovery of advanced materials, devices and chemicals from
-                                nanoscale. We combine high fidelity simulation techniques, large-scale data analytics
-                                and machine learning tools into a hosted environment available for public, private
-                                and hybrid cloud deployments.
+                                computing for design and discovery of advanced materials and chemicals from
+                                nanoscale. We combine high fidelity simulation, large-scale data analytics
+                                and machine learning into a hosted environment for public and private cloud deployments.
                             </blockquote>
                             <br>
                             <a href="https://exabyte.docsend.com/view/h6pyq7d"
@@ -641,7 +690,7 @@
                             <img class="team-photo" src="img/alchemist-accelerator-logo.jpg">
                             <div>
                                 <h4 class="team-name">Alchemist Accelerator</h4>
-                                <p class="team-title">Seed</p>
+                                <p class="team-title">Pre-seed</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
                                         <li><a class="team-link linkedin" href="http://alchemistaccelerator.com"
@@ -659,7 +708,7 @@
                             <img class="team-photo" src="img/impulse-vc-logo.jpg">
                             <div>
                                 <h4 class="team-name">Impulse VC</h4>
-                                <p class="team-title">Seed</p>
+                                <p class="team-title">Pre-seed</p>
                                 <div class="centered-pills">
                                     <ul class="nav nav-pills">
                                         <li><a class="team-link linkedin" href="http://impulsevc.com" target="_blank"><i
@@ -668,7 +717,7 @@
                                 </div>
                                 <p class="team-desc">
                                     Impulse VC is a seed stage venture capital firm headquartered in Moscow, Russia,
-                                    with a global focus on technological internet companies. The set of limited parnters
+                                    with a global focus on technological internet companies. The set of limited partners
                                     of the firm includes well-known engineers and highly successful international
                                     businessmen.
                                 </p>
@@ -1230,7 +1279,7 @@
 
             <!-- Copyright -->
             <div class="copyright">
-                <div class="text-center">&copy; 2016 Exabyte Inc. All rights reserved.</div>
+                <div class="text-center">&copy; 2017 Exabyte Inc. All rights reserved.</div>
             </div>
         </footer>
     </div>
@@ -1257,6 +1306,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/scrollr.min.js"></script>
     <script src="https://www.parsecdn.com/js/parse-1.2.16.min.js"></script>
+    <script src="assets/js/gifffer.min.js"></script>
     <script src="assets/js/app.js"></script>
 
     <script>
@@ -1282,6 +1332,13 @@
 
             return false;
         }
+        // enable Gifffer
+        window.onload = function () {
+            Gifffer();
+        }
+        jQuery(window).resize(function (event) {
+            // TODO: add logic for resizing gifffers
+        });
     </script>
 </body>
 </html>
