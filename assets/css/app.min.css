@@ -779,6 +779,12 @@ h3 {
     height: 100%;
 }
 
+#screencast .image .img-responsive {
+    width: 100%;
+    height: 100%;
+}
+
+
 .functions .tip-text {
     padding: 0 30px;
     text-align: justify;
