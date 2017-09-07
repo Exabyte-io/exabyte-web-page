@@ -705,6 +705,21 @@ h3 {
     margin: 0 auto 20px auto
 }
 
+.features .table-responsive {
+
+}
+
+.features .table-responsive tbody>tr>td {
+    line-height: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.features .table-responsive thead>tr>th {
+    font-size: 24px;
+}
+
 .functions {
     font-variant: small-caps;
 }
