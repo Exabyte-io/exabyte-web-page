@@ -664,7 +664,7 @@ h3 {
 
 .section.lightblue {
     /*background: rgba(10, 54, 119, 0.05);*/
-    background: rgba(237, 236, 236, 0.5);
+    background: rgba(237, 236, 236, 0.25);
 }
 
 .section h2 {
@@ -729,10 +729,17 @@ h3 {
 }
 
 .functions .i {
+    padding-top: 20px;
     text-align: center;
     font-size: 14px;
     font-size: 2rem;
 }
+
+.functions .i:hover {
+    background: rgba(237, 236, 236, 0.25);
+    border-radius: 10px;
+}
+
 
 .functions .i .icon {
     width: 103px;
