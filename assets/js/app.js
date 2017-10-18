@@ -192,7 +192,8 @@ var newsletter = {
             var input = $('.newsletter-input'),
                 email = input.val();
 
-            $('.navbar-nav li a[data-page=".contact-page"]').click();
+            // click on contact us link in footer
+            $('a[href="#contact"]').click();
 
             $('.contact-email').val(email);
             $('.contact-message').val('Greetings! I would like to find out more about your product. I am particularly interested in ...');
