@@ -724,6 +724,10 @@ h3 {
     font-variant: small-caps;
 }
 
+.functions.gray{
+    background: rgba(237, 236, 236, 0.25);
+}
+
 .functions header {
     margin-bottom: 50px;
 }
