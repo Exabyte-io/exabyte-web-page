@@ -140,7 +140,7 @@ const FullList = [].concat(
     SMBList,
     Array(3).fill("\xa0"),
     ["ACADEMIC"], Array(1).fill("\xa0"),
-    AcademicList,
+    AcademicList
 )
 
 function generateCompanyList(updated_users) {
@@ -148,10 +148,13 @@ function generateCompanyList(updated_users) {
     var selector = ".company-list ul#dynamic-list";
 
     // clear the existing list
-    $(`${selector} li`).remove();
+    $(selector + " li").remove();
 
     $.each(FullList, function (index, userName) {
-        $('<li />', {html: userName}).appendTo(selector)
+        $('<li />', {
+            html: userName,
+            class: !["FORTUNE 2000", "SMALL/MEDIUM ENTEPRISES", "ACADEMIC"].includes(userName) ? "company-name" : ''
+        }).appendTo(selector)
     });
 
 }
