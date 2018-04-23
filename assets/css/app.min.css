@@ -3316,7 +3316,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 
 .case-study > p.centered-text {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .case-study > p b a {
@@ -3591,4 +3591,12 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     margin-left: -10%;
     width: 120% !important;
 
+}
+
+.company-logo {
+    height: 200px !important;
+}
+
+.company-list ul li {
+    list-style-type: none !important;
 }
