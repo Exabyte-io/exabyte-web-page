@@ -136,7 +136,7 @@ const FullList = [].concat(
     ["FORTUNE 2000"], Array(1).fill("\xa0"),
     F500list,
     Array(3).fill("\xa0"),  // to add space
-    ["SMB"], Array(1).fill("\xa0"),
+    ["SMALL/MEDIUM ENTEPRISES"], Array(1).fill("\xa0"),
     SMBList,
     Array(3).fill("\xa0"),
     ["ACADEMIC"], Array(1).fill("\xa0"),
