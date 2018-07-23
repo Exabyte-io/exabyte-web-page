@@ -32,7 +32,7 @@ var loader = (function () {
     var isCrawler = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
 
     return {
-        require: isCrawler ? function () {} : load,
+        require: isCrawler ? ready : load
     }
 })();
 
