@@ -29,8 +29,10 @@ var loader = (function () {
         });
     }
 
+    var isCrawler = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+
     return {
-        require: load
+        require: isCrawler ? function () {} : load,
     }
 })();
 
