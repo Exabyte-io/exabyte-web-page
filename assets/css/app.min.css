@@ -3302,6 +3302,10 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     src: local('Campton Light'), local('Campton-Light'), url(../fonts/campton/Campton.Light.otf) format("opentype");
 }
 
+.case-study {
+    padding-bottom: 50px;
+}
+
 .case-study > a > i.fa {
     font-size: 10em;
     color: rgba(10, 54, 119, 0.8);
@@ -3598,7 +3602,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 }
 
 .company-logo {
-    height: 200px !important;
+    height: 180px !important;
 }
 
 .company-list ul li {
@@ -3607,4 +3611,32 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 
 .company-name {
     font-variant: all-small-caps !important;
+}
+
+/* NOTIFY-JS */
+
+.notifyjs-updates-base {
+    opacity: 0.85;
+    width: 100%;
+    background: #FEFEFE;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #bfc3c4;
+}
+
+.notifyjs-updates-base .title {
+    padding: 5px;
+}
+
+.notifyjs-updates-base .buttons {
+    padding: 5px;
+    margin: 2px;
+}
+
+.notifyjs-updates-base button.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
 }
