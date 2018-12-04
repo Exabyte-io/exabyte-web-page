@@ -794,6 +794,48 @@ h3 {
     height: 100%;
 }
 
+.normal-font {
+    font-family: "Roboto", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    font-weight: 300;
+}
+
+.normal-font b, .normal-font b a {
+    color: #063479;
+    font-weight: 400;
+}
+
+.normal-font p, .normal-font li {
+    font-variant: normal !important;
+    margin-bottom: 20px !important;
+    color: #36373c;
+    font-size: 20px;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 30px;
+
+}
+
+.normal-font h2 {
+    font-weight: 400;
+}
+
+.normal-font h4 {
+    font-weight: 300;
+}
+
+.normal-font h3 {
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-size: 3rem;
+}
+
+.justify {
+    text-align: justify;
+}
+
 .functions .tip-text {
     padding: 0 30px;
     text-align: justify;
@@ -851,6 +893,17 @@ h3 {
     font-size: 5rem;
     font-weight: 900;
     color: #fff;
+}
+
+.article {
+    color: #36373c;
+    font-size: 20px;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 30px;
+    position: relative
 }
 
 .blockquote-lg {
