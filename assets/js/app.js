@@ -25,7 +25,7 @@ var loader = (function () {
                 // generateCompanyList is imported from "./company-list.js"
                 $('#main-content').show().animate({opacity: 1}, 900, generateCompanyList);
                 loadParticleJS();
-                loadnNotifyJs();
+//                loadnNotifyJs();
             }, 100);
         });
     }
