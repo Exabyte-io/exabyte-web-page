@@ -146,7 +146,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: Campton, sans-serif;
     font-size: 16px;
-    font-size: 1.6rem
+    font-size: 1.8rem
 }
 
 body a {
@@ -180,21 +180,20 @@ body a:hover, body a:active, body a:focus {
 }
 
 .x-icon-molecule {
-    width: 132px;
-    height: 145px;
-    background-image: url(../../img/molecule.png);
+    width: 106px;
+    height: 117px;
 }
 
 .x-icon-server {
-    width: 95px;
-    height: 145px;
-    background-image: url(../../img/server.png);
+    width: 76px;
+    height: 117px;
+    /*background-image: url(../../img/server.png);*/
 }
 
 .x-icon-formula {
-    width: 168px;
-    height: 145px;
-    background-image: url(../../img/formula.png);
+    width: 135px;
+    height: 117px;
+    /*background-image: url(../../img/formula.png);*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -395,7 +394,7 @@ h3 {
     min-height: 600px;
     color: #fff;
     font-variant: small-caps;
-    background: rgba(10, 54, 119, 0.8);
+    background: rgba(10, 54, 119, 0.95);
 }
 
 #header.singleColor {
@@ -455,7 +454,7 @@ h3 {
     height: 100%;
     position: absolute;
     /*background: rgba(0, 0, 0, .75);*/
-    background: rgba(10, 54, 119, 0.85);
+    background: rgba(10, 54, 119, 0.92);
 }
 
 #header.dim > .container {
@@ -672,12 +671,12 @@ h3 {
 }
 
 .section p {
-    line-height: 24px;
+    line-height: 30px;
     margin: 0 0 50px 0
 }
 
 .features {
-    font-variant: small-caps;
+    /*font-variant: small-caps;*/
 }
 
 .features header {
@@ -695,7 +694,7 @@ h3 {
 
 .features p {
     margin: 0 auto;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 
 .features .i .icon {
@@ -721,7 +720,7 @@ h3 {
 }
 
 .functions {
-    font-variant: small-caps;
+    /*font-variant: small-caps;*/
 }
 
 .functions.gray {
@@ -735,8 +734,8 @@ h3 {
 .functions .i {
     padding-top: 20px;
     text-align: center;
-    font-size: 14px;
-    font-size: 2rem;
+    /*font-size: 14px;*/
+    /*font-size: 2rem;*/
 }
 
 .functions .i:hover {
@@ -772,19 +771,19 @@ h3 {
 }
 
 .notebook {
-    margin: 40px auto 40px auto;
+    margin: 0 auto 40px auto;
     position: relative
 }
 
 .notebook > img {
-    opacity: 0.3;
+    opacity: 0.07;
 }
 
 #screencast .image {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 3.5% 15.6% 6.3% 15.6%;
+    padding: 4.1% 4.2% 4.2% 4.3%;
     width: 100%;
     height: 100%;
 }
@@ -842,7 +841,7 @@ h3 {
 }
 
 .metrics {
-    font-variant: small-caps;
+    /*font-variant: small-caps;*/
 }
 
 .metrics header {
@@ -875,8 +874,8 @@ h3 {
 }
 
 .metrics .submetric p {
-    font-size: 3rem;
-    line-height: 3.5rem;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .metrics .submetric:last-child p {
@@ -1955,7 +1954,7 @@ h3 {
 }
 
 #footer .wrap {
-    background: url(../../img/exabyte-symbol.png) center center no-repeat rgba(10, 54, 119, 0.8);
+    background: url(../../img/exabyte-symbol.png) center center no-repeat rgba(10, 54, 119, 0.88);
     background-size: cover;
     color: #fff;
     padding: 75px 0;
