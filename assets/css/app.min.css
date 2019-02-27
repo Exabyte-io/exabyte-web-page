@@ -394,7 +394,7 @@ h3 {
     min-height: 600px;
     color: #fff;
     font-variant: small-caps;
-    background: rgba(10, 54, 119, 0.95);
+    background: rgba(10, 54, 119, 0.8);
 }
 
 #header.singleColor {
@@ -454,7 +454,7 @@ h3 {
     height: 100%;
     position: absolute;
     /*background: rgba(0, 0, 0, .75);*/
-    background: rgba(10, 54, 119, 0.92);
+    background: rgba(10, 54, 119, 0.8);
 }
 
 #header.dim > .container {
@@ -1954,7 +1954,7 @@ h3 {
 }
 
 #footer .wrap {
-    background: url(../../img/exabyte-symbol.png) center center no-repeat rgba(10, 54, 119, 0.88);
+    background: url(../../img/exabyte-symbol.png) center center no-repeat rgba(10, 54, 119, 0.8);
     background-size: cover;
     color: #fff;
     padding: 75px 0;
@@ -3399,6 +3399,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     font-variant: small-caps;
 }
 
+.about-page blockquote,
 .security-page blockquote {
     border: none;
     margin: 3em 0em;
