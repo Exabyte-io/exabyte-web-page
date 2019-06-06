@@ -84,10 +84,10 @@
     </style>
 </head>
 <body>
-<script src="http://threejs.org/build/three.js"></script>
-<script src="http://threejs.org/examples/js/libs/tween.min.js"></script>
-<script src="http://threejs.org/examples/js/controls/TrackballControls.js"></script>
-<script src="http://threejs.org/examples/js/renderers/CSS3DRenderer.js"></script>
+<script src="./lib/three.min.js"></script>
+<script src="./lib/tween.min.js"></script>
+<script src="./lib/TrackballControls.js"></script>
+<script src="./lib/CSS3DRenderer.js"></script>
 
 <div id="container"></div>
 <div id="menu">
@@ -435,8 +435,8 @@
     var counter = 1;
     // sec
     var delay = 5;
-    var interval = 2;
-    var easeOutPeriod = 0.75;
+    var interval = 3;
+    var easeOutPeriod = 1.0;
 
     function animate() {
 
@@ -449,9 +449,10 @@
         if (seconds > delay && (seconds % interval) === 0) {
             var keys = Object.keys(targets);
             var key = keys[Math.floor(seconds / interval) % (keys.length)];
-            const oscillator = Math.sin(seconds / 2) * 20 * Math.PI / 180;
-            camera.position.z = 2000 + oscillator * 2000;
-            transform(targets[key], easeOutPeriod * 1000, {z: 0, x: 0, y: 0});
+            const oscillator1 = Math.sin(seconds / 10) * 20 * Math.PI / 180;
+            camera.position.z = 2000 + oscillator1 * 1000;
+            const oscillator2 = Math.sin(seconds / 2) * 20 * Math.PI / 180;
+            transform(targets[key], easeOutPeriod * 1000, {z: oscillator2, x: 0, y: 0});
         }
 
         TWEEN.update();
