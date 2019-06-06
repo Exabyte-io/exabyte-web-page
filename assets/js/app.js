@@ -47,7 +47,8 @@ loader.require([
 ]);
 
 $(document).ready(function () {
-    simpleCarousel.init();
+    // TODO: clean up carousel artifacts
+    // simpleCarousel.init();
     dumbRouter.init();
     newsletter.init();
     cssTitleSlider.init();
