@@ -2051,6 +2051,10 @@ div[class$="-head"]:not(.main-head) {
     color: rgba(10, 54, 119, 1);
 }
 
+.contact-address {
+    padding: 35px;
+}
+
 .contact-address p {
     margin-bottom: 5px;
     font-size: 17px;
@@ -3639,7 +3643,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     font-weight: 800;
 }
 
-    /* Particle JS */
+/* Particle JS */
 .particles-js-canvas-el {
     position: absolute;
     top: 0;
@@ -3705,8 +3709,12 @@ img {
     image-rendering: -webkit-optimize-contrast;
 }
 
-
 #case-study-link-semi > .i:after {
     background: url(../../img/case-study-background-semi.jpg) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
 
+}
+
+/* hide iframe on non-main pages */
+.subpage #iframe-periodic-table {
+    display: none;
 }
