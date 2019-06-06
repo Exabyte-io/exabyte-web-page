@@ -2848,14 +2848,14 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     }
 
     .vscroll.active .pre-text {
-        left: 8%;
+        left: 15%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
     }
 
     .vscroll.active .vscroll-items {
-        left: 10%;
+        left: 3%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
@@ -3696,7 +3696,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     right: 15px;
 }
 
-.drop-shadow-white {
+.drop-shadow-white, logo {
     filter: drop-shadow(0px 0px 5px #fff);
 }
 
