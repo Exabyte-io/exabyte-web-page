@@ -330,6 +330,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="wistia-video hidden" id="api-usage">
+                                <script src="https://fast.wistia.com/embed/medias/wdn0iykyp5.jsonp" async></script>
+                                <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                                <div class="wistia_responsive_padding" style="padding:50.63% 0 0 0;position:relative;">
+                                    <div class="wistia_responsive_wrapper"
+                                         style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                        <div class="wistia_embed wistia_async_wdn0iykyp5 videoFoam=true"
+                                             style="height:100%;position:relative;width:100%">
+                                            <div class="wistia_swatch"
+                                                 style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                <img src="https://fast.wistia.com/embed/medias/wdn0iykyp5/swatch"
+                                                     style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                     alt="" onload="this.parentNode.style.opacity=1;"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="wistia-video" id="job-designer">
                                 <div class="wistia_responsive_padding" style="padding:55.27% 0 0 0;position:relative;">
                                     <div class="wistia_responsive_wrapper"
@@ -351,11 +368,14 @@
             </div>
             <header class="text-center" style="margin-bottom: 20px;">
                 <div class="btn-group" role="group">
-                    <button id="materials-designer-trigger" type="button" class="btn btn-outline"
+                    <button id="materials-designer-trigger" type="button" class="btn btn-outline wistia-video-trigger"
                             onclick="showGif('materials-designer')">design materials
                     </button>
-                    <button id="job-designer-trigger" type="button" class="btn btn-outline-bckgrnd"
+                    <button id="job-designer-trigger" type="button" class="btn btn-outline-bckgrnd wistia-video-trigger"
                             onclick="showGif('job-designer')">run simulations
+                    </button>
+                    <button id="api-usage-trigger" type="button" class="btn btn-outline wistia-video-trigger"
+                            onclick="showGif('api-usage')">programmatic usage
                     </button>
                     <a id="" type="button" class="btn btn-outline"
                        href="https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos" target="_blank">more
@@ -367,17 +387,10 @@
                          */
                         function showGif(name) {
                             console.log(name);
-                            if (name == "materials-designer") {
-                                $("#job-designer").addClass("hidden");
-                                $("#materials-designer").removeClass("hidden");
-                                $("#materials-designer-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
-                                $("#job-designer-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                            } else {
-                                $("#job-designer").removeClass("hidden");
-                                $("#materials-designer").addClass("hidden");
-                                $("#job-designer-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
-                                $("#materials-designer-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                            }
+                            $('.wistia-video').addClass("hidden");
+                            $(`#${name}`).removeClass("hidden");
+                            $(".wistia-video-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                            $(`#${name}-trigger`).addClass("btn-outline").removeClass("btn-outline-bckgrnd");
                         }
                     </script>
                 </div>
