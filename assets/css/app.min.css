@@ -427,26 +427,6 @@ h3 {
     transition: all 1.2s ease;
 }
 
-#header.image.boeing {
-    background-image: url(../../img/airplane-factory.jpg);
-}
-
-#header.image.lab {
-    background-image: url(../../img/semiconductor-fab.jpg);
-}
-
-#header.image.chemical {
-    background-image: url(../../img/chemical-plant.jpg);
-}
-
-#header.image.factory {
-    background-image: url(../../img/battery-factory.jpeg);
-}
-
-#header.image.solar {
-    background-image: url(../../img/solar-plant.jpg);
-}
-
 #header.image.boeing.active,
 #header.image.lab.active,
 #header.image.chemical.active,
@@ -466,6 +446,7 @@ h3 {
     position: absolute;
     background: rgba(10, 54, 119, 0.90);
     background: linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
+    /*background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);*/
 }
 
 #header.dim > .container {
@@ -582,7 +563,8 @@ h3 {
 }
 
 #header .wrap {
-    margin: 130px 0 180px 0
+    margin-top: 70px;
+    margin-bottom: 140px;
 }
 
 #header .wrap h2,
@@ -591,7 +573,7 @@ h3 {
 }
 
 #header .wrap h3 p {
-    margin: 0 auto 10px;
+    margin: 0 auto 50px;
     max-width: 600px;
 }
 
