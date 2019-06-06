@@ -8,6 +8,7 @@
         body {
             margin: 0;
         }
+
         a {
             color: #8ff;
         }
@@ -231,7 +232,7 @@
     function init() {
 
         camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
-        camera.position.z = 3000;
+        camera.position.z = 2000;
 
         scene = new THREE.Scene();
 
@@ -430,17 +431,27 @@
 
     }
 
-    var start = 1;
-    var delay = 5; // sec
+    // periodic table "ballet" timings
+    var counter = 1;
+    // sec
+    var delay = 5;
+    var interval = 2;
+    var easeOutPeriod = 0.75;
+
     function animate() {
 
         requestAnimationFrame(animate);
 
-        start += 1;
-        var seconds = (start / 60);
+        counter += 1;
+        // assuming 60 frames per second animation
+        var seconds = (counter / 60);
 
-        if (seconds > delay && (seconds % 1) === 0) {
-            transform(targets.table, 500, {z: Math.sin(seconds/2) * 20 * Math.PI / 180, x: 0, y: 0});
+        if (seconds > delay && (seconds % interval) === 0) {
+            var keys = Object.keys(targets);
+            var key = keys[Math.floor(seconds / interval) % (keys.length)];
+            const oscillator = Math.sin(seconds / 2) * 20 * Math.PI / 180;
+            camera.position.z = 2000 + oscillator * 2000;
+            transform(targets[key], easeOutPeriod * 1000, {z: 0, x: 0, y: 0});
         }
 
         TWEEN.update();

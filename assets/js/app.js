@@ -124,7 +124,6 @@ var _checkURLlinks = function (target, array) {
             target.attr('href').indexOf(element) > 0)
             return true;
     }
-    ;
     return false;
 };
 
@@ -148,7 +147,10 @@ var changeFunction = function () {
             "docs.exabyte.io",
             "blog.exabyte.io",
             "exabyte.docsend.com",
-            "angel.co"
+            "angel.co",
+            "linkedin.com",
+            "youtube.com",
+            "github.com",
         ])) {
         return;
     }
