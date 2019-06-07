@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <!-- Google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic'
           rel='stylesheet' type='text/css'>
@@ -95,9 +96,13 @@
 <!-- Header -->
 <div id="main-content">
     <header id="header" class="dim lab active">
+
+        <!-- PERIODIC TABLE -->
         <iframe id="iframe-periodic-table"
-                style="border: none; width: 100%; height: 100%; position: absolute; opacity: 0.095;"
+                style="border: none; width: 100%; height: 100%; position: absolute; opacity: 0.25;"
                 src="pt.html"></iframe>
+
+        <!-- HEADER CONTAINER -->
         <div id="particles-js" class="container">
             <div class="navbar" role="navigation">
                 <div class="navbar-header">
@@ -147,17 +152,18 @@
                     <h3>
                         <p>
                             exabyte.io empowers scientists with a <br>
-                            collaborative platform for digital r<span style="font-size: 1.6rem;">&</span>d<br>
+                            collaborative platform for <b class="drop-shadow-white">digital</b> r<span
+                            style="font-size: 1.6rem;">&</span>d<br>
                             to accelerate new materials to market
                         </p>
                     </h3>
                 </div>
                 <div id="screencast-link">
                     <a href="#screencast"
-                       class="btn btn-outline notify-js">how it works</a>
+                       class="btn btn-outline-bckgrnd notify-js">how it works</a>
                     <a href="https://platform.exabyte.io/register"
                        target="_blank"
-                       class="btn btn-outline-bckgrnd-orange">create account</a>
+                       class="btn btn-outline-bckgrnd-green">create account</a>
                 </div>
             </div>
         </div>
@@ -223,9 +229,9 @@
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
                             <h2 class="exb-color">EXABYTE.IO PLATFORM</h2>
                             <p class="justify">
-                                Exabyte.io allows computational-, data- and experimental scientists to
+                                Exabyte.io allows chemists and materials scientists to
                                 organize their work and collaborate using any best-in-class modeling tools.
-                                Our machine intelligence helps streamline and accelerate the research
+                                Our machine intelligence accelerates the research
                                 process, and provides the foundation for faster product development.
                             </p>
                         </div>
@@ -238,6 +244,9 @@
                             <!-- Notebook -->
                             <img src="img/platform-diagram.png" alt="#" width="968" height="510"
                                  class="img-responsive">
+                            <img src="img/platform-diagram-arrows.png" alt="#" width="968" height="510"
+                                style="position: absolute; top: 13%; left: 26%;width: 48%;"
+                                 class="img-responsive animated infinite flash slower">
                         </div>
                     </div>
                 </div>
@@ -1266,8 +1275,8 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 i">
-                        <h2>newsletter</h2>
-                        <p>get email updates</p>
+                        <h2>Stay in touch</h2>
+                        <p>Type your email below</p>
                         <div class="form">
                             <input type="email" class="form-control newsletter-input">
                             <button class="submit sprite newsletter-btn"></button>
