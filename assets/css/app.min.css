@@ -306,6 +306,16 @@ h3 {
     background: rgba(226, 165, 26, 0.75);
 }
 
+.btn-outline-bckgrnd-green {
+    border: 1px solid white;
+    background: rgba(59, 192, 189, 1.0);
+}
+
+.btn-outline-bckgrnd-green:hover,
+.btn-outline-bckgrnd-green:focus {
+    background: rgba(59, 192, 189, 0.75);
+}
+
 .btn-lg {
     padding: 25px 65px
 }
@@ -3639,7 +3649,9 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     font-size: 1.8rem;
 }
 
-#screencast-link .btn.btn-outline-bckgrnd-orange {
+#screencast-link .btn.btn-outline-bckgrnd-orange,
+#screencast-link .btn-outline-bckgrnd-green,
+#screencast-link .btn-outline-bckgrnd {
     font-weight: 800;
 }
 
@@ -3696,7 +3708,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     right: 15px;
 }
 
-.drop-shadow-white, logo {
+.drop-shadow-white, .logo, .navbar {
     filter: drop-shadow(0px 0px 5px #fff);
 }
 

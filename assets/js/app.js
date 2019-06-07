@@ -203,8 +203,8 @@ var newsletter = {
             // click on contact us link in footer
             $('a[href="#contact"]').click();
 
-            $('.contact-email').val(email);
-            $('.contact-message').val('Greetings! I would like to find out more about your product. I am particularly interested in ...');
+            $('#mce-EMAIL').val(email);
+            $('#mce-MMERGE3').val('Greetings, I am interested in ...');
             input.val('');
         };
 
