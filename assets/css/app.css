@@ -649,15 +649,12 @@ h3 {
 
 .section {
     padding: 100px 0;
-
-@media (min-width: 768px) {
-    padding:
-
-85px
-
-0;
 }
 
+@media (min-width: 768px) {
+    .section {
+        padding: 85px 0;
+    }
 }
 
 .section.gray {
@@ -1862,100 +1859,6 @@ h3 {
     height: 600px
 }
 
-.loginPage {
-    background: url(../../img/bg_login.jpg) center center fixed;
-    color: #fff;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
-}
-
-.loginPage .back {
-    font-size: 20px;
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 23px 30px;
-    display: inline-block;
-    color: #fff;
-    background: rgba(0, 0, 0, .3);
-    margin: 20px 0 0 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box
-}
-
-.loginPage .back .icon {
-    display: inline-block;
-    width: 30px;
-    height: 24px;
-    background-position: -118px 0;
-    vertical-align: middle;
-    top: -2px;
-    position: relative;
-    margin: 0 12px 0 0
-}
-
-.loginPage .back:hover:before {
-    background: #f6b036
-}
-
-.loginPage form {
-    margin: 150px 0
-}
-
-.loginPage form h1 {
-    margin: 0 0 55px 0;
-    font-size: 40px;
-    font-size: 4rem;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: 700
-}
-
-.loginPage form .input {
-    margin: 20px 0 0 0
-}
-
-.loginPage form .form-control::-webkit-input-placeholder {
-    color: #fff
-}
-
-.loginPage form .form-control:-moz-placeholder {
-    color: #fff
-}
-
-.loginPage form .form-control::-moz-placeholder {
-    color: #fff
-}
-
-.loginPage form .form-control:-ms-input-placeholder {
-    color: #fff
-}
-
-.loginPage form .forgotPassword {
-    color: #fff;
-    font-size: 14px;
-    font-size: 1.4rem;
-    margin: 8px 0 0 22px;
-    display: inline-block
-}
-
-.loginPage form .forgotPassword:hover {
-    color: #f6b036
-}
-
-.loginPage form .btn {
-    margin: 20px 0 0 0
-}
-
 #footer .wrap {
     background: rgba(10, 54, 119, 0.90);
     background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
@@ -1971,6 +1874,7 @@ h3 {
 #footer .wrap a {
     display: block;
     color: #fff;
+    font-size: 18px;
 }
 
 #footer .wrap a:hover {
