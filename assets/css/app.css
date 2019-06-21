@@ -3634,3 +3634,32 @@ img {
 .subpage #iframe-periodic-table {
     display: none;
 }
+
+#iframe-entity-counts, #iframe-entities {
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -10px;
+}
+
+@media (min-width: 961px) {
+    #iframe-entity-counts {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 960px) {
+    #iframe-entity-counts {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    #iframe-entity-counts {
+        min-height: 770px;
+    }
+}
+
+#iframe-entities {
+    min-height: 720px;
+}
