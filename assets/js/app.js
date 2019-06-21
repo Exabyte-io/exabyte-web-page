@@ -143,6 +143,7 @@ var changeFunction = function () {
     // catch links that redirect to
     if (_checkURLlinks($(this),
         [
+            "localhost:3000",
             "platform.exabyte.io",
             "docs.exabyte.io",
             "blog.exabyte.io",
