@@ -82,15 +82,10 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
         your browser</a> to improve your experience.</p>
     <![endif]-->
-    <!-- Preloader -->
 
+    <!-- Preloader -->
     <div class="spinner-wrap">
         <img class="spinner" src="img/exalogo.png" alt="" width="50" height="50">
-        <!--<div class="css-loader">
-            <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="8" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-            </svg>
-        </div>-->
     </div>
 
     <!-- Header -->
@@ -121,25 +116,26 @@
 
                     <nav class="navbar-collapse collapse">
                         <ul class="nav navbar-nav drop-shadow-white">
-                            <li><a href="#case-study" data-page=".case-study-page" data-header=".case-study-head"
-                                data-cls="subpage" title="Case Studies">Case Studies</a></li>
-                            <li><a href="#about" data-page=".about-page" data-header=".about-head" data-cls="subpage"
-                                title="About">About</a>
+                            <li>
+                                <a href="#case-study" data-page=".case-study-page" data-header=".case-study-head"
+                                    data-cls="subpage" title="Case Studies">Case Studies</a>
+                            </li>
+
+                            <li>
+                                <a href="#about" data-page=".about-page" data-header=".about-head" data-cls="subpage"
+                                    title="About">About</a>
                             </li>
 
                             <!-- vision -->
                             <li style="display: none">
                                 <a href="#vision" data-page=".vision-page" data-header=".vision-head" data-cls="subpage"
                                     title="Vision"
-                                >
-                                    Vision
-                                </a>
+                                >Vision</a>
                             </li>
 
-                            <li><a href="#security" data-page=".security-page" data-header=".security-head"
-                                data-cls="subpage" title="Security">Security</a></li>
                             <!-- sign in and docs links -->
                             <li><a href="https://docs.exabyte.io/" target="_blank">Documentation</a></li>
+                            <li><a href="https://platform.exabyte.io/shared-externally" target="_blank">Public Data</a></li>
                             <li><a href="https://platform.exabyte.io/login"> Sign in</a></li>
                         </ul>
                     </nav>
@@ -256,7 +252,7 @@
             </section>
 
             <iframe id="iframe-entity-counts" scrolling="no"
-                src="http://platform.exabyte.io/total-entity-counts"></iframe>
+                src="https://platform.exabyte.io/total-entity-counts"></iframe>
 
             <section class="section lightblue metrics">
                 <div class="container">
@@ -395,9 +391,6 @@
                     </div>
                 </header>
             </section>
-
-            <!-- TODO: WIP, uncomment or remove -->
-            <!--<iframe id="iframe-entities" scrolling="no" src="http://localhost:3000/shared-externally"></iframe>-->
 
             <!-- Functions -->
             <section class="section i functions gray">
@@ -1077,7 +1070,7 @@
                         </div>
                     </header>
 
-                    <section class="security-confidentiality">
+                    <div class="security-confidentiality">
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
                                 <div class="feature">
@@ -1138,7 +1131,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                 </div>
             </section>
@@ -1157,7 +1150,7 @@
                         </div>
                     </header>
 
-                    <section class="security-availability">
+                    <div class="security-availability">
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
                                 <div class="feature">
@@ -1184,7 +1177,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                 </div>
             </section>
@@ -1202,7 +1195,7 @@
                         </div>
                     </header>
 
-                    <section class="security-authentication">
+                    <div class="security-authentication">
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
                                 <div class="feature">
@@ -1231,7 +1224,7 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </section>
 
@@ -1245,8 +1238,8 @@
                                 <h2 class="exb-color">Contact us for more information</h2>
                                 <p class="text-muted">We support private cloud, on-premises installation, and can
                                     provide details upon request. <br>
-                                    The information available in this page is further summarized in a dedicated page
-                                    of our online documentation <a href="https://docs.exabyte.io/security/overview/"
+                                    The information available here is further explained in our online
+                                    documentation <a href="https://docs.exabyte.io/security/overview/"
                                         target="_blank">available here</a>.
                                 </p>
                             </div>
@@ -1300,6 +1293,8 @@
                                 <a href="https://docs.exabyte.io/pricing/service-levels/" target="_blank"> pricing</a>
                                 <a href="https://docs.exabyte.io/security/privacy-statement/" target="_blank">
                                     privacy</a>
+                                <a href="#security" data-page=".security-page" data-header=".security-head"
+                                    data-cls="subpage" title="Security">security</a>
                                 <a href="https://docs.exabyte.io" target="_blank"> documentation</a>
                                 <a href="https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos"
                                     target="_blank">
