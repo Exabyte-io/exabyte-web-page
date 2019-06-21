@@ -3428,7 +3428,6 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 }
 
 .security-page section.security-contact {
-    padding-top: 0em;
     margin-bottom: 3em;
 }
 
@@ -3635,7 +3634,7 @@ img {
     display: none;
 }
 
-#iframe-entity-counts, #iframe-entities {
+#iframe-entity-counts {
     border: none;
     width: 100%;
     height: 100%;
@@ -3658,10 +3657,6 @@ img {
     #iframe-entity-counts {
         min-height: 770px;
     }
-}
-
-#iframe-entities {
-    min-height: 720px;
 }
 
 section {
