@@ -135,7 +135,8 @@
 
                             <!-- sign in and docs links -->
                             <li><a href="https://docs.exabyte.io/" target="_blank">Documentation</a></li>
-                            <li><a href="https://platform.exabyte.io/shared-externally" target="_blank">Public Data</a></li>
+                            <li><a href="https://platform.exabyte.io/shared-externally" target="_blank">Public Data</a>
+                            </li>
                             <li><a href="https://platform.exabyte.io/login"> Sign in</a></li>
                         </ul>
                     </nav>
@@ -227,10 +228,9 @@
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
                                 <h2 class="exb-color">EXABYTE.IO PLATFORM</h2>
                                 <p class="justify">
-                                    Exabyte.io allows chemists and materials scientists to
-                                    organize their work and collaborate using any best-in-class modeling tools.
-                                    Our machine intelligence accelerates the research
-                                    process, and provides the foundation for faster product development.
+                                    Exabyte.io allows chemists and materials scientists to organize their work
+                                    and collaborate using any modeling tools. Our machine intelligence accelerates the
+                                    research process, and provides the foundation for faster product development.
                                 </p>
                             </div>
                         </div>
@@ -238,21 +238,48 @@
 
                     <div id="diagram" class="row">
                         <div class="col-lg-10 col-lg-offset-1">
+
+                            <!-- Platform Diagram -->
                             <div class="diagram">
-                                <!-- Notebook -->
                                 <img src="img/platform-diagram.png" alt="#" width="968" height="510"
                                     class="img-responsive">
                                 <img src="img/platform-diagram-arrows.png" alt="#" width="968" height="510"
-                                    style="position: absolute; top: 13%; left: 26%;width: 48%;"
+                                    style="position: absolute; top: 8%; left: 26%;width: 48%;"
                                     class="img-responsive animated infinite flash slower">
+                            </div>
+
+                            <!-- ENTITY COUNTS -->
+                            <div id="total-entity-counts"
+                                class="col-xs-12 text-center exb-color"
+                                style="margin-top: 70px"
+                            >
+                                <div class="col-xs-12 col-sm-6 col-md-3 metrics" id="total-count-jobs">
+                                    <div class="p-20 submetric">
+                                        <h2 class="exb-color">0</h2>
+                                        <span>Total Materials</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 metrics" id="total-count-materials">
+                                    <div class="p-20 submetric">
+                                        <h2 class="exb-color">0</h2>
+                                        <span>Total Jobs</span></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 metrics" id="total-count-workflows">
+                                    <div class="p-20 submetric">
+                                        <h2 class="exb-color">0</h2>
+                                        <span>Total Workflows</span></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 metrics" id="total-count-properties">
+                                    <div class="p-20 submetric">
+                                        <h2 class="exb-color">0</h2>
+                                        <span>Total Properties</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <iframe id="iframe-entity-counts" scrolling="no"
-                src="https://platform.exabyte.io/total-entity-counts"></iframe>
 
             <section class="section lightblue metrics">
                 <div class="container">
@@ -573,8 +600,6 @@
                                 digital materials R&D.
                             </blockquote>
                             <br>
-                            <!--<a href="https://exabyte.docsend.com/view/h6pyq7d"-->
-                            <!--target="_blank"> brief overview</a>-->
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="https://exabyte.io/#vision" target="_blank"> our vision</a>
                             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -1334,35 +1359,10 @@
     <script src="assets/js/jquery-1.11.2.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/scrollr.min.js"></script>
-    <!--<script src="https://www.parsecdn.com/js/parse-1.2.16.min.js"></script>-->
-    <script src="assets/js/gifffer.min.js"></script>
     <script src="assets/js/company-list.js"></script>
     <script src="assets/js/app.js"></script>
 
     <script>
-        function post_to_parse() {
-            Parse.initialize("ATMsrRPxE7MzFHdfogThm2iQvCasbcpkexKQ4hLh", "dHaZ0sBZGkO153TtGQrBBDdn5Mxtrg5O1vbZAkWj");
-            var TestObject = Parse.Object.extend("SignUpUsers");
-            var testObject = new TestObject();
-            var name = jQuery('#contact-name').val();
-            var email = jQuery('#contact-email').val();
-            var message = jQuery('#contact-message').val();
-            if (formValidation.validateForm(name, email, message)) {
-                testObject.save({
-                    name: name,
-                    email: email,
-                    message: message,
-                }).then(function (object) {
-                    jQuery('#contact-name').val('');
-                    jQuery('#contact-email').val('');
-                    jQuery('#contact-message').val('');
-                });
-                jQuery("#myModal").modal("show");
-            }
-
-            return false;
-        }
-
         function openEmail() {
             var name = jQuery('#contact-name').val();
             var email = jQuery('#contact-email').val();
@@ -1372,19 +1372,6 @@
                 'Greetings! I would like to find out more about your product. I am particularly interested in ...';
             window.open('mailto:info@exabyte.io?subject=' + subject + '&body=' + body);
         }
-
-        // enable Gifffer
-        window.onload = function () {
-            Gifffer();
-        }
-        jQuery(window).resize(function (event) {
-            // TODO: add logic for resizing gifffers
-        });
     </script>
-
-    <!-- TODO: remove particle.js artifacts -->
-    <!--<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
-    <!--<script src="//rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>-->
-
 </body>
 </html>
