@@ -287,14 +287,23 @@ h3 {
 }
 
 .btn-outline-bckgrnd {
-    background: transparent;
     border: 1px solid white;
     background: rgba(237, 236, 236, 0.35);
 }
 
 .btn-outline-bckgrnd:hover,
 .btn-outline-bckgrnd:focus {
-    background: rgba(237, 236, 236, 0.5);
+    background: rgba(237, 236, 236, 0.5);;
+}
+
+.btn-outline-bckgrnd-orange {
+    border: 1px solid white;
+    background: rgba(226, 165, 26, 1.0);
+}
+
+.btn-outline-bckgrnd-orange:hover,
+.btn-outline-bckgrnd-orange:focus {
+    background: rgba(226, 165, 26, 0.75);
 }
 
 .btn-lg {
@@ -395,6 +404,8 @@ h3 {
     color: #fff;
     font-variant: small-caps;
     background: rgba(10, 54, 119, 0.8);
+    background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
+
 }
 
 #header.singleColor {
@@ -453,8 +464,8 @@ h3 {
     width: 100%;
     height: 100%;
     position: absolute;
-    /*background: rgba(0, 0, 0, .75);*/
-    background: rgba(10, 54, 119, 0.8);
+    background: rgba(10, 54, 119, 0.90);
+    background: linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
 }
 
 #header.dim > .container {
@@ -597,8 +608,8 @@ h3 {
 
 #header .wrap h3 {
     margin: 0;
-    font-size: 22px;
-    font-size: 2.2rem
+    font-size: 23px;
+    font-size: 2.3rem
 }
 
 #header.subpage .carousel-btns {
@@ -1954,7 +1965,8 @@ h3 {
 }
 
 #footer .wrap {
-    background: url(../../img/exabyte-symbol.png) center center no-repeat rgba(10, 54, 119, 0.8);
+    background: rgba(10, 54, 119, 0.90);
+    background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
     background-size: cover;
     color: #fff;
     padding: 75px 0;
@@ -2155,7 +2167,9 @@ div[class$="-head"]:not(.main-head) {
 .vscroll {
     margin: 0 auto;
     width: 570px;
-    height: 45px;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    height: 2.6rem;
     position: relative;
     overflow: hidden;
 }
@@ -2203,55 +2217,55 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
         top: 0px;
     }
     11% {
-        top: -44px;
+        top: -2.8rem;
     }
     16.5% {
-        top: -44px;
+        top: -2.8rem;
     }
     22% {
-        top: -88px;
+        top: -5.6rem;
     }
     27.5% {
-        top: -88px;
+        top: -5.6rem;
     }
     33% {
-        top: -132px;
+        top: -8.4rem;
     }
     38.5% {
-        top: -132px;
+        top: -8.4rem;
     }
     44% {
-        top: -176px;
+        top: -11.1rem;
     }
     49.5% {
-        top: -176px;
+        top: -11.1rem;
     }
     55% {
-        top: -220px;
+        top: -13.9rem;
     }
     60.5% {
-        top: -220px;
+        top: -13.9rem;
     }
     66% {
-        top: -264px;
+        top: -16.7rem;
     }
     71.5% {
-        top: -264px;
+        top: -16.7rem;
     }
     77% {
-        top: -308px;
+        top: -19.5rem;
     }
     82.5% {
-        top: -308px;
+        top: -19.5rem;
     }
     88% {
-        top: -352px;
+        top: -22.3rem;
     }
     93.5% {
-        top: -352px;
+        top: -22.3rem;
     }
     100% {
-        top: 0px;
+        top: 0rem;
     }
 }
 
@@ -2263,55 +2277,55 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
         top: 0px;
     }
     11% {
-        top: -44px;
+        top: -2.8rem;
     }
     16.5% {
-        top: -44px;
+        top: -2.8rem;
     }
     22% {
-        top: -88px;
+        top: -5.6rem;
     }
     27.5% {
-        top: -88px;
+        top: -5.6rem;
     }
     33% {
-        top: -132px;
+        top: -8.4rem;
     }
     38.5% {
-        top: -132px;
+        top: -8.4rem;
     }
     44% {
-        top: -176px;
+        top: -11.1rem;
     }
     49.5% {
-        top: -176px;
+        top: -11.1rem;
     }
     55% {
-        top: -220px;
+        top: -13.9rem;
     }
     60.5% {
-        top: -220px;
+        top: -13.9rem;
     }
     66% {
-        top: -264px;
+        top: -16.7rem;
     }
     71.5% {
-        top: -264px;
+        top: -16.7rem;
     }
     77% {
-        top: -308px;
+        top: -19.5rem;
     }
     82.5% {
-        top: -308px;
+        top: -19.5rem;
     }
     88% {
-        top: -352px;
+        top: -22.3rem;
     }
     93.5% {
-        top: -352px;
+        top: -22.3rem;
     }
     100% {
-        top: 0px;
+        top: 0rem;
     }
 }
 
@@ -2323,244 +2337,244 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
         top: 0px;
     }
     11% {
-        top: -44px;
+        top: -2.8rem;
     }
     16.5% {
-        top: -44px;
+        top: -2.8rem;
     }
     22% {
-        top: -88px;
+        top: -5.6rem;
     }
     27.5% {
-        top: -88px;
+        top: -5.6rem;
     }
     33% {
-        top: -132px;
+        top: -8.4rem;
     }
     38.5% {
-        top: -132px;
+        top: -8.4rem;
     }
     44% {
-        top: -176px;
+        top: -11.1rem;
     }
     49.5% {
-        top: -176px;
+        top: -11.1rem;
     }
     55% {
-        top: -220px;
+        top: -13.9rem;
     }
     60.5% {
-        top: -220px;
+        top: -13.9rem;
     }
     66% {
-        top: -264px;
+        top: -16.7rem;
     }
     71.5% {
-        top: -264px;
+        top: -16.7rem;
     }
     77% {
-        top: -308px;
+        top: -19.5rem;
     }
     82.5% {
-        top: -308px;
+        top: -19.5rem;
     }
     88% {
-        top: -352px;
+        top: -22.3rem;
     }
     93.5% {
-        top: -352px;
+        top: -22.3rem;
     }
     100% {
-        top: 0px;
+        top: 0rem;
     }
 }
 
 @-webkit-keyframes move {
     0% {
-        left: 110px;
+        left: 180px;
     }
     5.5% {
-        left: 110px;
+        left: 180px;
     }
     11% {
-        left: 14px;
+        left: 110px;
     }
     16.5% {
-        left: 14px;
+        left: 110px;
     }
     22% {
-        left: 65px;
+        left: 147px;
     }
     27.5% {
-        left: 65px;
+        left: 147px;
     }
     33% {
-        left: 85px;
+        left: 155px;
     }
     38.5% {
-        left: 85px;
+        left: 155px;
     }
     44% {
-        left: 115px;
+        left: 165px;
     }
     49.5% {
-        left: 115px;
+        left: 165px;
     }
     55% {
-        left: 115px;
+        left: 175px;
     }
     60.5% {
-        left: 115px;
+        left: 175px;
     }
     66% {
-        left: 145px;
+        left: 185px;
     }
     71.5% {
-        left: 145px;
+        left: 185px;
     }
     77% {
-        left: 115px;
+        left: 165px;
     }
     82.5% {
-        left: 115px;
+        left: 165px;
     }
     88% {
-        left: 115px;
+        left: 175px;
     }
     93.5% {
-        left: 115px;
+        left: 175px;
     }
     96.5% {
-        left: 14px;
+        left: 110px;
     }
     100% {
-        left: 110px;
+        left: 180px;
     }
 }
 
 @-ms-keyframes move {
     0% {
-        left: 110px;
+        left: 180px;
     }
     5.5% {
-        left: 110px;
+        left: 180px;
     }
     11% {
-        left: 14px;
+        left: 110px;
     }
     16.5% {
-        left: 14px;
+        left: 110px;
     }
     22% {
-        left: 65px;
+        left: 147px;
     }
     27.5% {
-        left: 65px;
+        left: 147px;
     }
     33% {
-        left: 85px;
+        left: 155px;
     }
     38.5% {
-        left: 85px;
+        left: 155px;
     }
     44% {
-        left: 115px;
+        left: 165px;
     }
     49.5% {
-        left: 115px;
+        left: 165px;
     }
     55% {
-        left: 115px;
+        left: 175px;
     }
     60.5% {
-        left: 115px;
+        left: 175px;
     }
     66% {
-        left: 145px;
+        left: 185px;
     }
     71.5% {
-        left: 145px;
+        left: 185px;
     }
     77% {
-        left: 115px;
+        left: 165px;
     }
     82.5% {
-        left: 115px;
+        left: 165px;
     }
     88% {
-        left: 115px;
+        left: 175px;
     }
     93.5% {
-        left: 115px;
+        left: 175px;
     }
     96.5% {
-        left: 14px;
+        left: 110px;
     }
     100% {
-        left: 110px;
+        left: 180px;
     }
 }
 
 @-moz-keyframes move {
     0% {
-        left: 110px;
+        left: 180px;
     }
     5.5% {
-        left: 110px;
+        left: 180px;
     }
     11% {
-        left: 14px;
+        left: 110px;
     }
     16.5% {
-        left: 14px;
+        left: 110px;
     }
     22% {
-        left: 65px;
+        left: 147px;
     }
     27.5% {
-        left: 65px;
+        left: 147px;
     }
     33% {
-        left: 85px;
+        left: 155px;
     }
     38.5% {
-        left: 85px;
+        left: 155px;
     }
     44% {
-        left: 115px;
+        left: 165px;
     }
     49.5% {
-        left: 115px;
+        left: 165px;
     }
     55% {
-        left: 115px;
+        left: 175px;
     }
     60.5% {
-        left: 115px;
+        left: 175px;
     }
     66% {
-        left: 145px;
+        left: 185px;
     }
     71.5% {
-        left: 145px;
+        left: 185px;
     }
     77% {
-        left: 115px;
+        left: 165px;
     }
     82.5% {
-        left: 115px;
+        left: 165px;
     }
     88% {
-        left: 115px;
+        left: 175px;
     }
     93.5% {
-        left: 115px;
+        left: 175px;
     }
     96.5% {
-        left: 14px;
+        left: 110px;
     }
     100% {
-        left: 110px;
+        left: 180px;
     }
 }
 
@@ -3635,11 +3649,15 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     margin-top: 30px;
 }
 
-#screencast-link.a {
-    font-size: 90%
+#screencast-link .btn {
+    font-size: 1.8rem;
 }
 
-/* Particle JS */
+#screencast-link .btn.btn-outline-bckgrnd-orange {
+    font-weight: 800;
+}
+
+    /* Particle JS */
 .particles-js-canvas-el {
     position: absolute;
     top: 0;
@@ -3691,5 +3709,22 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     top: 15px;
     right: 15px;
 }
+
+.drop-shadow-white {
+    filter: drop-shadow(0px 0px 5px #fff);
+}
+
+.drop-shadow-blue {
+    filter: drop-shadow(1px 1px 3px rgba(10, 54, 119, 0.90));
+}
+
+img {
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+
+#case-study-link-semi > .i:after {
+    background: url(../../img/case-study-background-semi.jpg) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
 
 }
