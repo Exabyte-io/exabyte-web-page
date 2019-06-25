@@ -1,5 +1,6 @@
 // SETTINGS
-const PLATFORM_HOST_AND_PORT = "localhost:4000";
+const PLATFORM_HOST_AND_PORT = "platform.exabyte.io";
+//const PLATFORM_HOST_AND_PORT = "localhost:4000";  // uncomment for local development
 const REST_API_URL = `https://${PLATFORM_HOST_AND_PORT}/api/2018-10-01`;
 
 
