@@ -1,10 +1,45 @@
+// SETTINGS
+const PLATFORM_HOST_AND_PORT = "localhost:4000";
+const REST_API_URL = `https://${PLATFORM_HOST_AND_PORT}/api/2018-10-01`;
+
+
+// FUNCTIONS
 $(document).ready(function () {
     loaderReady();
     dumbRouter.init();
     newsletter.init();
     cssTitleSlider.init();
     goToPathname();
+    getTotalEntityCounts();
 });
+
+const animateNumberCountBySelector = (count, selector) => {
+    $({countNum: $(selector).html()}).animate({countNum: count}, {
+        duration: 2000,
+        easing: 'swing',
+        step: function () {
+            $(selector).html(Math.floor(this.countNum) + "+");
+        },
+        complete: function () {
+            $(selector).html(this.countNum);
+        }
+    });
+};
+
+const getTotalEntityCounts = () => {
+    $.ajax({
+        url: `${REST_API_URL}/other/entity-counts`,
+    }).then(function (data) {
+        const array = data.data;
+        const getCountByName = (name) => (array.find(o => o.name === name) || {count: "N/A"}).count;
+
+        animateNumberCountBySelector(getCountByName("Jobs"), '#total-count-jobs h2');
+        animateNumberCountBySelector(getCountByName("Materials"), '#total-count-materials h2');
+        animateNumberCountBySelector(getCountByName("Workflows"), '#total-count-workflows h2');
+        animateNumberCountBySelector(getCountByName("Properties"), '#total-count-properties h2');
+
+    });
+};
 
 var loaderReady = function () {
     // hide preloader and show main content
