@@ -29,11 +29,12 @@
     <link rel="shortcut icon" href="favicon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <!-- Google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic'
           rel='stylesheet' type='text/css'>
@@ -71,6 +72,10 @@
             a.appendChild(r);
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+
+    <!-- Wistia -->
+    <script src="https://fast.wistia.com/embed/medias/f3hgcyjjj1.jsonp" async></script>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -90,7 +95,14 @@
 
 <!-- Header -->
 <div id="main-content">
-    <header id="header" class="image dim lab active">
+    <header id="header" class="dim lab active">
+
+        <!-- PERIODIC TABLE -->
+        <iframe id="iframe-periodic-table"
+                style="border: none; width: 100%; height: 100%; position: absolute; opacity: 0.25;"
+                src="pt.html"></iframe>
+
+        <!-- HEADER CONTAINER -->
         <div id="particles-js" class="container">
             <div class="navbar" role="navigation">
                 <div class="navbar-header">
@@ -101,15 +113,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1 class="logo drop-shadow-white">
+                    <h1 class="logo">
                         <a href="#home" data-page=".main-page" data-header=".main-head"
-                           data-cls="image dim lab active" title="Home" class="exabyte-logo"></a>
+                           data-cls="image dim lab active" title="Home" class="exabyte-logo drop-shadow-white"></a>
                     </h1>
                 </div>
 
                 <nav class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- <li><a href="https://exabyte.docsend.com/view/syitiek"> Case study</a></li> -->
+                    <ul class="nav navbar-nav drop-shadow-white">
                         <li><a href="#case-study" data-page=".case-study-page" data-header=".case-study-head"
                                data-cls="subpage" title="Case Studies">Case Studies</a></li>
                         <li><a href="#about" data-page=".about-page" data-header=".about-head" data-cls="subpage"
@@ -133,41 +144,32 @@
                     </ul>
                 </nav>
             </div>
-
             <div class="text-center wrap main-head">
-                <div>
-                    <div style="text-transform: uppercase; margin-bottom: 40px; font-size: 5.5rem">
-                        ready for <span class="drop-shadow-white">material</span> gains?
+                <div class="main-head-text">
+                    <div style="text-transform: uppercase; margin-bottom: 50px; font-size: 4.5rem">
+                        <span class="drop-shadow-white">materials</span> modeling 2.0
                     </div>
                     <h3>
                         <p>
                             exabyte.io empowers scientists with a <br>
-                            collaborative platform for digital r<span style="font-size: 1.6rem;">&</span>d<br>
+                            collaborative platform for <b class="drop-shadow-white">digital</b> r<span
+                            style="font-size: 1.6rem;">&</span>d<br>
                             to accelerate new materials to market
                         </p>
                     </h3>
                 </div>
                 <div id="screencast-link">
                     <a href="#screencast"
-                       class="btn btn-outline notify-js">how it works</a>
+                       class="btn btn-outline-bckgrnd notify-js">how it works</a>
                     <a href="https://platform.exabyte.io/register"
                        target="_blank"
-                       class="btn btn-outline-bckgrnd-orange">create account</a>
+                       class="btn btn-outline-bckgrnd-green">create account</a>
                 </div>
             </div>
-
-            <ul class="carousel-btns list-inline">
-                <li data-target="0" class="active"></li>
-                <li data-target="1"></li>
-                <li data-target="2"></li>
-                <li data-target="3"></li>
-                <li data-target="4"></li>
-            </ul>
         </div>
     </header>
 
     <div class="main-page">
-
         <!-- Features -->
         <section class="section lightblue features">
             <div class="container">
@@ -175,7 +177,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2" style="">
                             <h2 class="exb-color vscroll-wrap">
-                                MATERIALS MODELING 2.0
+                                READY FOR MATERIAL GAINS?
                             </h2>
                             <h2 class="exb-color vscroll-wrap">
                                 <div class="vscroll">
@@ -227,9 +229,9 @@
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
                             <h2 class="exb-color">EXABYTE.IO PLATFORM</h2>
                             <p class="justify">
-                                Exabyte.io allows computational-, data- and experimental scientists to
+                                Exabyte.io allows chemists and materials scientists to
                                 organize their work and collaborate using any best-in-class modeling tools.
-                                Our machine intelligence helps streamline and accelerate the research
+                                Our machine intelligence accelerates the research
                                 process, and provides the foundation for faster product development.
                             </p>
                         </div>
@@ -242,6 +244,9 @@
                             <!-- Notebook -->
                             <img src="img/platform-diagram.png" alt="#" width="968" height="510"
                                  class="img-responsive">
+                            <img src="img/platform-diagram-arrows.png" alt="#" width="968" height="510"
+                                style="position: absolute; top: 13%; left: 26%;width: 48%;"
+                                 class="img-responsive animated infinite flash slower">
                         </div>
                     </div>
                 </div>
@@ -317,21 +322,54 @@
 
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
-                        <div class="notebook">
-                            <!-- Notebook -->
-                            <img src="img/mac-display.png" alt="#" width="968" height="510"
-                                 class="img-responsive">
-                            <div class="image" id="materials-designer">
-                                <img style="margin-top: 3px"
-                                     data-gifffer="img/Materials-Designer.gif" data-gifffer-width="100%"
-                                     data-gifffer-height="100%" alt=""
-                                     class="img-responsive">
+                        <div class="notebook" style="border: 2px solid #d6d6d6; border-radius: 2px;">
+                            <div class="wistia-video hidden" id="materials-designer">
+                                <div class="wistia_responsive_padding" style="padding:55.21% 0 0 0;position:relative;">
+                                    <div class="wistia_responsive_wrapper"
+                                         style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                        <div class="wistia_embed wistia_async_efwtm4xfwq videoFoam=true"
+                                             style="height:100%;position:relative;width:100%">
+                                            <div class="wistia_swatch"
+                                                 style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                <img src="https://fast.wistia.com/embed/medias/efwtm4xfwq/swatch"
+                                                     style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                     alt=""
+                                                     onload="this.parentNode.style.opacity=1;"/></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="image" id="job-designer">
-                                <img style="margin-top: 3px"
-                                     data-gifffer="img/Job-Designer.gif" data-gifffer-width="100%"
-                                     data-gifffer-height="100%" alt=""
-                                     class="img-responsive">
+                            <div class="wistia-video hidden" id="api-usage">
+                                <script src="https://fast.wistia.com/embed/medias/wdn0iykyp5.jsonp" async></script>
+                                <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                                <div class="wistia_responsive_padding" style="padding:50.63% 0 0 0;position:relative;">
+                                    <div class="wistia_responsive_wrapper"
+                                         style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                        <div class="wistia_embed wistia_async_wdn0iykyp5 videoFoam=true"
+                                             style="height:100%;position:relative;width:100%">
+                                            <div class="wistia_swatch"
+                                                 style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                <img src="https://fast.wistia.com/embed/medias/wdn0iykyp5/swatch"
+                                                     style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                     alt="" onload="this.parentNode.style.opacity=1;"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wistia-video" id="job-designer">
+                                <div class="wistia_responsive_padding" style="padding:55.27% 0 0 0;position:relative;">
+                                    <div class="wistia_responsive_wrapper"
+                                         style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                        <div class="wistia_embed wistia_async_f3hgcyjjj1 videoFoam=true"
+                                             style="height:100%;position:relative;width:100%">
+                                            <div class="wistia_swatch"
+                                                 style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                <img src="https://fast.wistia.com/embed/medias/f3hgcyjjj1/swatch"
+                                                     style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                     alt="" onload="this.parentNode.style.opacity=1;"/></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -339,29 +377,29 @@
             </div>
             <header class="text-center" style="margin-bottom: 20px;">
                 <div class="btn-group" role="group">
-                    <button id="materials-designer-trigger" type="button" class="btn btn-outline"
+                    <button id="materials-designer-trigger" type="button" class="btn btn-outline wistia-video-trigger"
                             onclick="showGif('materials-designer')">design materials
                     </button>
-                    <button id="job-designer-trigger" type="button" class="btn btn-outline-bckgrnd"
+                    <button id="job-designer-trigger" type="button" class="btn btn-outline-bckgrnd wistia-video-trigger"
                             onclick="showGif('job-designer')">run simulations
                     </button>
+                    <button id="api-usage-trigger" type="button" class="btn btn-outline wistia-video-trigger"
+                            onclick="showGif('api-usage')">programmatic usage
+                    </button>
+                    <a id="" type="button" class="btn btn-outline"
+                       href="https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos" target="_blank">more
+                        videos
+                    </a>
                     <script>
                         /*
                          * Button handler function
                          */
                         function showGif(name) {
                             console.log(name);
-                            if (name == "materials-designer") {
-                                $("#job-designer").addClass("hidden");
-                                $("#materials-designer").removeClass("hidden");
-                                $("#materials-designer-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
-                                $("#job-designer-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                            } else {
-                                $("#job-designer").removeClass("hidden");
-                                $("#materials-designer").addClass("hidden");
-                                $("#job-designer-trigger").removeClass("btn-outline").addClass("btn-outline-bckgrnd");
-                                $("#materials-designer-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                            }
+                            $('.wistia-video').addClass("hidden");
+                            $(`#${name}`).removeClass("hidden");
+                            $(".wistia-video-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                            $(`#${name}-trigger`).addClass("btn-outline").removeClass("btn-outline-bckgrnd");
                         }
                     </script>
                 </div>
@@ -804,49 +842,91 @@
                 <header class="text-center title">
                     <div class="row">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                            <h2 class="exb-color">How to contact us</h2>
+                            <h2 class="exb-color">Contact us</h2>
                         </div>
                     </div>
                 </header>
                 <div class="row list">
-                    <form role="form" onsubmit="return openEmail();">
-                        <div class="col-xs-12 col-sm-7 col-md-7">
-                            <div class="col-xs-12 form-group">
-                                <input type="text" name="name" placeholder="Name..."
-                                       class="contact-name form-control" id="contact-name">
-                                <div class="col-xs-12 text-danger">Please enter a name</div>
-                            </div>
-                            <div class="col-xs-12 form-group">
-                                <input type="text" name="email" placeholder="Email..."
-                                       class="contact-email form-control" id="contact-email">
-                                <div class="col-xs-12 text-danger">Please enter a valid email</div>
-                            </div>
-                            <div class="col-xs-12 form-group">
-                                    <textarea name="message" placeholder="Message..."
-                                              class="contact-message form-control" id="contact-message"></textarea>
-                                <div class="col-xs-12 text-danger">Please enter a message</div>
-                            </div>
 
-                            <div class="col-xs-12 i">
-                                <button type="submit" class="btn btn-exagray submit btn-effect">Send message
-                                </button>
+                    <!-- Begin Mailchimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                    <style type="text/css">
+                        #mc_embed_signup {
+                            background: #fff;
+                            clear: left;
+                        }
+                    </style>
+                    <div id="mc_embed_signup">
+                        <form action="https://exabyte.us12.list-manage.com/subscribe/post?u=aad1ed17fac8ac176781e0b82&amp;id=192672fe2b"
+                              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                              class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+
+                                <div class="indicates-required"><span class="asterisk">*</span>required</div>
+                                <div class="mc-field-group">
+                                    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                                    </label>
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                </div>
+                                <div class="mc-field-group">
+                                    <label for="mce-FNAME">First Name </label>
+                                    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                                </div>
+                                <div class="mc-field-group">
+                                    <label for="mce-LNAME">Last Name </label>
+                                    <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                                </div>
+                                <div class="mc-field-group">
+                                    <label for="mce-MMERGE3">I want to use Exabyte to ... </label>
+                                    <input type="text" value="" name="MMERGE3" class="" id="mce-MMERGE3">
+                                </div>
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                                                                                          name="b_aad1ed17fac8ac176781e0b82_192672fe2b"
+                                                                                                          tabindex="-1"
+                                                                                                          value="">
+                                </div>
+                                <div class="clear"><input type="submit" value="Submit" name="subscribe"
+                                                          id="mc-embedded-subscribe" class="button"></div>
                             </div>
+                        </form>
+                    </div>
+                    <script type='text/javascript'
+                            src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                    <script type='text/javascript'>(function ($) {
+                        window.fnames = new Array();
+                        window.ftypes = new Array();
+                        fnames[0] = 'EMAIL';
+                        ftypes[0] = 'email';
+                        fnames[1] = 'FNAME';
+                        ftypes[1] = 'text';
+                        fnames[2] = 'LNAME';
+                        ftypes[2] = 'text';
+                        fnames[3] = 'MMERGE3';
+                        ftypes[3] = 'text';
+                    }(jQuery));
+                    var $mcj = jQuery.noConflict(true);
+                    </script>
+                    <!-- END Mailchimp Signup Form -->
+
+                    <div class="col-xs-12 contact-address">
+                        <div class="map">
+                            <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5185074855603!2d-122.41425238374114!3d37.777886679758836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580834864161b%3A0x82abab0491e6b762!2s1161+Mission+St%2C+San+Francisco%2C+CA+94103!5e0!3m2!1sen!2sus!4v1461635977280"
+                                    width="100%" height="370" frameborder="0"
+                                    style="border:1px solid #ccc;"></iframe>
                         </div>
-                        <div class="col-xs-12 col-md-5 col-sm-5 contact-address">
-                            <div class="map">
-                                <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5185074855603!2d-122.41425238374114!3d37.777886679758836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580834864161b%3A0x82abab0491e6b762!2s1161+Mission+St%2C+San+Francisco%2C+CA+94103!5e0!3m2!1sen!2sus!4v1461635977280"
-                                        width="100%" height="370" frameborder="0"
-                                        style="border:1px solid #ccc;"></iframe>
-                            </div>
-                            <div class="address">
-                                <p><i class="fa fa-map-marker"></i> 1161 Mission street, 1st floor</p>
-                                <p><i class="fa" style="margin-right: 6px;"></i>San Francisco, CA 94103</p>
-                                <p><i class="fa fa-phone"></i> +1 (510) 473-7770</p>
-                                <p><i class="fa fa-envelope-o"></i> info@exabyte.io</p>
-                            </div>
+                        <div class="address">
+                            <p><i class="fa fa-map-marker"></i> 1161 Mission street, 1st floor</p>
+                            <p><i class="fa" style="margin-right: 6px;"></i>San Francisco, CA 94103</p>
+                            <p><i class="fa fa-phone"></i> +1 (510) 473-7770</p>
+                            <p><i class="fa fa-envelope-o"></i> info@exabyte.io</p>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1195,8 +1275,8 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 i">
-                        <h2>newsletter</h2>
-                        <p>on our email updates list</p>
+                        <h2>Stay in touch</h2>
+                        <p>Type your email below</p>
                         <div class="form">
                             <input type="email" class="form-control newsletter-input">
                             <button class="submit sprite newsletter-btn"></button>
@@ -1225,7 +1305,7 @@
                             <a href="https://docs.exabyte.io/security/privacy-statement/" target="_blank">
                                 privacy</a>
                             <a href="https://docs.exabyte.io" target="_blank"> documentation</a>
-                            <a href="https://www.youtube.com/channel/ucl4umkyffcskh_blw9jvncw/featured" target="_blank">
+                            <a href="https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos" target="_blank">
                                 video tutorials</a>
 
                         </div>
@@ -1310,8 +1390,9 @@
     });
 </script>
 
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="//rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>
+<!-- TODO: remove particle.js artifacts -->
+<!--<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
+<!--<script src="//rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>-->
 
 </body>
 </html>

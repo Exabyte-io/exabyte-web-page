@@ -47,7 +47,8 @@ loader.require([
 ]);
 
 $(document).ready(function () {
-    simpleCarousel.init();
+    // TODO: clean up carousel artifacts
+    // simpleCarousel.init();
     dumbRouter.init();
     newsletter.init();
     cssTitleSlider.init();
@@ -123,7 +124,6 @@ var _checkURLlinks = function (target, array) {
             target.attr('href').indexOf(element) > 0)
             return true;
     }
-    ;
     return false;
 };
 
@@ -147,7 +147,10 @@ var changeFunction = function () {
             "docs.exabyte.io",
             "blog.exabyte.io",
             "exabyte.docsend.com",
-            "angel.co"
+            "angel.co",
+            "linkedin.com",
+            "youtube.com",
+            "github.com",
         ])) {
         return;
     }
@@ -200,8 +203,8 @@ var newsletter = {
             // click on contact us link in footer
             $('a[href="#contact"]').click();
 
-            $('.contact-email').val(email);
-            $('.contact-message').val('Greetings! I would like to find out more about your product. I am particularly interested in ...');
+            $('#mce-EMAIL').val(email);
+            $('#mce-MMERGE3').val('Greetings, I am interested in ...');
             input.val('');
         };
 
