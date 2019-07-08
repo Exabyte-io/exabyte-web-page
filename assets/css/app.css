@@ -146,7 +146,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: Campton, sans-serif;
     font-size: 16px;
-    font-size: 1.6rem
+    font-size: 1.8rem
 }
 
 body a {
@@ -180,21 +180,20 @@ body a:hover, body a:active, body a:focus {
 }
 
 .x-icon-molecule {
-    width: 132px;
-    height: 145px;
-    background-image: url(../../img/molecule.png);
+    width: 106px;
+    height: 117px;
 }
 
 .x-icon-server {
-    width: 95px;
-    height: 145px;
-    background-image: url(../../img/server.png);
+    width: 76px;
+    height: 117px;
+    /*background-image: url(../../img/server.png);*/
 }
 
 .x-icon-formula {
-    width: 168px;
-    height: 145px;
-    background-image: url(../../img/formula.png);
+    width: 135px;
+    height: 117px;
+    /*background-image: url(../../img/formula.png);*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -275,6 +274,46 @@ h3 {
 .btn-exagray:hover,
 .btn-exagray:focus {
     background: rgba(237, 236, 236, 1.0);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid white;
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background: rgba(237, 236, 236, 0.35);
+}
+
+.btn-outline-bckgrnd {
+    border: 1px solid white;
+    background: rgba(237, 236, 236, 0.35);
+}
+
+.btn-outline-bckgrnd:hover,
+.btn-outline-bckgrnd:focus {
+    background: rgba(237, 236, 236, 0.5);;
+}
+
+.btn-outline-bckgrnd-orange {
+    border: 1px solid white;
+    background: rgba(226, 165, 26, 1.0);
+}
+
+.btn-outline-bckgrnd-orange:hover,
+.btn-outline-bckgrnd-orange:focus {
+    background: rgba(226, 165, 26, 0.75);
+}
+
+.btn-outline-bckgrnd-green {
+    border: 1px solid white;
+    background: rgba(59, 192, 189, 1.0);
+}
+
+.btn-outline-bckgrnd-green:hover,
+.btn-outline-bckgrnd-green:focus {
+    background: rgba(59, 192, 189, 0.75);
 }
 
 .btn-lg {
@@ -375,6 +414,8 @@ h3 {
     color: #fff;
     font-variant: small-caps;
     background: rgba(10, 54, 119, 0.8);
+    background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
+
 }
 
 #header.singleColor {
@@ -396,26 +437,6 @@ h3 {
     transition: all 1.2s ease;
 }
 
-#header.image.boeing {
-    background-image: url(../../img/airplane-factory.jpg);
-}
-
-#header.image.lab {
-    background-image: url(../../img/semiconductor-fab.jpg);
-}
-
-#header.image.chemical {
-    background-image: url(../../img/chemical-plant.jpg);
-}
-
-#header.image.factory {
-    background-image: url(../../img/battery-factory.jpeg);
-}
-
-#header.image.solar {
-    background-image: url(../../img/solar-plant.jpg);
-}
-
 #header.image.boeing.active,
 #header.image.lab.active,
 #header.image.chemical.active,
@@ -433,8 +454,9 @@ h3 {
     width: 100%;
     height: 100%;
     position: absolute;
-    /*background: rgba(0, 0, 0, .75);*/
-    background: rgba(10, 54, 119, 0.85);
+    background: rgba(10, 54, 119, 0.90);
+    background: linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
+    /*background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);*/
 }
 
 #header.dim > .container {
@@ -551,7 +573,8 @@ h3 {
 }
 
 #header .wrap {
-    margin: 130px 0 180px 0
+    margin-top: 70px;
+    margin-bottom: 140px;
 }
 
 #header .wrap h2,
@@ -560,7 +583,7 @@ h3 {
 }
 
 #header .wrap h3 p {
-    margin: 0 auto 10px;
+    margin: 0 auto 50px;
     max-width: 600px;
 }
 
@@ -577,8 +600,8 @@ h3 {
 
 #header .wrap h3 {
     margin: 0;
-    font-size: 22px;
-    font-size: 2.5rem
+    font-size: 23px;
+    font-size: 2.3rem
 }
 
 #header.subpage .carousel-btns {
@@ -625,16 +648,13 @@ h3 {
 }
 
 .section {
-    padding: 45px 0;
-
-@media (min-width: 768px) {
-    padding:
-
-85px
-
-0;
+    padding: 100px 0;
 }
 
+@media (min-width: 768px) {
+    .section {
+        padding: 85px 0;
+    }
 }
 
 .section.gray {
@@ -643,7 +663,7 @@ h3 {
 
 .section.lightblue {
     /*background: rgba(10, 54, 119, 0.05);*/
-    background: rgba(237, 236, 236, 0.5);
+    background: rgba(237, 236, 236, 0.25);
 }
 
 .section h2 {
@@ -651,12 +671,12 @@ h3 {
 }
 
 .section p {
-    line-height: 24px;
+    line-height: 30px;
     margin: 0 0 50px 0
 }
 
 .features {
-    font-variant: small-caps;
+    /*font-variant: small-caps;*/
 }
 
 .features header {
@@ -674,7 +694,7 @@ h3 {
 
 .features p {
     margin: 0 auto;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 
 .features .i .icon {
@@ -684,8 +704,27 @@ h3 {
     margin: 0 auto 20px auto
 }
 
+.features .table-responsive {
+
+}
+
+.features .table-responsive tbody > tr > td {
+    line-height: 1;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.features .table-responsive thead > tr > th {
+    font-size: 24px;
+}
+
 .functions {
-    font-variant: small-caps;
+    /*font-variant: small-caps;*/
+}
+
+.functions.gray {
+    background: rgba(237, 236, 236, 0.25);
 }
 
 .functions header {
@@ -693,9 +732,15 @@ h3 {
 }
 
 .functions .i {
+    padding-top: 20px;
     text-align: center;
-    font-size: 14px;
-    font-size: 2rem;
+    /*font-size: 14px;*/
+    /*font-size: 2rem;*/
+}
+
+.functions .i:hover {
+    background: rgba(237, 236, 236, 0.25);
+    border-radius: 10px;
 }
 
 .functions .i .icon {
@@ -725,29 +770,78 @@ h3 {
     background-position: -434px -57px
 }
 
-.functions .notebook {
-    margin: 40px auto 0 auto;
+.notebook {
+    margin: 0 auto 40px auto;
     position: relative
 }
 
-.functions .notebook > img {
-    opacity: 0.3;
+.notebook > img {
+    opacity: 0.07;
 }
 
-.functions .image {
+#screencast .image {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 3.5% 15.6% 0 15.6%;
+    padding: 4.1% 4.2% 4.2% 4.3%;
     width: 100%;
+    height: 100%;
+}
+
+#screencast .image .img-responsive {
+    width: 100%;
+    height: 100%;
+}
+
+.normal-font {
+    font-family: "Roboto", "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
+    font-weight: 300;
+}
+
+.normal-font b, .normal-font b a {
+    color: #063479;
+    font-weight: 400;
+}
+
+.normal-font p, .normal-font li {
+    font-variant: normal !important;
+    margin-bottom: 20px !important;
+    color: #36373c;
+    font-size: 20px;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 30px;
+
+}
+
+.normal-font h2 {
+    font-weight: 400;
+}
+
+.normal-font h4 {
+    font-weight: 300;
+}
+
+.normal-font h3 {
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    font-size: 3rem;
+}
+
+.justify {
+    text-align: justify;
 }
 
 .functions .tip-text {
-    padding: 0 50px;
+    padding: 0 30px;
+    text-align: justify;
 }
 
 .metrics {
-    font-variant: small-caps;
+    /*font-variant: small-caps;*/
 }
 
 .metrics header {
@@ -761,7 +855,9 @@ h3 {
 }
 
 .metrics .submetric h2 .pub-ent,
-.metrics .submetric h2 .rs-lab {
+.metrics .submetric h2 .pub-ent a,
+.metrics .submetric h2 .rs-lab,
+.metrics .submetric h2 .rs-lab a {
     font-size: 2.5rem;
     color: #ccc;
     margin-top: -20px;
@@ -778,8 +874,8 @@ h3 {
 }
 
 .metrics .submetric p {
-    font-size: 3rem;
-    line-height: 3.5rem;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .metrics .submetric:last-child p {
@@ -796,6 +892,17 @@ h3 {
     font-size: 5rem;
     font-weight: 900;
     color: #fff;
+}
+
+.article {
+    color: #36373c;
+    font-size: 20px;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 30px;
+    position: relative
 }
 
 .blockquote-lg {
@@ -1752,102 +1859,9 @@ h3 {
     height: 600px
 }
 
-.loginPage {
-    background: url(../../img/bg_login.jpg) center center fixed;
-    color: #fff;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
-}
-
-.loginPage .back {
-    font-size: 20px;
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 23px 30px;
-    display: inline-block;
-    color: #fff;
-    background: rgba(0, 0, 0, .3);
-    margin: 20px 0 0 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box
-}
-
-.loginPage .back .icon {
-    display: inline-block;
-    width: 30px;
-    height: 24px;
-    background-position: -118px 0;
-    vertical-align: middle;
-    top: -2px;
-    position: relative;
-    margin: 0 12px 0 0
-}
-
-.loginPage .back:hover:before {
-    background: #f6b036
-}
-
-.loginPage form {
-    margin: 150px 0
-}
-
-.loginPage form h1 {
-    margin: 0 0 55px 0;
-    font-size: 40px;
-    font-size: 4rem;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: 700
-}
-
-.loginPage form .input {
-    margin: 20px 0 0 0
-}
-
-.loginPage form .form-control::-webkit-input-placeholder {
-    color: #fff
-}
-
-.loginPage form .form-control:-moz-placeholder {
-    color: #fff
-}
-
-.loginPage form .form-control::-moz-placeholder {
-    color: #fff
-}
-
-.loginPage form .form-control:-ms-input-placeholder {
-    color: #fff
-}
-
-.loginPage form .forgotPassword {
-    color: #fff;
-    font-size: 14px;
-    font-size: 1.4rem;
-    margin: 8px 0 0 22px;
-    display: inline-block
-}
-
-.loginPage form .forgotPassword:hover {
-    color: #f6b036
-}
-
-.loginPage form .btn {
-    margin: 20px 0 0 0
-}
-
 #footer .wrap {
-    background: url(../../img/exabyte-symbol.png) center center no-repeat rgba(10, 54, 119, 0.8);
+    background: rgba(10, 54, 119, 0.90);
+    background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
     background-size: cover;
     color: #fff;
     padding: 75px 0;
@@ -1860,6 +1874,7 @@ h3 {
 #footer .wrap a {
     display: block;
     color: #fff;
+    font-size: 18px;
 }
 
 #footer .wrap a:hover {
@@ -1948,6 +1963,10 @@ div[class$="-head"]:not(.main-head) {
 
 .privacy h3 {
     color: rgba(10, 54, 119, 1);
+}
+
+.contact-address {
+    padding: 35px;
 }
 
 .contact-address p {
@@ -2048,7 +2067,9 @@ div[class$="-head"]:not(.main-head) {
 .vscroll {
     margin: 0 auto;
     width: 570px;
-    height: 45px;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    height: 2.6rem;
     position: relative;
     overflow: hidden;
 }
@@ -2080,273 +2101,380 @@ div[class$="-head"]:not(.main-head) {
     -ms-animation: scroll 20s infinite;
 }
 
+/*
+ * The code below was used in Chrome console to generate scroll animation
+```js
+a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
+    top: ${Math.floor(i/2)*-44}px;
+}`);}; a.join("\n")
+```
+ */
 @-webkit-keyframes scroll {
     0% {
-        top: 0;
+        top: 0px;
     }
-    8.5% {
-        top: 0;
+    5.5% {
+        top: 0px;
     }
-    17% {
-        top: -44px;
+    11% {
+        top: -2.8rem;
     }
-    25.5% {
-        top: -44px;
+    16.5% {
+        top: -2.8rem;
     }
-    34% {
-        top: -88px;
+    22% {
+        top: -5.6rem;
     }
-    42.5% {
-        top: -88px;
+    27.5% {
+        top: -5.6rem;
     }
-    51% {
-        top: -132px;
+    33% {
+        top: -8.4rem;
     }
-    59.5% {
-        top: -132px;
+    38.5% {
+        top: -8.4rem;
     }
-    68% {
-        top: -176px;
+    44% {
+        top: -11.1rem;
     }
-    76.5% {
-        top: -176px;
+    49.5% {
+        top: -11.1rem;
     }
-    85% {
-        top: -220px;
+    55% {
+        top: -13.9rem;
+    }
+    60.5% {
+        top: -13.9rem;
+    }
+    66% {
+        top: -16.7rem;
+    }
+    71.5% {
+        top: -16.7rem;
+    }
+    77% {
+        top: -19.5rem;
+    }
+    82.5% {
+        top: -19.5rem;
+    }
+    88% {
+        top: -22.3rem;
     }
     93.5% {
-        top: -220px;
+        top: -22.3rem;
     }
     100% {
-        top: 0;
+        top: 0rem;
     }
 }
 
 @-moz-keyframes scroll {
     0% {
-        top: 0;
+        top: 0px;
     }
-    8.5% {
-        top: 0
+    5.5% {
+        top: 0px;
     }
-    17% {
-        top: -44px;
+    11% {
+        top: -2.8rem;
     }
-    25.5% {
-        top: -44px;
+    16.5% {
+        top: -2.8rem;
     }
-    34% {
-        top: -88px;
+    22% {
+        top: -5.6rem;
     }
-    42.5% {
-        top: -88px;
+    27.5% {
+        top: -5.6rem;
     }
-    51% {
-        top: -132px;
+    33% {
+        top: -8.4rem;
     }
-    59.5% {
-        top: -132px;
+    38.5% {
+        top: -8.4rem;
     }
-    68% {
-        top: -176px;
+    44% {
+        top: -11.1rem;
     }
-    76.5% {
-        top: -176px;
+    49.5% {
+        top: -11.1rem;
     }
-    85% {
-        top: -220px;
+    55% {
+        top: -13.9rem;
+    }
+    60.5% {
+        top: -13.9rem;
+    }
+    66% {
+        top: -16.7rem;
+    }
+    71.5% {
+        top: -16.7rem;
+    }
+    77% {
+        top: -19.5rem;
+    }
+    82.5% {
+        top: -19.5rem;
+    }
+    88% {
+        top: -22.3rem;
     }
     93.5% {
-        top: -220px;
+        top: -22.3rem;
     }
     100% {
-        top: 0;
+        top: 0rem;
     }
 }
 
 @-ms-keyframes scroll {
     0% {
-        top: 0;
+        top: 0px;
     }
-    8.5% {
-        top: 0
+    5.5% {
+        top: 0px;
     }
-    17% {
-        top: -44px;
+    11% {
+        top: -2.8rem;
     }
-    25.5% {
-        top: -44px;
+    16.5% {
+        top: -2.8rem;
     }
-    34% {
-        top: -88px;
+    22% {
+        top: -5.6rem;
     }
-    42.5% {
-        top: -88px;
+    27.5% {
+        top: -5.6rem;
     }
-    51% {
-        top: -132px;
+    33% {
+        top: -8.4rem;
     }
-    59.5% {
-        top: -132px;
+    38.5% {
+        top: -8.4rem;
     }
-    68% {
-        top: -176px;
+    44% {
+        top: -11.1rem;
     }
-    76.5% {
-        top: -176px;
+    49.5% {
+        top: -11.1rem;
     }
-    85% {
-        top: -220px;
+    55% {
+        top: -13.9rem;
+    }
+    60.5% {
+        top: -13.9rem;
+    }
+    66% {
+        top: -16.7rem;
+    }
+    71.5% {
+        top: -16.7rem;
+    }
+    77% {
+        top: -19.5rem;
+    }
+    82.5% {
+        top: -19.5rem;
+    }
+    88% {
+        top: -22.3rem;
     }
     93.5% {
-        top: -220px;
+        top: -22.3rem;
     }
     100% {
-        top: 0;
+        top: 0rem;
     }
 }
 
 @-webkit-keyframes move {
     0% {
+        left: 180px;
+    }
+    5.5% {
+        left: 180px;
+    }
+    11% {
         left: 110px;
     }
-    8.5% {
+    16.5% {
         left: 110px;
     }
-    18% {
-        left: 14px;
+    22% {
+        left: 147px;
     }
-    25.5% {
-        left: 14px;
+    27.5% {
+        left: 147px;
     }
-    34% {
-        left: 85px;
+    33% {
+        left: 155px;
     }
-    42.5% {
-        left: 85px;
+    38.5% {
+        left: 155px;
     }
-    51% {
-        left: 100px;
+    44% {
+        left: 165px;
     }
-    59.5% {
-        left: 100px;
+    49.5% {
+        left: 165px;
     }
-    68% {
-        left: 115px;
+    55% {
+        left: 175px;
     }
-    76.5% {
-        left: 115px;
+    60.5% {
+        left: 175px;
     }
-    85% {
-        left: 145px;
+    66% {
+        left: 185px;
+    }
+    71.5% {
+        left: 185px;
+    }
+    77% {
+        left: 165px;
+    }
+    82.5% {
+        left: 165px;
+    }
+    88% {
+        left: 175px;
     }
     93.5% {
-        left: 145px;
+        left: 175px;
     }
-    95.5% {
-        left: 14px;
-    }
-    97% {
-        left: 14px;
+    96.5% {
+        left: 110px;
     }
     100% {
-        left: 110px;
+        left: 180px;
     }
 }
 
 @-ms-keyframes move {
     0% {
+        left: 180px;
+    }
+    5.5% {
+        left: 180px;
+    }
+    11% {
         left: 110px;
     }
-    8.5% {
+    16.5% {
         left: 110px;
     }
-    18% {
-        left: 14px;
+    22% {
+        left: 147px;
     }
-    25.5% {
-        left: 14px;
+    27.5% {
+        left: 147px;
     }
-    34% {
-        left: 85px;
+    33% {
+        left: 155px;
     }
-    42.5% {
-        left: 85px;
+    38.5% {
+        left: 155px;
     }
-    51% {
-        left: 100px;
+    44% {
+        left: 165px;
     }
-    59.5% {
-        left: 100px;
+    49.5% {
+        left: 165px;
     }
-    68% {
-        left: 115px;
+    55% {
+        left: 175px;
     }
-    76.5% {
-        left: 115px;
+    60.5% {
+        left: 175px;
     }
-    85% {
-        left: 145px;
+    66% {
+        left: 185px;
+    }
+    71.5% {
+        left: 185px;
+    }
+    77% {
+        left: 165px;
+    }
+    82.5% {
+        left: 165px;
+    }
+    88% {
+        left: 175px;
     }
     93.5% {
-        left: 145px;
+        left: 175px;
     }
-    95.5% {
-        left: 14px;
-    }
-    97% {
-        left: 14px;
+    96.5% {
+        left: 110px;
     }
     100% {
-        left: 110px;
+        left: 180px;
     }
 }
 
 @-moz-keyframes move {
     0% {
+        left: 180px;
+    }
+    5.5% {
+        left: 180px;
+    }
+    11% {
         left: 110px;
     }
-    8.5% {
+    16.5% {
         left: 110px;
     }
-    18% {
-        left: 14px;
+    22% {
+        left: 147px;
     }
-    25.5% {
-        left: 14px;
+    27.5% {
+        left: 147px;
     }
-    34% {
-        left: 85px;
+    33% {
+        left: 155px;
     }
-    42.5% {
-        left: 85px;
+    38.5% {
+        left: 155px;
     }
-    51% {
-        left: 100px;
+    44% {
+        left: 165px;
     }
-    59.5% {
-        left: 100px;
+    49.5% {
+        left: 165px;
     }
-    68% {
-        left: 115px;
+    55% {
+        left: 175px;
     }
-    76.5% {
-        left: 115px;
+    60.5% {
+        left: 175px;
     }
-    85% {
-        left: 145px;
+    66% {
+        left: 185px;
+    }
+    71.5% {
+        left: 185px;
+    }
+    77% {
+        left: 165px;
+    }
+    82.5% {
+        left: 165px;
+    }
+    88% {
+        left: 175px;
     }
     93.5% {
-        left: 145px;
+        left: 175px;
     }
-    95.5% {
-        left: 14px;
-    }
-    97% {
-        left: 14px;
+    96.5% {
+        left: 110px;
     }
     100% {
-        left: 110px;
+        left: 180px;
     }
 }
 
@@ -2462,6 +2590,11 @@ div[class$="-head"]:not(.main-head) {
         width: 20%;
         float: left
     }
+
+    .functions .i {
+        min-height: 275px;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -2469,6 +2602,11 @@ div[class$="-head"]:not(.main-head) {
         width: 20%;
         float: left
     }
+
+    .functions .i {
+        min-height: 305px;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -2476,6 +2614,11 @@ div[class$="-head"]:not(.main-head) {
         width: 20%;
         float: left
     }
+
+    .functions .i {
+        min-height: 275px;
+    }
+
 }
 
 @media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
@@ -2619,14 +2762,14 @@ div[class$="-head"]:not(.main-head) {
     }
 
     .vscroll.active .pre-text {
-        left: 8%;
+        left: 15%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
     }
 
     .vscroll.active .vscroll-items {
-        left: 10%;
+        left: 3%;
         -webkit-animation: none;
         -moz-animation: none;
         -ms-animation: none;
@@ -3125,6 +3268,10 @@ div[class$="-head"]:not(.main-head) {
     src: local('Campton Light'), local('Campton-Light'), url(../fonts/campton/Campton.Light.otf) format("opentype");
 }
 
+.case-study {
+    padding-bottom: 50px;
+}
+
 .case-study > a > i.fa {
     font-size: 10em;
     color: rgba(10, 54, 119, 0.8);
@@ -3143,7 +3290,7 @@ div[class$="-head"]:not(.main-head) {
 
 .case-study > p.centered-text {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .case-study > p b a {
@@ -3166,6 +3313,7 @@ div[class$="-head"]:not(.main-head) {
     font-variant: small-caps;
 }
 
+.about-page blockquote,
 .security-page blockquote {
     border: none;
     margin: 3em 0em;
@@ -3196,10 +3344,6 @@ div[class$="-head"]:not(.main-head) {
     margin-bottom: 2em;
     min-height: 250px;
     position: relative;
-
-    @media (min-width: 768px) {
-        min-height:  260px;
-    }
 }
 
 .feature i {
@@ -3216,7 +3360,6 @@ div[class$="-head"]:not(.main-head) {
 .feature p {
     min-height: 3em;
     margin-bottom: 1em;
-    font-size: 12px;
     color: #999;
     line-height: 18px;
     font-size: 17px;
@@ -3254,7 +3397,7 @@ div[class$="-head"]:not(.main-head) {
 
 .exablue .feature {
     min-height: 270px;
-    border-color: rgba(255,255,255,0.2);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .exablue .title {
@@ -3275,7 +3418,6 @@ div[class$="-head"]:not(.main-head) {
 }
 
 .security-page section.security-contact {
-    padding-top: 0em;
     margin-bottom: 3em;
 }
 
@@ -3396,6 +3538,96 @@ div[class$="-head"]:not(.main-head) {
     margin-top: 30px;
 }
 
-#screencast-link.a {
-    font-size: 90%
+#screencast-link .btn {
+    font-size: 1.8rem;
+}
+
+#screencast-link .btn.btn-outline-bckgrnd-orange,
+#screencast-link .btn-outline-bckgrnd-green,
+#screencast-link .btn-outline-bckgrnd {
+    font-weight: 800;
+}
+
+.company-logo {
+    height: 180px !important;
+}
+
+.company-list ul li {
+    list-style-type: none !important;
+}
+
+.company-name {
+    font-variant: all-small-caps !important;
+}
+
+/* NOTIFY-JS */
+
+.notifyjs-updates-base {
+    opacity: 0.85;
+    width: 100%;
+    background: #FEFEFE;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #bfc3c4;
+}
+
+.notifyjs-updates-base .title {
+    padding: 5px;
+}
+
+.notifyjs-updates-base .buttons {
+    padding: 5px;
+    margin: 2px;
+}
+
+.notifyjs-updates-base button.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.drop-shadow-white {
+    filter: drop-shadow(0px 0px 5px #fff);
+}
+
+.drop-shadow-blue {
+    filter: drop-shadow(1px 1px 3px rgba(10, 54, 119, 0.90));
+}
+
+/* hide iframe on non-main pages */
+.subpage #iframe-periodic-table {
+    display: none;
+}
+
+#iframe-entity-counts {
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -9px;
+}
+
+@media (min-width: 961px) {
+    #iframe-entity-counts {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 960px) {
+    #iframe-entity-counts {
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    #iframe-entity-counts {
+        min-height: 770px;
+    }
+}
+
+section {
+    border-top: 1px solid lightgray;
+}
+
+.p-20 {
+    padding: 20px !important;
 }

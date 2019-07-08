@@ -1,112 +1,57 @@
-var loader = (function () {
-    var count;
+// SETTINGS
+const PLATFORM_HOST_AND_PORT = "platform.exabyte.io";
+//const PLATFORM_HOST_AND_PORT = "localhost:4000";  // uncomment for local development
+const REST_API_URL = `https://${PLATFORM_HOST_AND_PORT}/api/2018-10-01`;
 
-    function load(array) {
-        count = array.length;
-        $.each(array, function (i, link) {
-            var img = new Image();
-            img.src = link;
-            img.onload = imageLoaded;
-        });
-    }
 
-    function imageLoaded() {
-        count--;
-        if (count == 0) {
-            ready();
-        }
-    }
-
-    function ready() {
-        $(document).ready(function () {
-            // hide preloader and show main content
-            setTimeout(function () {
-                $('.spinner-wrap').hide();
-                $('#main-content').show().animate({opacity: 1}, 900);
-            }, 100);
-        });
-    }
-
-    return {
-        require: load
-    }
-})();
-
-loader.require([
-    'img/airplane-factory.jpg',
-    'img/battery-factory.jpeg',
-    'img/chemical-plant.jpg',
-    'img/semiconductor-fab.jpg',
-    'img/solar-plant.jpg'
-]);
-
+// FUNCTIONS
 $(document).ready(function () {
-    simpleCarousel.init();
+    loaderReady();
     dumbRouter.init();
     newsletter.init();
     cssTitleSlider.init();
     goToPathname();
+    getTotalEntityCounts();
 });
 
-// This simple carousel for header background
-var simpleCarousel = {
-    i: 1,
-    slides: [
-        {
-            val: 'lab'
+const animateNumberCountBySelector = (count, selector) => {
+    $({countNum: $(selector).html()}).animate({countNum: count}, {
+        duration: 2000,
+        easing: 'swing',
+        step: function () {
+            $(selector).html(Math.floor(this.countNum) + "+");
         },
-        {
-            val: 'solar'
-        },
-        {
-            val: 'chemical'
-        },
-        {
-            val: 'factory'
-        },
-        {
-            val: 'boeing'
+        complete: function () {
+            $(selector).html(this.countNum);
         }
-    ],
-    changeSlide: function (target, i) {
-        var currItem = $('.carousel-btns li');
-        currItem.removeClass('active');
-        $(currItem[i]).addClass('active');
-        simpleCarousel.i = i;
-        setTimeout(function () {
-            if (!$('#header').hasClass('subpage')) {
-                $('#header').removeClass().addClass('image dim').addClass(target.val).addClass('active');
-            }
-        }, 500);
-    },
-    init: function () {
-        setInterval(function () {
-            simpleCarousel.changeSlide(simpleCarousel.slides[simpleCarousel.i], simpleCarousel.i);
-            if (simpleCarousel.i < simpleCarousel.slides.length - 1) {
-                simpleCarousel.i++;
-            } else {
-                simpleCarousel.i = 0;
-            }
-        }, 8000);
-
-        $(document).on('click', '.carousel-btns li', function () {
-            var t = $(this).data('target');
-            simpleCarousel.changeSlide(simpleCarousel.slides[t], t);
-            simpleCarousel.i = t;
-        });
-    },
-    getI: function () {
-        return simpleCarousel.i;
-    },
-    setI: function (val) {
-        simpleCarousel.i = val;
-    },
-    goSlide: function (i) {
-        simpleCarousel.changeSlide(simpleCarousel.slides[i], i);
-    }
+    });
 };
 
-// checks whether the a JQuery click target has a link contained in a list
+const getTotalEntityCounts = () => {
+    $.ajax({
+        url: `${REST_API_URL}/other/entity-counts`,
+    }).then(function (data) {
+        const array = data.data;
+        const getCountByName = (name) => (array.find(o => o.name === name) || {count: "N/A"}).count;
+
+        animateNumberCountBySelector(getCountByName("Jobs"), '#total-count-jobs h2');
+        animateNumberCountBySelector(getCountByName("Materials"), '#total-count-materials h2');
+        animateNumberCountBySelector(getCountByName("Workflows"), '#total-count-workflows h2');
+        animateNumberCountBySelector(getCountByName("Properties"), '#total-count-properties h2');
+
+    });
+};
+
+var loaderReady = function () {
+    // hide preloader and show main content
+    setTimeout(function () {
+        $('.spinner-wrap').hide();
+        // generateCompanyList is imported from "./company-list.js"
+        $('#main-content').show().animate({opacity: 1}, 900, generateCompanyList);
+    }, 0);
+};
+
+// checks whether the click target has a link contained in the array
 var _checkURLlinks = function (target, array) {
     for (var i = 0; i < array.length; i++) {
         element = array[i];
@@ -117,7 +62,6 @@ var _checkURLlinks = function (target, array) {
             target.attr('href').indexOf(element) > 0)
             return true;
     }
-    ;
     return false;
 };
 
@@ -130,19 +74,23 @@ var goToPathname = function () {
     $("a[data-page='." + pathname + "-page']").click()
 };
 
-var changeFunction = function () {
+var handlePageChange = function () {
     var selector,
         headCls,
         headTitle;
     // catch links that redirect to
     if (_checkURLlinks($(this),
-            [
-                "platform.exabyte.io",
-                "docs.exabyte.io",
-                "blog.exabyte.io",
-                "exabyte.docsend.com",
-                "angel.co"
-            ])) {
+        [
+            "localhost:3000",
+            "platform.exabyte.io",
+            "docs.exabyte.io",
+            "blog.exabyte.io",
+            "exabyte.docsend.com",
+            "angel.co",
+            "linkedin.com",
+            "youtube.com",
+            "github.com",
+        ])) {
         return;
     }
 
@@ -158,10 +106,6 @@ var changeFunction = function () {
         $(this).addClass('active');
     }
 
-    if ($(this).attr('title') == 'Home' || $(this).find('a').attr('title') == 'Home') {
-        simpleCarousel.goSlide(0);
-    }
-
     selector = $(this).data('page') ? $(this).data('page') : $(this).find('a').data('page');
     headTitle = $(this).data('header') ? $(this).data('header') : $(this).find('a').data('header');
     headCls = $(this).data('cls') ? $(this).data('cls') : $(this).find('a').data('cls');
@@ -170,13 +114,12 @@ var changeFunction = function () {
     $('html, body').animate({scrollTop: 0}, '500', 'swing');
 };
 
-// Function for page navigation
 var dumbRouter = {
     init: function () {
 
-        $(document).on('click', '.navbar-nav li', changeFunction);
-        $(document).on('click', '.logo a', changeFunction);
-        $(document).on('click', '#footer a', changeFunction);
+        $(document).on('click', '.navbar-nav li', handlePageChange);
+        $(document).on('click', '.logo a', handlePageChange);
+        $(document).on('click', '#footer a', handlePageChange);
 
         $(document).on('click', '.navbar-nav li a', function (event) {
             $(".navbar-collapse").collapse('hide');
@@ -184,24 +127,24 @@ var dumbRouter = {
     }
 };
 
-// Function for newsletter form on footer
 var newsletter = {
     init: function () {
         var send = function () {
             var input = $('.newsletter-input'),
                 email = input.val();
 
-            $('.navbar-nav li a[data-page=".contact-page"]').click();
+            // click on contact us link in footer
+            $('a[href="#contact"]').click();
 
-            $('.contact-email').val(email);
-            $('.contact-message').val('Greetings! I would like to find out more about your product. I am particularly interested in ...');
+            $('#mce-EMAIL').val(email);
+            $('#mce-MMERGE3').val('Greetings, I am interested in ...');
             input.val('');
         };
 
         $(document).on('click', '.newsletter-btn', send);
 
         $(document).on('keyup', '.newsletter-input', function (e) {
-            if (e.keyCode == 13) {
+            if (e.keyCode === 13) {
                 send();
             }
         });
@@ -214,53 +157,5 @@ var cssTitleSlider = {
         if (!$('.vscroll').hasClass('active')) {
             $('.vscroll').addClass('active');
         }
-    }
-};
-
-
-// Enable title animation on scrolling
-var onScrollDown = {
-    init: function () {
-        $(window).scroll(function () {
-            if ($(window).scrollTop() >= 200) {
-                if (!$('.vscroll').hasClass('active')) {
-                    $('.vscroll').addClass('active');
-                }
-            }
-        });
-    }
-};
-
-// Contact scroll validation
-var formValidation = {
-    validateForm: function (name, email, message) {
-        var validateEmail = function (email) {
-                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-                return re.test(email);
-            },
-            result = [];
-
-        if ($.trim(name) != '') {
-            $('#contact-name').parent().find('.text-danger').hide();
-            result.push(true)
-        } else {
-            $('#contact-name').parent().find('.text-danger').show();
-        }
-
-        if (validateEmail(email)) {
-            $('#contact-email').parent().find('.text-danger').hide();
-            result.push(true)
-        } else {
-            $('#contact-email').parent().find('.text-danger').show();
-        }
-
-        if ($.trim(message) != '') {
-            $('#contact-message').parent().find('.text-danger').hide();
-            result.push(true)
-        } else {
-            $('#contact-message').parent().find('.text-danger').show();
-        }
-
-        return result[0] && result[1] && result[2] ? true : false;
     }
 };
