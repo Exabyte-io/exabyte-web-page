@@ -2032,7 +2032,6 @@ div[class$="-head"]:not(.main-head) {
     text-align: justify;
     padding: 0px 10px;
     margin-bottom: 70px;
-    text-transform: lowercase;
 }
 
 .centered-pills {
@@ -3270,6 +3269,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 
 .case-study {
     padding-bottom: 50px;
+    min-height: 450px;
 }
 
 .case-study > a > i.fa {
@@ -3634,4 +3634,8 @@ section {
 
 #total-entity-counts .metrics .submetric h2 {
     font-size: 6rem;
+}
+
+.m-b-50 {
+    margin-bottom: 50px !important;
 }
