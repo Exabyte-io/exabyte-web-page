@@ -19,10 +19,12 @@ const animateNumberCountBySelector = (count, selector) => {
         duration: 2000,
         easing: 'swing',
         step: function () {
-            $(selector).html(Math.floor(this.countNum) + "+");
+            const count = parseFloat(Math.floor(this.countNum)).toLocaleString();
+            $(selector).html(count + "+");
         },
         complete: function () {
-            $(selector).html(this.countNum);
+            const count = parseFloat(this.countNum).toLocaleString();
+            $(selector).html(this.countNum.toLocaleString());
         }
     });
 };

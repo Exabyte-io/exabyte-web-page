@@ -2032,7 +2032,6 @@ div[class$="-head"]:not(.main-head) {
     text-align: justify;
     padding: 0px 10px;
     margin-bottom: 70px;
-    text-transform: lowercase;
 }
 
 .centered-pills {
@@ -3270,6 +3269,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 
 .case-study {
     padding-bottom: 50px;
+    min-height: 450px;
 }
 
 .case-study > a > i.fa {
