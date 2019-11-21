@@ -92,11 +92,6 @@
     <div id="main-content">
         <header id="header" class="dim lab active">
 
-            <!-- PERIODIC TABLE -->
-            <iframe id="iframe-periodic-table"
-                style="border: none; width: 100%; height: 100%; position: absolute; opacity: 0.25;"
-                src="pt.html"></iframe>
-
             <!-- HEADER CONTAINER -->
             <div id="particles-js" class="container">
                 <div class="navbar" role="navigation">
@@ -141,27 +136,113 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="text-center wrap main-head">
-                    <div class="main-head-text">
-                        <div style="text-transform: uppercase; margin-bottom: 50px; font-size: 4.5rem">
-                            <span class="drop-shadow-white">materials</span> modeling 2.0
+
+                <div class="main-head">
+
+                    <div id="hero-left" class="text-center wrap col-md-4 col-xs-12">
+                        <div class="main-head-text">
+                            <div style="text-transform: uppercase; margin-bottom: 20px; font-size: 3.9rem">
+                                <span class="drop-shadow-white">materials</span> modeling 2.0
+                            </div>
+                            <h3>
+                                <p>
+                                    Exabyte.io is a digital materials r<span style="font-size: 1.6rem;">&</span>d
+                                    platform for the 21 century. Design structures, run simulations, and build
+                                    data-driven
+                                    models <b class="drop-shadow-white">online</b> alongside other scientists on your
+                                    team
+                                    or worldwide.
+                                </p>
+                            </h3>
                         </div>
-                        <h3>
-                            <p>
-                                exabyte.io empowers scientists with a <br>
-                                collaborative platform for <b class="drop-shadow-white">digital</b> r<span
-                                style="font-size: 1.6rem;">&</span>d<br>
-                                to accelerate new materials to market
-                            </p>
-                        </h3>
+                        <div id="screencast-link">
+                            <a href="https://platform.exabyte.io/register"
+                                class="btn btn-outline-bckgrnd-green">sign up + try free</a>
+                        </div>
                     </div>
-                    <div id="screencast-link">
-                        <a href="#screencast"
-                            class="btn btn-outline-bckgrnd notify-js">how it works</a>
-                        <a href="https://platform.exabyte.io/register"
-                            target="_blank"
-                            class="btn btn-outline-bckgrnd-green">create account</a>
+
+                    <div id="hero-right" class="text-center wrap col-md-8 col-xs-12">
+                        <div class="main-head-text">
+                            <div class="notebook" style="border: 2px solid; border-radius: 2px;">
+                                <div class="wistia-video hidden" id="materials-designer">
+                                    <div class="wistia_responsive_padding"
+                                        style="padding:55.21% 0 0 0;position:relative;">
+                                        <div class="wistia_responsive_wrapper"
+                                            style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                            <div class="wistia_embed wistia_async_efwtm4xfwq videoFoam=true"
+                                                style="height:100%;position:relative;width:100%">
+                                                <div class="wistia_swatch"
+                                                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                    <img src="https://fast.wistia.com/embed/medias/efwtm4xfwq/swatch"
+                                                        style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                        alt=""
+                                                        onload="this.parentNode.style.opacity=1;"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wistia-video hidden" id="api-usage">
+                                    <div class="wistia_responsive_padding"
+                                        style="padding:50.63% 0 0 0;position:relative;">
+                                        <div class="wistia_responsive_wrapper"
+                                            style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                            <div class="wistia_embed wistia_async_wdn0iykyp5 videoFoam=true"
+                                                style="height:100%;position:relative;width:100%">
+                                                <div class="wistia_swatch"
+                                                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                    <img src="https://fast.wistia.com/embed/medias/wdn0iykyp5/swatch"
+                                                        style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                        alt="" onload="this.parentNode.style.opacity=1;"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wistia-video" id="job-designer">
+                                    <div class="wistia_responsive_padding"
+                                        style="padding:55.27% 0 0 0;position:relative;">
+                                        <div class="wistia_responsive_wrapper"
+                                            style="height:100%;left:0;position:absolute;top:0;width:100%;">
+                                            <div class="wistia_embed wistia_async_f3hgcyjjj1 videoFoam=true"
+                                                style="height:100%;position:relative;width:100%">
+                                                <div class="wistia_swatch"
+                                                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
+                                                    <img src="https://fast.wistia.com/embed/medias/f3hgcyjjj1/swatch"
+                                                        style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
+                                                        alt="" onload="this.parentNode.style.opacity=1;"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button id="materials-designer-trigger" type="button"
+                                class="btn btn-outline wistia-video-trigger"
+                                onclick="showGif('materials-designer')">design materials
+                            </button>
+                            <button id="job-designer-trigger" type="button"
+                                class="btn btn-outline-bckgrnd wistia-video-trigger"
+                                onclick="showGif('job-designer')">run simulations
+                            </button>
+                            <button id="api-usage-trigger" type="button" class="btn btn-outline wistia-video-trigger"
+                                onclick="showGif('api-usage')">programmatic usage
+                            </button>
+                            <script>
+                                /*
+                                 * Button handler function
+                                 */
+                                function showGif(name) {
+                                    console.log(name);
+                                    $('.wistia-video').addClass("hidden");
+                                    $(`#${name}`).removeClass("hidden");
+                                    $(".wistia-video-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                                    $(`#${name}-trigger`).addClass("btn-outline").removeClass("btn-outline-bckgrnd");
+                                }
+                            </script>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
         </header>
@@ -317,110 +398,8 @@
                 </div>
             </section>
 
-            <section id="screencast" class="section i functions">
-                <div class="container">
-
-                    <header class="text-center">
-                        <div class="row metric-title">
-                            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                                <h2 class="exb-color">PRODUCT IN ACTION</h2>
-                            </div>
-                        </div>
-                    </header>
-
-                    <div class="row">
-                        <div class="col-lg-10 col-lg-offset-1">
-                            <div class="notebook" style="border: 2px solid #d6d6d6; border-radius: 2px;">
-                                <div class="wistia-video hidden" id="materials-designer">
-                                    <div class="wistia_responsive_padding"
-                                        style="padding:55.21% 0 0 0;position:relative;">
-                                        <div class="wistia_responsive_wrapper"
-                                            style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                                            <div class="wistia_embed wistia_async_efwtm4xfwq videoFoam=true"
-                                                style="height:100%;position:relative;width:100%">
-                                                <div class="wistia_swatch"
-                                                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                                                    <img src="https://fast.wistia.com/embed/medias/efwtm4xfwq/swatch"
-                                                        style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
-                                                        alt=""
-                                                        onload="this.parentNode.style.opacity=1;"/></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wistia-video hidden" id="api-usage">
-                                    <script src="https://fast.wistia.com/embed/medias/wdn0iykyp5.jsonp" async></script>
-                                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
-                                    <div class="wistia_responsive_padding"
-                                        style="padding:50.63% 0 0 0;position:relative;">
-                                        <div class="wistia_responsive_wrapper"
-                                            style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                                            <div class="wistia_embed wistia_async_wdn0iykyp5 videoFoam=true"
-                                                style="height:100%;position:relative;width:100%">
-                                                <div class="wistia_swatch"
-                                                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                                                    <img src="https://fast.wistia.com/embed/medias/wdn0iykyp5/swatch"
-                                                        style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
-                                                        alt="" onload="this.parentNode.style.opacity=1;"/></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wistia-video" id="job-designer">
-                                    <div class="wistia_responsive_padding"
-                                        style="padding:55.27% 0 0 0;position:relative;">
-                                        <div class="wistia_responsive_wrapper"
-                                            style="height:100%;left:0;position:absolute;top:0;width:100%;">
-                                            <div class="wistia_embed wistia_async_f3hgcyjjj1 videoFoam=true"
-                                                style="height:100%;position:relative;width:100%">
-                                                <div class="wistia_swatch"
-                                                    style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;">
-                                                    <img src="https://fast.wistia.com/embed/medias/f3hgcyjjj1/swatch"
-                                                        style="filter:blur(5px);height:100%;object-fit:contain;width:100%;"
-                                                        alt="" onload="this.parentNode.style.opacity=1;"/></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <header class="text-center" style="margin-bottom: 20px;">
-                    <div class="btn-group" role="group">
-                        <button id="materials-designer-trigger" type="button"
-                            class="btn btn-outline wistia-video-trigger"
-                            onclick="showGif('materials-designer')">design materials
-                        </button>
-                        <button id="job-designer-trigger" type="button"
-                            class="btn btn-outline-bckgrnd wistia-video-trigger"
-                            onclick="showGif('job-designer')">run simulations
-                        </button>
-                        <button id="api-usage-trigger" type="button" class="btn btn-outline wistia-video-trigger"
-                            onclick="showGif('api-usage')">programmatic usage
-                        </button>
-                        <a id="" type="button" class="btn btn-outline"
-                            href="https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos" target="_blank">more
-                            videos
-                        </a>
-                        <script>
-                            /*
-                             * Button handler function
-                             */
-                            function showGif(name) {
-                                console.log(name);
-                                $('.wistia-video').addClass("hidden");
-                                $(`#${name}`).removeClass("hidden");
-                                $(".wistia-video-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                                $(`#${name}-trigger`).addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                            }
-                        </script>
-                    </div>
-                </header>
-            </section>
-
             <!-- Functions -->
-            <section class="section i functions gray">
+            <section class="section i functions">
                 <div class="container">
                     <header class="text-center">
                         <div class="row">
@@ -725,25 +704,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!--<div class="col-md-3 col-sm-3 team-item text-center">-->
-                        <!--<img class="team-photo" src="img/team-chris.jpg">-->
-                        <!--<div>-->
-                        <!--<h4 class="team-name">Chris Kemp</h4>-->
-                        <!--<p class="team-title">Advisor</p>-->
-                        <!--<div class="centered-pills">-->
-                        <!--<ul class="nav nav-pills">-->
-                        <!--<li><a class="team-link linkedin"-->
-                        <!--href="http://en.wikipedia.org/wiki/Chris_C._Kemp" target="_blank"><i-->
-                        <!--class="fa fa-info-circle fa-2"></i></a></li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                        <!--<p class="team-desc">-->
-                        <!--Founder and leading mind behind OpenStack. Previously - CTO of NASA, founder and CEO-->
-                        <!--of Nebula, Escapia and Netran. Providing guidance on business and technological-->
-                        <!--aspects of cloud computing.-->
-                        <!--</p>-->
-                        <!--</div>-->
-                        <!--</div>-->
                         <div class="col-md-3 col-sm-3 team-item text-center">
                             <img class="team-photo" src="img/team-nikita.jpg">
                             <div>
@@ -764,26 +724,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!--<div class="col-md-3 col-sm-3 team-item text-center">-->
-                        <!--<img class="team-photo" src="img/team-kj.jpg">-->
-                        <!--<div>-->
-                        <!--<h4 class="team-name">K.J. Cho</h4>-->
-                        <!--<p class="team-title">Scientific Advisor</p>-->
-                        <!--<div class="centered-pills">-->
-                        <!--<ul class="nav nav-pills">-->
-                        <!--<li><a class="team-link linkedin"-->
-                        <!--href="http://mse.utdallas.edu/people/cho.html"-->
-                        <!--target="_blank"><i class="fa fa-info-circle"></i></a></li>-->
-                        <!--</ul>-->
-                        <!--</div>-->
-                        <!--<p class="team-desc">-->
-                        <!--Professor of Materials Science at UT Dallas and one of the pioneers of multiscale-->
-                        <!--modeling for nanomaterials. Co-founder of 3 material design companies. Published-->
-                        <!--over 250 journal articles, with some highlighted in US President's Council of-->
-                        <!--Advisors On Science And Technology.-->
-                        <!--</p>-->
-                        <!--</div>-->
-                        <!--</div>-->
                     </div>
 
                     <!-- Investors -->
@@ -1289,7 +1229,7 @@
                             </div>
                         </div>
                         <div class="col-xs-6 col-sm-3 i">
-                            <h2>Stay in touch</h2>
+                            <h2>Get in touch</h2>
                             <p>Type your email below</p>
                             <div class="form">
                                 <input type="email" class="form-control newsletter-input">
@@ -1373,5 +1313,41 @@
             window.open('mailto:info@exabyte.io?subject=' + subject + '&body=' + body);
         }
     </script>
+
+    <!-- INTERCOM -->
+    <script>
+        window.intercomSettings = {
+            app_id: "dh4b19uk"
+        };
+    </script>
+
+    <script>(function () {
+        var w = window;
+        var ic = w.Intercom;
+        if (typeof ic === "function") {
+            ic('reattach_activator');
+            ic('update', w.intercomSettings);
+        } else {
+            var d = document;
+            var i = function () {i.c(arguments);};
+            i.q = [];
+            i.c = function (args) {i.q.push(args);};
+            w.Intercom = i;
+            var l = function () {
+                var s = d.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://widget.intercom.io/widget/dh4b19uk';
+                var x = d.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            };
+            if (w.attachEvent) {
+                w.attachEvent('onload', l);
+            } else {
+                w.addEventListener('load', l, false);
+            }
+        }
+    })();</script>
+
 </body>
 </html>

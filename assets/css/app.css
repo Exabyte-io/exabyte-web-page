@@ -574,7 +574,7 @@ h3 {
 
 #header .wrap {
     margin-top: 70px;
-    margin-bottom: 140px;
+    margin-bottom: 70px;
 }
 
 #header .wrap h2,
@@ -600,8 +600,8 @@ h3 {
 
 #header .wrap h3 {
     margin: 0;
-    font-size: 23px;
-    font-size: 2.3rem
+    font-size: 20px;
+    font-size: 2.0rem
 }
 
 #header.subpage .carousel-btns {
@@ -3539,7 +3539,8 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 }
 
 #screencast-link .btn {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    border: 2px solid;
 }
 
 #screencast-link .btn.btn-outline-bckgrnd-orange,
@@ -3610,6 +3611,9 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     #iframe-entity-counts {
         min-height: 250px;
     }
+    #hero-left {
+        text-align: left;
+    }
 }
 
 @media (max-width: 960px) {
@@ -3630,4 +3634,16 @@ section {
 
 .p-20 {
     padding: 20px !important;
+}
+
+#total-entity-counts .metrics .submetric h2 {
+    font-size: 6rem;
+}
+
+.m-b-50 {
+    margin-bottom: 50px !important;
+}
+
+#hero-left {
+    padding-top: 20px;
 }
