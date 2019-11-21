@@ -3607,7 +3607,7 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     margin-bottom: -9px;
 }
 
-@media (min-width: 961px) {
+@media (min-width: 991px) {
     #iframe-entity-counts {
         min-height: 250px;
     }
