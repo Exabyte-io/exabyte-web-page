@@ -307,7 +307,6 @@ h3 {
 }
 
 .btn-outline-bckgrnd-green {
-    border: 1px solid white;
     background: rgba(59, 192, 189, 1.0);
 }
 
@@ -3543,19 +3542,24 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     }
 }
 
-#screencast-link {
+.signup-link {
     margin-top: 30px;
 }
 
-#screencast-link .btn {
+.signup-link .btn {
     font-size: 2.5rem;
     border: 2px solid;
 }
 
-#screencast-link .btn.btn-outline-bckgrnd-orange,
-#screencast-link .btn-outline-bckgrnd-green,
-#screencast-link .btn-outline-bckgrnd {
+.signup-link .btn.btn-outline-bckgrnd-orange,
+.signup-link .btn-outline-bckgrnd-green,
+.signup-link .btn-outline-bckgrnd {
     font-weight: 800;
+}
+
+.signup-button-standalone a {
+    color: white;
+    font-variant: small-caps;
 }
 
 .company-logo {
