@@ -573,7 +573,7 @@ h3 {
 
 #header .wrap {
     margin-top: 70px;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 #header .wrap h2,
@@ -3562,6 +3562,11 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     font-variant: small-caps;
 }
 
+.signup-button-standalone a:hover {
+    color: rgba(10, 54, 119, 1.0);
+}
+
+
 .company-logo {
     height: 180px !important;
 }
@@ -3685,4 +3690,8 @@ section {
 
 .learn-more-link {
     color: rgba(10, 54, 119, 1.0);
+}
+
+#open-access-note {
+    font-size: 80%;
 }
