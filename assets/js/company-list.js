@@ -133,7 +133,7 @@ const AcademicList = [
 ];
 
 const FullList = [].concat(
-    ["FORTUNE 2000"], Array(1).fill("\xa0"),
+    ["GLOBAL 2000"], Array(1).fill("\xa0"),
     F500list,
     Array(3).fill("\xa0"),  // to add space
     ["SMALL/MEDIUM ENTEPRISES"], Array(1).fill("\xa0"),
@@ -153,7 +153,7 @@ function generateCompanyList(updated_users) {
     $.each(FullList, function (index, userName) {
         $('<li />', {
             html: userName,
-            class: !["FORTUNE 2000", "SMALL/MEDIUM ENTEPRISES", "ACADEMIC"].includes(userName) ? "company-name" : ''
+            class: !["GLOBAL 2000", "SMALL/MEDIUM ENTEPRISES", "ACADEMIC"].includes(userName) ? "company-name" : ''
         }).appendTo(selector)
     });
 
