@@ -456,7 +456,7 @@ h3 {
     position: absolute;
     background: rgba(10, 54, 119, 0.90);
     background: linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
-    /*background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);*/
+    background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
 }
 
 #header.dim > .container {
@@ -846,6 +846,15 @@ h3 {
 
 .metrics header {
     margin-bottom: 50px;
+}
+
+.metrics .submetric {
+    margin-bottom: 50px;
+}
+
+.metrics .submetric p i {
+    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 .metrics .submetric h2 {
@@ -2050,7 +2059,7 @@ div[class$="-head"]:not(.main-head) {
     float: left;
 }
 
-.team-item .team-link {
+.team-link {
     color: rgba(10, 54, 119, 0.8);
     font-size: 20px;
 }
@@ -3595,6 +3604,10 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     filter: drop-shadow(1px 1px 3px rgba(10, 54, 119, 0.90));
 }
 
+.drop-shadow-blue-opacity {
+    filter: drop-shadow(1px 1px 3px rgba(10, 54, 119, 0.30));
+}
+
 /* hide iframe on non-main pages */
 .subpage #iframe-periodic-table {
     display: none;
@@ -3607,10 +3620,23 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     margin-bottom: -9px;
 }
 
+@media (min-width: 1200px) {
+    #hero-left {
+        padding-top: 20px;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    #hero-left h3 p {
+        font-size: 1.8rem;
+    }
+}
+
 @media (min-width: 991px) {
     #iframe-entity-counts {
         min-height: 250px;
     }
+
     #hero-left {
         text-align: left;
     }
@@ -3644,6 +3670,15 @@ section {
     margin-bottom: 50px !important;
 }
 
-#hero-left {
-    padding-top: 20px;
+#features-showcase img {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+#features-showcase .i {
+    min-height: 450px;
+}
+
+.learn-more-link {
+    color: rgba(10, 54, 119, 1.0);
 }
