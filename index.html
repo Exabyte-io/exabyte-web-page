@@ -214,31 +214,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-group" role="group">
-                            <button id="materials-designer-trigger" type="button"
-                                class="btn btn-outline wistia-video-trigger"
-                                onclick="showGif('materials-designer')">design materials
-                            </button>
-                            <button id="job-designer-trigger" type="button"
-                                class="btn btn-outline-bckgrnd wistia-video-trigger"
-                                onclick="showGif('job-designer')">run simulations
-                            </button>
-                            <button id="api-usage-trigger" type="button" class="btn btn-outline wistia-video-trigger"
-                                onclick="showGif('api-usage')">programmatic usage
-                            </button>
-                            <script>
-                                /*
-                                 * Button handler function
-                                 */
-                                function showGif(name) {
-                                    console.log(name);
-                                    $('.wistia-video').addClass("hidden");
-                                    $(`#${name}`).removeClass("hidden");
-                                    $(".wistia-video-trigger").addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                                    $(`#${name}-trigger`).addClass("btn-outline").removeClass("btn-outline-bckgrnd");
-                                }
-                            </script>
-                        </div>
 
                     </div>
 
@@ -248,7 +223,7 @@
 
         <div class="main-page">
             <!-- Features -->
-            <section class="section lightblue features">
+            <section class="section features">
                 <div class="container">
                     <header class="text-center">
                         <div class="row">
@@ -279,22 +254,141 @@
                             </div>
                         </div>
                     </header>
-                    <div class="row text-center">
+                    <div id="features-showcase" class="row text-center">
                         <div class="col-sm-4 i">
-                            <img class="x-icon-molecule drop-shadow-blue" src="img/molecule.png" alt="#"
-                                class="img-responsive">
-                            <p>web-based collaborative environment for materials design, modeling and informatics</p>
+                            <img width="100%" src="img/design-materials.png" alt="#"
+                                class="img-responsive drop-shadow-blue-opacity">
+                            <p>in-browser integrated environment for <b class="exb-color">materials</b> design</p>
+                            <div class="centered-pills">
+                                <ul class="nav nav-pills">
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://github.com/Exabyte-io/materials-designer"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-github-square fa-2"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://docs.exabyte.io/tutorials/materials/slabs-interface/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-info-circle fa-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-sm-4 i">
-                            <img class="x-icon-server drop-shadow-blue" src="img/server.png" alt="#"
-                                class="img-responsive">
-                            <p>cloud-based high-performance computing platform, <br> fast, scalable and secure
-                            </p>
+                            <img width="100%" src="img/run-jobs.png" alt="#"
+                                class="img-responsive drop-shadow-blue-opacity">
+                            <p>fast and secure cloud high-performance <b class="exb-color">computing</b></p>
+                            <div class="centered-pills">
+                                <ul class="nav nav-pills">
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://github.com/Exabyte-io/exabyte-benchmarks-suite"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-github-square fa-2"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://docs.exabyte.io/benchmarks/2018-11-12-comparison/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-info-circle fa-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-sm-4 i">
-                            <img class="x-icon-formula drop-shadow-blue" src="img/formula.png" alt="#"
-                                class="img-responsive">
-                            <p>integrated support for high-fidelity multi-scale models and associated workflows</p>
+                            <img width="100%" src="img/design-workflows.png" alt="#"
+                                class="img-responsive drop-shadow-blue-opacity">
+                            <p>web-based designer for inter-operable modeling <b class="exb-color">workflows</b></p>
+                            <div class="centered-pills">
+                                <ul class="nav nav-pills">
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://docs.exabyte.io/workflow-designer/overview/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-info-circle fa-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <img width="100%" src="img/organize-data.png" alt="#"
+                                class="img-responsive drop-shadow-blue-opacity">
+                            <p>open-source <b class="exb-color">data standards</b> organizing materials information</p>
+                            <div class="centered-pills">
+                                <ul class="nav nav-pills">
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://github.com/Exabyte-io/esse"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-github-square fa-2"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://docs.exabyte.io/data-structured/convention/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-info-circle fa-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <img width="100%" src="img/analyze-data.png" alt="#"
+                                class="img-responsive drop-shadow-blue-opacity">
+                            <p>advanced data <b class="exb-color">analytics</b> and machine learning infrastructure</p>
+                            <div class="centered-pills">
+                                <ul class="nav nav-pills">
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://github.com/Exabyte-io/exabyte-api-examples/blob/master/examples/job/ml-train-model-predict-properties.ipynb"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-github-square fa-2"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://docs.exabyte.io/materials/actions/advanced-search/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-info-circle fa-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 i">
+                            <img width="100%" src="img/collaborate.png" alt="#"
+                                class="img-responsive drop-shadow-blue-opacity">
+                            <p>secure <b class="exb-color">collaboration</b> within and between accounts</p>
+                            <div class="centered-pills">
+                                <ul class="nav nav-pills">
+                                    <li>
+                                        <a class="team-link"
+                                            href="https://docs.exabyte.io/collaboration/ui/overview/"
+                                            target="_blank"
+                                        >
+                                            <i class="fa fa-info-circle fa-2"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -305,11 +399,12 @@
                     <header class="text-center">
                         <div class="row metric-title">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                                <h2 class="exb-color">EXABYTE.IO PLATFORM</h2>
+                                <h2 class="exb-color">THE EXABYTE.IO PLATFORM</h2>
                                 <p class="justify">
-                                    Exabyte.io allows chemists and materials scientists to organize their work
-                                    and collaborate using any modeling tools. Our machine intelligence accelerates the
-                                    research process, and provides the foundation for faster product development.
+                                    Exabyte.io helps chemists and materials scientists organize their work
+                                    and collaborate in a single easy-to-use cloud environment, allowing to
+                                    rapidly learn and deploy a variety of modeling tools able to accelerate the R&D
+                                    phase and provide the foundation for faster product development.
                                 </p>
                             </div>
                         </div>
@@ -365,37 +460,79 @@
                     <header class="text-center">
                         <div class="row metric-title">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                                <h2 class="exb-color">CUSTOMER <strong>METRICS </strong></h2>
+                                <h2 class="exb-color">CUSTOMER <strong>STORIES </strong></h2>
                             </div>
                         </div>
                     </header>
+
                     <div class="row submetric text-center">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                            <h2 class="exb-color"><strong>10x </strong>
-                                <div class="pub-ent">public enterprise</div>
+                            <h2 class="exb-color">
+                                <img style="opacity: 0.7;margin: auto;/* margin-top: 30px; */max-width: 205px;"
+                                    src="img/logos/imi-bw.jpg" class="img-responsive">
+                                <div class="pub-ent"></div>
                             </h2>
                             <p>
-                                <b class="exb-color">more</b> virtual tests for materials discovery,
+                                <i>
+                                    "Exabyte.io allowed us to significantly <b class="exb-color">accelerate</b> our
+                                    research and development efforts by leveraging state-of-the-art advancements in
+                                    materials simulations and high performance computing in the cloud."
+                                </i>
                                 <br>
-                                innovate faster than competition
+                                <br>
+                                Dr. Sergey Barabash, Materials & Device Simulations, <br>
+                                Intermolecular, Inc. (acq. by Merck KGaA)
                             </p>
                         </div>
                     </div>
+
                     <div class="row submetric text-center">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                            <h2 class="exb-color"><strong>5x </strong>
-                                <div class="rs-lab">research lab</div>
+                            <h2 class="exb-color">
+                                <img style="opacity: 0.7;margin: auto;/* margin-top: 30px; */max-width: 205px;"
+                                    src="img/logos/itochu-bw.png" class="img-responsive">
+                                <div class="pub-ent"></div>
                             </h2>
                             <p>
-                                <b class="exb-color">shorter</b> turnaround time for prototyping,
+                                <i>
+                                    "Exabyte.io lets us improve <b class="exb-color">speed and
+                                    accuracy</b> of the modeling techniques we deploy and helps organize the resulting
+                                    data. Accessible and collaborative interface allows us to train new users in
+                                    nanoscale simulations much faster."
+                                </i>
                                 <br>
-                                reduced time = direct savings
+                                <br>
+                                Dr. Kazuki Mori, Science and Engineering Systems Division, <br>
+                                ITOCHU Techno-solutions, Inc.
                             </p>
                         </div>
                     </div>
+
+                    <div class="row submetric text-center">
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+                            <h2 class="exb-color">
+                                <img style="opacity: 0.7;margin: auto; margin-bottom: 40px; max-width: 425px;"
+                                    src="img/logos/tuos.gif" class="img-responsive">
+                                <div class="pub-ent"></div>
+                            </h2>
+                            <p>
+                                <i>
+                                    "With Exabyte.io we have top-tier computational resources and support
+                                    in a very cost-efficient manner. This helps us
+                                    <b class="exb-color">reduce</b> the time required to educate new group members in
+                                    performing state-of-the-art research in molecular modeling."
+                                </i>
+                                <br>
+                                <br>
+                                Dr. Jun Koyanagi, Dept. of Materials Science and Technology, <br>
+                                Tokyo University of Science
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
-            
+
             <!-- Functions -->
             <section class="section i functions">
                 <div class="container">
@@ -896,7 +1033,7 @@
                             <div class="col-xs-12 company-logo">
                                 <a href="https://exabyte.docsend.com/view/syitiek" target="_blank">
                                     <img style="opacity: 0.7; margin: auto; margin-top: 30px; max-width: 275px;"
-                                        src="img/logos/imi-bw-full.jpg"
+                                        src="img/logos/imi-bw.jpg"
                                         class="img-responsive">
                                 </a>
                             </div>
