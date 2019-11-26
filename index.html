@@ -133,9 +133,11 @@
                             </li>
 
                             <!-- sign in and docs links -->
-                            <li><a href="https://docs.exabyte.io/" target="_blank">Documentation</a></li>
-                            <li><a href="https://platform.exabyte.io/shared-externally" target="_blank">Public Data</a>
-                            </li>
+                            <!--<li><a href="https://docs.exabyte.io/" target="_blank">Documentation</a></li>-->
+                            <!--<li>-->
+                                <!--<a href="https://platform.exabyte.io/shared-externally" target="_blank">Public Data</a>-->
+                            <!--</li>-->
+                            <li><a href="https://platform.exabyte.io/login"> Sign Up</a></li>
                             <li><a href="https://platform.exabyte.io/login"> Sign in</a></li>
                         </ul>
                     </nav>
@@ -226,7 +228,7 @@
                             <li style="margin-top: 13px; margin-right: 5px;">We support Open Access</li>
                             <li>
                                 <a class="team-link"
-                                    href="https://github.com/Exabyte-io/materials-designer"
+                                    href="https://platform.exabyte.io/shared-externally"
                                     target="_blank">
                                     <i class="fa fa-unlock-alt fa-2"></i>
                                 </a>
@@ -907,9 +909,21 @@
                         </p>
                     </div>
 
-                    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center links-to-more-info">
-                        <a href="#vision">our vision</a>
-                        <a href="#contact"> contact us</a>
+                    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center links-to-more-info handle-page-change">
+                        <a href="#vision"
+                            data-page=".vision-page"
+                            data-cls="subpage"
+                            title="Vision"
+                        >
+                            our vision
+                        </a>
+                        <a href="#contact"
+                            data-page=".contact-page"
+                            data-cls="subpage"
+                            title="Contact Us"
+                        >
+                            contact us
+                        </a>
                         <a href="https://docs.exabyte.io/getting-started/content-highlights/"
                             target="_blank"> documentation</a>
                     </div>
@@ -1167,7 +1181,7 @@
                                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                                     </div>
                                     <div class="mc-field-group">
-                                        <label for="mce-MMERGE3">I want to use Exabyte to ... </label>
+                                        <label for="mce-MMERGE3">I would like to ... </label>
                                         <input type="text" value="" name="MMERGE3" class="" id="mce-MMERGE3">
                                     </div>
                                     <div id="mce-responses" class="clear">
