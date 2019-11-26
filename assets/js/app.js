@@ -3,7 +3,6 @@ const PLATFORM_HOST_AND_PORT = "platform.exabyte.io";
 //const PLATFORM_HOST_AND_PORT = "localhost:4000";  // uncomment for local development
 const REST_API_URL = `https://${PLATFORM_HOST_AND_PORT}/api/2018-10-01`;
 
-
 // FUNCTIONS
 $(document).ready(function () {
     loaderReady();
@@ -12,6 +11,7 @@ $(document).ready(function () {
     cssTitleSlider.init();
     goToPathname();
     getTotalEntityCounts();
+    initHideShowScrollToTopButton();
 });
 
 const animateNumberCountBySelector = (count, selector) => {
@@ -123,6 +123,8 @@ var dumbRouter = {
         $(document).on('click', '.logo a', handlePageChange);
         $(document).on('click', '#footer a', handlePageChange);
 
+        $(document).on('click', '.handle-page-change a', handlePageChange);
+
         $(document).on('click', '.navbar-nav li a', function (event) {
             $(".navbar-collapse").collapse('hide');
         });
@@ -161,3 +163,21 @@ var cssTitleSlider = {
         }
     }
 };
+
+// Initiate Scroll-to top logic
+const initHideShowScrollToTopButton = () => {
+    const mybutton = document.getElementById("scroll-to-top");
+
+    window.onscroll = function () {
+        hideShowButtonOnScroll();
+    };
+
+    function hideShowButtonOnScroll() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+}
