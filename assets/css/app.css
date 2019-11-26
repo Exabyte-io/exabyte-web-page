@@ -3383,8 +3383,12 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 
 
 /* SECURITY */
-.security-page {
-    font-variant: small-caps;
+.security-page {}
+
+.security-page #cloud-provider-note {
+    font-size: 14px;
+    font-size: 1.4rem;
+    margin-top: 30px;
 }
 
 .about-page blockquote,
@@ -3799,6 +3803,11 @@ section {
 .links-to-more-info a {
     margin-right: 40px;
     font-variant: small-caps;
+}
+
+.links-to-more-info a:hover {
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
 }
 
 #scroll-to-top {
