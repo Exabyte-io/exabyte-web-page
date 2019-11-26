@@ -3623,6 +3623,18 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     font-weight: 800;
 }
 
+#signup-link-header a {
+    background: rgba(59, 192, 189, 1.0);
+    border: 1px solid !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    border-radius: 5px;
+}
+
+#signup-link-header a:hover {
+    background: rgba(59, 192, 189, 0.75) !important;
+}
+
 .signup-button-standalone a {
     color: white;
     font-variant: small-caps;
