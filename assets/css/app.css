@@ -424,10 +424,17 @@ h3 {
     position: relative;
     min-height: 600px;
     color: #fff;
-    font-variant: small-caps;
     background: rgba(10, 54, 119, 0.8);
     background: url(../../img/exabyte-symbol.png) center center no-repeat, linear-gradient(30deg, rgba(10, 54, 119, 0.90) 43%, rgba(0, 0, 32, 0.95) 100%);
 
+}
+
+#header .explanation-paragraph {
+
+}
+
+#header .signup-link {
+    font-variant: small-caps;
 }
 
 #header.singleColor {
