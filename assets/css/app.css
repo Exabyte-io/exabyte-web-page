@@ -3411,7 +3411,8 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
 }
 
 .security-page .section h2 {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .feature {
