@@ -3831,3 +3831,6 @@ section {
     background-color: rgba(10, 54, 119, 0.75);
 }
 
+.vision.section p {
+    margin-bottom: 20px;
+}
