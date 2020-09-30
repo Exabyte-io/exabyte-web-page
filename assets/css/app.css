@@ -3654,6 +3654,10 @@ a=[]; for (i=0; i<19; i++) { a.push(`${i*5.5}% {
     height: 180px !important;
 }
 
+.news-entry-visual {
+    padding-bottom: 40px;
+}
+
 .company-list ul li {
     list-style-type: none !important;
 }
