@@ -1,0 +1,35 @@
+@import '../../styles/index';
+
+.action-btn {
+  font-family: @primary-font;
+  font-weight: 600;
+  font-size: @font-small;
+  color: @secondary-color;
+
+  &:hover {
+    color: @secondary-color;
+  }
+
+  &-default {
+    background-color: @tertiary-color;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: @font-extra-small;
+    text-transform: uppercase;
+    color: @primary-color;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  &-small {
+    width: 166px;
+    height: 44px;
+  }
+
+}

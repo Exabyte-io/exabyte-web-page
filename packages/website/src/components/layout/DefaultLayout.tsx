@@ -4,6 +4,7 @@ import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
 import { Outlet } from 'react-router-dom'
 import './DefaultLayout.less'
+import { ActionButton } from '../button/actionButton'
 
 const DefaultLayout: FC = () => (
   <Layout style={{ minHeight: '100vh', width: '100%' }}>
@@ -11,6 +12,10 @@ const DefaultLayout: FC = () => (
       <Row align={'middle'} justify={'space-between'}>
         <Logo />
         <TopNavigation />
+        <Row align={'middle'}>
+          <ActionButton title={'SignIn'} type={'transparent'} styles={{ marginRight: '30px' }} />
+          <ActionButton title={'Sign Up'} type={'default'} size={'small'} />
+        </Row>
       </Row>
     </Layout.Header>
     <Layout.Content style={{ padding: 50 }}>

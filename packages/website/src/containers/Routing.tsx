@@ -5,8 +5,8 @@ import { Menu, MenuProps } from 'antd'
 import { RoutesProps } from 'react-router'
 
 const Home = lazy(() => import('./../pages/home'))
-const Login = lazy(() => import('./../pages/login'))
-const ContactUs = lazy(() => import('../pages/contact-us'))
+// const Login = lazy(() => import('./../pages/login'))
+// const ContactUs = lazy(() => import('../pages/contact-us'))
 
 type RouteNavigationMap = {
   [key: string]: { component: FC; name: string }
@@ -17,13 +17,25 @@ const routeMap: RouteNavigationMap = {
     component: Home,
     name: 'Home',
   },
-  '/login': {
-    component: Login,
-    name: 'Login',
+  '/case-studies': {
+    component: Home,
+    name: 'Case Studies',
+  },
+  '/pricing': {
+    component: Home,
+    name: 'Pricing',
+  },
+  '/news': {
+    component: Home,
+    name: 'News',
   },
   '/contact-us': {
-    component: ContactUs,
+    component: Home,
     name: 'Contact Us',
+  },
+  '/about': {
+    component: Home,
+    name: 'About',
   },
 }
 
@@ -32,7 +44,8 @@ function withNavigation(Wrapped: FC<MenuProps>): FC<MenuProps> {
     const { pathname } = useLocation()
     return (
       <Wrapped {...props} defaultSelectedKeys={[pathname ?? '/']}>
-        {Object.entries(routeMap).map(([path, { name }]) => (
+        {Object.entries(routeMap).map(([path, { name }]) =>
+          name !== "Home" && (
           <Menu.Item key={path}>
             <NavLink to={path}>{name}</NavLink>
           </Menu.Item>
