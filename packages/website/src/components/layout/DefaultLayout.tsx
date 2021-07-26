@@ -1,16 +1,17 @@
 import { FC } from 'react'
-import { Breadcrumb, Layout, Space } from 'antd'
+import { Breadcrumb, Layout, Row } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
 import { Outlet } from 'react-router-dom'
+import './DefaultLayout.less'
 
 const DefaultLayout: FC = () => (
   <Layout style={{ minHeight: '100vh', width: '100%' }}>
     <Layout.Header>
-      <Space align={'center'} size={'large'} direction={'horizontal'}>
+      <Row align={'middle'} justify={'space-between'}>
         <Logo />
         <TopNavigation />
-      </Space>
+      </Row>
     </Layout.Header>
     <Layout.Content style={{ padding: 50 }}>
       <Breadcrumb style={{ margin: '16px 0' }}>
