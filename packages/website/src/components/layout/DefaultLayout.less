@@ -7,15 +7,30 @@
 
 .ant-layout-header {
   background-color: @primary-color;
+  height: 63px;
+  padding: 0 20px;
+
+  @media (min-width: 992px) {
+    height: 103px;
+  }
 }
 
 .ant-menu {
   border: none;
 
-  &-title-content > a {
-    font-family: @primary-font;
-    font-size: 16px;
-    line-height: 20px;
-    color: @secondary-color !important;
+  &-item {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+
+  &-title-content {
+    a {
+      font-family: @primary-font;
+      font-size: 16px;
+      line-height: 20px;
+      color: @secondary-color !important;
+    }
   }
 }
