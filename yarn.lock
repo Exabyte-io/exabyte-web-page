@@ -5083,9 +5083,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@template/react-antd-website@workspace:packages/react-antd-website-template":
+"@template/react-antd-website@workspace:packages/website":
   version: 0.0.0-use.local
-  resolution: "@template/react-antd-website@workspace:packages/react-antd-website-template"
+  resolution: "@template/react-antd-website@workspace:packages/website"
   dependencies:
     "@apollo/client": ^3.3.20
     "@babel/core": ^7.14.3
@@ -5151,9 +5151,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@template/strapi-cms@workspace:packages/strapi-cms-template":
+"@template/strapi-cms@workspace:packages/cms":
   version: 0.0.0-use.local
-  resolution: "@template/strapi-cms@workspace:packages/strapi-cms-template"
+  resolution: "@template/strapi-cms@workspace:packages/cms"
   dependencies:
     "@types/node": ^15.12.2
     babel-eslint: ^10.1.0
