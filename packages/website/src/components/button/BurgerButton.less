@@ -21,15 +21,15 @@
 }
 
 .burger_line {
-  width: 24px;
+  width: 26px;
   height: 2px;
-  background-color: #f26522;
+  background-color: #FFFFFF;
   transition: transform 0.3s, opacity 0.3s, width 0.3s;
+  border-radius: 4px;
 }
 
-
 .burger_line:not(:last-of-type) {
-  margin-bottom: 4px;
+  margin-bottom: 9px;
 }
 
 .burger_line:first-child {
@@ -55,5 +55,5 @@
 
 .mobile_menu__opener--active .burger_line:last-child {
   width: 26px;
-  transform: rotate(-45deg) translate(-8px, 8px);
+  transform: rotate(-45deg) translate(-5px, 5px);
 }

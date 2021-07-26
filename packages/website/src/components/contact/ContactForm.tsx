@@ -23,7 +23,6 @@ const ContactForm: FC = () => {
   const [messageApi, context] = message.useMessage()
   const [rating, setRating] = useState(0)
 
-
   const onFinish = (data: ContactFormRequestInput) => {
     messageApi
       .loading(

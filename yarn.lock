@@ -5126,6 +5126,7 @@ __metadata:
     less-loader: ^9.1.0
     mini-css-extract-plugin: ^1.6.0
     postcss-loader: ^6.1.0
+    prettier: 2.3.2
     process: ^0.11.10
     react: ^17.0.2
     react-cookie: ^4.0.3
@@ -20563,6 +20564,15 @@ fsevents@~2.3.1:
   dependencies:
     fast-diff: ^1.1.2
   checksum: 6d698b9c8dc28e52c8d69df520cde3410cc06cc40471acf81b4b7c18ca08e73d0efb0f878654985bb02fce4f8d3d64cdf64fe9f3ffad3e1dc7e17b837d4ddcb2
+  languageName: node
+  linkType: hard
+
+"prettier@npm:2.3.2":
+  version: 2.3.2
+  resolution: "prettier@npm:2.3.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 4fd89a7f6a12b13456d359fba2b1dd0fc0a17cf33f8f15953ab9f43b21ea9b09b5a2861d63b558ca0577274ce606d390e70628cf93e26d19d6cb7f19c9eebc31
   languageName: node
   linkType: hard
 

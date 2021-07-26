@@ -44,12 +44,14 @@ function withNavigation(Wrapped: FC<MenuProps>): FC<MenuProps> {
     const { pathname } = useLocation()
     return (
       <Wrapped {...props} defaultSelectedKeys={[pathname ?? '/']}>
-        {Object.entries(routeMap).map(([path, { name }]) =>
-          name !== "Home" && (
-          <Menu.Item key={path}>
-            <NavLink to={path}>{name}</NavLink>
-          </Menu.Item>
-        ))}
+        {Object.entries(routeMap).map(
+          ([path, { name }]) =>
+            name !== 'Home' && (
+              <Menu.Item key={path}>
+                <NavLink to={path}>{name}</NavLink>
+              </Menu.Item>
+            ),
+        )}
       </Wrapped>
     )
   }

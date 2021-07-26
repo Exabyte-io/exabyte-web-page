@@ -1,26 +1,26 @@
 @import '../../styles/index';
 
 .action-btn {
-  font-family: @primary-font;
+  color: @secondary-color;
   font-weight: 600;
   font-size: @font-small;
-  color: @secondary-color;
+  font-family: @primary-font;
 
   &:hover {
     color: @secondary-color;
   }
 
   &-default {
-    background-color: @tertiary-color;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: @font-extra-small;
-    text-transform: uppercase;
-    color: @primary-color;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    color: @primary-color;
+    font-weight: 700;
+    font-size: @font-extra-small;
+    text-transform: uppercase;
+    background-color: @tertiary-color;
+    border-radius: 10px;
 
     &:hover {
       color: @primary-color;
@@ -31,5 +31,4 @@
     width: 166px;
     height: 44px;
   }
-
 }
