@@ -1,0 +1,15 @@
+.git*
+.idea
+node_modules
+build
+properties
+obj
+coverage
+.gradle
+charts
+.yarn
+.config
+.terraform
+modules
+*ignore
+**/*/graphql/**/*

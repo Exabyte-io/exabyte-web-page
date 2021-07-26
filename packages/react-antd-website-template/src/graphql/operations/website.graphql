@@ -1,0 +1,5 @@
+query website($domain: ID!) {
+  website(id: $domain) {
+    ...Website
+  }
+}

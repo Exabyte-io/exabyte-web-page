@@ -1,0 +1,31 @@
+schema:
+  - packages/strapi-cms-template/exports/graphql/schema.graphql
+watch:
+  - packages/strapi-cms-template/exports/**/*.graphql
+  - packages/*/src/graphql/**/*.graphql
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+config:
+  maybeValue: T
+  typescript:
+    avoidOptionals: true
+    scalars:
+      Date: Date
+      Time: Date
+      JSON: Record<string, any>
+      Long: number
+      DateTime: Date
+generates:
+  packages/react-antd-website-template/src/graphql/index.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo:
+          withComponent: true
+          withHooks: true
+          withResultType: true
+    documents:
+      - packages/react-antd-website-template/src/graphql/fragments/*.graphql
+      - packages/react-antd-website-template/src/graphql/operations/*.graphql
+      - packages/strapi-cms-template/exports/graphql/fragments/*.graphql
