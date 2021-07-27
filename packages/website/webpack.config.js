@@ -46,6 +46,7 @@ const config = {
       },
       {
         test: /\.(png|jpg|jpeg|webp|gif)$/i,
+        dependency: { not: 'url' },
         use: [
           {
             loader: 'url-loader',
