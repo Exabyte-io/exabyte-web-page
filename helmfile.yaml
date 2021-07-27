@@ -36,7 +36,7 @@ releases:
     labels:
       app: cms
     values:
-      - image: dcr.bndigital.dev/grant-mill/cms:latest
+      - image: dcr.bndigital.dev/exabyte/cms:latest
         envSecrets: [ backend-services ]
         configMapsSecrets: [ backend-services ]
         imagePullSecrets: [ container-registry ]
