@@ -53,7 +53,6 @@ function withNavigation<T>(Wrapped: FC<T>): FC<T> {
   )
 }
 
-
 const Routing: VFC = () => (
   <Routes>
     <Route element={<DefaultLayout />}>

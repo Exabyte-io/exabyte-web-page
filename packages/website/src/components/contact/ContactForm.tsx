@@ -1,8 +1,7 @@
-import { FC, useState } from 'react'
-import { Button, Form, FormProps, Input, message, Rate, Select, Typography } from 'antd'
+import { FC } from 'react'
+import { Button, Form, FormProps, Input, message, Select } from 'antd'
 import { ValidateMessages } from 'rc-field-form/lib/interface'
 import { useCreateContactFormRequestMutation, useCountriesQuery, ContactFormRequestInput } from '../../graphql'
-import Dragger, { UploadChangeParam } from 'antd/lib/upload'
 
 const formProps: FormProps = {
   labelCol: { span: 8 },
@@ -17,11 +16,10 @@ const validateMessages: ValidateMessages = {
 }
 
 const ContactForm: FC = () => {
-  const { data, loading } = useCountriesQuery()
+  const { data } = useCountriesQuery()
   const [createContactFormRequest] = useCreateContactFormRequestMutation()
   const messageKey = 'request'
   const [messageApi, context] = message.useMessage()
-  const [rating, setRating] = useState(0)
 
   const onFinish = (data: ContactFormRequestInput) => {
     messageApi
