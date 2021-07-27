@@ -1,8 +1,7 @@
-import { FC, lazy } from 'react'
-import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { FC, lazy, VFC } from 'react'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from '../components/layout/DefaultLayout'
-import { Menu, MenuProps } from 'antd'
-import { RoutesProps } from 'react-router'
+import { Menu } from 'antd'
 
 const Home = lazy(() => import('./../pages/home'))
 // const Login = lazy(() => import('./../pages/login'))
@@ -39,41 +38,30 @@ const routeMap: RouteNavigationMap = {
   },
 }
 
-function withNavigation(Wrapped: FC<MenuProps>): FC<MenuProps> {
-  return props => {
-    const { pathname } = useLocation()
-    return (
-      <Wrapped {...props} defaultSelectedKeys={[pathname ?? '/']}>
-        {Object.entries(routeMap).map(
-          ([path, { name }]) =>
-            name !== 'Home' && (
-              <Menu.Item key={path}>
-                <NavLink to={path}>{name}</NavLink>
-              </Menu.Item>
-            ),
-        )}
-      </Wrapped>
-    )
-  }
-}
-
-function withRoutes(Wrapped: FC): FC<RoutesProps> {
+function withNavigation<T>(Wrapped: FC<T>): FC<T> {
   return props => (
-    <Wrapped {...props}>
-      {Object.entries(routeMap).map(([path, { component }]) => {
-        const Page = component
-        return <Route key={path} path={path} element={<Page />} />
-      })}
+    <Wrapped {...props} defaultSelectedKeys={['/']}>
+      {Object.entries(routeMap).map(
+        ([path, { name }]) =>
+          name !== 'Home' && (
+            <Menu.Item key={path}>
+              <NavLink to={path}>{name}</NavLink>
+            </Menu.Item>
+          ),
+      )}
     </Wrapped>
   )
 }
 
-const InnerRouter: FC = ({ children }) => (
+
+const Routing: VFC = () => (
   <Routes>
-    <Route path={''} element={<DefaultLayout />}>
-      {children}
+    <Route element={<DefaultLayout />}>
+      {Object.entries(routeMap).map(([path, { component }]) => {
+        const Page = component
+        return <Route key={path} path={path} element={<Page />} />
+      })}
     </Route>
   </Routes>
 )
-const Routing = withRoutes(InnerRouter)
 export { Routing, withNavigation }

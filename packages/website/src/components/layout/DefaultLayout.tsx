@@ -6,14 +6,12 @@ import { Outlet } from 'react-router-dom'
 import { ActionButton } from '../button/actionButton'
 import { useMediaQuery } from 'react-responsive'
 import { BurgerButton } from '../button/BurgerButton'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import GetInTouchBtn from './get-in-toch-icon.svg'
 import { BottomNavigation } from '../menu/BottomNavigation'
 import './DefaultLayout.less'
 
 const DefaultLayout: FC = () => {
-  const [open, setOpen] = useState(false)
+  const [, setOpen] = useState(false)
 
   // const md = useMediaQuery({ minWidth: '768px' })
   const xl = useMediaQuery({ minWidth: '992px' })
