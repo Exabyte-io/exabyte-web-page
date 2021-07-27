@@ -6,6 +6,9 @@ import { Outlet } from 'react-router-dom'
 import { ActionButton } from '../button/actionButton'
 import { useMediaQuery } from 'react-responsive'
 import { BurgerButton } from '../button/BurgerButton'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import GetInTouchBtn from './get-in-toch-icon.svg'
 import './DefaultLayout.less'
 
 const DefaultLayout: FC = () => {
@@ -18,7 +21,7 @@ const DefaultLayout: FC = () => {
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
       <Layout.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Row align={'middle'} justify={'space-between'} style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-          <Logo />
+          <Logo style={{ display: 'flex' }} />
           {xl && <TopNavigation />}
           {xl && (
             <Row align={'middle'}>
@@ -35,7 +38,38 @@ const DefaultLayout: FC = () => {
         </Breadcrumb>
         <Outlet />
       </Layout.Content>
-      <Layout.Footer style={{ textAlign: 'center' }}>App ©{new Date().getFullYear()}</Layout.Footer>
+      <Layout.Footer>
+        <Row align={'middle'} justify={'space-between'} style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+          {/*top left wrapper*/}
+          <div className={'top-left-wrapper'}>
+            <Logo style={{ marginBottom: '30px' }} />
+            <p className={'address-info'}>
+              1161 Mission street, suite 505
+              <br />
+              San Francisco, CA 94103
+              <br />
+              +1 (510) 473-7770
+              <br />
+              info@exabyte.io
+            </p>
+          </div>
+          {/*top left wrapper*/}
+
+          {/*touch form*/}
+          <div className={'touch-form-wrapper'}>
+            <p className={'touch-form-label'}>Get in touch</p>
+            <form className={'touch-form'}>
+              <input placeholder={'Email'} className={'touch-form-input'} />
+              <button className={'touch-form-btn'}>
+                <GetInTouchBtn />
+              </button>
+            </form>
+          </div>
+          {/*touch form*/}
+
+          <p className={'all-rights'}>©{new Date().getFullYear()} Exabyte Inc. All rights reserved.</p>
+        </Row>
+      </Layout.Footer>
     </Layout>
   )
 }
