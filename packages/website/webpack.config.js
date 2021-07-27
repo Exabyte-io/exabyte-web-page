@@ -75,6 +75,19 @@ const config = {
         ],
       },
       {
+        test: /\.(png|jpg|jpeg|webp|gif)$/i,
+        dependency: { not: ['url'] },
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+        type: 'javascript/auto',
+      },
+      {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
       },

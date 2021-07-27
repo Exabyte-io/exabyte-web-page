@@ -1,0 +1,35 @@
+@import "./src/styles/index";
+
+.home-hero {
+  padding-top: 48px;
+  padding-bottom: 130px;
+  //background: linear-gradient(180deg, #070F4A -27.43%, #15165E 43%, #5B37C0 123.76%);
+  background-image: url("../images/home-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  &-title {
+    font-family: @secondary-font;
+    font-weight: 600;
+    font-size: @font-2xl;
+    color: @secondary-color;
+    margin-bottom: 24px;
+  }
+
+  &-description {
+    font-family: @primary-font;
+    font-size: @font-small;
+    color: @secondary-color;
+    margin-bottom: 43px !important;
+  }
+
+  &-unlock {
+    font-family: @primary-font;
+    font-weight: 600;
+    font-size: @font-very-small;
+    color: @secondary-color;
+    border-bottom: 1px solid @secondary-color;
+    margin-bottom: 0px !important;
+  }
+}

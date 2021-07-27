@@ -1,17 +1,11 @@
 import { FC } from 'react'
-import { Layout, Typography } from 'antd'
-import { useContentQuery } from '../../graphql'
+import { Hero } from './sections/Hero'
 
-const Home: FC = ({ children }) => {
-  const { data, loading, error } = useContentQuery({ variables: { where: { slug: 'home-section' } } })
-  const section = data?.contents?.[0]
-  return !loading && section ? (
-    <Layout>
-      <Typography.Title>{section.title}</Typography.Title>
-      <Typography.Paragraph>{section.description}</Typography.Paragraph>
-    </Layout>
-  ) : (
-    <Layout>{children}</Layout>
+const Home: FC = () => {
+  return (
+    <>
+      <Hero />
+    </>
   )
 }
 

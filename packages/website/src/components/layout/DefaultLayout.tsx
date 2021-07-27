@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Breadcrumb, Col, Layout, Row, Typography } from 'antd'
+import { Col, Layout, Row, Typography } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
 import { Outlet } from 'react-router-dom'
@@ -21,7 +21,7 @@ const DefaultLayout: FC = () => {
   return (
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
       <Layout.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Row align={'middle'} justify={'space-between'} style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+        <Row align={'middle'} justify={'space-between'} className={'container'}>
           <Logo style={{ display: 'flex' }} />
           {xl && <TopNavigation />}
           {xl && (
@@ -33,14 +33,13 @@ const DefaultLayout: FC = () => {
           {!xl && <BurgerButton onClick={setOpen} />}
         </Row>
       </Layout.Header>
-      <Layout.Content style={{ padding: 50 }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-        </Breadcrumb>
+
+      <Layout.Content style={{ width: '100%', minHeight: 'unset' }}>
         <Outlet />
       </Layout.Content>
+
       <Layout.Footer>
-        <Col style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+        <Col className={'container'}>
 
           <Row className={'footer-content-wrapper'}>
             {/*top left wrapper*/}
