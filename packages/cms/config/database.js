@@ -5,9 +5,9 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: env('DATABASE_CLIENT') ? env('DATABASE_CLIENT') : 'sqlite',
-        host: env('DATABASE_HOST', 'bndigital.dev'),
+        host: env('DATABASE_HOST', 'bndigital-postgresql.production.svc.cluster.local'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'production'),
+        database: env('DATABASE_NAME', 'staging'),
         schema: env('DATABASE_SCHEMA', 'bndigital'),
         username: env('DATABASE_USERNAME', 'bn'),
         password: env('DATABASE_PASSWORD'),

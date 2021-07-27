@@ -4,7 +4,7 @@ on:
     types:
       - completed
     workflows:
-      - Deploy
+      - Website
 jobs:
   smoke-test:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}

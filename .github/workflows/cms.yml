@@ -1,17 +1,22 @@
-name: Vue
+name: CMS
 on:
+  workflow_dispatch:
+    inputs: {}
   push:
     branches:
       - latest
     paths:
-      - .github/workflows/vue.yml
-      - packages/vue/src/**/*
-      - packages/vue/src/package.json
+      - .github/workflows/cms.yml
+      - packages/strapi/api/**/*
+      - packages/strapi/components/**/*
+      - packages/strapi/config/**/*
+      - packages/strapi/extensions/**/*
+      - packages/strapi/package.json
 
 env:
   docker_buildkit: 1
-  docker_repository: ${{ secrets.docker_registry }}/app
-  docker_image: vue
+  docker_repository: ${{ secrets.docker_registry }}/exabyte
+  docker_image: cms
 
 jobs:
   build:
@@ -63,12 +68,5 @@ jobs:
       - name: Setup Helm diff
         run: helm plugin install https://github.com/databus23/helm-diff
 
-      - name: Get Time
-        id: time
-        uses: nanzm/get-time-action@v1.1
-        with:
-          timeZone: 2
-          format: 'YYYY-MM-DD-HH-mm-ss'
-
       - name: Helmfile apply
-        run: helmfile --environment=staging --selector=app=${{ env.docker_image }} apply --set podAnnotations.timestamp=${{ steps.time.outputs.time }}
+        run: helmfile --environment=staging --selector=app=${{ env.docker_image }} apply

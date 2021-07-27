@@ -4,7 +4,7 @@ on:
     types:
       - completed
     workflows:
-      - Deploy
+      - Website
 jobs:
   slack:
     name: Notify in Slack
@@ -20,6 +20,6 @@ jobs:
           SLACK_ICON: https://cdn.bndigital.co/images/logo.png
           SLACK_MESSAGE: |
             Staging environment updated.
-            See latest builds on https://app.bndigital.dev. Code analysis report: https://sonarqube.bndigital.dev
+            See latest builds on https://exabyte.bndigital.dev. Code analysis report: https://sonarqube.bndigital.dev
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_FOOTER: ''

@@ -12,67 +12,34 @@ environments:
     values: [ ]
 
 releases:
-  - name: app-react
+  - name: exabyte-website
     namespace: '{{ .Environment.Name }}'
     chart: bndigital/nodejs
     labels:
-      app: react
+      app: website
     values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
+      - image: dcr.bndigital.dev/exabyte/website:latest
+        imagePullSecrets: [ container-registry ]
+        podAnnotations:
+          git/ref: '{{ env "GITHUB_REF" | default "latest" }}'
+          git/sha: '{{ env "GITHUB_SHA" | default "unknown" }}'
+        ingress:
+          host: exabyte.bndigital.dev
+          proxies:
+            - path: /(admin|auth|import-export-content|callback|connect|content-manager|content-type-builder|email|email-designer|entity-relationship-chart|i18n|graphql|register|responsive-image|users-permissions|upload|uploads)(.*)
+              backend:
+                service: grant-mill-cms-nodejs
 
-  - name: app-vue
+  - name: exabyte-cms
     namespace: '{{ .Environment.Name }}'
     chart: bndigital/nodejs
     labels:
-      app: vue
+      app: cms
     values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
-
-  - name: app-html
-    namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
-    labels:
-      app: html
-    values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
-
-  - name: app-strapi
-    namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
-    labels:
-      app: strapi
-    values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
-      - envSecrets: [ backend-services ]
+      - image: dcr.bndigital.dev/exabyte/cms:latest
+        envSecrets: [ backend-services ]
         configMapsSecrets: [ backend-services ]
-
-  - name: app-graphql
-    namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
-    labels:
-      app: graphql
-    values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
-      - image: apisguru/graphql-faker
-        app:
-          port: 9092
-
-  - name: app-tailwind
-    namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
-    labels:
-      app: graphql
-    values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
-      - image: apisguru/graphql-faker
-        app:
-          port: 9092
-
-  - name: app-storybook
-    namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
-    labels:
-      app: storybook
-    installed: false
-    values:
-      - 'values.{{ .Environment.Name }}.gotmpl'
+        imagePullSecrets: [ container-registry ]
+        podAnnotations:
+          git/ref: '{{ env "GITHUB_REF" | default "latest" }}'
+          git/sha: '{{ env "GITHUB_SHA" | default "unknown" }}'

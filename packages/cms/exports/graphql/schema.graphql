@@ -48,92 +48,11 @@ type Employee {
   photo: UploadFile
 }
 
-type Category {
-  id: ID!
-  name: String!
-  slug: String!
-  posts(sort: String, limit: Int, start: Int, where: JSON): [Post]
-}
-
-type CategoryConnection {
-  values: [Category]
-  groupBy: CategoryGroupBy
-  aggregate: CategoryAggregator
-}
-
-type CategoryAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type CategoryGroupBy {
-  id: [CategoryConnectionId]
-  name: [CategoryConnectionName]
-  slug: [CategoryConnectionSlug]
-}
-
-type CategoryConnectionId {
-  key: ID
-  connection: CategoryConnection
-}
-
-type CategoryConnectionName {
-  key: String
-  connection: CategoryConnection
-}
-
-type CategoryConnectionSlug {
-  key: String
-  connection: CategoryConnection
-}
-
-input CategoryInput {
-  name: String!
-  posts: [ID]
-  slug: String!
-  created_by: ID
-  updated_by: ID
-}
-
-input editCategoryInput {
-  name: String
-  posts: [ID]
-  slug: String
-  created_by: ID
-  updated_by: ID
-}
-
-input createCategoryInput {
-  data: CategoryInput
-}
-
-type createCategoryPayload {
-  category: Category
-}
-
-input updateCategoryInput {
-  where: InputID
-  data: editCategoryInput
-}
-
-type updateCategoryPayload {
-  category: Category
-}
-
-input deleteCategoryInput {
-  where: InputID
-}
-
-type deleteCategoryPayload {
-  category: Category
-}
-
 type ContactFormRequest {
   id: ID!
   email: String!
   firstName: String
   lastName: String
-  country: Country
   message: String
   rating: Float
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
@@ -175,7 +94,6 @@ type ContactFormRequestGroupBy {
   email: [ContactFormRequestConnectionEmail]
   firstName: [ContactFormRequestConnectionFirstName]
   lastName: [ContactFormRequestConnectionLastName]
-  country: [ContactFormRequestConnectionCountry]
   message: [ContactFormRequestConnectionMessage]
   rating: [ContactFormRequestConnectionRating]
 }
@@ -200,11 +118,6 @@ type ContactFormRequestConnectionLastName {
   connection: ContactFormRequestConnection
 }
 
-type ContactFormRequestConnectionCountry {
-  key: ID
-  connection: ContactFormRequestConnection
-}
-
 type ContactFormRequestConnectionMessage {
   key: String
   connection: ContactFormRequestConnection
@@ -219,7 +132,6 @@ input ContactFormRequestInput {
   email: String!
   firstName: String
   lastName: String
-  country: ID
   message: String
   files: [ID]
   rating: Float
@@ -231,7 +143,6 @@ input editContactFormRequestInput {
   email: String
   firstName: String
   lastName: String
-  country: ID
   message: String
   files: [ID]
   rating: Float
@@ -378,200 +289,6 @@ input deleteContentInput {
 
 type deleteContentPayload {
   content: Content
-}
-
-type Country {
-  id: ID!
-  name: String!
-  code: String!
-}
-
-type CountryConnection {
-  values: [Country]
-  groupBy: CountryGroupBy
-  aggregate: CountryAggregator
-}
-
-type CountryAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type CountryGroupBy {
-  id: [CountryConnectionId]
-  name: [CountryConnectionName]
-  code: [CountryConnectionCode]
-}
-
-type CountryConnectionId {
-  key: ID
-  connection: CountryConnection
-}
-
-type CountryConnectionName {
-  key: String
-  connection: CountryConnection
-}
-
-type CountryConnectionCode {
-  key: String
-  connection: CountryConnection
-}
-
-input CountryInput {
-  name: String!
-  code: String!
-  created_by: ID
-  updated_by: ID
-}
-
-input editCountryInput {
-  name: String
-  code: String
-  created_by: ID
-  updated_by: ID
-}
-
-input createCountryInput {
-  data: CountryInput
-}
-
-type createCountryPayload {
-  country: Country
-}
-
-input updateCountryInput {
-  where: InputID
-  data: editCountryInput
-}
-
-type updateCountryPayload {
-  country: Country
-}
-
-input deleteCountryInput {
-  where: InputID
-}
-
-type deleteCountryPayload {
-  country: Country
-}
-
-type Post {
-  id: ID!
-  category: Category
-  slug: String!
-  seo: ComponentOrganismsPage
-  section: ComponentOrganismsSection
-  previewHorizontal: UploadFile
-  previewVertical: UploadFile
-}
-
-type PostConnection {
-  values: [Post]
-  groupBy: PostGroupBy
-  aggregate: PostAggregator
-}
-
-type PostAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type PostGroupBy {
-  id: [PostConnectionId]
-  category: [PostConnectionCategory]
-  slug: [PostConnectionSlug]
-  seo: [PostConnectionSeo]
-  section: [PostConnectionSection]
-  previewHorizontal: [PostConnectionPreviewHorizontal]
-  previewVertical: [PostConnectionPreviewVertical]
-}
-
-type PostConnectionId {
-  key: ID
-  connection: PostConnection
-}
-
-type PostConnectionCategory {
-  key: ID
-  connection: PostConnection
-}
-
-type PostConnectionSlug {
-  key: String
-  connection: PostConnection
-}
-
-type PostConnectionSeo {
-  key: ID
-  connection: PostConnection
-}
-
-type PostConnectionSection {
-  key: ID
-  connection: PostConnection
-}
-
-type PostConnectionPreviewHorizontal {
-  key: ID
-  connection: PostConnection
-}
-
-type PostConnectionPreviewVertical {
-  key: ID
-  connection: PostConnection
-}
-
-input PostInput {
-  category: ID
-  author: ID
-  slug: String!
-  seo: ComponentOrganismsPageInput
-  section: ComponentOrganismsSectionInput!
-  previewHorizontal: ID
-  previewVertical: ID
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editPostInput {
-  category: ID
-  author: ID
-  slug: String
-  seo: editComponentOrganismsPageInput
-  section: editComponentOrganismsSectionInput
-  previewHorizontal: ID
-  previewVertical: ID
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input createPostInput {
-  data: PostInput
-}
-
-type createPostPayload {
-  post: Post
-}
-
-input updatePostInput {
-  where: InputID
-  data: editPostInput
-}
-
-type updatePostPayload {
-  post: Post
-}
-
-input deletePostInput {
-  where: InputID
-}
-
-type deletePostPayload {
-  post: Post
 }
 
 type Website {
@@ -1159,6 +876,246 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
+type BlogCategory {
+  id: ID!
+  name: String!
+  slug: String!
+  posts(sort: String, limit: Int, start: Int, where: JSON): [BlogPost]
+  parent(sort: String, limit: Int, start: Int, where: JSON): [BlogCategory]
+  children(sort: String, limit: Int, start: Int, where: JSON): [BlogCategory]
+}
+
+type BlogCategoryConnection {
+  values: [BlogCategory]
+  groupBy: BlogCategoryGroupBy
+  aggregate: BlogCategoryAggregator
+}
+
+type BlogCategoryAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type BlogCategoryGroupBy {
+  id: [BlogCategoryConnectionId]
+  name: [BlogCategoryConnectionName]
+  slug: [BlogCategoryConnectionSlug]
+}
+
+type BlogCategoryConnectionId {
+  key: ID
+  connection: BlogCategoryConnection
+}
+
+type BlogCategoryConnectionName {
+  key: String
+  connection: BlogCategoryConnection
+}
+
+type BlogCategoryConnectionSlug {
+  key: String
+  connection: BlogCategoryConnection
+}
+
+input CategoryInput {
+  name: String!
+  posts: [ID]
+  parent: [ID]
+  children: [ID]
+  slug: String!
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCategoryInput {
+  name: String
+  posts: [ID]
+  parent: [ID]
+  children: [ID]
+  slug: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+type BlogPost {
+  id: ID!
+  name: String!
+  text: String!
+  slug: String!
+  cover(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  categories(sort: String, limit: Int, start: Int, where: JSON): [BlogCategory]
+}
+
+type BlogPostConnection {
+  values: [BlogPost]
+  groupBy: BlogPostGroupBy
+  aggregate: BlogPostAggregator
+}
+
+type BlogPostAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type BlogPostGroupBy {
+  id: [BlogPostConnectionId]
+  name: [BlogPostConnectionName]
+  text: [BlogPostConnectionText]
+  slug: [BlogPostConnectionSlug]
+}
+
+type BlogPostConnectionId {
+  key: ID
+  connection: BlogPostConnection
+}
+
+type BlogPostConnectionName {
+  key: String
+  connection: BlogPostConnection
+}
+
+type BlogPostConnectionText {
+  key: String
+  connection: BlogPostConnection
+}
+
+type BlogPostConnectionSlug {
+  key: String
+  connection: BlogPostConnection
+}
+
+input PostInput {
+  name: String!
+  text: String!
+  cover: [ID]
+  slug: String!
+  categories: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editPostInput {
+  name: String
+  text: String
+  cover: [ID]
+  slug: String
+  categories: [ID]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+type IntlCountry {
+  id: ID!
+  name: String!
+  code: String!
+}
+
+type IntlCountryConnection {
+  values: [IntlCountry]
+  groupBy: IntlCountryGroupBy
+  aggregate: IntlCountryAggregator
+}
+
+type IntlCountryAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type IntlCountryGroupBy {
+  id: [IntlCountryConnectionId]
+  name: [IntlCountryConnectionName]
+  code: [IntlCountryConnectionCode]
+}
+
+type IntlCountryConnectionId {
+  key: ID
+  connection: IntlCountryConnection
+}
+
+type IntlCountryConnectionName {
+  key: String
+  connection: IntlCountryConnection
+}
+
+type IntlCountryConnectionCode {
+  key: String
+  connection: IntlCountryConnection
+}
+
+input CountryInput {
+  name: String!
+  code: String!
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCountryInput {
+  name: String
+  code: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+type IntlCurrency {
+  id: ID!
+  name: String!
+  code: String!
+}
+
+type IntlCurrencyConnection {
+  values: [IntlCurrency]
+  groupBy: IntlCurrencyGroupBy
+  aggregate: IntlCurrencyAggregator
+}
+
+type IntlCurrencyAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type IntlCurrencyGroupBy {
+  id: [IntlCurrencyConnectionId]
+  name: [IntlCurrencyConnectionName]
+  code: [IntlCurrencyConnectionCode]
+}
+
+type IntlCurrencyConnectionId {
+  key: ID
+  connection: IntlCurrencyConnection
+}
+
+type IntlCurrencyConnectionName {
+  key: String
+  connection: IntlCurrencyConnection
+}
+
+type IntlCurrencyConnectionCode {
+  key: String
+  connection: IntlCurrencyConnection
+}
+
+input CurrencyInput {
+  name: String!
+  code: String!
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editCurrencyInput {
+  name: String
+  code: String
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
 type ComponentAtomsButton {
   id: ID!
   link: ComponentAtomsLink
@@ -1379,7 +1336,7 @@ input editComponentOrganismsSectionInput {
   slug: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Employee | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionName | CategoryConnectionSlug | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | ContactFormRequest | ContactFormRequestConnection | ContactFormRequestAggregator | ContactFormRequestAggregatorSum | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorMax | ContactFormRequestGroupBy | ContactFormRequestConnectionId | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionLastName | ContactFormRequestConnectionCountry | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | createContactFormRequestPayload | updateContactFormRequestPayload | deleteContactFormRequestPayload | Content | ContentConnection | ContentAggregator | ContentGroupBy | ContentConnectionId | ContentConnectionTitle | ContentConnectionDescription | ContentConnectionButton | ContentConnectionSlug | ContentConnectionLocale | createContentPayload | updateContentPayload | deleteContentPayload | Country | CountryConnection | CountryAggregator | CountryGroupBy | CountryConnectionId | CountryConnectionName | CountryConnectionCode | createCountryPayload | updateCountryPayload | deleteCountryPayload | Post | PostConnection | PostAggregator | PostGroupBy | PostConnectionId | PostConnectionCategory | PostConnectionSlug | PostConnectionSeo | PostConnectionSection | PostConnectionPreviewHorizontal | PostConnectionPreviewVertical | createPostPayload | updatePostPayload | deletePostPayload | Website | WebsiteConnection | WebsiteAggregator | WebsiteGroupBy | WebsiteConnectionId | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | createWebsitePayload | updateWebsitePayload | deleteWebsitePayload | EmailDesignerEmailTemplate | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | createUserPayload | updateUserPayload | deleteUserPayload | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Employee | ContactFormRequest | ContactFormRequestConnection | ContactFormRequestAggregator | ContactFormRequestAggregatorSum | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorMax | ContactFormRequestGroupBy | ContactFormRequestConnectionId | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | createContactFormRequestPayload | updateContactFormRequestPayload | deleteContactFormRequestPayload | Content | ContentConnection | ContentAggregator | ContentGroupBy | ContentConnectionId | ContentConnectionTitle | ContentConnectionDescription | ContentConnectionButton | ContentConnectionSlug | ContentConnectionLocale | createContentPayload | updateContentPayload | deleteContentPayload | Website | WebsiteConnection | WebsiteAggregator | WebsiteGroupBy | WebsiteConnectionId | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | createWebsitePayload | updateWebsitePayload | deleteWebsitePayload | EmailDesignerEmailTemplate | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | createUserPayload | updateUserPayload | deleteUserPayload | BlogCategory | BlogCategoryConnection | BlogCategoryAggregator | BlogCategoryGroupBy | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogPost | BlogPostConnection | BlogPostAggregator | BlogPostGroupBy | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionText | BlogPostConnectionSlug | IntlCountry | IntlCountryConnection | IntlCountryAggregator | IntlCountryGroupBy | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryConnectionCode | IntlCurrency | IntlCurrencyConnection | IntlCurrencyAggregator | IntlCurrencyGroupBy | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyConnectionCode | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection
 
 input InputID {
   id: ID!
@@ -1398,21 +1355,12 @@ type AdminUser {
 }
 
 type Query {
-  category(id: ID!, publicationState: PublicationState): Category
-  categories(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Category]
-  categoriesConnection(sort: String, limit: Int, start: Int, where: JSON): CategoryConnection
   contactFormRequest(id: ID!, publicationState: PublicationState): ContactFormRequest
   contactFormRequests(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [ContactFormRequest]
   contactFormRequestsConnection(sort: String, limit: Int, start: Int, where: JSON): ContactFormRequestConnection
   content(id: ID!, publicationState: PublicationState): Content
   contents(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState, locale: String): [Content]
   contentsConnection(sort: String, limit: Int, start: Int, where: JSON, locale: String): ContentConnection
-  country(id: ID!, publicationState: PublicationState): Country
-  countries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Country]
-  countriesConnection(sort: String, limit: Int, start: Int, where: JSON): CountryConnection
-  post(id: ID!, publicationState: PublicationState): Post
-  posts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Post]
-  postsConnection(sort: String, limit: Int, start: Int, where: JSON): PostConnection
   website(id: ID!, publicationState: PublicationState): Website
   websites(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Website]
   websitesConnection(sort: String, limit: Int, start: Int, where: JSON): WebsiteConnection
@@ -1428,26 +1376,31 @@ type Query {
   user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
   users(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsUser]
   usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  category(id: ID!, publicationState: PublicationState): BlogCategory
+  categories(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [BlogCategory]
+  categoriesConnection(sort: String, limit: Int, start: Int, where: JSON): BlogCategoryConnection
+  post(id: ID!, publicationState: PublicationState): BlogPost
+  posts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [BlogPost]
+  postsConnection(sort: String, limit: Int, start: Int, where: JSON): BlogPostConnection
+  country(id: ID!, publicationState: PublicationState): IntlCountry
+  countries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [IntlCountry]
+  countriesConnection(sort: String, limit: Int, start: Int, where: JSON): IntlCountryConnection
+  currency(id: ID!, publicationState: PublicationState): IntlCurrency
+  currencies(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [IntlCurrency]
+  currenciesConnection(sort: String, limit: Int, start: Int, where: JSON): IntlCurrencyConnection
   me: UsersPermissionsMe
+  postBySlug(slug: String!): BlogPost
+  categoryBySlug(slug: String!): BlogCategory
   employees: [Employee]!
 }
 
 type Mutation {
-  createCategory(input: createCategoryInput): createCategoryPayload
-  updateCategory(input: updateCategoryInput): updateCategoryPayload
-  deleteCategory(input: deleteCategoryInput): deleteCategoryPayload
   createContactFormRequest(input: createContactFormRequestInput): createContactFormRequestPayload
   updateContactFormRequest(input: updateContactFormRequestInput): updateContactFormRequestPayload
   deleteContactFormRequest(input: deleteContactFormRequestInput): deleteContactFormRequestPayload
   createContent(input: createContentInput): createContentPayload
   updateContent(input: updateContentInput): updateContentPayload
   deleteContent(input: deleteContentInput): deleteContentPayload
-  createCountry(input: createCountryInput): createCountryPayload
-  updateCountry(input: updateCountryInput): updateCountryPayload
-  deleteCountry(input: deleteCountryInput): deleteCountryPayload
-  createPost(input: createPostInput): createPostPayload
-  updatePost(input: updatePostInput): updatePostPayload
-  deletePost(input: deletePostInput): deletePostPayload
   createWebsite(input: createWebsiteInput): createWebsitePayload
   updateWebsite(input: updateWebsiteInput): updateWebsitePayload
   deleteWebsite(input: deleteWebsiteInput): deleteWebsitePayload
