@@ -40,7 +40,6 @@ const DefaultLayout: FC = () => {
 
       <Layout.Footer>
         <Col className={'container'}>
-
           <Row className={'footer-content-wrapper'}>
             {/*top left wrapper*/}
             <div className={'top-left-wrapper'}>

@@ -75,7 +75,7 @@ const config = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|webp|gif)$/i,
+        test: /\.(png|jpg|jpeg|webp|gif|mp4)$/i,
         dependency: { not: ['url'] },
         use: [
           {
