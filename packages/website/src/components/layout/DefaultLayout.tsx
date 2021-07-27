@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Breadcrumb, Layout, Row, Typography } from 'antd'
+import { Breadcrumb, Col, Layout, Row, Typography } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
 import { Outlet } from 'react-router-dom'
@@ -9,8 +9,8 @@ import { BurgerButton } from '../button/BurgerButton'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import GetInTouchBtn from './get-in-toch-icon.svg'
-import './DefaultLayout.less'
 import { BottomNavigation } from '../menu/BottomNavigation'
+import './DefaultLayout.less'
 
 const DefaultLayout: FC = () => {
   const [open, setOpen] = useState(false)
@@ -40,42 +40,45 @@ const DefaultLayout: FC = () => {
         <Outlet />
       </Layout.Content>
       <Layout.Footer>
-        <Row align={'middle'} justify={'space-between'} style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-          {/*top left wrapper*/}
-          <div className={'top-left-wrapper'}>
-            <Logo style={{ marginBottom: '30px' }} />
-            <Typography.Paragraph className={'address-info'}>
-              1161 Mission street, suite 505
-              <br />
-              San Francisco, CA 94103
-              <br />
-              +1 (510) 473-7770
-              <br />
-              info@exabyte.io
-            </Typography.Paragraph>
-          </div>
-          {/*top left wrapper*/}
+        <Col style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
 
-          {/*touch form*/}
-          <div className={'touch-form-wrapper'}>
-            <Typography.Paragraph className={'touch-form-label'}>Get in touch</Typography.Paragraph>
-            <form className={'touch-form'}>
-              <input placeholder={'Email'} className={'touch-form-input'} />
-              <button className={'touch-form-btn'}>
-                <GetInTouchBtn />
-              </button>
-            </form>
-          </div>
-          {/*touch form*/}
+          <Row className={'footer-content-wrapper'}>
+            {/*top left wrapper*/}
+            <div className={'top-left-wrapper'}>
+              <Logo style={{ marginBottom: '30px' }} />
+              <Typography.Paragraph className={'address-info'}>
+                1161 Mission street, suite 505
+                <br />
+                San Francisco, CA 94103
+                <br />
+                +1 (510) 473-7770
+                <br />
+                info@exabyte.io
+              </Typography.Paragraph>
+            </div>
+            {/*top left wrapper*/}
 
-          {/*footer navigation*/}
-          <BottomNavigation />
-          {/*footer navigation*/}
+            {/*touch form*/}
+            <div className={'touch-form-wrapper'}>
+              <Typography.Paragraph className={'touch-form-label'}>Get in touch</Typography.Paragraph>
+              <form className={'touch-form'}>
+                <input placeholder={'Email'} className={'touch-form-input'} />
+                <button className={'touch-form-btn'}>
+                  <GetInTouchBtn />
+                </button>
+              </form>
+            </div>
+            {/*touch form*/}
+
+            {/*footer navigation*/}
+            <BottomNavigation />
+            {/*footer navigation*/}
+          </Row>
 
           <Typography.Paragraph className={'all-rights'}>
             ©{new Date().getFullYear()} Exabyte Inc. All rights reserved.
           </Typography.Paragraph>
-        </Row>
+        </Col>
       </Layout.Footer>
     </Layout>
   )

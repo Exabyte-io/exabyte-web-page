@@ -2,6 +2,9 @@
 
 .bottom-navigation-wrapper {
   margin-bottom: 64px;
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+  }
 
   .list-title {
     margin-bottom: 24px;
@@ -9,5 +12,14 @@
     font-weight: 600;
     font-size: @font-small;
     font-family: @primary-font;
+
+    @media (min-width: 992px) {
+      font-size: @font-lg;
+      margin-bottom: 32px;
+    }
+  }
+
+  .ant-menu-item {
+    margin: 0 !important;
   }
 }
