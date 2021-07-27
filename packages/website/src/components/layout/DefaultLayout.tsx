@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { Breadcrumb, Layout, Row } from 'antd'
+import { Breadcrumb, Layout, Row, Typography } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
 import { Outlet } from 'react-router-dom'
@@ -10,6 +10,7 @@ import { BurgerButton } from '../button/BurgerButton'
 // @ts-ignore
 import GetInTouchBtn from './get-in-toch-icon.svg'
 import './DefaultLayout.less'
+import { BottomNavigation } from '../menu/BottomNavigation'
 
 const DefaultLayout: FC = () => {
   const [open, setOpen] = useState(false)
@@ -43,7 +44,7 @@ const DefaultLayout: FC = () => {
           {/*top left wrapper*/}
           <div className={'top-left-wrapper'}>
             <Logo style={{ marginBottom: '30px' }} />
-            <p className={'address-info'}>
+            <Typography.Paragraph className={'address-info'}>
               1161 Mission street, suite 505
               <br />
               San Francisco, CA 94103
@@ -51,13 +52,13 @@ const DefaultLayout: FC = () => {
               +1 (510) 473-7770
               <br />
               info@exabyte.io
-            </p>
+            </Typography.Paragraph>
           </div>
           {/*top left wrapper*/}
 
           {/*touch form*/}
           <div className={'touch-form-wrapper'}>
-            <p className={'touch-form-label'}>Get in touch</p>
+            <Typography.Paragraph className={'touch-form-label'}>Get in touch</Typography.Paragraph>
             <form className={'touch-form'}>
               <input placeholder={'Email'} className={'touch-form-input'} />
               <button className={'touch-form-btn'}>
@@ -67,7 +68,13 @@ const DefaultLayout: FC = () => {
           </div>
           {/*touch form*/}
 
-          <p className={'all-rights'}>©{new Date().getFullYear()} Exabyte Inc. All rights reserved.</p>
+          {/*footer navigation*/}
+          <BottomNavigation />
+          {/*footer navigation*/}
+
+          <Typography.Paragraph className={'all-rights'}>
+            ©{new Date().getFullYear()} Exabyte Inc. All rights reserved.
+          </Typography.Paragraph>
         </Row>
       </Layout.Footer>
     </Layout>
