@@ -5,7 +5,7 @@ import HeroImgMb from '../images/home-hero-mb.svg'
 import HeroImgLg from '../images/home-hero-lg.svg'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import testVideo from '../../../../public/video/videoplayback.mp4'
+// import testVideo from '../../../../public/video/videoplayback.mp4'
 import { useMediaQuery } from 'react-responsive'
 import { AccessBtn } from '../../../components/button/accessBtn'
 import './Hero.less'
@@ -25,8 +25,12 @@ const Hero: FC = () => {
           models online alongside scientists on your team and worldwide.
         </Typography.Paragraph>
         <Row>
-          <ActionButton title={'Get Started Now'} type={'default'} size={'medium'}
-                        styles={xl ? { marginRight: 32 } : { marginBottom: 17 }} />
+          <ActionButton
+            title={'Get Started Now'}
+            type={'default'}
+            size={'medium'}
+            styles={xl ? { marginRight: 32 } : { marginBottom: 17 }}
+          />
           <AccessBtn style={!md ? { marginBottom: 64 } : undefined} />
         </Row>
       </Row>
