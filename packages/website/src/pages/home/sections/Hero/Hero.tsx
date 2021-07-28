@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { Layout, Row, Typography } from 'antd'
-import { ActionButton } from '../../../components/button/actionButton'
-import HeroImgMb from '../images/home-hero-mb.svg'
-import HeroImgLg from '../images/home-hero-lg.svg'
+import { ActionButton } from '../../../../components/button/actionButton'
+import HeroImgMb from '../../images/home-hero-mb.svg'
+import HeroImgLg from '../../images/home-hero-lg.svg'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // import testVideo from '../../../../public/video/videoplayback.mp4'
 import { useMediaQuery } from 'react-responsive'
-import { AccessBtn } from '../../../components/button/accessBtn'
+import { AccessBtn } from '../../../../components/button/accessBtn'
 import './Hero.less'
 
 const Hero: FC = () => {
