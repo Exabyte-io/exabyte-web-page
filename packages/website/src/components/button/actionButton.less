@@ -17,13 +17,17 @@
     width: 100%;
     color: @primary-color;
     font-weight: 700;
-    font-size: @font-extra-small;
+    font-size: @font-very-small;
     text-transform: uppercase;
     background-color: @tertiary-color;
     border-radius: 10px;
 
     &:hover {
       color: @primary-color;
+    }
+
+    @media (min-width: 992px) {
+      font-size: @font-small;
     }
   }
 

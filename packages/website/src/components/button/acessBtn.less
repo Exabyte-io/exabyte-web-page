@@ -5,6 +5,17 @@
   align-items: center;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  &-img {
+    width: 16px;
+    height: 16px;
+
+    @media (min-width: 992px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
 
   &-text {
     margin-bottom: 0px !important;
@@ -13,5 +24,9 @@
     font-size: @font-very-small;
     font-family: @primary-font;
     border-bottom: 1px solid @secondary-color;
+
+    @media (min-width: 992px) {
+      font-size: @font-small;
+    }
   }
 }
