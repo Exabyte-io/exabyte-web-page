@@ -26,15 +26,13 @@ const info: CardProps[] = [
 ]
 
 const ReadyForCard: FC<CardProps> = ({ avatar, ...metaProps }) => (
-  <Col>
-    <Card
-      style={{ textAlign: 'center' }}
-      bordered={false}
-      cover={<Avatar style={{ display: 'block', margin: '0 auto' }} src={avatar} shape={'square'} size={64} />}
-    >
-      <Card.Meta {...metaProps} />
-    </Card>
-  </Col>
+  <Card
+    style={{ textAlign: 'center' }}
+    bordered={false}
+    cover={<Avatar style={{ display: 'block', margin: '0 auto' }} src={avatar} shape={'square'} size={64} />}
+  >
+    <Card.Meta {...metaProps} />
+  </Card>
 )
 
 const ReadyFor: FC = () => (
@@ -49,7 +47,9 @@ const ReadyFor: FC = () => (
       </Col>
       <Row wrap={false} gutter={[24, 24]} justify={'center'}>
         {info.map((props, index) => (
-          <ReadyForCard key={index} {...props} />
+          <Col key={index}>
+            <ReadyForCard {...props} />
+          </Col>
         ))}
       </Row>
     </Row>
