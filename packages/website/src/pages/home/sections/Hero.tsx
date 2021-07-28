@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Layout, Row, Typography } from 'antd'
 import { ActionButton } from '../../../components/button/actionButton'
-// import previewImg from '../images/preview-mb.png'
+import previewImg from '../images/preview-mb.png'
 import HeroImgMb from '../images/home-hero-mb.svg'
 import HeroImgLg from '../images/home-hero-lg.svg'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -26,7 +26,12 @@ const Hero: FC = () => {
           models online alongside scientists on your team and worldwide.
         </Typography.Paragraph>
         <ActionButton title={'Get Started Now'} type={'default'} size={'medium'} styles={{ marginBottom: '17px' }} />
-        <AccessBtn style={{ marginBottom: '64px' }} />
+        <AccessBtn style={!md ? { marginBottom: '64px' } : undefined} />
+        {/*hero video */}
+        <video poster={previewImg}>
+          <source/>
+        </video>
+        {/*hero video */}
       </Row>
     </Layout>
   )
