@@ -1,11 +1,11 @@
-import { FC, HTMLAttributes } from 'react'
+import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import logoSrc from './logoImg.svg'
+import logoSrc from './Logo.svg'
 import './Logo.less'
 
-const Logo: FC<Pick<HTMLAttributes<Element>, 'style'>> = ({ style }) => (
-  <Link to={'/'} style={style} className={'logo'}>
-    <img src={logoSrc} />
+const Logo: FC = () => (
+  <Link to={'/'} className={'logo'}>
+    <img alt={'Matera'} src={logoSrc} />
   </Link>
 )
 

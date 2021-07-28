@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Avatar, Card, Col, Layout, Row, Space, Typography } from 'antd'
+import { Avatar, Card, Col, Layout, Row, Typography } from 'antd'
 import './ReadyFor.less'
 import cardImg1 from '../ReadyFor/images/card1.svg'
 import cardImg2 from '../ReadyFor/images/card2.svg'

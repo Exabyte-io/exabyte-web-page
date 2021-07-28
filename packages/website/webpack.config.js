@@ -98,7 +98,6 @@ const config = {
       },
       {
         test: /\.(png|jpe?g|svg|webp|gif|mp4)$/i,
-        dependency: { not: ['url'] },
         loader: 'url-loader',
         type: 'javascript/auto',
       },
@@ -112,9 +111,6 @@ const config = {
     new CleanWebpackPlugin(),
     new ESLintWebpackPlugin({
       useEslintrc: true,
-      failOnWarning: false,
-      emitWarning: true,
-      cache: true,
       extensions: ['.ts', '.js', '.jsx', '.tsx'],
     }),
     new HtmlWebpackPlugin({

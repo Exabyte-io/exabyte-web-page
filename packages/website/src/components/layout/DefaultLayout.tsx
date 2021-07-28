@@ -1,14 +1,14 @@
 import { FC, useState } from 'react'
-import { Col, Layout, Row, Typography } from 'antd'
+import { Button, Col, Layout, Row, Space, Typography } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
 import { Outlet } from 'react-router-dom'
-import { ActionButton } from '../button/actionButton'
 import { useMediaQuery } from 'react-responsive'
 import { BurgerButton } from '../button/BurgerButton'
 import { BottomNavigation } from '../menu/BottomNavigation'
 import { TouchForm } from '../form/TouchForm'
 import './DefaultLayout.less'
+import '../button/ActionButton.less'
 
 const DefaultLayout: FC = () => {
   // const md = useMediaQuery({ minWidth: '768px' })
@@ -20,15 +20,36 @@ const DefaultLayout: FC = () => {
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
       <Layout.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Row align={'middle'} justify={'space-between'} className={'container'}>
-          <Logo style={{ display: 'flex' }} />
-          {xl && <TopNavigation />}
+          <Col flex={'240px'}>
+            <Logo />
+          </Col>
           {xl && (
-            <Row align={'middle'}>
-              <ActionButton title={'SignIn'} type={'transparent'} styles={{ marginRight: '30px' }} />
-              <ActionButton title={'Sign Up'} type={'default'} size={'small'} />
-            </Row>
+            <Col flex={'auto'}>
+              <TopNavigation />
+            </Col>
           )}
-          {!xl && <BurgerButton onClick={setOpen} />}
+          <Col>
+            {xl && (
+              <Row align={'middle'} gutter={16}>
+                <Col>
+                  <Button style={{ color: '#fff' }} size={'large'} block type={'link'} href={'/sign-in'}>
+                    Sign In
+                  </Button>
+                </Col>
+                <Col>
+                  <Button
+                    className={'action-btn-default action-btn-medium'}
+                    type={'primary'}
+                    size={'large'}
+                    href={'/sign-up'}
+                  >
+                    Sign Up
+                  </Button>
+                </Col>
+              </Row>
+            )}
+          </Col>
+          <Col> {!xl && <BurgerButton onClick={setOpen} />}</Col>{' '}
         </Row>
       </Layout.Header>
 
@@ -39,28 +60,23 @@ const DefaultLayout: FC = () => {
       <Layout.Footer>
         <Col className={'container'}>
           <Row className={'footer-content-wrapper'}>
-            {/*top left wrapper*/}
-            <div className={'top-left-wrapper'}>
-              <Logo style={{ marginBottom: '30px' }} />
-              <Typography.Paragraph className={'address-info'}>
-                1161 Mission street, suite 505
-                <br />
-                San Francisco, CA 94103
-                <br />
-                +1 (510) 473-7770
-                <br />
-                info@exabyte.io
-              </Typography.Paragraph>
-            </div>
-            {/*top left wrapper*/}
-
-            {/*touch form*/}
-            <TouchForm />
-            {/*touch form*/}
-
-            {/*footer navigation*/}
-            <BottomNavigation />
-            {/*footer navigation*/}
+            <Col>
+              <Space className={'top-left-wrapper'} direction={'vertical'} size={32}>
+                <Logo />
+                <Space className={'address-info'} direction={'vertical'} size={8}>
+                  <Typography.Text>1161 Mission street, suite 505</Typography.Text>
+                  <Typography.Text>San Francisco, CA 94103</Typography.Text>
+                  <Typography.Text>+1 (510) 473-7770</Typography.Text>
+                  <Typography.Text>info@exabyte.io</Typography.Text>
+                </Space>
+              </Space>
+            </Col>
+            <Col>
+              <TouchForm />
+            </Col>
+            <Col>
+              <BottomNavigation />
+            </Col>
           </Row>
 
           <Typography.Paragraph className={'all-rights'}>
