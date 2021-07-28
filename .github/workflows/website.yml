@@ -6,6 +6,7 @@ on:
       - latest
     paths:
       - .github/workflows/website.yml
+      - helmfile.yaml
       - packages/website/src/**/*
       - packages/website/src/package.json
 

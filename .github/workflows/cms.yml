@@ -7,6 +7,7 @@ on:
       - latest
     paths:
       - .github/workflows/cms.yml
+      - helmfile.yaml
       - packages/strapi/api/**/*
       - packages/strapi/components/**/*
       - packages/strapi/config/**/*
