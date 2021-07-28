@@ -1,5 +1,5 @@
 import { CSSProperties, FC } from 'react'
-import './actionButton.less'
+import './ActionButton.less'
 
 type ActionButtonProps = {
   title: string

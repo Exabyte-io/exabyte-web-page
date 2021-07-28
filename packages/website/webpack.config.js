@@ -59,15 +59,11 @@ const config = {
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'fonts',
+        },
       },
       {
         test: /\.(css|less)$/,
@@ -101,21 +97,10 @@ const config = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg|webp|gif|mp4)$/i,
+        test: /\.(png|jpe?g|svg|webp|gif|mp4)$/i,
         dependency: { not: ['url'] },
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
+        loader: 'url-loader',
         type: 'javascript/auto',
-      },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
       },
     ],
   },

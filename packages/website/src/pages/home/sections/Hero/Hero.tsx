@@ -1,23 +1,20 @@
 import { FC } from 'react'
 import { Layout, Row, Typography } from 'antd'
 import { ActionButton } from '../../../../components/button/actionButton'
-import HeroImgMb from '../../images/home-hero-mb.svg'
-import HeroImgLg from '../../images/home-hero-lg.svg'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// import testVideo from '../../../../public/video/videoplayback.mp4'
+import heroMb from '../../images/home-hero-mb.svg'
+import heroLg from '../../images/home-hero-lg.svg'
 import { useMediaQuery } from 'react-responsive'
-import { AccessBtn } from '../../../../components/button/accessBtn'
+import { AccessButton } from '../../../../components/button/AccessButton'
 import './Hero.less'
 
 const Hero: FC = () => {
-  const md = useMediaQuery({ minWidth: '768px' })
-  const xl = useMediaQuery({ minWidth: '992px' })
-
+  const md = useMediaQuery({ minWidth: 768 })
+  const xl = useMediaQuery({ minWidth: 992 })
+  console.log(heroMb)
   return (
     <Layout className={'section home-hero'}>
-      {!md && <HeroImgMb className={'home-hero-img'} />}
-      {md && <HeroImgLg className={'home-hero-img'} />}
+      {!md && <img src={heroMb} alt={''} className={'home-hero-img'} />}
+      {md && <img src={heroLg} alt={''} className={'home-hero-img'} />}
       <Row align={'middle'} justify={'space-between'} className={'container section home-hero-absolute'}>
         <Typography.Paragraph className={'home-hero-title'}>Materials Modeling 2.0</Typography.Paragraph>
         <Typography.Paragraph className={'home-hero-description'}>
@@ -31,7 +28,7 @@ const Hero: FC = () => {
             size={'medium'}
             styles={xl ? { marginRight: 32 } : { marginBottom: 17 }}
           />
-          <AccessBtn style={!md ? { marginBottom: 64 } : undefined} />
+          <AccessButton style={!md ? { marginBottom: 64 } : undefined} />
         </Row>
       </Row>
     </Layout>

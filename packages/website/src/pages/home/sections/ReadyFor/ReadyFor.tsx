@@ -1,47 +1,59 @@
 import { FC } from 'react'
-import { Col, Layout, Row, Typography } from 'antd'
+import { Avatar, Card, Col, Layout, Row, Space, Typography } from 'antd'
 import './ReadyFor.less'
-import { Card } from '../../../../components/card/Card'
 import cardImg1 from '../ReadyFor/images/card1.svg'
 import cardImg2 from '../ReadyFor/images/card2.svg'
 import cardImg3 from '../ReadyFor/images/card3.svg'
 
-const info = [
+type CardProps = typeof Card.Meta.defaultProps
+
+const info: CardProps[] = [
   {
-    image: cardImg1,
+    avatar: cardImg1,
     title: 'PRODUCTIVITY',
     description: 'Boost productivity through our purpose-built easy-to-use, modern, and highly customizable interface.',
   },
   {
-    image: cardImg2,
+    avatar: cardImg2,
     title: 'ORGANIZING',
     description: 'Accelerate work by organizing the simulations and data landscape in a single searchable environment.',
   },
   {
-    image: cardImg3,
+    avatar: cardImg3,
     title: 'COMPUTING',
     description: 'Scale up with the power of secure high-performance computing in the cloud when you need it.',
   },
 ]
 
-const ReadyFor: FC = () => {
-  return (
-    <Layout className={'section ready-for-wrapper'}>
-      <Row align={'middle'} justify={'space-between'} className={'container'}>
-        <Col className={'top-wrapper'}>
-          <Typography.Paragraph className={'top-wrapper-title'}>Ready For Material Gains?</Typography.Paragraph>
-          <Typography.Paragraph className={'top-wrapper-under-title'}>New Solar Cells?</Typography.Paragraph>
-          <Typography.Paragraph className={'top-wrapper-description'}>Digitally transform R&D practices for new
-            materials and chemicals with our machine intelligence.</Typography.Paragraph>
-        </Col>
-        <Row>
-          {info.map((value, index) => (
-              <Card img={value.image} title={value.title} description={value.description} key={index} />
-          ))}
-        </Row>
+const ReadyForCard: FC<CardProps> = ({ avatar, ...metaProps }) => (
+  <Col>
+    <Card
+      style={{ textAlign: 'center' }}
+      bordered={false}
+      cover={<Avatar style={{ display: 'block', margin: '0 auto' }} src={avatar} shape={'square'} size={64} />}
+    >
+      <Card.Meta {...metaProps} />
+    </Card>
+  </Col>
+)
+
+const ReadyFor: FC = () => (
+  <Layout className={'section ready-for-wrapper'}>
+    <Row align={'middle'} justify={'space-between'} className={'container'}>
+      <Col className={'top-wrapper'}>
+        <Typography.Paragraph className={'top-wrapper-title'}>Ready For Material Gains?</Typography.Paragraph>
+        <Typography.Paragraph className={'top-wrapper-under-title'}>New Solar Cells?</Typography.Paragraph>
+        <Typography.Paragraph className={'top-wrapper-description'}>
+          Digitally transform R&D practices for new materials and chemicals with our machine intelligence.
+        </Typography.Paragraph>
+      </Col>
+      <Row wrap={false} gutter={[24, 24]} justify={'center'}>
+        {info.map((props, index) => (
+          <ReadyForCard key={index} {...props} />
+        ))}
       </Row>
-    </Layout>
-  )
-}
+    </Row>
+  </Layout>
+)
 
 export { ReadyFor }
