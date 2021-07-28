@@ -6,15 +6,15 @@ import { Outlet } from 'react-router-dom'
 import { ActionButton } from '../button/actionButton'
 import { useMediaQuery } from 'react-responsive'
 import { BurgerButton } from '../button/BurgerButton'
-import GetInTouchBtn from './get-in-toch-icon.svg'
 import { BottomNavigation } from '../menu/BottomNavigation'
+import { TouchForm } from '../form/TouchForm'
 import './DefaultLayout.less'
 
 const DefaultLayout: FC = () => {
-  const [, setOpen] = useState(false)
-
   // const md = useMediaQuery({ minWidth: '768px' })
   const xl = useMediaQuery({ minWidth: '992px' })
+
+  const [, setOpen] = useState(false)
 
   return (
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
@@ -55,15 +55,7 @@ const DefaultLayout: FC = () => {
             {/*top left wrapper*/}
 
             {/*touch form*/}
-            <div className={'touch-form-wrapper'}>
-              <Typography.Paragraph className={'touch-form-label'}>Get in touch</Typography.Paragraph>
-              <form className={'touch-form'}>
-                <input placeholder={'Email'} className={'touch-form-input'} />
-                <button className={'touch-form-btn'}>
-                  <GetInTouchBtn />
-                </button>
-              </form>
-            </div>
+            <TouchForm />
             {/*touch form*/}
 
             {/*footer navigation*/}
