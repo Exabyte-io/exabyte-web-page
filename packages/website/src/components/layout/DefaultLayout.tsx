@@ -58,7 +58,7 @@ const DefaultLayout: FC = () => {
 
       <Layout.Footer>
         <Col className={'container'}>
-          <Row className={'footer-content-wrapper'}>
+          <Row className={'footer-content-wrapper'} justify={'space-between'}>
             <Col>
               <Space className={'top-left-wrapper'} direction={'vertical'} size={32}>
                 <Logo />
@@ -70,10 +70,10 @@ const DefaultLayout: FC = () => {
                 </Space>
               </Space>
             </Col>
-            <Col>
+            <Col xs={24} sm={12} lg={6}>
               <TouchForm />
             </Col>
-            <Col>
+            <Col xs={24} sm={9} lg={6}>
               <BottomNavigation />
             </Col>
           </Row>

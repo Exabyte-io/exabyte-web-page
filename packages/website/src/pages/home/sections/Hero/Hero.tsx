@@ -24,8 +24,8 @@ const Hero: FC = () => {
             models online alongside scientists on your team and worldwide.
           </Typography.Paragraph>
         </Col>
-        <Row align={'middle'} gutter={[0, 17]} >
-          <Col>
+        <Row align={'middle'} gutter={[0, 17]} style={{width:"100%"}}>
+          <Col xs={24} sm={24} md={9} lg={7} xl={6}>
             <ActionButton title={'Get Started Now'} type={'default'} size={'medium'} />
           </Col>
           <Col>
