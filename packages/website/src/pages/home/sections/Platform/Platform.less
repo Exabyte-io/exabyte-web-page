@@ -2,4 +2,19 @@
 
 .platform-wrapper {
   position: relative;
+
+  &-button {
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (max-width: 767px) {
+      width: calc(100vw - 40px);
+    }
+
+    @media (min-width: 768px) {
+      bottom: 23%;
+    }
+  }
 }
