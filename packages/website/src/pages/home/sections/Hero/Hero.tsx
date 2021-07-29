@@ -8,7 +8,7 @@ import './Hero.less'
 import { AccessButton } from '../../../../components/button/AccessButton'
 
 const Hero: FC = () => {
-  const md = useMediaQuery({ minWidth: '768px' })
+  const md = useMediaQuery({ minWidth: 768 })
   // const xl = useMediaQuery({ minWidth: 992 })
 
   return (
@@ -24,7 +24,7 @@ const Hero: FC = () => {
             models online alongside scientists on your team and worldwide.
           </Typography.Paragraph>
         </Col>
-        <Row align={'middle'} gutter={[0, 17]} style={{width:"100%"}}>
+        <Row align={'middle'} gutter={[0, 17]} style={{ width: '100%' }}>
           <Col xs={24} sm={24} md={9} lg={7} xl={6}>
             <ActionButton title={'Get Started Now'} type={'default'} size={'medium'} />
           </Col>

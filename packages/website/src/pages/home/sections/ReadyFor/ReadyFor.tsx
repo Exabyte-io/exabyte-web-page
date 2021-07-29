@@ -26,28 +26,31 @@ const info: CardProps[] = [
 ]
 
 const ReadyForCard: FC<CardProps> = ({ avatar, ...metaProps }) => (
-  <Card
-    style={{ textAlign: 'center' }}
-    bordered={false}
-    cover={<Avatar style={{ display: 'block', margin: '0 auto' }} src={avatar} shape={'square'} size={64} />}
-  >
+  <Card bordered={false} cover={<Avatar src={avatar} shape={'square'} size={52} style={{ marginBottom: 24 }} />}>
     <Card.Meta {...metaProps} />
   </Card>
 )
 
 const ReadyFor: FC = () => (
   <Layout className={'section ready-for-wrapper'}>
-    <Row align={'middle'} justify={'space-between'} className={'container'}>
-      <Col className={'top-wrapper'}>
+    <Row
+      align={'middle'}
+      justify={'space-between'}
+      className={'container'}
+      style={{ flexDirection: 'row-reverse', background: 'transparent' }}
+    >
+      <Col className={'top-wrapper'} md={10} lg={8}>
         <Typography.Paragraph className={'top-wrapper-title'}>Ready For Material Gains?</Typography.Paragraph>
         <Typography.Paragraph className={'top-wrapper-under-title'}>New Solar Cells?</Typography.Paragraph>
         <Typography.Paragraph className={'top-wrapper-description'}>
           Digitally transform R&D practices for new materials and chemicals with our machine intelligence.
         </Typography.Paragraph>
       </Col>
-      <Row wrap={false} gutter={[24, 24]} justify={'center'}>
+      <Row gutter={[32, 32]} justify={'space-around'}>
         {info.map((props, index) => (
-          <Col key={index}>{/*<ReadyForCard {...props} />*/}</Col>
+          <Col key={index} md={7} xl={6}>
+            <ReadyForCard {...props} />
+          </Col>
         ))}
       </Row>
     </Row>

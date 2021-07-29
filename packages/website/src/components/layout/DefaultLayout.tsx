@@ -18,18 +18,18 @@ const DefaultLayout: FC = () => {
   return (
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
       <Layout.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Row align={'middle'} justify={'space-between'} className={'container'}>
+        <Row align={'middle'} justify={'space-between'} className={'container'} wrap={false}>
           <Col flex={'240px'}>
             <Logo />
           </Col>
           {xl && (
-            <Col flex={'auto'}>
+            <Col lg={13} xl={11}>
               <TopNavigation />
             </Col>
           )}
           <Col>
             {xl && (
-              <Row align={'middle'} gutter={16}>
+              <Row align={'middle'} wrap={false}>
                 <Col>
                   <Button style={{ color: '#fff' }} size={'large'} block type={'link'} href={'/sign-in'}>
                     Sign In
@@ -37,7 +37,7 @@ const DefaultLayout: FC = () => {
                 </Col>
                 <Col>
                   <Button
-                    className={'action-btn-default action-btn-medium'}
+                    className={'action-btn-default action-btn-small'}
                     type={'primary'}
                     size={'large'}
                     href={'/sign-up'}
