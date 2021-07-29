@@ -8,7 +8,6 @@ import { BurgerButton } from '../button/BurgerButton'
 import { BottomNavigation } from '../menu/BottomNavigation'
 import { TouchForm } from '../form/TouchForm'
 import './DefaultLayout.less'
-import '../button/ActionButton.less'
 
 const DefaultLayout: FC = () => {
   // const md = useMediaQuery({ minWidth: '768px' })

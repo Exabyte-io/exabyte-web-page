@@ -48,7 +48,7 @@ const ReadyFor: FC = () => (
       <Row wrap={false} gutter={[24, 24]} justify={'center'}>
         {info.map((props, index) => (
           <Col key={index}>
-            <ReadyForCard {...props} />
+            {/*<ReadyForCard {...props} />*/}
           </Col>
         ))}
       </Row>
