@@ -1,6 +1,6 @@
-import { FC, useState } from 'react'
+import React, { FC, useState } from 'react'
 import './Capabilities.less'
-import { Col, Layout, Row, Typography, Collapse } from 'antd'
+import { Col, Layout, Row, Typography, Collapse, Menu } from 'antd'
 import DropdownIcon from './images/dropdown-icon.svg'
 import Dropdown1 from './images/dropdown1.svg'
 import Dropdown2 from './images/dropdown2.svg'
@@ -13,11 +13,30 @@ import Dropdown8 from './images/dropdown8.svg'
 import Dropdown9 from './images/dropdown9.svg'
 import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
 import InfoIcon from '../Capabilities/images/info-icon.svg'
+import { useMediaQuery } from 'react-responsive'
 
 const { Panel } = Collapse
+const { SubMenu } = Menu
+
+const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
 
 const Capabilities: FC = () => {
+  const xl = useMediaQuery({ minWidth: 992 })
+
+  // collapse
   const [open, setOpen] = useState(false)
+
+  //menu
+  const [openKeys, setOpenKeys] = React.useState(['sub1'])
+
+  const onOpenChange = keys => {
+    const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
+    if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+      setOpenKeys(keys);
+    } else {
+      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+    }
+  };
 
   return (
     <Layout className={'section capabilities-wrapper'}>
@@ -34,40 +53,147 @@ const Capabilities: FC = () => {
             From idea to result - let's get there faster together!
           </Typography.Paragraph>
         </Col>
-        <Col style={{ padding: '0' }} xl={24}>
-          <Collapse
-            bordered={false}
-            expandIconPosition={'right'}
-            onChange={() => setOpen(prevState => !prevState)}
-            expandIcon={() =>
-              open ? (
-                <Row align={'middle'} justify={'center'} style={{ display: 'flex', height: '100%' }}>
-                  <Col className={'active-class'}>
-                    <img alt={'img'} src={DropdownIcon} />
-                  </Col>
-                </Row>
-              ) : (
-                <Row align={'middle'} justify={'center'} style={{ display: 'flex', height: '100%' }}>
-                  <Col>
-                    <img alt={'img'} src={DropdownIcon} />
-                  </Col>
-                </Row>
-              )
-            }
-            className={'menu-wrapper'}
-          >
-            <Panel header='Fin-browser integrated environment for materials design' key='1'>
-              <img alt={'img'} src={Dropdown1} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </Panel>
-            <Panel header='Fast and secure cloud high-performance computing' key='2'>
+        <Col style={{ padding: '0' }} xs={24} sm={24} md={24} xl={14}>
+          {/*<Collapse*/}
+          {/*  bordered={false}*/}
+          {/*  expandIconPosition={'right'}*/}
+          {/*  onChange={() => setOpen(prevState => !prevState)}*/}
+          {/*  expandIcon={() =>*/}
+          {/*    open ? (*/}
+          {/*      <Row align={'middle'} justify={'center'} style={{ display: 'flex', height: '100%' }}>*/}
+          {/*        <Col className={'active-class'}>*/}
+          {/*          <img alt={'img'} src={DropdownIcon} />*/}
+          {/*        </Col>*/}
+          {/*      </Row>*/}
+          {/*    ) : (*/}
+          {/*      <Row align={'middle'} justify={'center'} style={{ display: 'flex', height: '100%' }}>*/}
+          {/*        <Col>*/}
+          {/*          <img alt={'img'} src={DropdownIcon} />*/}
+          {/*        </Col>*/}
+          {/*      </Row>*/}
+          {/*    )*/}
+          {/*  }*/}
+          {/*  className={'menu-wrapper'}*/}
+          {/*>*/}
+          {/*  <Panel header='Fin-browser integrated environment for materials design' key='1'>*/}
+          {/*    <img alt={'img'} src={Dropdown1} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Fast and secure cloud high-performance computing' key='2'>*/}
+          {/*    <img alt={'img'} src={Dropdown2} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Web-based designer for inter-operable modeling workflows' key='3'>*/}
+          {/*    <img alt={'img'} src={Dropdown3} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Open-source data standards organizing materials information' key='4'>*/}
+          {/*    <img alt={'img'} src={Dropdown4} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Advanced data analytics and machine learning infrastructure' key='5'>*/}
+          {/*    <img alt={'img'} src={Dropdown5} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Secure collaboration within and between accounts' key='6'>*/}
+          {/*    <img alt={'img'} src={Dropdown6} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines' key='7'>*/}
+          {/*    <img alt={'img'} src={Dropdown7} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel header='Command-line interface, remote desktop, RESTful API access options for experts' key='8'>*/}
+          {/*    <img alt={'img'} src={Dropdown8} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*  <Panel*/}
+          {/*    header='Encrypted data at rest and in-transfer, network partitioning, and more for maximum security'*/}
+          {/*    key='9'*/}
+          {/*  >*/}
+          {/*    <img alt={'img'} src={Dropdown9} className={'menu-wrapper-image'} />*/}
+          {/*    <div style={{ display: 'flex', justifyContent: 'center' }}>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={GitHubIcon} />*/}
+          {/*      </a>*/}
+          {/*      <a href='#' className={'menu-wrapper-link'}>*/}
+          {/*        <img alt={'img'} src={InfoIcon} />*/}
+          {/*      </a>*/}
+          {/*    </div>*/}
+          {/*  </Panel>*/}
+          {/*</Collapse>*/}
+
+          <Menu mode={xl ? "vertical" : 'inline'} openKeys={openKeys} onOpenChange={onOpenChange} >
+            <SubMenu key="sub1"  title="Fin-browser integrated environment for materials design">
+              <Menu.Item key="1">
+                <img alt={'img'} src={Dropdown1} className={'menu-wrapper-image'} />
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <a href='#' className={'menu-wrapper-link'}>
+                    <img alt={'img'} src={GitHubIcon} />
+                  </a>
+                  <a href='#' className={'menu-wrapper-link'}>
+                    <img alt={'img'} src={InfoIcon} />
+                  </a>
+                </div>
+              </Menu.Item>
+            </SubMenu>
+            <SubMenu key="sub2"  title="Fast and secure cloud high-performance computing">
               <img alt={'img'} src={Dropdown2} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -77,8 +203,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel header='Web-based designer for inter-operable modeling workflows' key='3'>
+            </SubMenu>
+            <SubMenu key="sub3"  title="Web-based designer for inter-operable modeling workflows">
               <img alt={'img'} src={Dropdown3} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -88,8 +214,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel header='Open-source data standards organizing materials information' key='4'>
+            </SubMenu>
+            <SubMenu key="sub4"  title="Open-source data standards organizing materials information">
               <img alt={'img'} src={Dropdown4} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -99,8 +225,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel header='Advanced data analytics and machine learning infrastructure' key='5'>
+            </SubMenu>
+            <SubMenu key="sub5"  title="Advanced data analytics and machine learning infrastructure">
               <img alt={'img'} src={Dropdown5} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -110,8 +236,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel header='Secure collaboration within and between accounts' key='6'>
+            </SubMenu>
+            <SubMenu key="sub6"  title="Secure collaboration within and between accounts">
               <img alt={'img'} src={Dropdown6} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -121,8 +247,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel header='Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines' key='7'>
+            </SubMenu>
+            <SubMenu key="sub7"  title="Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines">
               <img alt={'img'} src={Dropdown7} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -132,8 +258,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel header='Command-line interface, remote desktop, RESTful API access options for experts' key='8'>
+            </SubMenu>
+            <SubMenu key="sub8"  title="Command-line interface, remote desktop, RESTful API access options for experts">
               <img alt={'img'} src={Dropdown8} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -143,11 +269,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-            <Panel
-              header='Encrypted data at rest and in-transfer, network partitioning, and more for maximum security'
-              key='9'
-            >
+            </SubMenu>
+            <SubMenu key="sub9"  title="Encrypted data at rest and in-transfer, network partitioning, and more for maximum security">
               <img alt={'img'} src={Dropdown9} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -157,8 +280,8 @@ const Capabilities: FC = () => {
                   <img alt={'img'} src={InfoIcon} />
                 </a>
               </div>
-            </Panel>
-          </Collapse>
+            </SubMenu>
+          </Menu>
         </Col>
       </Row>
     </Layout>
