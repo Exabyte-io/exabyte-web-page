@@ -10,7 +10,7 @@ const Home: FC = () => {
       <Hero />
       <ReadyFor />
       <Platform />
-      <Capabilities/>
+      <Capabilities />
     </>
   )
 }
