@@ -1,0 +1,46 @@
+@import "src/styles/index";
+
+.related {
+  position: relative;
+  min-height: 426px;
+
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-title {
+      font-weight: 600;
+      font-size: @font-lg;
+      color: @secondary-color;
+      text-align: center;
+    }
+
+    &-links {
+      margin-top: 48px;
+      display: flex;
+
+      .related-content-link {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: @secondary-color;
+
+        img {
+          margin-right: 12px;
+        }
+
+        span {
+          border-bottom: 1px solid @secondary-color;
+          padding-bottom: 4px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 64px;
+        }
+      }
+    }
+  }
+}
+

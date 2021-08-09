@@ -18,7 +18,7 @@ import { useMediaQuery } from 'react-responsive'
 const { Panel } = Collapse
 const { SubMenu } = Menu
 
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4'];
+const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
 
 const Capabilities: FC = () => {
   const xl = useMediaQuery({ minWidth: 992 })
@@ -30,13 +30,13 @@ const Capabilities: FC = () => {
   const [openKeys, setOpenKeys] = React.useState(['sub1'])
 
   const onOpenChange = keys => {
-    const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1);
+    const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
     if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-      setOpenKeys(keys);
+      setOpenKeys(keys)
     } else {
-      setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+      setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
     }
-  };
+  }
 
   return (
     <Layout className={'section capabilities-wrapper'}>
@@ -179,9 +179,9 @@ const Capabilities: FC = () => {
           {/*  </Panel>*/}
           {/*</Collapse>*/}
 
-          <Menu mode={xl ? "vertical" : 'inline'} openKeys={openKeys} onOpenChange={onOpenChange} >
-            <SubMenu key="sub1"  title="Fin-browser integrated environment for materials design">
-              <Menu.Item key="1">
+          <Menu mode={xl ? 'vertical' : 'inline'} openKeys={openKeys} onOpenChange={onOpenChange}>
+            <SubMenu key='sub1' title='Fin-browser integrated environment for materials design'>
+              <Menu.Item key='1'>
                 <img alt={'img'} src={Dropdown1} className={'menu-wrapper-image'} />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                   <a href='#' className={'menu-wrapper-link'}>
@@ -193,7 +193,7 @@ const Capabilities: FC = () => {
                 </div>
               </Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2"  title="Fast and secure cloud high-performance computing">
+            <SubMenu key='sub2' title='Fast and secure cloud high-performance computing'>
               <img alt={'img'} src={Dropdown2} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -204,7 +204,7 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub3"  title="Web-based designer for inter-operable modeling workflows">
+            <SubMenu key='sub3' title='Web-based designer for inter-operable modeling workflows'>
               <img alt={'img'} src={Dropdown3} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -215,7 +215,7 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub4"  title="Open-source data standards organizing materials information">
+            <SubMenu key='sub4' title='Open-source data standards organizing materials information'>
               <img alt={'img'} src={Dropdown4} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -226,7 +226,7 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub5"  title="Advanced data analytics and machine learning infrastructure">
+            <SubMenu key='sub5' title='Advanced data analytics and machine learning infrastructure'>
               <img alt={'img'} src={Dropdown5} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -237,7 +237,7 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub6"  title="Secure collaboration within and between accounts">
+            <SubMenu key='sub6' title='Secure collaboration within and between accounts'>
               <img alt={'img'} src={Dropdown6} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -248,7 +248,7 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub7"  title="Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines">
+            <SubMenu key='sub7' title='Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines'>
               <img alt={'img'} src={Dropdown7} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -259,7 +259,7 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub8"  title="Command-line interface, remote desktop, RESTful API access options for experts">
+            <SubMenu key='sub8' title='Command-line interface, remote desktop, RESTful API access options for experts'>
               <img alt={'img'} src={Dropdown8} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
@@ -270,7 +270,10 @@ const Capabilities: FC = () => {
                 </a>
               </div>
             </SubMenu>
-            <SubMenu key="sub9"  title="Encrypted data at rest and in-transfer, network partitioning, and more for maximum security">
+            <SubMenu
+              key='sub9'
+              title='Encrypted data at rest and in-transfer, network partitioning, and more for maximum security'
+            >
               <img alt={'img'} src={Dropdown9} className={'menu-wrapper-image'} />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <a href='#' className={'menu-wrapper-link'}>
