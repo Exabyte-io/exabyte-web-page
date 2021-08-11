@@ -1,0 +1,71 @@
+@import 'src/styles/index';
+
+.faster-materials {
+  position: relative;
+
+  .laptop-decoration {
+    position: absolute;
+    top: -54px;
+    right: 45px;
+  }
+
+  &-content {
+    position: absolute;
+    bottom: 138px;
+    left: 50%;
+    color: @secondary-color;
+    transform: translateX(-50%);
+
+    &-title {
+      font-weight: 700;
+      font-size: 42px;
+    }
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 64px;
+
+      &-card {
+        width: 320px;
+
+        &-title {
+          margin-bottom: 48px;
+          font-weight: 600;
+          font-size: 22px;
+        }
+
+        &-text {
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 110px;
+        }
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 96px;
+
+      .faster-materials-content-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 261px;
+        height: 56px;
+        margin-left: 44px;
+        color: @secondary-color;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        border: 2px solid #2effec;
+        border-radius: 10px;
+      }
+    }
+  }
+}
