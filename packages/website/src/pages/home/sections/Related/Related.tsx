@@ -11,9 +11,7 @@ const Related: FC = () => {
     <Layout className={'section related'}>
       <img src={RelatedBgLg} alt='' className='background-img' />
       <div className='related-content'>
-        <Typography.Paragraph className={'related-content-title'}>
-          RELATED INFORMATION
-        </Typography.Paragraph>
+        <Typography.Paragraph className={'related-content-title'}>RELATED INFORMATION</Typography.Paragraph>
         <div className='related-content-links'>
           <a href={'#'} className='related-content-link'>
             <img src={GoogleDocsIcon} alt='' />

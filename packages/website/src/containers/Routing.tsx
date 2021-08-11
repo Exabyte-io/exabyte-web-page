@@ -5,8 +5,9 @@ import { Menu } from 'antd'
 
 const Home = lazy(() => import('./../pages/home'))
 const Pricing = lazy(() => import('./../pages/home'))
-const CaseStudies = lazy(() => import('./../pages/home'))
+const CaseStudies = lazy(() => import('./../pages/case-studies'))
 const Login = lazy(() => import('./../pages/login'))
+const About = lazy(() => import('./../pages/about'))
 // const ContactUs = lazy(() => import('../pages/contact-us'))
 
 type NavigationPlacement = 'top' | string
@@ -40,7 +41,7 @@ const routeMap: RouteNavigationMap = {
     placements: ['top'],
   },
   '/about': {
-    component: Home,
+    component: About,
     name: 'About',
     placements: ['top'],
   },

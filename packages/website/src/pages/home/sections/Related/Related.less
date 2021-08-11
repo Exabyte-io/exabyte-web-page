@@ -1,4 +1,4 @@
-@import "src/styles/index";
+@import 'src/styles/index';
 
 .related {
   position: relative;
@@ -11,29 +11,29 @@
     transform: translate(-50%, -50%);
 
     &-title {
+      color: @secondary-color;
       font-weight: 600;
       font-size: @font-lg;
-      color: @secondary-color;
       text-align: center;
     }
 
     &-links {
-      margin-top: 48px;
       display: flex;
+      margin-top: 48px;
 
       .related-content-link {
         display: flex;
         align-items: center;
-        font-size: 16px;
         color: @secondary-color;
+        font-size: 16px;
 
         img {
           margin-right: 12px;
         }
 
         span {
-          border-bottom: 1px solid @secondary-color;
           padding-bottom: 4px;
+          border-bottom: 1px solid @secondary-color;
         }
 
         &:not(:last-child) {
@@ -43,4 +43,3 @@
     }
   }
 }
-

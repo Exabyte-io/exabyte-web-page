@@ -1,0 +1,68 @@
+@import 'src/styles/index';
+
+.customer {
+  padding: 123px 0 72px;
+
+  &-content {
+    &-title {
+      color: @text-title;
+      font-weight: 700;
+      font-size: 42px;
+      text-align: center;
+    }
+
+    &-carousel-wrapper {
+      width: 1180px;
+      margin: 46px auto 0;
+
+      .customer-content-carousel {
+        &-slide {
+          height: 287px;
+          background-color: #ffffff;
+
+          &-content {
+            display: flex;
+            justify-content: space-between;
+
+            &-text {
+              width: 589px;
+              color: @text-title;
+
+              &-paragraph {
+                margin-bottom: 32px;
+                font-size: 22px;
+                line-height: 30px;
+              }
+
+              &-sign {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+
+        &-slide-number {
+          margin-bottom: 64px;
+          padding-bottom: 18px;
+          color: #5032b1;
+          font-weight: 700;
+          font-size: 22px;
+          border-bottom: 1px solid rgba(9, 20, 50, 0.5);
+        }
+
+        &-arrows {
+          display: flex;
+
+          &-arrow {
+            cursor: pointer;
+
+            &:not(:last-child) {
+              margin-right: 33px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

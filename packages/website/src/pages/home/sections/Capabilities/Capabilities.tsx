@@ -1,7 +1,6 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import './Capabilities.less'
-import { Col, Layout, Row, Typography, Collapse, Menu } from 'antd'
-import DropdownIcon from './images/dropdown-icon.svg'
+import { Col, Layout, Row, Typography, Menu } from 'antd'
 import Dropdown1 from './images/dropdown1.svg'
 import Dropdown2 from './images/dropdown2.svg'
 import Dropdown3 from './images/dropdown3.svg'
@@ -15,16 +14,12 @@ import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
 import InfoIcon from '../Capabilities/images/info-icon.svg'
 import { useMediaQuery } from 'react-responsive'
 
-const { Panel } = Collapse
 const { SubMenu } = Menu
 
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
 
 const Capabilities: FC = () => {
   const xl = useMediaQuery({ minWidth: 992 })
-
-  // collapse
-  const [open, setOpen] = useState(false)
 
   //menu
   const [openKeys, setOpenKeys] = React.useState(['sub1'])
