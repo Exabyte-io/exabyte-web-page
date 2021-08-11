@@ -1,0 +1,87 @@
+@import 'node_modules/antd/dist/antd';
+@import '../../styles/index';
+
+#root,
+#root > * {
+  height: 100%;
+}
+
+.ant-layout {
+  &-header {
+    height: 64px;
+    padding: 0 20px;
+
+    @media (min-width: 992px) {
+      height: 103px;
+    }
+  }
+
+  &-footer {
+    padding: 64px 20px;
+    background-color: @primary-color;
+
+    .footer-content-wrapper {
+      //
+    }
+
+    .top-left-wrapper {
+      margin-bottom: 48px;
+      @media (min-width: 992px) {
+        margin-bottom: 0;
+      }
+
+      .address-info {
+        .ant-typography {
+          color: @secondary-color;
+          font-size: @font-small;
+          font-family: @primary-font;
+        }
+      }
+    }
+
+    .all-rights {
+      color: @secondary-color;
+      font-size: @font-very-small;
+      font-family: @primary-font;
+
+      @media (min-width: 992px) {
+        font-size: @font-extra-small;
+      }
+    }
+  }
+}
+
+.ant-menu {
+  border: none;
+
+  &-item {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+
+  &-title-content {
+    a {
+      color: @secondary-color !important;
+      font-size: @font-small;
+      font-family: @primary-font;
+      line-height: 20px;
+    }
+  }
+}
+
+.section {
+  padding: 0 20px;
+
+  @media (min-width: 1230px) {
+    padding: 0;
+  }
+}
+
+.container {
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

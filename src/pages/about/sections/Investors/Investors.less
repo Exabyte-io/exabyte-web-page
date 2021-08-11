@@ -1,0 +1,44 @@
+@import 'src/styles/index';
+
+.investors {
+  padding-top: 90px;
+  padding-bottom: 220px;
+
+  &-content {
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 130px;
+
+    &-title {
+      margin-bottom: 48px;
+      color: @text-title;
+      font-weight: 700;
+      font-size: 42px;
+      text-align: center;
+    }
+
+    &-cards {
+      display: flex;
+
+      &-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 394px;
+        height: 230px;
+        border: 1px solid #c4c4c4;
+
+        &:first-child {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+  }
+}

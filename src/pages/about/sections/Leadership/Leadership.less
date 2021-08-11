@@ -1,0 +1,67 @@
+@import 'src/styles/index';
+
+.leadership {
+  padding: 119px 0 223px;
+
+  &-content {
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 130px;
+
+    &-title {
+      color: @text-title;
+      font-weight: 700;
+      font-size: 42px;
+    }
+
+    &-cards {
+      display: flex;
+      margin-top: 70px;
+
+      &-card {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+
+        &:not(:last-child) {
+          margin-right: 65px;
+        }
+
+        &-photo {
+          width: 160px;
+          height: 160px;
+          margin-bottom: 28px;
+        }
+
+        &-name {
+          margin-bottom: 28px;
+          font-size: 22px;
+        }
+
+        &-position {
+          margin-bottom: 28px;
+          color: @text-title;
+          font-size: 16px;
+        }
+
+        &-links {
+          display: flex;
+          margin-bottom: 28px;
+
+          &-link {
+            &:not(:last-child) {
+              margin-right: 22px;
+            }
+          }
+        }
+
+        &-description {
+          color: @text-title;
+          font-size: 16px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}

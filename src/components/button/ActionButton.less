@@ -1,0 +1,52 @@
+@import '../../styles/index';
+
+.ant-btn {
+  text-shadow: none;
+}
+
+.action-btn {
+  color: @secondary-color;
+  font-weight: 600;
+  font-size: @font-small;
+  font-family: @primary-font;
+
+  &:hover {
+    color: @secondary-color;
+  }
+
+  &-default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: @primary-color;
+    font-weight: 700;
+    font-size: @font-very-small;
+    text-transform: uppercase;
+    background-color: @tertiary-color;
+    border-radius: 10px;
+
+    &:hover {
+      color: @primary-color;
+    }
+
+    @media (min-width: 992px) {
+      font-size: @font-small;
+    }
+  }
+
+  &-small {
+    @media (min-width: 576px) {
+      width: 166px;
+      height: 44px;
+    }
+  }
+
+  &-medium {
+    height: 42px;
+    @media (min-width: 576px) {
+      width: 261px;
+      height: 56px;
+    }
+  }
+}

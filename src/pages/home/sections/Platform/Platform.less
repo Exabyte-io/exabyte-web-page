@@ -1,0 +1,53 @@
+@import 'src/styles/index';
+
+.platform-wrapper {
+  position: relative;
+
+  &-content {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100vw;
+    padding: 0 20px;
+
+    @media (min-width: 1220px) {
+      left: 50%;
+      max-width: 1200px;
+      padding: 0;
+      transform: translateX(-50%);
+    }
+
+    &-title {
+      max-width: 568px;
+      margin-bottom: 24px;
+      color: @secondary-color;
+      font-weight: bold;
+      font-size: @font-1xl;
+      font-family: @primary-font;
+      line-height: 50px;
+    }
+
+    &-description {
+      max-width: 568px;
+      color: @secondary-color;
+      font-size: @font-small;
+      font-family: @primary-font;
+      line-height: 24px;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (max-width: 767px) {
+      width: calc(100vw - 40px);
+    }
+
+    @media (min-width: 768px) {
+      bottom: 23%;
+    }
+  }
+}
