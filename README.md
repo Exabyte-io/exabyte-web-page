@@ -1,27 +1,11 @@
-# Brand New Apps
+# Exabyte
 
-## Development
+## Directions about how to install/run the codebase
 
-### Required IDE plugins
+#### how to install/run
 
-- [GraphQL](https://plugins.jetbrains.com/plugin/8097-js-graphql)
-- [.env](https://plugins.jetbrains.com/plugin/9525--env-files-support)
-- [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore)
-
-### Starting application
-
-Run corresponding command from root [package.json](package.json) script.
-
-#### Apps
-
-| App | Command | Endpoint | 
+| Step | Command | Description | 
 | --- | --- | --- |
-| ![Strapi](https://simpleicons.org/icons/strapi.svg) | `yarn strapi` | http://localhost:1337 |
-| ![React](https://simpleicons.org/icons/react.svg) | `yarn react`| http://localhost:3000 |
-| ![Ant Design](https://simpleicons.org/icons/antdesign.svg) | `yarn antd`| http://localhost:3000 |
-| ![Tailwind](https://simpleicons.org/icons/tailwindcss.svg) | `yarn tailwind`| http://localhost:3000 |
-| ![Angular](https://simpleicons.org/icons/angular.svg) | `yarn angular` | http://localhost:4200 |
-| ![HTML](https://simpleicons.org/icons/html5.svg) | `yarn html` | http://localhost:5000 |
-| ![Apollo](https://simpleicons.org/icons/apollographql.svg) | `yarn apollo` | http://localhost:4000 http://localhost:9002/editor |
-| ![GraphQL Mesh](https://simpleicons.org/icons/graphql.svg) | `yarn graphql` | http://localhost:8080 |
+| 1 | `yarn` or `npm i` | open the terminal at the root of the project and execute the command to establish dependencies |
+| 2 | `yarn start` or `npm start`| open the terminal and go from the root of the project to the folder /packages/website and then execute the command (when using a WebStorm you can go to the above directory by opening the package.json and execute the command `start` |
 
