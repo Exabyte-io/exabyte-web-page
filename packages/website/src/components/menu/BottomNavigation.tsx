@@ -3,6 +3,9 @@ import { Col, Menu, Row, Typography } from 'antd'
 import { NavLink } from 'react-router-dom'
 import './BottomNavigation.less'
 
+
+
+
 const BottomNavigation: FC = () => {
   const footerPages = {
     company: [

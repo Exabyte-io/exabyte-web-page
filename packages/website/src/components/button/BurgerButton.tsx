@@ -1,6 +1,9 @@
 import React, { Dispatch, FC, SetStateAction, useCallback } from 'react'
 import './BurgerButton.less'
 
+
+
+
 type BurgerButtonProps = {
   onClick: Dispatch<SetStateAction<boolean>>
 }

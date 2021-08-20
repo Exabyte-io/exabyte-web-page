@@ -6,6 +6,9 @@ import './Platform.less'
 import { useMediaQuery } from 'react-responsive'
 import { ActionButton } from '../../../../components/button/ActionButton'
 
+
+
+
 const Platform: FC = () => {
   const md = useMediaQuery({ minWidth: 768 })
   // const xl = useMediaQuery({ minWidth: 992 })

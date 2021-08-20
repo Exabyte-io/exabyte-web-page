@@ -3,6 +3,9 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from '../components/layout/DefaultLayout'
 import { Menu } from 'antd'
 
+
+
+
 const Home = lazy(() => import('./../pages/home'))
 const Pricing = lazy(() => import('./../pages/home'))
 const CaseStudies = lazy(() => import('./../pages/case-studies'))

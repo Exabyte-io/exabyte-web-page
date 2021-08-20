@@ -7,6 +7,9 @@ import LaineConklinPhoto from './images/laine-conklin.svg'
 import MartaBulaichPhoto from './images/marta-bulaich.svg'
 import InfoIcon from './images/info-icon.svg'
 
+
+
+
 type AdvisoryCard = {
   photo: string
   name: string

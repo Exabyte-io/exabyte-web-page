@@ -7,6 +7,9 @@ import { Related } from './sections/Related/Related'
 import { Customer } from './sections/Customer/Customer'
 import { FasterMaterials } from './sections/FasterMaterials/FasterMaterials'
 
+
+
+
 const Home: FC = () => {
   return (
     <>

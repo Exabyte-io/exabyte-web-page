@@ -5,6 +5,9 @@ import './Partners.less'
 import Partner1 from './images/partner-1.svg'
 import Partner2 from './images/partner-2.svg'
 
+
+
+
 type PartnersCard = {
   photo: string
   title: string
