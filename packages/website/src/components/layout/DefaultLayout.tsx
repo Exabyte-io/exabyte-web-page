@@ -9,9 +9,6 @@ import { BottomNavigation } from '../menu/BottomNavigation'
 import { TouchForm } from '../form/TouchForm'
 import './DefaultLayout.less'
 
-
-
-
 const DefaultLayout: FC = () => {
   // const md = useMediaQuery({ minWidth: '768px' })
   const xl = useMediaQuery({ minWidth: '992px' })

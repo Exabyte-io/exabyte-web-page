@@ -5,9 +5,6 @@ import { UI } from './UI'
 import { Routing } from './Routing'
 import { hot } from 'react-hot-loader/root'
 
-
-
-
 export const Loader: FC = () => (
   <Row justify={'center'} style={{ minHeight: '100vh' }} align={'middle'}>
     <Spin />

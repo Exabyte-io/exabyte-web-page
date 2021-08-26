@@ -5,9 +5,6 @@ import cardImg1 from '../ReadyFor/images/card1.svg'
 import cardImg2 from '../ReadyFor/images/card2.svg'
 import cardImg3 from '../ReadyFor/images/card3.svg'
 
-
-
-
 type CardProps = typeof Card.Meta.defaultProps
 
 const info: CardProps[] = [

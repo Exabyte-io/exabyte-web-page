@@ -6,9 +6,6 @@ import YouTubeIcon from './images/youtube.svg'
 import FileIcon from './images/file.svg'
 import './Related.less'
 
-
-
-
 const Related: FC = () => {
   return (
     <Layout className={'section related'}>

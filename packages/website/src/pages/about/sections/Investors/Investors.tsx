@@ -5,9 +5,6 @@ import Investor1 from './images/investor-1.svg'
 import Investor2 from './images/investor-2.svg'
 import Investor3 from './images/investor-3.svg'
 
-
-
-
 type InvestorCard = {
   photo: string
   name: string

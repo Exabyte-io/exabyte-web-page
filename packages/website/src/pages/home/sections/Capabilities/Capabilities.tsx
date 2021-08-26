@@ -14,9 +14,6 @@ import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
 import InfoIcon from '../Capabilities/images/info-icon.svg'
 import { useMediaQuery } from 'react-responsive'
 
-
-
-
 const { SubMenu } = Menu
 
 const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']

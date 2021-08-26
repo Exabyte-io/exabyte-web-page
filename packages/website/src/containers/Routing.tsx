@@ -3,15 +3,11 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from '../components/layout/DefaultLayout'
 import { Menu } from 'antd'
 
-
-
-
 const Home = lazy(() => import('./../pages/home'))
 const Pricing = lazy(() => import('./../pages/home'))
 const CaseStudies = lazy(() => import('./../pages/case-studies'))
 const Login = lazy(() => import('./../pages/login'))
 const About = lazy(() => import('./../pages/about'))
-// const ContactUs = lazy(() => import('../pages/contact-us'))
 
 type NavigationPlacement = 'top' | string
 type RouteNavigationMap = {
@@ -61,7 +57,9 @@ function withNavigation<T>(Wrapped: FC<T>, placement: NavigationPlacement): FC<T
         ([path, { name, placements = [] }]) =>
           placements?.find(it => it === placement) && (
             <Menu.Item key={path}>
-              <NavLink to={path}>{name}</NavLink>
+              <NavLink activeClassName='selected-navlink' to={path}>
+                {name}
+              </NavLink>
             </Menu.Item>
           ),
       )}

@@ -7,9 +7,6 @@ import JamesDeanPhoto from './images/james-dean.svg'
 import LinkedInIcon from './images/linkedin-icon.svg'
 import GitHubIcon from './images/github-icon.svg'
 
-
-
-
 type LeadershipCard = {
   photo: string
   name: string

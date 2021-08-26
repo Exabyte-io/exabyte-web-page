@@ -7,9 +7,6 @@ import EyeIcon from './images/eye-icon.svg'
 import LetterIcon from './images/letter-icon.svg'
 import DocumentIcon from './images/document-icon.svg'
 
-
-
-
 type HeroBlock = {
   title: string
   text: string

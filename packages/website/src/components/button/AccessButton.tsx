@@ -3,9 +3,6 @@ import { Typography } from 'antd'
 import unlockSrc from './unlock.svg'
 import './AccessButton.less'
 
-
-
-
 type AccessBtnProps = {
   style?: CSSProperties
 }

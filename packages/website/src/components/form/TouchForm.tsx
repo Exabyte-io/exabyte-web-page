@@ -3,9 +3,6 @@ import { Typography } from 'antd'
 import GetInTouchBtnImg from './get-in-toch-icon.svg'
 import './TouchForm.less'
 
-
-
-
 const TouchForm: FC = () => (
   <div className={'touch-form-wrapper'}>
     <Typography.Paragraph className={'touch-form-label'}>Get in touch</Typography.Paragraph>

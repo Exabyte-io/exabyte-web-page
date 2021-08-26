@@ -5,11 +5,9 @@ import { ValidateMessages } from 'rc-field-form/lib/interface'
 // @ts-ignore
 import { useCreateContactFormRequestMutation, useCountriesQuery, ContactFormRequestInput } from '../../graphql'
 
-
-
 interface countries {
-  name: string;
-  id: number;
+  name: string
+  id: number
 }
 
 const formProps: FormProps = {
@@ -42,7 +40,9 @@ const ContactForm: FC = () => {
       .then(() =>
         createContactFormRequest({ variables: { input: { data } } })
           .then(
-            (result: { data: { createContactFormRequest: { contactFormRequest: { firstName: string; email: string } } } }) =>
+            (result: {
+              data: { createContactFormRequest: { contactFormRequest: { firstName: string; email: string } } }
+            }) =>
               result?.data &&
               message.success(
                 {
@@ -86,7 +86,7 @@ const ContactForm: FC = () => {
             optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
           }
         >
-          {data?.countries?.map(({ id, name }:countries) => (
+          {data?.countries?.map(({ id, name }: countries) => (
             <Select.Option key={id} value={id}>
               {name}
             </Select.Option>

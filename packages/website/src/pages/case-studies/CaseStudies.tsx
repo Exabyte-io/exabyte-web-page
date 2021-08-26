@@ -1,10 +1,12 @@
 import { FC } from 'react'
-
-
-
+import { Hero } from './sections/Hero/Hero'
 
 const CaseStudies: FC = () => {
-  return <></>
+  return (
+    <>
+      <Hero />
+    </>
+  )
 }
 
 export { CaseStudies }

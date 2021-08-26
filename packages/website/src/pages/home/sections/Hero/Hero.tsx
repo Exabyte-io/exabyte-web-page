@@ -7,9 +7,6 @@ import { ActionButton } from '../../../../components/button/ActionButton'
 import './Hero.less'
 import { AccessButton } from '../../../../components/button/AccessButton'
 
-
-
-
 const Hero: FC = () => {
   const md = useMediaQuery({ minWidth: 768 })
   // const xl = useMediaQuery({ minWidth: 992 })

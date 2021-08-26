@@ -1,9 +1,6 @@
 import { CSSProperties, FC } from 'react'
 import './ActionButton.less'
 
-
-
-
 type ActionButtonProps = {
   title: string
   src?: string

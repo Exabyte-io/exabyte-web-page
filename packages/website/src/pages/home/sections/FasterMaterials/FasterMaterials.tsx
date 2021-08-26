@@ -5,9 +5,6 @@ import LaptopDecoration from './images/laptop.svg'
 import './FasterMaterials.less'
 import { ActionButton } from '../../../../components/button/ActionButton'
 
-
-
-
 const fasterMaterialsCards = [
   {
     title: 'SEMICONDUCTOR',

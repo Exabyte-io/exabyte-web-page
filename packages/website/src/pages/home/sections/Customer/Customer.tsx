@@ -9,9 +9,6 @@ import RightNotActiveArrow from './images/right-not-active-arrow.svg'
 import LeftNotActiveArrow from './images/left-not-active-arrow.svg'
 import './Customer.less'
 
-
-
-
 type Slide = {
   image: string
   text: string
