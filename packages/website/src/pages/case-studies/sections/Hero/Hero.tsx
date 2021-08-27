@@ -6,6 +6,10 @@ import LeftNotActiveArrow from '../../../home/sections/Customer/images/left-not-
 import LeftActiveArrow from '../../../home/sections/Customer/images/left-active-arrow.svg'
 import RightNotActiveArrow from '../../../home/sections/Customer/images/right-not-active-arrow.svg'
 import RightActiveArrow from '../../../home/sections/Customer/images/right-active-arrow.svg'
+import Slide1Image from './images/slide-1.svg'
+import Slide2Image from './images/slide-2.svg'
+import Slide3Image from './images/slide-3.svg'
+import Slide4Image from './images/slide-4.svg'
 import './Hero.less'
 
 type CaseStudiesSlide = {
@@ -18,32 +22,41 @@ type CaseStudiesSlide = {
 
 const caseStudiesSlidesContent: CaseStudiesSlide[] = [
   {
-    image: '',
-    title: '1',
-    text: '',
-    tags: [],
-    link: '',
+    image: Slide1Image,
+    title: 'AI FOR SURFACE CATALYSIS',
+    text: "A team of researchers lead by professor Rocca at the Universit'e de Lorraine computed adsorption entalpies  in zeolites with high accuracy using the random phase approximation first-principles technique coupled with machine learning.",
+    tags: ['2019', 'Quantum Chemistry', 'Density Functional Theory', 'Random-phase Approximation', 'VASP', 'Zeolites'],
+    link: '#',
   },
   {
-    image: '',
-    title: '2',
-    text: '',
-    tags: [],
-    link: '',
+    image: Slide2Image,
+    title: 'LIGHT-WEIGHT ALLOYS',
+    text: 'A team of researchers from Intermolecular Inc. compressed what would otherwise be 10 years of computing into under 2 days and screened 296 promising structural alloys for potential applications in automotive and aerospace fields.',
+    tags: ['2016', 'Solid-state Physics', 'Density Functional Theory', 'VASP', 'High-entropy alloys'],
+    link: '#',
   },
   {
-    image: '',
-    title: '3',
-    text: '',
-    tags: [],
-    link: '',
+    image: Slide3Image,
+    title: 'STRONGER COMPOSITE MATERIALS',
+    text: 'Tokyo University of Science team together with ITOCHU Techno-solutions successfully demonstrated a computational evaluation of the mechanical properties of carbon fiber/polymer resin interfaces.',
+    tags: [
+      '2019',
+      'Materials-Science',
+      'Molecular Dynamics',
+      'GROMACS',
+      'Carbon Fiber',
+      'Graphene',
+      'Polyimide',
+      'Vinylester',
+    ],
+    link: '#',
   },
   {
-    image: '',
-    title: '4',
-    text: '',
-    tags: [],
-    link: '',
+    image: Slide4Image,
+    title: 'SOLID-STATE BATTERY ELECTROLYTES',
+    text: 'A team from San Francisco State University benchmarked Exabyte.io platform against a set of incumbents using atomistic simulations of solid-state lithium electrolytes, and found a 2-3x decrease in timer required to run simulations.\n',
+    tags: ['2016', 'Solid-state Physics', 'Density Functional Theory', 'Quantum ESPRESSO', 'Li3 P S4'],
+    link: '#',
   },
 ]
 
@@ -88,11 +101,11 @@ const Hero: FC = () => {
                   <div className='case-studies-hero-content-carousel-slide-content-image'>
                     <img src={slide.image} alt='' />
                   </div>
-                  <div className='case-studies-hero-content-carousel-slide-content-tile'>{slide.title}</div>
+                  <div className='case-studies-hero-content-carousel-slide-content-title'>{slide.title}</div>
                   <div className='case-studies-hero-content-carousel-slide-content-text'>{slide.text}</div>
                   <div className='case-studies-hero-content-carousel-slide-content-tags'>
                     {slide.tags.map(tag => (
-                      <div className='case-studies-hero-content-carousel-slide-content-tag'>{tag}</div>
+                      <div className='case-studies-hero-content-carousel-slide-content-tags-tag'>{tag}</div>
                     ))}
                   </div>
                   <a href={slide.link} className='case-studies-hero-content-carousel-slide-content-link'>
@@ -107,7 +120,7 @@ const Hero: FC = () => {
             <div onClick={prevSlide} className={'case-studies-hero-content-carousel-arrows-arrow'}>
               <img src={slideNumber === 1 ? LeftNotActiveArrow : LeftActiveArrow} alt='' />
             </div>
-            <div onClick={nextSlide} className={'case-studies-hero-content-carousel-arrow'}>
+            <div onClick={nextSlide} className={'case-studies-hero-content-carousel-arrows-arrow'}>
               <img src={slideNumber === 4 ? RightNotActiveArrow : RightActiveArrow} alt='' />
             </div>
           </div>
