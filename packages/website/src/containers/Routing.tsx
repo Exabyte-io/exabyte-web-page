@@ -8,6 +8,7 @@ const Pricing = lazy(() => import('./../pages/home'))
 const CaseStudies = lazy(() => import('./../pages/case-studies'))
 const Login = lazy(() => import('./../pages/login'))
 const About = lazy(() => import('./../pages/about'))
+const OurVision = lazy(() => import('./../pages/our-vision'))
 
 type NavigationPlacement = 'top' | string
 type RouteNavigationMap = {
@@ -42,6 +43,11 @@ const routeMap: RouteNavigationMap = {
   '/about': {
     component: About,
     name: 'About',
+    placements: ['top'],
+  },
+  '/our_vision': {
+    component: OurVision,
+    name: 'Our Vision',
     placements: ['top'],
   },
   '/sign-in': {
