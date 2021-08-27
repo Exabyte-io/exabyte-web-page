@@ -1,0 +1,75 @@
+@import 'src/styles/index';
+
+.case-studies-hero {
+  position: relative;
+
+  .background-decoration-img {
+    position: absolute;
+    top: 10%;
+    right: 0;
+  }
+
+  &-content {
+    position: absolute;
+    top: 0;
+    margin: 132px 0 0 170px;
+    color: @secondary-color;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 125%;
+
+    &-carousel-wrapper {
+      width: 1180px;
+      margin: 46px auto 0;
+
+      .case-studies-hero-content-carousel {
+        &-slide {
+          height: 287px;
+          background-color: #ffffff;
+
+          &-content {
+            display: flex;
+            justify-content: space-between;
+
+            &-text {
+              width: 589px;
+              color: @text-title;
+
+              &-paragraph {
+                margin-bottom: 32px;
+                font-size: 22px;
+                line-height: 30px;
+              }
+
+              &-sign {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+
+        &-slide-number {
+          margin-bottom: 64px;
+          padding-bottom: 18px;
+          color: #5032b1;
+          font-weight: 700;
+          font-size: 22px;
+          border-bottom: 1px solid rgba(9, 20, 50, 0.5);
+        }
+
+        &-arrows {
+          display: flex;
+
+          &-arrow {
+            cursor: pointer;
+
+            &:not(:last-child) {
+              margin-right: 33px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ type AccessBtnProps = {
 
 const AccessButton: FC<AccessBtnProps> = ({ style }) => (
   <button style={style} className={'access-btn-wrapper'}>
-    <img src={unlockSrc} style={{ marginRight: 12 }} className={'access-btn-wrapper-img'} />
+    <img alt='img' src={unlockSrc} style={{ marginRight: 12 }} className={'access-btn-wrapper-img'} />
     <Typography.Paragraph className={'access-btn-wrapper-text'}>We support Open Access</Typography.Paragraph>
   </button>
 )

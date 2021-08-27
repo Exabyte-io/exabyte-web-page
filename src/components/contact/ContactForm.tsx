@@ -1,7 +1,14 @@
 import { FC } from 'react'
 import { Button, Form, FormProps, Input, message, Select } from 'antd'
 import { ValidateMessages } from 'rc-field-form/lib/interface'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { useCreateContactFormRequestMutation, useCountriesQuery, ContactFormRequestInput } from '../../graphql'
+
+interface countries {
+  name: string
+  id: number
+}
 
 const formProps: FormProps = {
   labelCol: { span: 8 },
@@ -33,7 +40,9 @@ const ContactForm: FC = () => {
       .then(() =>
         createContactFormRequest({ variables: { input: { data } } })
           .then(
-            result =>
+            (result: {
+              data: { createContactFormRequest: { contactFormRequest: { firstName: string; email: string } } }
+            }) =>
               result?.data &&
               message.success(
                 {
@@ -43,7 +52,7 @@ const ContactForm: FC = () => {
                 2000,
               ),
           )
-          .catch(reason =>
+          .catch((reason: never) =>
             messageApi.error(
               {
                 content: `Error sending your request: ${reason}`,
@@ -77,9 +86,9 @@ const ContactForm: FC = () => {
             optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
           }
         >
-          {data?.countries?.map(it => (
-            <Select.Option key={it.id} value={it.id}>
-              {it.name}
+          {data?.countries?.map(({ id, name }: countries) => (
+            <Select.Option key={id} value={id}>
+              {name}
             </Select.Option>
           ))}
         </Select>

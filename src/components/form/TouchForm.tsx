@@ -9,7 +9,7 @@ const TouchForm: FC = () => (
     <form className={'touch-form'}>
       <input placeholder={'Email'} className={'touch-form-input'} />
       <button className={'touch-form-btn'}>
-        <img src={GetInTouchBtnImg} />
+        <img alt='img' src={GetInTouchBtnImg} />
       </button>
     </form>
   </div>
