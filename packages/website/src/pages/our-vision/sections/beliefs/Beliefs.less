@@ -1,3 +1,5 @@
+@import 'src/styles/index';
+
 .beliefs {
   padding: 0 130px 200px;
 
@@ -8,13 +10,13 @@
 
 .heading {
   margin: 0 auto 60px;
-  font-size: 22px;
+  font-size: @font-lg;
   text-align: center;
   text-transform: uppercase;
 
   @media (max-width: 426px) {
     margin-bottom: 48px;
-    font-size: 18px;
+    font-size: @font-bigger;
   }
 }
 
@@ -22,7 +24,7 @@
   margin-bottom: 66px;
   color: #5032B1;
   font-weight: 700;
-  font-size: 22px;
+  font-size: @font-lg;
 
   @media (max-width: 426px) {
     margin-bottom: 50px;

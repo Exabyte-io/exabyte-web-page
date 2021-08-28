@@ -8,7 +8,7 @@ export const Beliefs: FC = () => (
       Here is what we believe
     </div>
     <div className={'container'}>
-      <Row gutter={151}>
+      <Row gutter={{ sm: 0, md: 151 }}>
         <Col sm={24} md={12}>
           <article className={'item'}>
             <div className={'number'}>
@@ -31,7 +31,7 @@ export const Beliefs: FC = () => (
           </article>
         </Col>
       </Row>
-      <Row gutter={151}>
+      <Row gutter={{ sm: 0, md: 151 }}>
         <Col sm={24} md={12}>
           <article className={'item'}>
             <div className={'number'}>

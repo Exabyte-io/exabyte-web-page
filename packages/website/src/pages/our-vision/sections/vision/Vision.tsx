@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { Col, Row } from 'antd'
 import './Vision.less';
-import { Background } from './images/Rectangle 253.svg'
+import Background from './images/Rectangle_253.svg'
+import BackgroundMobile from './images/Rectangle_mobile.svg'
+
 
 type VisionBlock = {
   label: string
@@ -43,8 +44,17 @@ const visionBlocks: VisionBlock[] = [
   }
 ]
 export const Vision: FC = () => (
-  <div className={'vision'}>
-    <img src={Background}/>
+  <section className={'vision'}>
+    <img
+      src={Background}
+      alt={''}
+      className={'background'}
+    />
+    <img
+      src={BackgroundMobile}
+      alt={''}
+      className={'mobile-background'}
+    />
     <div className={'wrapper'}>
       {visionBlocks.map(visionBlock => (
         <article className={'entry'} key={visionBlock.label}>
@@ -57,5 +67,5 @@ export const Vision: FC = () => (
         </article>
       ))}
     </div>
-  </div>
+  </section>
 )
