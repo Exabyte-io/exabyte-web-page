@@ -1,7 +1,9 @@
 import { FC } from 'react'
-import { Layout } from 'antd'
+import { Collapse, Layout } from 'antd'
 import './PublicationsRelated.less'
 import { PublicationsDropdown } from '../../../../types'
+
+const { Panel } = Collapse
 
 const publicationsRelatedDropdowns: PublicationsDropdown[] = [
   {
@@ -47,7 +49,20 @@ const publicationsRelatedDropdowns: PublicationsDropdown[] = [
 ]
 
 const PublicationsRelated: FC = () => {
-  return <Layout className='section publications-related'>Publications related section</Layout>
+  return (
+    <Layout className='publications-related'>
+      <div className='title'>Publications related to Exabyte.io</div>
+      <Collapse>
+        {publicationsRelatedDropdowns.map((dropdown, index) => (
+          <Panel key={index} header={dropdown.title}>
+            {dropdown.paragraphs.map((paragraph, paragraphIndex) => (
+              <p key={paragraphIndex}>{paragraph}</p>
+            ))}
+          </Panel>
+        ))}
+      </Collapse>
+    </Layout>
+  )
 }
 
 export { PublicationsRelated }

@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { Col, Row } from 'antd'
 import './Vision.less'
 import { Background } from './images/Rectangle 253.svg'
 
@@ -44,7 +43,7 @@ const visionBlocks: VisionBlock[] = [
 ]
 export const Vision: FC = () => (
   <div className={'vision'}>
-    <img src={Background} />
+    <img src={Background} alt='' />
     <div className={'wrapper'}>
       {visionBlocks.map(visionBlock => (
         <article className={'entry'} key={visionBlock.label}>

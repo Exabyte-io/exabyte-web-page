@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { Layout, Menu } from 'antd'
+import { Collapse, Layout } from 'antd'
 import './PublicationsPerformed.less'
 import { PublicationsDropdown } from '../../../../types'
 
-const { SubMenu } = Menu
+const { Panel } = Collapse
 
 const publicationsPerformedDropdowns: PublicationsDropdown[] = [
   {
@@ -93,15 +93,15 @@ const PublicationsPerformed: FC = () => {
   return (
     <Layout className='publications-performed'>
       <div className='title'>Publications performed on Exabyte.io</div>
-      <Menu mode='inline'>
+      <Collapse>
         {publicationsPerformedDropdowns.map((dropdown, index) => (
-          <SubMenu key={index} title={dropdown.title}>
-            {dropdown.paragraphs.map((paragraph, paraIndex) => (
-              <Menu.Item key={`${index}${paraIndex}`}>{paragraph}</Menu.Item>
+          <Panel key={index} header={dropdown.title}>
+            {dropdown.paragraphs.map((paragraph, paragraphIndex) => (
+              <p key={paragraphIndex}>{paragraph}</p>
             ))}
-          </SubMenu>
+          </Panel>
         ))}
-      </Menu>
+      </Collapse>
     </Layout>
   )
 }

@@ -18,3 +18,12 @@ export type PublicationsDropdown = {
   tags: string[]
   image: string
 }
+
+type communitySlide = {
+  paragraphs: string[]
+}
+
+export type communityCarousel = {
+  title: string
+  carouselSlides: communitySlide[]
+}
