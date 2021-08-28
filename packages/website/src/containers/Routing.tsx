@@ -9,6 +9,7 @@ const CaseStudies = lazy(() => import('./../pages/case-studies'))
 const Login = lazy(() => import('./../pages/login'))
 const About = lazy(() => import('./../pages/about'))
 const OurVision = lazy(() => import('./../pages/our-vision'))
+const News = lazy(() => import('./../pages/news'))
 
 type NavigationPlacement = 'top' | string
 type RouteNavigationMap = {
@@ -31,7 +32,7 @@ const routeMap: RouteNavigationMap = {
     placements: ['top'],
   },
   '/news': {
-    component: Home,
+    component: News,
     name: 'News',
     placements: ['top'],
   },

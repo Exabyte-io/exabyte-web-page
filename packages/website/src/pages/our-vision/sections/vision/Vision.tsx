@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC } from 'react'
 import { Col, Row } from 'antd'
-import './Vision.less';
+import './Vision.less'
 import { Background } from './images/Rectangle 253.svg'
 
 type VisionBlock = {
@@ -24,7 +24,7 @@ const visionBlocks: VisionBlock[] = [
           a specific analysis, without having to learn yet another new language and data format. A plug-in modular
           architecture allows researchers to pick the best combination of tools, and get the job done faster. Data
           standards and an intuitive interface control the ever-growing data and cut learning time, making the discipline
-          less esoteric.`
+          less esoteric.`,
   },
   {
     label: 'Collaborative',
@@ -33,27 +33,23 @@ const visionBlocks: VisionBlock[] = [
           This means scientists need to be able to review and comment on each other's work, to define and refine
           workflows, and to engage experimentalists to evaluate the results. Instead of having modelers and
           experimentalists work independently and continue speaking different languages, exchanging information
-          regularly lets teams achieve R&D goals faster and more accurately.`
+          regularly lets teams achieve R&D goals faster and more accurately.`,
   },
   {
     label: 'Summary',
     text: `Materials modeling has the potential to speed the discovery of extraordinary new materials for many
           industries and applications. To do so, it must be set free from the ivory tower and in-house supercomputers,
-          and become more widely accessible, easier to use, faster, and more precise.`
-  }
+          and become more widely accessible, easier to use, faster, and more precise.`,
+  },
 ]
 export const Vision: FC = () => (
   <div className={'vision'}>
-    <img src={Background}/>
+    <img src={Background} />
     <div className={'wrapper'}>
       {visionBlocks.map(visionBlock => (
         <article className={'entry'} key={visionBlock.label}>
-          <div className={'label'}>
-            {visionBlock.label}
-          </div>
-          <div className={'text'}>
-            {visionBlock.text}
-          </div>
+          <div className={'label'}>{visionBlock.label}</div>
+          <div className={'text'}>{visionBlock.text}</div>
         </article>
       ))}
     </div>
