@@ -2,6 +2,7 @@ import { FC } from 'react'
 import './Vision.less'
 import Background from './images/Rectangle_253.svg'
 import BackgroundMobile from './images/Rectangle_mobile.svg'
+import { Background } from './images/Rectangle 253.svg'
 
 type VisionBlock = {
   label: string
@@ -46,13 +47,16 @@ export const Vision: FC = () => (
   <section className={'vision'}>
     <img src={Background} alt={''} className={'background'} />
     <img src={BackgroundMobile} alt={''} className={'mobile-background'} />
-    <div className={'wrapper'}>
-      {visionBlocks.map(visionBlock => (
-        <article className={'entry'} key={visionBlock.label}>
-          <div className={'label'}>{visionBlock.label}</div>
-          <div className={'text'}>{visionBlock.text}</div>
-        </article>
-      ))}
+    <div className={'vision'}>
+      <img src={Background} alt='' />
+      <div className={'wrapper'}>
+        {visionBlocks.map(visionBlock => (
+          <article className={'entry'} key={visionBlock.label}>
+            <div className={'label'}>{visionBlock.label}</div>
+            <div className={'text'}>{visionBlock.text}</div>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 )

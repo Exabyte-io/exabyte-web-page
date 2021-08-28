@@ -1,1 +1,105 @@
 @import 'src/styles/index';
+
+.case-studies-hero {
+  position: relative;
+
+  .background-decoration-img {
+    position: absolute;
+    top: 10%;
+    right: 0;
+  }
+
+  &-content {
+    color: @secondary-color;
+    font-size: 72px;
+    line-height: 125%;
+
+    &-title {
+      position: absolute;
+      top: 0;
+      margin: 132px 0 0 170px;
+      font-weight: bold;
+    }
+
+    &-carousel-wrapper {
+      width: 623px;
+      margin: 46px 0 0 170px;
+
+      .case-studies-hero-content-carousel {
+        &-slide {
+          height: 527px;
+          background-color: #ffffff;
+
+          &-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            &-image {
+              margin-bottom: 64px;
+            }
+
+            &-title {
+              margin-bottom: 28px;
+              color: @text-title;
+              font-size: 22px;
+            }
+
+            &-text {
+              margin-bottom: 48px;
+              color: @text-title;
+              font-size: 16px;
+              line-height: 187%;
+            }
+
+            &-tags {
+              display: flex;
+              flex-wrap: wrap;
+              max-width: 516px;
+
+              &-tag {
+                box-sizing: border-box;
+                margin: 0 16px 16px 0;
+                padding: 0 14px;
+                color: @text-title;
+                font-size: 14px;
+                border: 1px solid @text-title;
+                border-radius: 10px;
+              }
+            }
+
+            &-link {
+              position: absolute;
+              bottom: 0;
+              color: #003d92;
+              font-weight: 600;
+              border-bottom: 1px solid #003d92;
+            }
+          }
+        }
+
+        &-slide-number {
+          margin-bottom: 37px;
+          padding-bottom: 18px;
+          color: #5032b1;
+          font-weight: 700;
+          font-size: 22px;
+          border-bottom: 1px solid rgba(9, 20, 50, 0.5);
+        }
+
+        &-arrows {
+          display: flex;
+
+          &-arrow {
+            cursor: pointer;
+
+            &:not(:last-child) {
+              margin-right: 33px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

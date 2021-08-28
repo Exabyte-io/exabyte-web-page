@@ -1,0 +1,54 @@
+@import 'src/styles/index';
+
+.case-studies-carousel-wrapper {
+  width: 360px;
+  height: 450px;
+  padding: 48px 32px;
+  //background-color: rgba(255, 255, 255, 0.1);
+  background-color: #800080;
+  border-radius: 8px;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+    color: @secondary-color;
+    font-size: 22px;
+  }
+
+  .carousel {
+    width: 100%;
+    height: 208px;
+    margin-bottom: 56px;
+
+    .carousel-slide {
+      &-paragraph {
+        margin: 0;
+        color: @secondary-color;
+        font-size: 16px;
+        line-height: 187%;
+      }
+    }
+  }
+
+  .carousel-arrows {
+    display: flex;
+
+    .carousel-arrow {
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      span {
+        color: rgba(255, 255, 255, 0.4);
+
+        &.active {
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
