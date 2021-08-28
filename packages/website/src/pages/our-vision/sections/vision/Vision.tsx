@@ -1,5 +1,7 @@
 import { FC } from 'react'
 import './Vision.less'
+import Background from './images/Rectangle_253.svg'
+import BackgroundMobile from './images/Rectangle_mobile.svg'
 import { Background } from './images/Rectangle 253.svg'
 
 type VisionBlock = {
@@ -42,15 +44,19 @@ const visionBlocks: VisionBlock[] = [
   },
 ]
 export const Vision: FC = () => (
-  <div className={'vision'}>
-    <img src={Background} alt='' />
-    <div className={'wrapper'}>
-      {visionBlocks.map(visionBlock => (
-        <article className={'entry'} key={visionBlock.label}>
-          <div className={'label'}>{visionBlock.label}</div>
-          <div className={'text'}>{visionBlock.text}</div>
-        </article>
-      ))}
+  <section className={'vision'}>
+    <img src={Background} alt={''} className={'background'} />
+    <img src={BackgroundMobile} alt={''} className={'mobile-background'} />
+    <div className={'vision'}>
+      <img src={Background} alt='' />
+      <div className={'wrapper'}>
+        {visionBlocks.map(visionBlock => (
+          <article className={'entry'} key={visionBlock.label}>
+            <div className={'label'}>{visionBlock.label}</div>
+            <div className={'text'}>{visionBlock.text}</div>
+          </article>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
 )

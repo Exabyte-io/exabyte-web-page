@@ -6,7 +6,7 @@ export const Beliefs: FC = () => (
   <section className={'beliefs'}>
     <div className={'heading'}>Here is what we believe</div>
     <div className={'container'}>
-      <Row gutter={151}>
+      <Row gutter={{ sm: 0, md: 151 }}>
         <Col sm={24} md={12}>
           <article className={'item'}>
             <div className={'number'}>01</div>
@@ -26,7 +26,7 @@ export const Beliefs: FC = () => (
           </article>
         </Col>
       </Row>
-      <Row gutter={151}>
+      <Row gutter={{ sm: 0, md: 151 }}>
         <Col sm={24} md={12}>
           <article className={'item'}>
             <div className={'number'}>03</div>
