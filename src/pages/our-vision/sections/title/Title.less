@@ -1,19 +1,22 @@
+@import 'src/styles/index';
+
 h1.ant-typography,
 .ant-typography h1,
-.page-title{
-  color: #091432;
+.page-title {
+  color: @text-title;
   font-weight: 700;
-  font-size: 72px;
+  font-size: @font-5xl;
   line-height: 90px;
 
   @media (max-width: 426px) {
     font-weight: 600;
-    font-size: 48px;
+    font-size: @font-2xl;
     line-height: 60px;
   }
 }
 
 .title-section {
+  width: 90%;
   max-width: 1180px;
   margin: 120px auto 85px;
 
@@ -24,11 +27,11 @@ h1.ant-typography,
 
 .subtitle {
   margin-bottom: 28px;
-  font-size: 22px;
+  font-size: @font-lg;
 
   @media (max-width: 426px) {
     margin-bottom: 24px;
-    font-size: 18px;
+    font-size: @font-bigger;
   }
 }
 

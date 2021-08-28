@@ -12,31 +12,49 @@
     }
 
     &-carousel-wrapper {
-      width: 1180px;
+      width: 90%;
+      max-width: 1180px;
       margin: 46px auto 0;
 
       .customer-content-carousel {
         &-slide {
-          height: 287px;
+          //height: 287px;
           background-color: #ffffff;
 
           &-content {
             display: flex;
             justify-content: space-between;
 
+            @media (max-width: 800px) {
+              flex-direction: column-reverse;
+
+              &-image img {
+                width: 192px;
+                margin-bottom: 50px;
+              }
+            }
+
             &-text {
-              width: 589px;
+              max-width: 589px;
               color: @text-title;
 
               &-paragraph {
                 margin-bottom: 32px;
-                font-size: 22px;
+                font-size: @font-lg;
                 line-height: 30px;
+
+                @media (max-width: 800px) {
+                  font-size: @font-small;
+                }
               }
 
               &-sign {
                 font-size: 16px;
                 line-height: 24px;
+
+                @media (max-width: 800px) {
+                  font-size: @font-extra-small;
+                }
               }
             }
           }

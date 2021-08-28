@@ -1,14 +1,39 @@
 @import 'src/styles/index';
 
 .related {
-  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
   min-height: 426px;
+  padding: 0;
+
+  &-background-img,
+  &-background-img-mobile {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  &-background-img {
+    display: block;
+    @media (max-width: 426px) {
+      display: none;
+    }
+  }
+
+  &-background-img-mobile {
+    display: none;
+    @media (max-width: 426px) {
+      display: block;
+    }
+  }
 
   &-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
 
     &-title {
       color: @secondary-color;
@@ -20,6 +45,11 @@
     &-links {
       display: flex;
       margin-top: 48px;
+
+      @media (max-width: 426px) {
+        flex-direction: column;
+        gap: 14px;
+      }
 
       .related-content-link {
         display: flex;

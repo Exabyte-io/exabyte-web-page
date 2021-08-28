@@ -95,8 +95,8 @@ const Hero: FC = () => {
             infinite={false}
             className='case-studies-hero-content-carousel'
           >
-            {caseStudiesSlidesContent.map(slide => (
-              <div className='case-studies-hero-content-carousel-slide'>
+            {caseStudiesSlidesContent.map((slide, index) => (
+              <div className='case-studies-hero-content-carousel-slide' key={index}>
                 <div className='case-studies-hero-content-carousel-slide-content'>
                   <div className='case-studies-hero-content-carousel-slide-content-image'>
                     <img src={slide.image} alt='' />
@@ -104,8 +104,10 @@ const Hero: FC = () => {
                   <div className='case-studies-hero-content-carousel-slide-content-title'>{slide.title}</div>
                   <div className='case-studies-hero-content-carousel-slide-content-text'>{slide.text}</div>
                   <div className='case-studies-hero-content-carousel-slide-content-tags'>
-                    {slide.tags.map(tag => (
-                      <div className='case-studies-hero-content-carousel-slide-content-tags-tag'>{tag}</div>
+                    {slide.tags.map((tag, index) => (
+                      <div className='case-studies-hero-content-carousel-slide-content-tags-tag' key={index}>
+                        {tag}
+                      </div>
                     ))}
                   </div>
                   <a href={slide.link} className='case-studies-hero-content-carousel-slide-content-link'>
