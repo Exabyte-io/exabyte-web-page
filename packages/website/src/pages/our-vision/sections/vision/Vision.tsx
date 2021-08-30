@@ -2,7 +2,6 @@ import { FC } from 'react'
 import './Vision.less'
 import Background from './images/Rectangle_253.svg'
 import BackgroundMobile from './images/Rectangle_mobile.svg'
-import { Background } from './images/Rectangle 253.svg'
 
 type VisionBlock = {
   label: string

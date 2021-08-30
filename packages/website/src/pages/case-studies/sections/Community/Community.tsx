@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Layout } from 'antd'
 import './Community.less'
 import { communityCarousel } from '../../../../types'
-import { CaseStudiesCarousel } from '../../../../components/NewsCard/CaseStudiesCarousel'
+import { CaseStudiesCarousel } from '../../../../components/CaseStudiesCarousel/CaseStudiesCarousel'
 
 const communityCarousels: communityCarousel[] = [
   {

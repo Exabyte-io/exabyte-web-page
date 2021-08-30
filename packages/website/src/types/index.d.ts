@@ -4,7 +4,7 @@ declare namespace App {
   }
 }
 
-export type NewsCard = {
+export type NewsCardType = {
   image: string
   title: string
   released: string
