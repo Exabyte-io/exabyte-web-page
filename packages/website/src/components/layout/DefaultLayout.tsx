@@ -19,11 +19,11 @@ const DefaultLayout: FC = () => {
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
       <Layout.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Row align={'middle'} justify={'space-between'} className={'container'} wrap={false}>
-          <Col flex={'240px'}>
+          <Col flex={'140px'}>
             <Logo />
           </Col>
           {xl && (
-            <Col lg={13} xl={11}>
+            <Col lg={13} xl={13}>
               <TopNavigation />
             </Col>
           )}
