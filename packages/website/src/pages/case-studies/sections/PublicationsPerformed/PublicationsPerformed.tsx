@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Collapse, Layout } from 'antd'
+import { Collapse } from 'antd'
 import './PublicationsPerformed.less'
 import { PublicationsDropdown } from '../../../../types'
 
@@ -91,18 +91,20 @@ const publicationsPerformedDropdowns: PublicationsDropdown[] = [
 
 const PublicationsPerformed: FC = () => {
   return (
-    <Layout className='publications-performed'>
-      <div className='title'>Publications performed on Exabyte.io</div>
-      <Collapse>
-        {publicationsPerformedDropdowns.map((dropdown, index) => (
-          <Panel key={index} header={dropdown.title}>
-            {dropdown.paragraphs.map((paragraph, paragraphIndex) => (
-              <p key={paragraphIndex}>{paragraph}</p>
-            ))}
-          </Panel>
-        ))}
-      </Collapse>
-    </Layout>
+    <div className='publications-performed'>
+      <div className='content'>
+        <div className='title'>Publications performed on Exabyte.io</div>
+        <Collapse bordered={false} expandIconPosition='right'>
+          {publicationsPerformedDropdowns.map((dropdown, index) => (
+            <Panel key={index} header={dropdown.title}>
+              {dropdown.paragraphs.map((paragraph, paragraphIndex) => (
+                <p key={paragraphIndex}>{paragraph}</p>
+              ))}
+            </Panel>
+          ))}
+        </Collapse>
+      </div>
+    </div>
   )
 }
 

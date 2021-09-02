@@ -1,12 +1,13 @@
 import { FC } from 'react'
-import { Layout } from 'antd'
-import { ContactForm } from '../../components/contact/ContactForm'
+import Map from './sections/Map/Map'
+import Contact from './sections/Contact/Contact'
 
 const ContactUs: FC = () => {
   return (
-    <Layout>
-      <ContactForm />
-    </Layout>
+    <div className='contact-us'>
+      <Map />
+      <Contact />
+    </div>
   )
 }
 

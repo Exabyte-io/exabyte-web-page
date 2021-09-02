@@ -1,7 +1,67 @@
 @import 'src/styles/index';
 
 .case-studies-community {
-  .carousels {
-    display: flex;
+  position: relative;
+  height: 1412px;
+  overflow: hidden;
+
+  .background-img {
+    position: absolute;
+    width: 100%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1440px;
+    margin: 186px auto 0;
+    padding: 0 130px;
+    color: #ffffff;
+
+    .case-studies-community-title {
+      margin-bottom: 80px;
+      font-weight: 700;
+      font-size: 42px;
+    }
+
+    .case-studies-community-text {
+      margin-bottom: 48px;
+      font-size: 22px;
+      line-height: 40px;
+    }
+
+    .carousels {
+      display: flex;
+    }
+
+    .join-community {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 120px;
+
+      &-title {
+        margin-bottom: 80px;
+        font-weight: 700;
+        font-size: 42px;
+        text-align: center;
+      }
+
+      .button {
+        width: 314px;
+        margin: 0 auto;
+        padding: 18px 0;
+        color: #1f1a6b;
+        font-weight: 700;
+        font-size: 16px;
+        text-transform: uppercase;
+        background: #2effec;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        cursor: pointer;
+      }
+    }
   }
 }
