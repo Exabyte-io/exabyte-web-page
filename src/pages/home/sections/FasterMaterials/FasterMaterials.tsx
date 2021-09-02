@@ -1,5 +1,5 @@
 import { FC, useRef, useState } from 'react'
-import { Carousel, Layout} from 'antd'
+import { Carousel, Layout } from 'antd'
 import BackgroundLg from './images/background-lg.svg'
 import LaptopDecoration from './images/laptop.svg'
 import './FasterMaterials.less'
@@ -47,7 +47,7 @@ const FasterMaterials: FC = () => {
       <img src={LaptopDecoration} alt='' className={'laptop-decoration'} />
       <div className='faster-materials-content'>
         <div className='faster-materials-content-title'>Faster Materials R&D For</div>
-        {window.innerWidth > 426 ?
+        {window.innerWidth > 426 ? (
           <div className='faster-materials-content-info'>
             {fasterMaterialsCards.map(card => (
               <div className='faster-materials-content-info-card'>
@@ -56,7 +56,7 @@ const FasterMaterials: FC = () => {
               </div>
             ))}
           </div>
-          :
+        ) : (
           <>
             <Carousel
               ref={carousel}
@@ -66,28 +66,37 @@ const FasterMaterials: FC = () => {
               className={'faster-materials-content-carousel'}
             >
               {fasterMaterialsCards.map(card => (
-                  <div className='faster-materials-content-info-card'>
-                    <div className='faster-materials-content-info-card-title'>{card.title}</div>
-                    <div className='faster-materials-content-info-card-text'>{card.text}</div>
-                  </div>
+                <div className='faster-materials-content-info-card'>
+                  <div className='faster-materials-content-info-card-title'>{card.title}</div>
+                  <div className='faster-materials-content-info-card-text'>{card.text}</div>
+                </div>
               ))}
             </Carousel>
 
             <div className={'faster-materials-content-carousel-arrows'}>
-              <div onClick={prevCard} className={cardNumber === 1
-                ? 'faster-materials-content-carousel-arrows-arrow inactive'
-                : 'faster-materials-content-carousel-arrows-arrow active'
-              }>
+              <div
+                onClick={prevCard}
+                className={
+                  cardNumber === 1
+                    ? 'faster-materials-content-carousel-arrows-arrow inactive'
+                    : 'faster-materials-content-carousel-arrows-arrow active'
+                }
+              >
                 <img src={cardNumber === 1 ? LeftNotActiveArrow : LeftActiveArrow} alt='' />
               </div>
-              <div onClick={nextCard} className={cardNumber === 3
-                ? 'faster-materials-content-carousel-arrows-arrow inactive'
-                : 'faster-materials-content-carousel-arrows-arrow active'}>
+              <div
+                onClick={nextCard}
+                className={
+                  cardNumber === 3
+                    ? 'faster-materials-content-carousel-arrows-arrow inactive'
+                    : 'faster-materials-content-carousel-arrows-arrow active'
+                }
+              >
                 <img src={cardNumber === 3 ? RightNotActiveArrow : RightActiveArrow} alt='' />
               </div>
             </div>
           </>
-        }
+        )}
         <div className='faster-materials-content-buttons'>
           <ActionButton title={'Get started now'} type={'default'} size={'medium'} />
           <a href={'#'} className='faster-materials-content-button'>
