@@ -5,13 +5,17 @@ import BackgroundMb from './images/background-mb.svg'
 import { useMediaQuery } from 'react-responsive'
 import './ContactUs.less'
 
-const ContactUs: FC = () => {
+interface ContactUsProps {
+  incomingEmail?: string
+}
+
+const ContactUs: FC<ContactUsProps> = ({ incomingEmail = '' }) => {
   const md = useMediaQuery({ maxWidth: 768 })
 
   return (
-    <div className='contact-us'>
+    <div className='contact-us-unique-style'>
       <img src={md ? BackgroundMb : ''} alt='' className='background-mb' />
-      <Map />
+      <Map incomingEmail={incomingEmail} />
       <Contact />
     </div>
   )

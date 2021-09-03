@@ -4,6 +4,8 @@ import './Partners.less'
 import Partner1 from './images/partner-1.svg'
 import Partner2 from './images/partner-2.svg'
 import CustomCarousel from '../../components/CustomCarousel'
+import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import { NavLink } from 'react-router-dom'
 
 type PartnersCard = {
   photo: string
@@ -51,7 +53,12 @@ const Partners: FC = () => {
             ))}
           </CustomCarousel>
         </div>
+      </div>
+      <NavLink className='action-btn-wrapper-in-partners' to={'/contact-us'}>
         <ActionButton title={'CONTACT US'} type={'default'} size={'medium'} />
+      </NavLink>
+      <div className='back-top'>
+        <CustomBackTop color={'#000000'} />
       </div>
     </div>
   )

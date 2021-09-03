@@ -8,6 +8,7 @@ import EyeIcon from './images/eye-icon.svg'
 import LetterIcon from './images/letter-icon.svg'
 import DocumentIcon from './images/document-icon.svg'
 import { useMediaQuery } from 'react-responsive'
+import { NavLink } from 'react-router-dom'
 
 type HeroBlock = {
   title: string
@@ -49,15 +50,15 @@ const Hero: FC = () => {
         <div className='hero-content-links'>
           <div className='hero-content-links-title'>Related Information</div>
           <div className='hero-content-links-wrapper'>
-            <a href={'#'} className='hero-content-links-link'>
+            <NavLink to={'/our-vision'} className='hero-content-links-link'>
               <img src={EyeIcon} alt='' />
               <span>Our vision</span>
-            </a>
-            <a href={'#'} className='hero-content-links-link'>
+            </NavLink>
+            <NavLink to={'/contact-us'} className='hero-content-links-link'>
               <img src={LetterIcon} alt='' />
               <span>Contact Us</span>
-            </a>
-            <a href={'#'} className='hero-content-links-link'>
+            </NavLink>
+            <a href={'https://docs.exabyte.io/'} className='hero-content-links-link'>
               <img src={DocumentIcon} alt='' />
               <span>Documentation</span>
             </a>

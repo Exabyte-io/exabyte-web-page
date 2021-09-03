@@ -1,72 +1,160 @@
 @import 'src/styles/index';
 
-.capabilities-wrapper {
-  padding-top: 70px;
-  padding-bottom: 98px;
+.home-page-unique-style {
+  .capabilities-wrapper {
+    padding-top: 70px;
+    padding-bottom: 98px;
 
-  .top-wrapper {
-    @media (min-width: 992px) {
-      text-align: center;
+    .collapse-menu-mobile {
+      display: none;
     }
 
-    &-title {
-      margin-bottom: 24px !important;
-      color: @text-title;
-      font-weight: bold;
-      font-size: @font-1xl;
-      font-family: @primary-font;
-      font-style: normal;
-      line-height: 50px;
-
+    .top-wrapper {
       @media (min-width: 992px) {
-        font-size: 42px;
+        text-align: center;
+      }
+
+      &-title {
+        margin-bottom: 24px !important;
+        color: @text-title;
+        font-weight: bold;
+        font-size: @font-1xl;
+        font-family: @primary-font;
+        font-style: normal;
+        line-height: 50px;
+
+        @media (min-width: 992px) {
+          font-size: 42px;
+        }
+      }
+
+      &-description {
+        margin-bottom: 0 !important;
+        color: @text-title;
+        font-weight: 600;
+        font-size: @font-bigger;
+        font-family: @primary-font;
+        font-style: normal;
+        line-height: 30px;
+
+        @media (min-width: 992px) {
+          font-size: @font-lg;
+        }
       }
     }
 
-    &-description {
-      margin-bottom: 0 !important;
-      color: @text-title;
-      font-weight: 600;
-      font-size: @font-bigger;
-      font-family: @primary-font;
-      font-style: normal;
-      line-height: 30px;
+    .menu-wrapper {
+      background: transparent;
 
-      @media (min-width: 992px) {
-        font-size: @font-lg;
+      @media (max-width: 1279px) {
+        width: calc(100vw - 40px);
+      }
+
+      &-image {
+        margin-bottom: 32px;
+
+        @media (min-width: 992px) {
+          margin-bottom: 49px;
+        }
+      }
+
+      &-link {
+        display: block;
+        width: 25px;
+        height: 25px;
+
+        &:first-of-type {
+          margin-right: 14px;
+        }
+      }
+    }
+
+    .ant-menu {
+      &-item {
+        height: auto !important;
+      }
+    }
+
+    .collapse-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 600px;
+
+      .collapse-menu-items {
+        width: 660px;
+
+        .collapse-menu-item {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 11.5px 0 12.5px 0;
+          color: #091432;
+          font-size: 16px;
+          border-bottom: 0.5px solid #091432;
+          cursor: pointer;
+
+          .active {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 31px;
+            height: 31px;
+            border: 1px solid #747bc8;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .collapse-image-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 505px;
+        height: 100%;
+
+        .collapse-image {
+          max-width: 505px;
+        }
+
+        .icons {
+          margin-top: 46px;
+
+          img:first-child {
+            margin-right: 14px;
+          }
+        }
       }
     }
   }
+}
 
-  .menu-wrapper {
-    background: transparent;
-
-    @media (max-width: 1279px) {
-      width: calc(100vw - 40px);
+@media screen and (max-width: 768px) {
+  .home-page-unique-style {
+    .collapse-menu {
+      display: none !important;
     }
 
-    &-image {
-      margin-bottom: 32px;
+    .collapse-menu-mobile {
+      display: block !important;
+      background-color: transparent !important;
 
-      @media (min-width: 992px) {
-        margin-bottom: 49px;
+      .collapse-menu-mobile-image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .collapse-menu-mobile-icons {
+          margin-top: 32px;
+
+          img:first-child {
+            margin-right: 14px;
+          }
+        }
       }
-    }
-
-    &-link {
-      display: block;
-      width: 25px;
-      height: 25px;
-
-      &:first-of-type {
-        margin-right: 14px;
-      }
-    }
-  }
-
-  .ant-menu {
-    &-item {
-      height: auto !important;
     }
   }
 }

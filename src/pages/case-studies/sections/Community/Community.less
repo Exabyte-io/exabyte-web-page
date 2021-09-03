@@ -1,76 +1,16 @@
 @import 'src/styles/index';
 
-.case-studies-community {
-  position: relative;
-  height: 1412px;
-  overflow: hidden;
-
-  .background-img {
-    position: absolute;
-    width: 100%;
-  }
-
-  .content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1440px;
-    margin: 186px auto 0;
-    padding: 0 130px;
-    color: #ffffff;
-
-    .case-studies-community-title {
-      margin-bottom: 80px;
-      font-weight: 700;
-      font-size: 42px;
-    }
-
-    .case-studies-community-text {
-      margin-bottom: 48px;
-      font-size: 22px;
-      line-height: 40px;
-    }
-
-    .carousels {
-      display: flex;
-    }
-
-    .join-community {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-top: 120px;
-
-      &-title {
-        margin-bottom: 80px;
-        font-weight: 700;
-        font-size: 42px;
-        text-align: center;
-      }
-
-      .button {
-        width: 314px;
-        margin: 0 auto;
-        padding: 18px 0;
-        color: #1f1a6b;
-        font-weight: 700;
-        font-size: 16px;
-        text-transform: uppercase;
-        background: #2effec;
-        border: none;
-        border-radius: 10px;
-        outline: none;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
+.case-studies-unique-style {
   .case-studies-community {
     position: relative;
-    height: 1125px;
+    height: 1412px;
     overflow: hidden;
+
+    .back-top {
+      position: absolute;
+      right: 65px;
+      bottom: 30px;
+    }
 
     .background-img {
       position: absolute;
@@ -83,34 +23,32 @@
       width: 100%;
       max-width: 1440px;
       margin: 186px auto 0;
-      padding: 0 20px;
+      padding: 0 130px;
       color: #ffffff;
 
       .case-studies-community-title {
-        margin-bottom: 32px;
+        margin-bottom: 80px;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 42px;
       }
 
       .case-studies-community-text {
-        margin-bottom: 24px;
-        font-size: 16px;
-        line-height: 24px;
+        margin-bottom: 48px;
+        font-size: 22px;
+        line-height: 40px;
       }
 
       .carousels {
         display: flex;
-        overflow-x: scroll;
       }
 
       .join-community {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 68px;
+        margin-top: 120px;
 
         &-title {
-          display: none;
           margin-bottom: 80px;
           font-weight: 700;
           font-size: 42px;
@@ -118,18 +56,95 @@
         }
 
         .button {
-          width: 100%;
-          margin: 0 auto 120px;
+          width: 314px;
+          margin: 0 auto;
           padding: 18px 0;
           color: #1f1a6b;
           font-weight: 700;
-          font-size: 12px;
+          font-size: 16px;
+          text-align: center;
           text-transform: uppercase;
           background: #2effec;
           border: none;
           border-radius: 10px;
           outline: none;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .case-studies-unique-style {
+    .case-studies-community {
+      .back-top {
+        display: none;
+      }
+
+      position: relative;
+      height: 1125px;
+      overflow: hidden;
+
+      .background-img {
+        position: absolute;
+        width: 100%;
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1440px;
+        margin: 186px auto 0;
+        padding: 0 20px;
+        color: #ffffff;
+
+        .case-studies-community-title {
+          margin-bottom: 32px;
+          font-weight: 700;
+          font-size: 32px;
+        }
+
+        .case-studies-community-text {
+          margin-bottom: 24px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        .carousels {
+          display: flex;
+          overflow-x: scroll;
+        }
+
+        .join-community {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-top: 68px;
+
+          &-title {
+            display: none;
+            margin-bottom: 80px;
+            font-weight: 700;
+            font-size: 42px;
+            text-align: center;
+          }
+
+          .button {
+            width: 100%;
+            margin: 0 auto 120px;
+            padding: 18px 0;
+            color: #1f1a6b;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            background: #2effec;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+          }
         }
       }
     }

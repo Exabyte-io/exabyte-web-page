@@ -5,7 +5,7 @@ import './News.less'
 
 const News: FC = () => {
   return (
-    <Layout.Content style={{ position: 'relative', overflow: 'hidden' }}>
+    <Layout.Content className='news-page-unique-style' style={{ position: 'relative', overflow: 'hidden' }}>
       <Main />
     </Layout.Content>
   )

@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import './Capabilities.less'
-import { Col, Layout, Row, Typography, Menu } from 'antd'
+import { Col, Collapse, Layout, Row, Typography } from 'antd'
 import Dropdown1 from './images/dropdown1.svg'
 import Dropdown2 from './images/dropdown2.svg'
 import Dropdown3 from './images/dropdown3.svg'
@@ -12,28 +12,96 @@ import Dropdown8 from './images/dropdown8.svg'
 import Dropdown9 from './images/dropdown9.svg'
 import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
 import InfoIcon from '../Capabilities/images/info-icon.svg'
-import { useMediaQuery } from 'react-responsive'
+import ClosedArrow from './images/closed-arrow.svg'
+import OpenArrow from './images/open-arrow.svg'
 
-const { SubMenu } = Menu
+const { Panel } = Collapse
 
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub4']
+interface capabilitiesCollapseItem {
+  name: string
+  image: string
+  githubLink: string
+  infoLink: string
+}
+
+const capabilitiesCollapseItems: capabilitiesCollapseItem[] = [
+  {
+    name: 'Fin-browser integrated environment for materials design',
+    image: Dropdown1,
+    githubLink: 'https://github.com/Exabyte-io/materials-designer',
+    infoLink: 'https://docs.exabyte.io/tutorials/materials/slabs-interface/',
+  },
+  {
+    name: 'Fast and secure cloud high-performance computing',
+    image: Dropdown2,
+    githubLink: 'https://github.com/Exabyte-io/exabyte-benchmarks-suite',
+    infoLink: 'https://docs.exabyte.io/benchmarks/2018-11-12-comparison/',
+  },
+  {
+    name: 'Web-based designer for inter-operable modeling workflows',
+    image: Dropdown3,
+    githubLink: '',
+    infoLink: 'https://docs.exabyte.io/workflow-designer/overview/',
+  },
+  {
+    name: 'Open-source data standards organizing materials information',
+    image: Dropdown4,
+    githubLink: 'https://github.com/Exabyte-io/esse',
+    infoLink: 'https://docs.exabyte.io/data-structured/convention/',
+  },
+  {
+    name: 'Advanced data analytics and machine learning infrastructure',
+    image: Dropdown5,
+    githubLink:
+      'https://github.com/Exabyte-io/exabyte-api-examples/blob/master/examples/job/ml-train-model-predict-properties.ipynb',
+    infoLink: 'https://docs.exabyte.io/materials/actions/advanced-search/',
+  },
+  {
+    name: 'Secure collaboration within and between accounts',
+    image: Dropdown6,
+    githubLink: '',
+    infoLink: 'https://docs.exabyte.io/collaboration/ui/overview/',
+  },
+  {
+    name: 'Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines',
+    image: Dropdown7,
+    githubLink: 'https://github.com/Exabyte-io/exaparser',
+    infoLink: 'https://docs.exabyte.io/software-directory/overview/',
+  },
+  {
+    name: 'Command-line interface, remote desktop, RESTful API access options for experts',
+    image: Dropdown8,
+    githubLink: 'https://github.com/Exabyte-io/exabyte-api-examples',
+    infoLink: 'https://docs.exabyte.io/remote-connection/overview/',
+  },
+  {
+    name: 'Encrypted data at rest and in-transfer, network partitioning, and more for    maximum security',
+    image: Dropdown9,
+    githubLink: 'https://exabyte.io/#security',
+    infoLink: 'https://docs.exabyte.io/security/overview/',
+  },
+]
 
 const Capabilities: FC = () => {
-  const xl = useMediaQuery({ minWidth: 992 })
+  const [openedItem, setOpenedItem] = useState('')
+  const [githubLink, setGithubLink] = useState('')
+  const [infoLink, setInfoLink] = useState('')
+  const [openedCollapseItem, setOpenedCollapseItem] = useState(-1)
 
-  //menu
-  const [openKeys, setOpenKeys] = React.useState(['sub1'])
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const onOpenChange = keys => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
-    if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-      setOpenKeys(keys)
+  const changeOpenedItem = (image: string, ghLink: string, infLink: string, index: number) => {
+    if (openedItem === image) {
+      setOpenedItem('')
     } else {
-      setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
+      setOpenedItem(image)
+    }
+
+    setGithubLink(ghLink)
+    setInfoLink(infLink)
+
+    if (index === openedCollapseItem) {
+      setOpenedCollapseItem(-1)
+    } else {
+      setOpenedCollapseItem(index)
     }
   }
 
@@ -52,114 +120,54 @@ const Capabilities: FC = () => {
             From idea to result - let's get there faster together!
           </Typography.Paragraph>
         </Col>
-        <Col style={{ padding: '0' }} xs={24} sm={24} md={24} xl={14}>
-          <Menu mode={xl ? 'vertical' : 'inline'} openKeys={openKeys} onOpenChange={onOpenChange}>
-            <SubMenu key='sub1' title='Fin-browser integrated environment for materials design'>
-              <Menu.Item key='1'>
-                <img alt={'img'} src={Dropdown1} className={'menu-wrapper-image'} />
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <a href='#' className={'menu-wrapper-link'}>
-                    <img alt={'img'} src={GitHubIcon} />
+
+        <div className='collapse-menu'>
+          <div className='collapse-menu-items'>
+            {capabilitiesCollapseItems.map((item, index) => {
+              return (
+                <div
+                  className='collapse-menu-item'
+                  key={index}
+                  onClick={() => changeOpenedItem(item.image, item.githubLink, item.infoLink, index)}
+                >
+                  <span>{item.name}</span>
+                  <div className={index === openedCollapseItem ? 'active' : ''}>
+                    <img src={index === openedCollapseItem ? OpenArrow : ClosedArrow} alt='' />
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <div className='collapse-image-wrapper' style={{ display: openedItem !== '' ? 'flex' : 'none' }}>
+            <img className='collapse-image' src={openedItem} alt='' />
+            <div className='icons' style={{ display: 'flex' }}>
+              <a href={infoLink}>
+                <img width={25} height={25} src={InfoIcon} alt='' />
+              </a>
+              <a href={githubLink}>
+                <img width={25} height={25} src={GitHubIcon} alt='' />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <Collapse className='collapse-menu-mobile' accordion bordered={false} expandIconPosition={'right'}>
+          {capabilitiesCollapseItems.map((item, index) => (
+            <Panel key={index} header={item.name}>
+              <div className='collapse-menu-mobile-image-wrapper'>
+                <img src={item.image} alt='' />
+                <div className='collapse-menu-mobile-icons'>
+                  <a href={item.infoLink}>
+                    <img width={25} height={25} src={InfoIcon} alt='' />
                   </a>
-                  <a href='#' className={'menu-wrapper-link'}>
-                    <img alt={'img'} src={InfoIcon} />
+                  <a href={item.infoLink}>
+                    <img width={25} height={25} src={GitHubIcon} alt='' />
                   </a>
                 </div>
-              </Menu.Item>
-            </SubMenu>
-            <SubMenu key='sub2' title='Fast and secure cloud high-performance computing'>
-              <img alt={'img'} src={Dropdown2} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
               </div>
-            </SubMenu>
-            <SubMenu key='sub3' title='Web-based designer for inter-operable modeling workflows'>
-              <img alt={'img'} src={Dropdown3} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-            <SubMenu key='sub4' title='Open-source data standards organizing materials information'>
-              <img alt={'img'} src={Dropdown4} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-            <SubMenu key='sub5' title='Advanced data analytics and machine learning infrastructure'>
-              <img alt={'img'} src={Dropdown5} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-            <SubMenu key='sub6' title='Secure collaboration within and between accounts'>
-              <img alt={'img'} src={Dropdown6} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-            <SubMenu key='sub7' title='Quantum ESPRESSO, VASP, LAMMPS, GROMACS, and other simulation engines'>
-              <img alt={'img'} src={Dropdown7} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-            <SubMenu key='sub8' title='Command-line interface, remote desktop, RESTful API access options for experts'>
-              <img alt={'img'} src={Dropdown8} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-            <SubMenu
-              key='sub9'
-              title='Encrypted data at rest and in-transfer, network partitioning, and more for maximum security'
-            >
-              <img alt={'img'} src={Dropdown9} className={'menu-wrapper-image'} />
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={GitHubIcon} />
-                </a>
-                <a href='#' className={'menu-wrapper-link'}>
-                  <img alt={'img'} src={InfoIcon} />
-                </a>
-              </div>
-            </SubMenu>
-          </Menu>
-        </Col>
+            </Panel>
+          ))}
+        </Collapse>
       </Row>
     </Layout>
   )

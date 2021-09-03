@@ -9,7 +9,7 @@ import { FasterMaterials } from './sections/FasterMaterials/FasterMaterials'
 
 const Home: FC = () => {
   return (
-    <>
+    <div className='home-page-unique-style'>
       <Hero />
       <ReadyFor />
       <Platform />
@@ -17,7 +17,7 @@ const Home: FC = () => {
       <Related />
       <Customer />
       <FasterMaterials />
-    </>
+    </div>
   )
 }
 

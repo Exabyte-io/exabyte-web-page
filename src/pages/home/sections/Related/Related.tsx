@@ -15,15 +15,15 @@ const Related: FC = () => {
       <div className='related-content'>
         <Typography.Paragraph className={'related-content-title'}>RELATED INFORMATION</Typography.Paragraph>
         <div className='related-content-links'>
-          <a href={'#'} className='related-content-link'>
+          <a href={'https://docs.exabyte.io/'} className='related-content-link'>
             <img src={GoogleDocsIcon} alt='' />
             <span>Documentation</span>
           </a>
-          <a href={'#'} className='related-content-link'>
+          <a href={'https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos'} className='related-content-link'>
             <img src={YouTubeIcon} alt='' />
             <span>Video Tutorials</span>
           </a>
-          <a href={'#'} className='related-content-link'>
+          <a href={'https://docs.exabyte.io/pricing/service-levels/'} className='related-content-link'>
             <img src={FileIcon} alt='' />
             <span>Pricing</span>
           </a>

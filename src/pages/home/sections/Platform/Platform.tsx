@@ -24,7 +24,12 @@ const Platform: FC = () => {
         </Typography.Paragraph>
       </div>
       <div className={'platform-wrapper-button'}>
-        <ActionButton title={'CREATE A FREE ACCOUNT'} type={'default'} size={'medium'} />
+        <ActionButton
+          title={'CREATE A FREE ACCOUNT'}
+          type={'default'}
+          size={'medium'}
+          src={'https://platform.exabyte.io/register'}
+        />
       </div>
     </Layout>
   )

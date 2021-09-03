@@ -7,11 +7,11 @@ import './OurVision.less'
 
 export const OurVision: FC = () => {
   return (
-    <>
+    <div className='our-vision-page-unique-style'>
       <Title />
       <Beliefs />
       <Vision />
       <ContactUs />
-    </>
+    </div>
   )
 }
