@@ -1,0 +1,148 @@
+@import 'src/styles/index';
+
+.leadership {
+  padding: 119px 0 223px;
+
+  &-content {
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 130px;
+
+    .leadership-carousel-wrapper {
+      display: none;
+    }
+
+    &-title {
+      color: @text-title;
+      font-weight: 700;
+      font-size: 42px;
+    }
+
+    &-cards {
+      display: flex;
+      margin-top: 70px;
+
+      &-card {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+
+        &:not(:last-child) {
+          margin-right: 65px;
+        }
+
+        &-photo {
+          width: 160px;
+          height: 160px;
+          margin-bottom: 28px;
+        }
+
+        &-name {
+          margin-bottom: 28px;
+          font-size: 22px;
+        }
+
+        &-position {
+          margin-bottom: 28px;
+          color: @text-title;
+          font-size: 16px;
+        }
+
+        &-links {
+          display: flex;
+          margin-bottom: 28px;
+
+          &-link {
+            &:not(:last-child) {
+              margin-right: 22px;
+            }
+          }
+        }
+
+        &-description {
+          color: @text-title;
+          font-size: 16px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .leadership {
+    padding: 319px 0 93px;
+
+    &-content {
+      box-sizing: border-box;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      .leadership-carousel-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 335px;
+
+        .leadership-content-cards-card {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin: 0 auto;
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+
+          &-photo {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 28px;
+          }
+
+          &-name {
+            margin-bottom: 28px;
+            font-size: 18px;
+          }
+
+          &-position {
+            margin-bottom: 24px;
+            color: @text-title;
+            font-size: 16px;
+          }
+
+          &-links {
+            display: flex;
+            margin-bottom: 32px;
+
+            &-link {
+              &:not(:last-child) {
+                margin-right: 22px;
+              }
+            }
+          }
+
+          &-description {
+            width: 100%;
+            margin-bottom: 48px;
+            color: @text-title;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      &-title {
+        margin-bottom: 48px;
+        color: @text-title;
+        font-weight: 700;
+        font-size: 32px;
+      }
+
+      &-cards {
+        display: none;
+      }
+    }
+  }
+}

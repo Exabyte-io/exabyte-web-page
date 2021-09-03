@@ -1,0 +1,58 @@
+@import 'src/styles/index';
+
+.ready-for-wrapper {
+  padding-top: 50px;
+
+  @media (min-width: 768px) {
+    margin-top: -23%;
+    margin-bottom: 23%;
+  }
+
+  .top-wrapper {
+    margin-bottom: 48px;
+
+    &-title {
+      margin-bottom: 24px;
+      color: @text-title;
+      font-weight: bold;
+      font-size: @font-1xl;
+      font-family: @primary-font;
+    }
+
+    &-under-title {
+      margin-bottom: 16px;
+      color: @text-title;
+      font-weight: 600;
+      font-size: @font-bigger;
+      font-family: @primary-font;
+    }
+
+    &-description {
+      color: @text-title;
+      font-size: @font-small;
+      font-family: @primary-font;
+    }
+  }
+
+  .ant-card {
+    &-body {
+      padding: 0;
+
+      .ant-card-meta {
+        &-title {
+          margin-bottom: 16px;
+          color: @text-title;
+          font-weight: 600;
+          font-size: @font-bigger;
+          font-family: @primary-font;
+        }
+
+        &-description {
+          color: @text-title;
+          font-size: @font-small;
+          font-family: @primary-font;
+        }
+      }
+    }
+  }
+}

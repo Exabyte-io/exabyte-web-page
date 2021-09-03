@@ -1,0 +1,117 @@
+@import 'src/styles/index';
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+
+  &-content {
+    .partners-carousel-wrapper {
+      display: none;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 1440px;
+    margin: 0 auto 75px;
+    padding: 0 130px;
+    color: @text-title;
+
+    &-title {
+      font-weight: 700;
+      font-size: 42px;
+      text-align: center;
+    }
+
+    &-cards {
+      display: flex;
+
+      &-card {
+        width: 350px;
+
+        &-photo {
+          margin-bottom: 30px;
+        }
+
+        &-title {
+          margin-bottom: 32px;
+          font-weight: 600;
+          font-size: 22px;
+        }
+
+        &-text {
+          font-size: 16px;
+          line-height: 30px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 65px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px;
+
+    &-content {
+      .partners-carousel-wrapper {
+        display: block;
+        margin-bottom: 61px;
+
+        .partners-content-cards-card {
+          width: 100%;
+          max-width: 345px;
+
+          &-photo {
+            margin-bottom: 30px;
+          }
+
+          &-title {
+            margin-bottom: 22px;
+            font-weight: 600;
+            font-size: 16px;
+          }
+
+          &-text {
+            font-size: 16px;
+            line-height: 24px;
+          }
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      max-width: 375px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      color: @text-title;
+
+      &-title {
+        width: 100%;
+        max-width: 345px;
+        margin-bottom: 32px;
+        font-weight: 700;
+        font-size: 32px;
+        text-align: start;
+      }
+
+      &-cards {
+        display: none;
+      }
+    }
+  }
+}

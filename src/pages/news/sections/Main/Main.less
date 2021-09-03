@@ -1,0 +1,151 @@
+@import 'src/styles/index';
+
+.news {
+  min-height: 1420px;
+
+  .background-lg {
+    position: absolute;
+    width: 100%;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 1440px;
+    height: 100%;
+    min-height: 1420px;
+    margin: 0 auto;
+    padding: 120px 130px 30px;
+
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 72px;
+      }
+
+      .input-wrapper {
+        display: flex;
+        align-items: center;
+
+        input {
+          margin-right: 8px;
+          color: #ffffff;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #2a3f7c;
+          outline: none;
+
+          &::placeholder {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    .stay-tuned {
+      margin: 200px auto 0;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 42px;
+      text-align: center;
+    }
+
+    .decorations {
+      position: absolute;
+      bottom: 35px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 260px);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news {
+    min-height: 1420px;
+
+    .background-lg {
+      position: absolute;
+      width: 100%;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 1440px;
+      height: 100%;
+      min-height: 1420px;
+      margin: 0 auto;
+      padding: 48px 20px 0;
+
+      .title-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+          width: 100%;
+          margin-bottom: 58px;
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 48px;
+        }
+
+        .input-wrapper {
+          display: flex;
+          align-items: center;
+          width: 100%;
+
+          input {
+            width: 100%;
+            margin-right: 8px;
+            color: #ffffff;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #2a3f7c;
+            outline: none;
+
+            &::placeholder {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+
+      .news-cards {
+        width: 100%;
+      }
+
+      .stay-tuned {
+        margin: 120px auto 30px;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .decorations {
+        position: absolute;
+        bottom: 35px;
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+
+        img {
+          width: 60%;
+
+          &:last-child {
+            align-self: flex-end;
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+  }
+}

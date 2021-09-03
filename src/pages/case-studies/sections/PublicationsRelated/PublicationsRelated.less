@@ -1,0 +1,139 @@
+@import 'src/styles/index';
+
+.publications-related {
+  margin-bottom: 182px;
+
+  .content {
+    position: relative;
+
+    .decoration-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-80%);
+    }
+
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 130px;
+
+    .title {
+      margin-bottom: 96px;
+      color: #091432;
+      font-weight: 700;
+      font-size: 42px;
+    }
+
+    .ant-collapse {
+      background: transparent;
+    }
+
+    .dropdown-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 64px;
+      margin-bottom: 96px;
+
+      .dropdown-text-content {
+        max-width: 650px;
+        margin-right: 50px;
+        color: #091432;
+        font-size: 16px;
+        line-height: 35px;
+
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+
+          .tag {
+            box-sizing: border-box;
+            padding: 0 14px;
+            border: 1px solid #091432;
+            border-radius: 10px;
+
+            &:not(:last-child) {
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .publications-related {
+    margin-bottom: 44px;
+
+    .content {
+      position: relative;
+
+      .decoration-img {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        transform: translateY(-80%);
+      }
+
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px;
+
+      .title {
+        margin-bottom: 48px;
+        color: #091432;
+        font-weight: 700;
+        font-size: 32px;
+      }
+
+      .ant-collapse {
+        background: transparent;
+      }
+
+      .dropdown-content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 32px;
+
+        .dropdown-image-box {
+          margin-bottom: 48px;
+
+          img {
+            max-width: 345px;
+          }
+        }
+
+        .dropdown-text-content {
+          max-width: 345px;
+          margin-right: 0;
+          color: #091432;
+          font-size: 16px;
+          line-height: 24px;
+
+          .tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            .tag {
+              box-sizing: border-box;
+              padding: 0 14px;
+              border: 1px solid #091432;
+              border-radius: 10px;
+
+              &:not(:last-child) {
+                margin-right: 16px;
+                margin-bottom: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
