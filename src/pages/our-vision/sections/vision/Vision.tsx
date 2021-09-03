@@ -45,9 +45,7 @@ const visionBlocks: VisionBlock[] = [
 export const Vision: FC = () => (
   <section className={'vision'}>
     <img src={Background} alt={''} className={'background'} />
-    <img src={BackgroundMobile} alt={''} className={'mobile-background'} />
-    <div className={'vision'}>
-      <img src={Background} alt='' />
+    <div className={'content'}>
       <div className={'wrapper'}>
         {visionBlocks.map(visionBlock => (
           <article className={'entry'} key={visionBlock.label}>

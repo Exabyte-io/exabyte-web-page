@@ -91,3 +91,34 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  min-width: 303px;
+  min-height: 500px;
+  background-color: #ffffff;
+
+  .close-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  ul {
+    margin: 64px 0 0 51px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      color: #11214a;
+      font-size: 18px;
+
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

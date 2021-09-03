@@ -4,11 +4,20 @@ import { Row } from 'antd'
 import IconSearch from './images/icon-search.svg'
 import NewsCardImage1 from './images/news-card-image-1.svg'
 import NewsCard from './NewsCard/NewsCard'
+import BackgroundLg from './images/background-lg.svg'
+import BackgroundMb from './images/background-mb.svg'
+import DecorationLeftBottom from './images/decoration-left-bottom.svg'
+import DecorationLeftBottomMb from './images/decoration-left-bottom-mb.svg'
+import DecorationRightBottom from './images/decoration-right-bottom.svg'
+import DecorationRightBottomMb from './images/decoration-right-bottom-mb.svg'
+import NewsCardImageMb1 from './images/news-card-image-mb-1.svg'
 import './Main.less'
+import { useMediaQuery } from 'react-responsive'
 
 const newsCards: NewsCardType[] = [
   {
     image: NewsCardImage1,
+    imageMb: NewsCardImageMb1,
     title:
       'Exabyte.io Tapped by USAF to Give Scientists Real-World Version of Tony Stark’s Futuristic Ironman Simulation Software',
     released: 'Released 2020-09-30 via WebWire.',
@@ -23,8 +32,11 @@ const newsCards: NewsCardType[] = [
 ]
 
 const Main: FC = () => {
+  const md = useMediaQuery({ minWidth: 768 })
+
   return (
     <div className='news'>
+      <img src={md ? BackgroundLg : BackgroundMb} alt='' className='background-lg' />
       <div className='content'>
         <Row className='title-wrapper' style={{ marginBottom: 64 }}>
           <div className='title'>News</div>
@@ -33,19 +45,25 @@ const Main: FC = () => {
             <img src={IconSearch} alt='' />
           </div>
         </Row>
-        <Row>
+        <div className='news-cards'>
           {newsCards.map((card, index) => (
             <NewsCard
               key={index}
               image={card.image}
+              imageMb={card.imageMb}
               title={card.title}
               paragraphs={card.paragraphs}
               tags={card.tags}
               released={card.released}
             />
           ))}
-        </Row>
+        </div>
         <div className='stay-tuned'>Stay Tuned</div>
+
+        <div className='decorations'>
+          <img src={md ? DecorationLeftBottom : DecorationLeftBottomMb} alt='' />
+          <img src={md ? DecorationRightBottom : DecorationRightBottomMb} alt='' />
+        </div>
       </div>
     </div>
   )

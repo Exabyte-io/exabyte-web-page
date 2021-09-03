@@ -5,6 +5,7 @@ import { PublicationsDropdown } from '../../../../types'
 import DropdownImage1 from './images/dropdown-image-1.svg'
 import DropdownImage2 from './images/dropdown-image-2.svg'
 import DropdownImage3 from './images/dropdown-image-3.svg'
+import Decoration from './images/decoration.svg'
 
 const { Panel } = Collapse
 
@@ -55,6 +56,7 @@ const PublicationsRelated: FC = () => {
   return (
     <div className='publications-related'>
       <div className='content'>
+        <img src={Decoration} alt='' className='decoration-img' />
         <div className='title'>Publications related to Exabyte.io</div>
         <Collapse bordered={false} expandIconPosition='right'>
           {publicationsRelatedDropdowns.map((dropdown, index) => (
