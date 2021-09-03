@@ -1,6 +1,10 @@
 .contact-us-map-section {
   height: 678px;
 
+  .mobile-title {
+    display: none;
+  }
+
   .map {
     position: absolute;
     filter: grayscale(100%) invert(92%) contrast(83%);
@@ -16,7 +20,24 @@
 
 @media screen and (max-width: 768px) {
   .contact-us-map-section {
-    height: 678px;
+    height: 100%;
+
+    .mobile-title {
+      position: relative;
+      z-index: 1;
+      display: block;
+      max-width: 1440px;
+      margin: 48px auto;
+      padding: 0 20px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 48px;
+    }
+
+    .map {
+      position: static;
+      filter: grayscale(100%) invert(92%) contrast(83%);
+    }
 
     .content {
       position: relative;

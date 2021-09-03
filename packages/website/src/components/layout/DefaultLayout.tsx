@@ -2,21 +2,61 @@ import { FC, useState } from 'react'
 import { Button, Col, Layout, Row, Space, Typography } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
-import { Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
-import { BurgerButton } from '../button/BurgerButton'
 import { BottomNavigation } from '../menu/BottomNavigation'
 import { TouchForm } from '../form/TouchForm'
 import './DefaultLayout.less'
+import CloseIcon from './images/close-icon.svg'
+import BurgerIcon from './images/burger-icon.svg'
 
 const DefaultLayout: FC = () => {
   // const md = useMediaQuery({ minWidth: '768px' })
   const xl = useMediaQuery({ minWidth: '992px' })
 
-  const [, setOpen] = useState(false)
+  const mobileNavMenuItems = [
+    {
+      name: 'Case Studies',
+      link: '/case-studies',
+    },
+    {
+      name: 'Pricing',
+      link: '/pricing',
+    },
+    {
+      name: 'News',
+      link: '/news',
+    },
+    {
+      name: 'Contact Us',
+      link: '/contact-us',
+    },
+    {
+      name: 'About',
+      link: '/about',
+    },
+  ]
+
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
+      <div style={{ display: isOpen ? 'flex' : 'none' }} className='burger-menu'>
+        <div className='content'>
+          <div onClick={() => setIsOpen(false)} className='close-icon'>
+            <img src={CloseIcon} alt='' />
+          </div>
+          <ul>
+            {mobileNavMenuItems.map((item, index) => (
+              <li key={index}>
+                <NavLink onClick={() => setIsOpen(false)} to={item.link}>
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
       <Layout.Header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Row align={'middle'} justify={'space-between'} className={'container'} wrap={false}>
           <Col flex={'140px'}>
@@ -48,7 +88,7 @@ const DefaultLayout: FC = () => {
               </Row>
             )}
           </Col>
-          <Col> {!xl && <BurgerButton onClick={setOpen} />}</Col>{' '}
+          <Col> {!xl && <img src={BurgerIcon} alt='' onClick={() => setIsOpen(true)} />}</Col>
         </Row>
       </Layout.Header>
 

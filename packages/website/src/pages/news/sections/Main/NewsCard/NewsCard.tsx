@@ -1,15 +1,17 @@
 import { FC, useState } from 'react'
 import { NewsCardType } from 'src/types'
 import './NewsCard.less'
+import { useMediaQuery } from 'react-responsive'
 
-const NewsCard: FC<NewsCardType> = ({ image, tags, paragraphs, released, title }) => {
+const NewsCard: FC<NewsCardType> = ({ image, imageMb, tags, paragraphs, released, title }) => {
   const [isReadMore, setIsReadMore] = useState<boolean>(false)
+  const md = useMediaQuery({ minWidth: 768 })
 
   return (
     <div className='news-card'>
       <div className='less-content'>
         <div className='image'>
-          <img src={image} alt='' />
+          <img src={md ? image : imageMb} alt='' />
         </div>
         <div className='description'>
           <div className='title'>{title}</div>

@@ -6,6 +6,7 @@ declare namespace App {
 
 export type NewsCardType = {
   image: string
+  imageMb: string
   title: string
   released: string
   tags: string[]
