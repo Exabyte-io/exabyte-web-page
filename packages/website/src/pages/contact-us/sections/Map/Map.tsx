@@ -2,7 +2,11 @@ import { FC } from 'react'
 import './Map.less'
 import Form from './Form/Form'
 
-const Map: FC = () => {
+interface MapProps {
+  incomingEmail?: string
+}
+
+const Map: FC<MapProps> = ({ incomingEmail = '' }) => {
   return (
     <div className='contact-us-map-section'>
       <div className='mobile-title'>Contact Us</div>
@@ -16,7 +20,7 @@ const Map: FC = () => {
         loading='lazy'
       />
       <div className='content'>
-        <Form />
+        <Form incomingEmail={incomingEmail} />
       </div>
     </div>
   )

@@ -75,7 +75,13 @@ const DefaultLayout: FC = () => {
             {xl && (
               <Row align={'middle'} wrap={false}>
                 <Col>
-                  <Button style={{ color: '#fff' }} size={'large'} block type={'link'} href={'/sign-in'}>
+                  <Button
+                    style={{ color: '#fff' }}
+                    size={'large'}
+                    block
+                    type={'link'}
+                    href={'https://platform.exabyte.io/login'}
+                  >
                     Sign In
                   </Button>
                 </Col>
@@ -84,7 +90,7 @@ const DefaultLayout: FC = () => {
                     className={'action-btn-default action-btn-small'}
                     type={'primary'}
                     size={'large'}
-                    href={'/sign-up'}
+                    href={'https://platform.exabyte.io/login'}
                   >
                     Sign Up
                   </Button>

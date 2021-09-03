@@ -1,53 +1,62 @@
 @import 'src/styles/index';
 
-.partners {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 120px;
-
-  &-content {
-    .partners-carousel-wrapper {
-      display: none;
-    }
-
+.about-page-unique-style {
+  .partners {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    width: 1440px;
-    margin: 0 auto 75px;
-    padding: 0 130px;
-    color: @text-title;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px;
 
-    &-title {
-      font-weight: 700;
-      font-size: 42px;
-      text-align: center;
+    .back-top {
+      position: absolute;
+      right: 65px;
+      bottom: 30px;
     }
 
-    &-cards {
+    &-content {
+      .partners-carousel-wrapper {
+        display: none;
+      }
+
       display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      width: 1440px;
+      margin: 0 auto 75px;
+      padding: 0 130px;
+      color: @text-title;
 
-      &-card {
-        width: 350px;
+      &-title {
+        font-weight: 700;
+        font-size: 42px;
+        text-align: center;
+      }
 
-        &-photo {
-          margin-bottom: 30px;
-        }
+      &-cards {
+        display: flex;
 
-        &-title {
-          margin-bottom: 32px;
-          font-weight: 600;
-          font-size: 22px;
-        }
+        &-card {
+          width: 350px;
 
-        &-text {
-          font-size: 16px;
-          line-height: 30px;
-        }
+          &-photo {
+            margin-bottom: 30px;
+          }
 
-        &:not(:last-child) {
-          margin-right: 65px;
+          &-title {
+            margin-bottom: 32px;
+            font-weight: 600;
+            font-size: 22px;
+          }
+
+          &-text {
+            font-size: 16px;
+            line-height: 30px;
+          }
+
+          &:not(:last-child) {
+            margin-right: 65px;
+          }
         }
       }
     }
@@ -55,62 +64,80 @@
 }
 
 @media screen and (max-width: 768px) {
-  .partners {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 120px;
-
-    &-content {
-      .partners-carousel-wrapper {
-        display: block;
-        margin-bottom: 61px;
-
-        .partners-content-cards-card {
-          width: 100%;
-          max-width: 345px;
-
-          &-photo {
-            margin-bottom: 30px;
-          }
-
-          &-title {
-            margin-bottom: 22px;
-            font-weight: 600;
-            font-size: 16px;
-          }
-
-          &-text {
-            font-size: 16px;
-            line-height: 24px;
-          }
-
-          &:not(:last-child) {
-            margin-right: 0;
-          }
-        }
-      }
-
+  .about-page-unique-style {
+    .partners {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      box-sizing: border-box;
-      max-width: 375px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-      color: @text-title;
+      align-items: center;
+      padding-bottom: 120px;
 
-      &-title {
-        width: 100%;
-        max-width: 345px;
-        margin-bottom: 32px;
-        font-weight: 700;
-        font-size: 32px;
-        text-align: start;
+      .back-top {
+        display: none;
       }
 
-      &-cards {
-        display: none;
+      .action-btn-wrapper-in-partners {
+        width: 100% !important;
+        max-width: 345px !important;
+        margin: 0 auto !important;
+      }
+
+      .action-btn {
+        width: 100% !important;
+        max-width: 345px !important;
+        margin: 0 auto !important;
+      }
+
+      &-content {
+        .partners-carousel-wrapper {
+          display: block;
+          margin-bottom: 61px;
+
+          .partners-content-cards-card {
+            width: 100%;
+            max-width: 345px;
+
+            &-photo {
+              margin-bottom: 30px;
+            }
+
+            &-title {
+              margin-bottom: 22px;
+              font-weight: 600;
+              font-size: 16px;
+            }
+
+            &-text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+
+            &:not(:last-child) {
+              margin-right: 0;
+            }
+          }
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        max-width: 375px;
+        margin: 0 auto 60px;
+        padding: 0 20px;
+        color: @text-title;
+
+        &-title {
+          width: 100%;
+          max-width: 345px;
+          margin-bottom: 32px;
+          font-weight: 700;
+          font-size: 32px;
+          text-align: start;
+        }
+
+        &-cards {
+          display: none;
+        }
       }
     }
   }

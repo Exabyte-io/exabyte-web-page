@@ -1,92 +1,8 @@
 @import 'src/styles/index';
 
-.hero {
-  position: relative;
-
-  .background-img {
-    width: 100%;
-  }
-
-  .laptop-decor {
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-  }
-
-  &-content {
-    position: absolute;
-    top: 120px;
-    width: 100%;
-    color: @secondary-color;
-
-    &-title {
-      margin-left: 170px;
-      font-weight: 700;
-      font-size: 72px;
-    }
-
-    &-blocks {
-      max-width: 805px;
-      margin-top: 96px;
-      margin-left: 170px;
-
-      &-block {
-        &-title {
-          margin-bottom: 28px;
-          font-size: 22px;
-        }
-
-        &-text {
-          font-size: 16px;
-          line-height: 30px;
-        }
-
-        &:not(:last-child) {
-          margin-bottom: 144px;
-        }
-      }
-    }
-
-    &-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 120px;
-
-      &-wrapper {
-        display: flex;
-      }
-
-      &-title {
-        margin-bottom: 48px;
-        font-size: 22px;
-      }
-
-      &-link {
-        color: @secondary-color;
-
-        &:not(:last-child) {
-          margin-right: 64px;
-        }
-
-        span {
-          margin-left: 12px;
-          padding-bottom: 4px;
-          border-bottom: 1px solid #ffffff;
-        }
-
-        &:hover {
-          color: @secondary-color;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
+.about-page-unique-style {
   .hero {
     position: relative;
-    padding: 0;
 
     .background-img {
       width: 100%;
@@ -95,41 +11,39 @@
     .laptop-decor {
       position: absolute;
       right: 0;
-      bottom: -250px;
+      bottom: -50px;
     }
 
     &-content {
       position: absolute;
-      top: 48px;
+      top: 120px;
       width: 100%;
-      padding: 0 20px;
       color: @secondary-color;
 
       &-title {
-        margin-left: 0;
-        font-weight: 600;
-        font-size: 48px;
+        margin-left: 170px;
+        font-weight: 700;
+        font-size: 72px;
       }
 
       &-blocks {
-        width: 100%;
         max-width: 805px;
-        margin-top: 64px;
-        margin-left: 0;
+        margin-top: 96px;
+        margin-left: 170px;
 
         &-block {
           &-title {
-            margin-bottom: 24px;
-            font-size: 32px;
+            margin-bottom: 28px;
+            font-size: 22px;
           }
 
           &-text {
             font-size: 16px;
-            line-height: 24px;
+            line-height: 30px;
           }
 
           &:not(:last-child) {
-            margin-bottom: 48px;
+            margin-bottom: 144px;
           }
         }
       }
@@ -137,27 +51,23 @@
       &-links {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 88px;
+        align-items: center;
+        margin-top: 120px;
 
         &-wrapper {
           display: flex;
-          flex-direction: column;
         }
 
         &-title {
-          margin-bottom: 32px;
-          font-weight: 600;
-          font-size: 24px;
+          margin-bottom: 48px;
+          font-size: 22px;
         }
 
         &-link {
           color: @secondary-color;
 
           &:not(:last-child) {
-            margin-right: 0;
-            margin-bottom: 23px;
+            margin-right: 64px;
           }
 
           span {
@@ -168,6 +78,100 @@
 
           &:hover {
             color: @secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-page-unique-style {
+    .hero {
+      position: relative;
+      padding: 0;
+
+      .background-img {
+        width: 100%;
+      }
+
+      .laptop-decor {
+        position: absolute;
+        right: 0;
+        bottom: -250px;
+      }
+
+      &-content {
+        position: absolute;
+        top: 48px;
+        width: 100%;
+        padding: 0 20px;
+        color: @secondary-color;
+
+        &-title {
+          margin-left: 0;
+          font-weight: 600;
+          font-size: 48px;
+        }
+
+        &-blocks {
+          width: 100%;
+          max-width: 805px;
+          margin-top: 64px;
+          margin-left: 0;
+
+          &-block {
+            &-title {
+              margin-bottom: 24px;
+              font-size: 32px;
+            }
+
+            &-text {
+              font-size: 16px;
+              line-height: 24px;
+            }
+
+            &:not(:last-child) {
+              margin-bottom: 48px;
+            }
+          }
+        }
+
+        &-links {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          margin-top: 88px;
+
+          &-wrapper {
+            display: flex;
+            flex-direction: column;
+          }
+
+          &-title {
+            margin-bottom: 32px;
+            font-weight: 600;
+            font-size: 24px;
+          }
+
+          &-link {
+            color: @secondary-color;
+
+            &:not(:last-child) {
+              margin-right: 0;
+              margin-bottom: 23px;
+            }
+
+            span {
+              margin-left: 12px;
+              padding-bottom: 4px;
+              border-bottom: 1px solid #ffffff;
+            }
+
+            &:hover {
+              color: @secondary-color;
+            }
           }
         }
       }

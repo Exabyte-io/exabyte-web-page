@@ -12,7 +12,7 @@ const BottomNavigation: FC = () => {
       },
       {
         name: 'Contact',
-        path: '/contact',
+        path: '/contact-us',
       },
       {
         name: 'News',
@@ -20,54 +20,54 @@ const BottomNavigation: FC = () => {
       },
       {
         name: 'Jobs',
-        path: '/jobs',
+        path: 'https://angel.co/exabyte-io/jobs',
       },
       {
         name: 'Blog',
-        path: '/blog',
+        path: 'https://blog.exabyte.io/',
       },
       {
         name: 'Linkedin',
-        path: '/linkedin',
+        path: 'https://www.linkedin.com/company/exabyte-io',
       },
       {
         name: 'Github',
-        path: '/github',
+        path: 'https://www.github.com/exabyte-io',
       },
       {
         name: 'Twitter',
-        path: '/twitter',
+        path: 'https://www.twitter.com/exabyte_io',
       },
     ],
 
     product: [
       {
         name: 'Sign Up',
-        path: '/sign-up',
+        path: 'https://platform.exabyte.io/login',
       },
       {
         name: 'Sign In',
-        path: '/sign-in',
+        path: 'https://platform.exabyte.io/register',
       },
       {
         name: 'Pricing',
-        path: '/pricing',
+        path: 'https://docs.exabyte.io/pricing/service-levels/',
       },
       {
         name: 'Privacy',
-        path: '/privacy',
+        path: 'https://docs.exabyte.io/site-policy/privacy-statement/',
       },
       {
         name: 'Security',
-        path: '/security',
+        path: 'https://exabyte.io/#security',
       },
       {
         name: 'Documentation',
-        path: '/documentation',
+        path: 'https://docs.exabyte.io/',
       },
       {
         name: 'Video tutorials',
-        path: '/video-tutorials',
+        path: 'https://www.youtube.com/channel/UCL4UmkYffcskh_BLW9JVNcw/videos',
       },
     ],
   }
@@ -79,7 +79,7 @@ const BottomNavigation: FC = () => {
         <Menu style={{ backgroundColor: 'transparent' }} mode='vertical'>
           {footerPages.company.map((value, index) => (
             <Menu.Item key={index} style={{ padding: '0px' }}>
-              <NavLink to={value.path}>{value.name}</NavLink>
+              {index < 3 ? <NavLink to={value.path}>{value.name}</NavLink> : <a href={value.path}>{value.name}</a>}
             </Menu.Item>
           ))}
         </Menu>
@@ -89,7 +89,7 @@ const BottomNavigation: FC = () => {
         <Menu style={{ backgroundColor: 'transparent' }} mode='vertical'>
           {footerPages.product.map((value, index) => (
             <Menu.Item key={index} style={{ padding: '0px' }}>
-              <NavLink to={value.path}>{value.name}</NavLink>
+              <a href={value.path}>{value.name}</a>
             </Menu.Item>
           ))}
         </Menu>

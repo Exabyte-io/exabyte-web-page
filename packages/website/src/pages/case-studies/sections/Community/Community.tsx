@@ -5,6 +5,7 @@ import { CaseStudiesCarousel } from '../../../../components/CaseStudiesCarousel/
 import BackgroundLg from './images/background-lg.svg'
 import BackgroundMb from './images/background-mb.svg'
 import { useMediaQuery } from 'react-responsive'
+import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
 
 const communityCarousels: communityCarousel[] = [
   {
@@ -238,8 +239,13 @@ const Community: FC = () => {
         </div>
         <div className='join-community'>
           <div className='join-community-title'>Join Our Community!</div>
-          <button className='button'>Join us — it’s free!</button>
+          <a href='https://platform.exabyte.io/register' className='button'>
+            Join us — it’s free!
+          </a>
         </div>
+      </div>
+      <div className='back-top'>
+        <CustomBackTop color={'#ffffff'} />
       </div>
     </div>
   )

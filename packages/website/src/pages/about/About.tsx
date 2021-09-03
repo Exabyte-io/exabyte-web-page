@@ -7,13 +7,13 @@ import { Partners } from './sections/Partners/Partners'
 
 const About: FC = () => {
   return (
-    <>
+    <div className='about-page-unique-style'>
       <Hero />
       <Leadership />
       <Advisory />
       <Investors />
       <Partners />
-    </>
+    </div>
   )
 }
 

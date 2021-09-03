@@ -13,6 +13,7 @@ import DecorationRightBottomMb from './images/decoration-right-bottom-mb.svg'
 import NewsCardImageMb1 from './images/news-card-image-mb-1.svg'
 import './Main.less'
 import { useMediaQuery } from 'react-responsive'
+import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
 
 const newsCards: NewsCardType[] = [
   {
@@ -64,6 +65,10 @@ const Main: FC = () => {
           <img src={md ? DecorationLeftBottom : DecorationLeftBottomMb} alt='' />
           <img src={md ? DecorationRightBottom : DecorationRightBottomMb} alt='' />
         </div>
+      </div>
+
+      <div className='back-top'>
+        <CustomBackTop color={'#ffffff'} />
       </div>
     </div>
   )

@@ -8,6 +8,8 @@ import LeftNotActiveArrow from '../Customer/images/left-not-active-arrow.svg'
 import LeftActiveArrow from '../Customer/images/left-active-arrow.svg'
 import RightNotActiveArrow from '../Customer/images/right-not-active-arrow.svg'
 import RightActiveArrow from '../Customer/images/right-active-arrow.svg'
+import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import { NavLink } from 'react-router-dom'
 
 const fasterMaterialsCards = [
   {
@@ -98,11 +100,19 @@ const FasterMaterials: FC = () => {
           </>
         )}
         <div className='faster-materials-content-buttons'>
-          <ActionButton title={'Get started now'} type={'default'} size={'medium'} />
-          <a href={'#'} className='faster-materials-content-button'>
+          <ActionButton
+            title={'Get started now'}
+            type={'default'}
+            size={'medium'}
+            src={'https://platform.exabyte.io/register'}
+          />
+          <NavLink to={'/contact-us'} className='faster-materials-content-button'>
             Contact us
-          </a>
+          </NavLink>
         </div>
+      </div>
+      <div className='back-top'>
+        <CustomBackTop color={'#ffffff'} />
       </div>
     </Layout>
   )

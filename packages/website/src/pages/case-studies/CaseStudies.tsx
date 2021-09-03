@@ -6,12 +6,12 @@ import { Community } from './sections/Community/Community'
 
 const CaseStudies: FC = () => {
   return (
-    <>
+    <div className='case-studies-unique-style'>
       <Hero />
       <PublicationsPerformed />
       <PublicationsRelated />
       <Community />
-    </>
+    </div>
   )
 }
 
