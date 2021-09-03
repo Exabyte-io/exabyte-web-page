@@ -1,0 +1,27 @@
+@import '../../../styles/index';
+
+.custom-carousel-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+
+  .custom-carousel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .custom-carousel-arrows {
+    display: flex;
+
+    .custom-carousel-arrow {
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      span {
+        color: #11214a;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -35,6 +35,10 @@ const DefaultLayout: FC = () => {
       name: 'About',
       link: '/about',
     },
+    {
+      name: 'Our Vision',
+      link: '/our_vision',
+    },
   ]
 
   const [isOpen, setIsOpen] = useState(false)

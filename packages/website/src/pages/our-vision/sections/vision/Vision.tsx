@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import './Vision.less'
 import Background from './images/Rectangle_253.svg'
-import BackgroundMobile from './images/Rectangle_mobile.svg'
+import BackgroundMobile from './images/background-mb.svg'
+import { useMediaQuery } from 'react-responsive'
 
 type VisionBlock = {
   label: string
@@ -42,18 +43,22 @@ const visionBlocks: VisionBlock[] = [
           and become more widely accessible, easier to use, faster, and more precise.`,
   },
 ]
-export const Vision: FC = () => (
-  <section className={'vision'}>
-    <img src={Background} alt={''} className={'background'} />
-    <div className={'content'}>
-      <div className={'wrapper'}>
-        {visionBlocks.map(visionBlock => (
-          <article className={'entry'} key={visionBlock.label}>
-            <div className={'label'}>{visionBlock.label}</div>
-            <div className={'text'}>{visionBlock.text}</div>
-          </article>
-        ))}
+export const Vision: FC = () => {
+  const md = useMediaQuery({ maxWidth: 768 })
+
+  return (
+    <section className={'vision'}>
+      <img src={md ? BackgroundMobile : Background} alt={''} className={'background'} />
+      <div className={'content'}>
+        <div className={'wrapper'}>
+          {visionBlocks.map(visionBlock => (
+            <article className={'entry'} key={visionBlock.label}>
+              <div className={'label'}>{visionBlock.label}</div>
+              <div className={'text'}>{visionBlock.text}</div>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}

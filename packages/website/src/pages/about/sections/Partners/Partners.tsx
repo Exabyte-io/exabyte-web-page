@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { Layout } from 'antd'
 import { ActionButton } from '../../../../components/button/ActionButton'
 import './Partners.less'
 import Partner1 from './images/partner-1.svg'
 import Partner2 from './images/partner-2.svg'
+import CustomCarousel from '../../components/CustomCarousel'
 
 type PartnersCard = {
   photo: string
@@ -26,9 +26,10 @@ const partnersCards: PartnersCard[] = [
 
 const Partners: FC = () => {
   return (
-    <Layout className={'section partners'}>
+    <div className={'partners'}>
       <div className='partners-content'>
         <div className='partners-content-title'>Partners</div>
+
         <div className='partners-content-cards'>
           {partnersCards.map(card => (
             <div className='partners-content-cards-card'>
@@ -38,9 +39,21 @@ const Partners: FC = () => {
             </div>
           ))}
         </div>
+
+        <div className='partners-carousel-wrapper'>
+          <CustomCarousel>
+            {partnersCards.map(card => (
+              <div className='partners-content-cards-card'>
+                <img src={card.photo} alt='' className='partners-content-cards-card-photo' />
+                <div className='partners-content-cards-card-title'>{card.title}</div>
+                <div className='partners-content-cards-card-text'>{card.text}</div>
+              </div>
+            ))}
+          </CustomCarousel>
+        </div>
+        <ActionButton title={'CONTACT US'} type={'default'} size={'medium'} />
       </div>
-      <ActionButton title={'CONTACT US'} type={'default'} size={'medium'} />
-    </Layout>
+    </div>
   )
 }
 
