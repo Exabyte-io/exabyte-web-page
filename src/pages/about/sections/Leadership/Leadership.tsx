@@ -6,8 +6,9 @@ import JonathanHansonPhoto from './images/jonathan-hanson.svg'
 import JamesDeanPhoto from './images/james-dean.svg'
 import LinkedInIcon from './images/linkedin-icon.svg'
 import GitHubIcon from './images/github-icon.svg'
+import CustomCarousel from '../../components/CustomCarousel'
 
-type LeadershipCard = {
+export type LeadershipCard = {
   photo: string
   name: string
   position: string
@@ -51,6 +52,7 @@ const Leadership: FC = () => {
     <Layout className={'section leadership'}>
       <div className='leadership-content'>
         <div className='leadership-content-title'>Leadership Team</div>
+
         <div className='leadership-content-cards'>
           {leadershipCards.map(card => (
             <div className='leadership-content-cards-card'>
@@ -68,6 +70,27 @@ const Leadership: FC = () => {
               <div className='leadership-content-cards-card-description'>{card.description}</div>
             </div>
           ))}
+        </div>
+
+        <div className='leadership-carousel-wrapper'>
+          <CustomCarousel>
+            {leadershipCards.map(card => (
+              <div className='leadership-content-cards-card'>
+                <img src={card.photo} alt='' className='leadership-content-cards-card-photo' />
+                <div className='leadership-content-cards-card-name'>{card.name}</div>
+                <div className='leadership-content-cards-card-position'>{card.position}</div>
+                <div className='leadership-content-cards-card-links'>
+                  <a href={card.linkedInLink} className={'leadership-content-cards-card-links-link'}>
+                    <img src={LinkedInIcon} alt='' />
+                  </a>
+                  <a href={card.gitHubLink} className={'leadership-content-cards-card-links-link'}>
+                    <img src={GitHubIcon} alt='' />
+                  </a>
+                </div>
+                <div className='leadership-content-cards-card-description'>{card.description}</div>
+              </div>
+            ))}
+          </CustomCarousel>
         </div>
       </div>
     </Layout>

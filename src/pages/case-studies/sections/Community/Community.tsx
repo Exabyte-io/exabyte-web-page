@@ -3,6 +3,8 @@ import './Community.less'
 import { communityCarousel } from '../../../../types'
 import { CaseStudiesCarousel } from '../../../../components/CaseStudiesCarousel/CaseStudiesCarousel'
 import BackgroundLg from './images/background-lg.svg'
+import BackgroundMb from './images/background-mb.svg'
+import { useMediaQuery } from 'react-responsive'
 
 const communityCarousels: communityCarousel[] = [
   {
@@ -217,9 +219,11 @@ const communityCarousels: communityCarousel[] = [
 ]
 
 const Community: FC = () => {
+  const md = useMediaQuery({ maxWidth: 768 })
+
   return (
     <div className='case-studies-community'>
-      <img src={BackgroundLg} alt='' className='background-img' />
+      <img src={md ? BackgroundMb : BackgroundLg} alt='' className='background-img' />
       <div className='content'>
         <div className='case-studies-community-title'>Community</div>
         <div className='case-studies-community-text'>

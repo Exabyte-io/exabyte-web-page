@@ -1,11 +1,11 @@
 import { FC } from 'react'
-import { Layout } from 'antd'
 import './Advisory.less'
 import MarvinCohenPhoto from './images/marvin-cohen.svg'
 import StevenLouiePhoto from './images/steven-louie.svg'
 import LaineConklinPhoto from './images/laine-conklin.svg'
 import MartaBulaichPhoto from './images/marta-bulaich.svg'
 import InfoIcon from './images/info-icon.svg'
+import CustomCarousel from '../../components/CustomCarousel'
 
 type AdvisoryCard = {
   photo: string
@@ -48,9 +48,10 @@ const advisoryCards: AdvisoryCard[] = [
 
 const Advisory: FC = () => {
   return (
-    <Layout className={'section advisory'}>
+    <div className={'section advisory'}>
       <div className='advisory-content'>
         <div className='advisory-content-title'>Advisory Board</div>
+
         <div className='advisory-content-cards'>
           {advisoryCards.map(card => (
             <div className='advisory-content-cards-card'>
@@ -64,8 +65,24 @@ const Advisory: FC = () => {
             </div>
           ))}
         </div>
+
+        <div className='advisory-carousel-wrapper'>
+          <CustomCarousel>
+            {advisoryCards.map(card => (
+              <div className='advisory-content-cards-card'>
+                <img src={card.photo} alt='' className='advisory-content-cards-card-photo' />
+                <div className='advisory-content-cards-card-name'>{card.name}</div>
+                <div className='advisory-content-cards-card-position'>{card.position}</div>
+                <a href={card.infoLink} className='advisory-content-cards-card-link'>
+                  <img src={InfoIcon} alt='' />
+                </a>
+                <div className='advisory-content-cards-card-text'>{card.text}</div>
+              </div>
+            ))}
+          </CustomCarousel>
+        </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 

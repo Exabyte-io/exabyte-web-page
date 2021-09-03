@@ -1,7 +1,9 @@
 import { FC, useRef, useState } from 'react'
 import { Carousel, Layout } from 'antd'
 import BackgroundLg from './images/background-lg.svg'
+import BackgroundMb from './images/background-mb.svg'
 import BackgroundDecorationLg from './images/background-decor-lg.svg'
+import BackgroundDecorationMb from './images/background-decor-mb.svg'
 import LeftNotActiveArrow from '../../../home/sections/Customer/images/left-not-active-arrow.svg'
 import LeftActiveArrow from '../../../home/sections/Customer/images/left-active-arrow.svg'
 import RightNotActiveArrow from '../../../home/sections/Customer/images/right-not-active-arrow.svg'
@@ -11,6 +13,7 @@ import Slide2Image from './images/slide-2.svg'
 import Slide3Image from './images/slide-3.svg'
 import Slide4Image from './images/slide-4.svg'
 import './Hero.less'
+import { useMediaQuery } from 'react-responsive'
 
 type CaseStudiesSlide = {
   image: string
@@ -77,14 +80,14 @@ const Hero: FC = () => {
     carousel.current?.next()
   }
 
+  const md = useMediaQuery({ maxWidth: 768 })
+
   return (
     <Layout className='section case-studies-hero'>
-      <img src={BackgroundLg} alt='' className='background-img' />
-      <img src={BackgroundDecorationLg} alt='' className='background-decoration-img' />
+      <img src={md ? BackgroundMb : BackgroundLg} alt='' className='background-img' />
+      <img src={md ? BackgroundDecorationMb : BackgroundDecorationLg} alt='' className='background-decoration-img' />
       <div className='case-studies-hero-content'>
-        <div className='case-studies-hero-content-title'>
-          Case <br /> Studies
-        </div>
+        <div className='case-studies-hero-content-title'>Case Studies</div>
         <div className='case-studies-hero-content-carousel-wrapper'>
           <div className='case-studies-hero-content-carousel-slide-number'>0{slideNumber}</div>
 

@@ -1,11 +1,13 @@
 import { FC } from 'react'
-import { Layout } from 'antd'
 import './Hero.less'
 import BackgroundLg from './images/background-lg.svg'
+import BackgroundMb from './images/background-mb.svg'
 import LaptopDecor from './images/laptop-decor.svg'
+import LaptopDecorMb from './images/laptop-decor-mb.svg'
 import EyeIcon from './images/eye-icon.svg'
 import LetterIcon from './images/letter-icon.svg'
 import DocumentIcon from './images/document-icon.svg'
+import { useMediaQuery } from 'react-responsive'
 
 type HeroBlock = {
   title: string
@@ -28,10 +30,12 @@ const heroBlocks: HeroBlock[] = [
 ]
 
 const Hero: FC = () => {
+  const md = useMediaQuery({ maxWidth: 768 })
+
   return (
-    <Layout className={'section hero'}>
-      <img src={BackgroundLg} alt='' className={'background-img'} />
-      <img src={LaptopDecor} alt='' className={'laptop-decor'} />
+    <div className={'section hero'}>
+      <img src={md ? BackgroundMb : BackgroundLg} alt='' className={'background-img'} />
+      <img src={md ? LaptopDecorMb : LaptopDecor} alt='' className={'laptop-decor'} />
       <div className='hero-content'>
         <div className='hero-content-title'>The Company</div>
         <div className='hero-content-blocks'>
@@ -60,7 +64,7 @@ const Hero: FC = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   )
 }
 
