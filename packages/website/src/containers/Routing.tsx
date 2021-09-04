@@ -6,7 +6,6 @@ import { Menu } from 'antd'
 const Home = lazy(() => import('./../pages/home'))
 const Pricing = lazy(() => import('./../pages/home'))
 const CaseStudies = lazy(() => import('./../pages/case-studies'))
-const Login = lazy(() => import('./../pages/login'))
 const About = lazy(() => import('./../pages/about'))
 const OurVision = lazy(() => import('./../pages/our-vision'))
 const News = lazy(() => import('./../pages/news'))
@@ -51,10 +50,6 @@ const routeMap: RouteNavigationMap = {
     component: OurVision,
     name: 'Our Vision',
     placements: ['top'],
-  },
-  '/sign-in': {
-    component: Login,
-    name: 'Sign In',
   },
 }
 
