@@ -9,7 +9,7 @@ import { FasterMaterials } from './sections/FasterMaterials/FasterMaterials'
 
 const Home: FC = () => {
   return (
-    <div className='home-page-unique-style'>
+    <div className='home-page-unique-style' style={{ overflowX: 'hidden' }}>
       <Hero />
       <ReadyFor />
       <Platform />

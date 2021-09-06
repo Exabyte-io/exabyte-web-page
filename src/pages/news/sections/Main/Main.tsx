@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, SyntheticEvent, useState } from 'react'
 import { NewsCardType } from '../../../../types'
 import { Row } from 'antd'
 import IconSearch from './images/icon-search.svg'
@@ -33,7 +33,22 @@ const newsCards: NewsCardType[] = [
 ]
 
 const Main: FC = () => {
+  const [filterValue, setFilterValue] = useState('')
+  const [filteredNewsCards, setFilteredNewsCards] = useState(newsCards)
   const md = useMediaQuery({ minWidth: 768 })
+
+  const handleFilterFormSubmit = (e: SyntheticEvent) => {
+    e.preventDefault()
+
+    const filteredCards = newsCards.filter(card => {
+      const titleHasSubstring = card.title.includes(filterValue)
+      const textHasSubstring = card.paragraphs.filter(paragraph => paragraph.includes(filterValue)).length > 0
+
+      return titleHasSubstring || textHasSubstring
+    })
+
+    setFilteredNewsCards(filteredCards)
+  }
 
   return (
     <div className='news'>
@@ -41,13 +56,15 @@ const Main: FC = () => {
       <div className='content'>
         <Row className='title-wrapper' style={{ marginBottom: 64 }}>
           <div className='title'>News</div>
-          <div className='input-wrapper'>
-            <input placeholder='Search' />
-            <img src={IconSearch} alt='' />
-          </div>
+          <form onSubmit={handleFilterFormSubmit} className='input-wrapper'>
+            <input value={filterValue} onChange={e => setFilterValue(e.target.value)} placeholder='Search' />
+            <button type='submit'>
+              <img src={IconSearch} alt='' />
+            </button>
+          </form>
         </Row>
         <div className='news-cards'>
-          {newsCards.map((card, index) => (
+          {filteredNewsCards.map((card, index) => (
             <NewsCard
               key={index}
               image={card.image}
