@@ -66,6 +66,10 @@ const config = {
         },
       },
       {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+      },
+      {
         test: /\.(css|less)$/,
         exclude: /\.module\.(css|less)$/,
         use: [
@@ -97,7 +101,7 @@ const config = {
         ],
       },
       {
-        test: /\.(png|jpe?g|svg|webp|gif|mp4)$/i,
+        test: /\.(png|jpe?g|svg|webp|gif)$/i,
         loader: 'url-loader',
         type: 'javascript/auto',
       },

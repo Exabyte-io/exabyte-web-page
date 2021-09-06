@@ -4,7 +4,6 @@ import { DefaultLayout } from '../components/layout/DefaultLayout'
 import { Menu } from 'antd'
 
 const Home = lazy(() => import('./../pages/home'))
-const Pricing = lazy(() => import('./../pages/home'))
 const CaseStudies = lazy(() => import('./../pages/case-studies'))
 const About = lazy(() => import('./../pages/about'))
 const OurVision = lazy(() => import('./../pages/our-vision'))
@@ -24,11 +23,6 @@ const routeMap: RouteNavigationMap = {
   '/case-studies': {
     component: CaseStudies,
     name: 'Case Studies',
-    placements: ['top'],
-  },
-  '/pricing': {
-    component: Pricing,
-    name: 'Pricing',
     placements: ['top'],
   },
   '/news': {
