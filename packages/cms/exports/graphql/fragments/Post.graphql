@@ -1,0 +1,14 @@
+fragment Post on BlogPost {
+  id
+  name
+  slug
+  text
+  subtitle
+  section {
+    ...Section
+  }
+  cover {
+    id
+    url
+  }
+}

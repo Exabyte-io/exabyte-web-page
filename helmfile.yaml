@@ -33,7 +33,7 @@ releases:
   - name: exabyte-cms
     namespace: '{{ .Environment.Name }}'
     chart: bndigital/nodejs
-    installed: false
+    installed: true
     labels:
       app: cms
     values:

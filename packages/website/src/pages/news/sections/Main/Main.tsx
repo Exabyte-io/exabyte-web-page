@@ -1,8 +1,6 @@
-import { FC, SyntheticEvent, useState } from 'react'
-import { NewsCardType } from '../../../../types'
+import { FC, useState } from 'react'
 import { Row } from 'antd'
 import IconSearch from './images/icon-search.svg'
-import NewsCardImage1 from './images/news-card-image-1.svg'
 import NewsCard from './NewsCard/NewsCard'
 import BackgroundLg from './images/background-lg.svg'
 import BackgroundMb from './images/background-mb.svg'
@@ -10,12 +8,12 @@ import DecorationLeftBottom from './images/decoration-left-bottom.svg'
 import DecorationLeftBottomMb from './images/decoration-left-bottom-mb.svg'
 import DecorationRightBottom from './images/decoration-right-bottom.svg'
 import DecorationRightBottomMb from './images/decoration-right-bottom-mb.svg'
-import NewsCardImageMb1 from './images/news-card-image-mb-1.svg'
 import './Main.less'
 import { useMediaQuery } from 'react-responsive'
 import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import { usePostsQuery } from '../../../../graphql'
 
-const newsCards: NewsCardType[] = [
+/*const newsCards: NewsCardType[] = [
   {
     image: NewsCardImage1,
     imageMb: NewsCardImageMb1,
@@ -30,14 +28,16 @@ const newsCards: NewsCardType[] = [
       'The Air Force Research Laboratory and AFWERX work together to streamline the SBIR process and accelerate the development of new technologies, broaden the pool of potential applicants and decrease bureaucratic overhead. Beginning in 2018, the Air Force started offering ’Special’ SBIR topics to drive a broader range of innovations that are faster and leaner.',
     ],
   },
-]
+]*/
 
 const Main: FC = () => {
   const [filterValue, setFilterValue] = useState('')
-  const [filteredNewsCards, setFilteredNewsCards] = useState(newsCards)
+  //const [filteredNewsCards, setFilteredNewsCards] = useState(newsCards)
   const md = useMediaQuery({ minWidth: 768 })
+  const { data } = usePostsQuery()
+  const content = data?.posts
 
-  const handleFilterFormSubmit = (e: SyntheticEvent) => {
+  /*const handleFilterFormSubmit = (e: SyntheticEvent) => {
     e.preventDefault()
 
     const filteredCards = newsCards.filter(card => {
@@ -48,7 +48,7 @@ const Main: FC = () => {
     })
 
     setFilteredNewsCards(filteredCards)
-  }
+  }*/
 
   return (
     <div className='news'>
@@ -56,7 +56,10 @@ const Main: FC = () => {
       <div className='content'>
         <Row className='title-wrapper' style={{ marginBottom: 64 }}>
           <div className='title'>News</div>
-          <form onSubmit={handleFilterFormSubmit} className='input-wrapper'>
+          <form
+            //onSubmit={handleFilterFormSubmit}
+            className='input-wrapper'
+          >
             <input value={filterValue} onChange={e => setFilterValue(e.target.value)} placeholder='Search' />
             <button type='submit'>
               <img src={IconSearch} alt='' />
@@ -64,15 +67,14 @@ const Main: FC = () => {
           </form>
         </Row>
         <div className='news-cards'>
-          {filteredNewsCards.map((card, index) => (
+          {content?.map((card, index) => (
             <NewsCard
               key={index}
-              image={card.image}
-              imageMb={card.imageMb}
-              title={card.title}
-              paragraphs={card.paragraphs}
-              tags={card.tags}
-              released={card.released}
+              cover={card.cover}
+              name={card?.name}
+              text={card?.text}
+              section={card?.section}
+              subtitle={card?.subtitle}
             />
           ))}
         </div>

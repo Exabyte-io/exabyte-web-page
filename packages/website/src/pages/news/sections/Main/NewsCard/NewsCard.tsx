@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
-import { NewsCardType } from 'src/types'
 import './NewsCard.less'
 import { useMediaQuery } from 'react-responsive'
+import ReactMarkdown from 'react-markdown'
+import { BlogPost } from '../../../../../graphql'
 
-const NewsCard: FC<NewsCardType> = ({ image, imageMb, tags, paragraphs, released, title }) => {
+const NewsCard: FC<BlogPost> = ({ cover, section, text, subtitle, name }) => {
   const [isReadMore, setIsReadMore] = useState<boolean>(false)
   const md = useMediaQuery({ minWidth: 768 })
 
@@ -11,15 +12,15 @@ const NewsCard: FC<NewsCardType> = ({ image, imageMb, tags, paragraphs, released
     <div className='news-card'>
       <div className='less-content'>
         <div className='image'>
-          <img src={md ? image : imageMb} alt='' />
+          <img src={md ? cover?.[0]?.url : cover?.[1]?.url} alt='' />
         </div>
         <div className='description'>
-          <div className='title'>{title}</div>
-          <div className='released'>{released}</div>
+          <div className='title'>{name}</div>
+          <div className='released'>{subtitle}</div>
           <div className='tags'>
-            {tags.map((tag, i) => (
+            {section?.map((tag, i) => (
               <div className='tag' key={i}>
-                {tag}
+                {tag.title}
               </div>
             ))}
           </div>
@@ -35,11 +36,9 @@ const NewsCard: FC<NewsCardType> = ({ image, imageMb, tags, paragraphs, released
 
       <div className='more-content' style={isReadMore ? { display: 'block' } : { display: 'none' }}>
         <div className='paragraphs'>
-          {paragraphs.map((paragraph, i) => (
-            <p className='paragraph' key={i}>
-              {paragraph}
-            </p>
-          ))}
+          <p className='paragraph'>
+            <ReactMarkdown children={text ?? ''} />
+          </p>
         </div>
         <div className='read-less read' onClick={() => setIsReadMore(false)}>
           Read less

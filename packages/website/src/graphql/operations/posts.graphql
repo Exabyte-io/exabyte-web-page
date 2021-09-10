@@ -1,0 +1,5 @@
+query posts($where: JSON) {
+  posts(where: $where) {
+    ...Post
+  }
+}

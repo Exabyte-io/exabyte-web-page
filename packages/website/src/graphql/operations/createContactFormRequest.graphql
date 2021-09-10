@@ -1,0 +1,12 @@
+mutation createContactFormRequest($input: createContactFormRequestInput) {
+  createContactFormRequest(input: $input) {
+    contactFormRequest {
+      id
+      email
+      rating
+      firstName
+      lastName
+      message
+    }
+  }
+}
