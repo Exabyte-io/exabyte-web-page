@@ -20,15 +20,16 @@ releases:
     values:
       - image: dcr.bndigital.dev/exabyte/website:latest
         imagePullSecrets: [ container-registry ]
-        podAnnotations:
-          git/ref: '{{ env "GITHUB_REF" | default "latest" }}'
-          git/sha: '{{ env "GITHUB_SHA" | default "unknown" }}'
+        vcs:
+          branch: '{{ env "GITHUB_REF" | default "latest" }}'
+          commit: '{{ env "GITHUB_SHA" | default "unknown" }}'
         ingress:
           host: exabyte.bndigital.dev
-          proxies:
-            - path: /(admin|auth|import-export-content|callback|connect|content-manager|content-type-builder|email|email-designer|entity-relationship-chart|i18n|graphql|register|responsive-image|users-permissions|upload|uploads)(.*)
-              backend:
-                service: grant-mill-cms-nodejs
+          proxy:
+            enabled: true
+            path: /(admin|auth|import-export-content|callback|connect|content-manager|content-type-builder|email|email-designer|entity-relationship-chart|i18n|graphql|register|responsive-image|users-permissions|upload|uploads)(.*)
+            backend:
+              service: exabyte-cms-nodejs
 
   - name: exabyte-cms
     namespace: '{{ .Environment.Name }}'
@@ -38,9 +39,9 @@ releases:
       app: cms
     values:
       - image: dcr.bndigital.dev/exabyte/cms:latest
-        envSecrets: [ backend-services ]
-        configMapsSecrets: [ backend-services ]
         imagePullSecrets: [ container-registry ]
-        podAnnotations:
-          git/ref: '{{ env "GITHUB_REF" | default "latest" }}'
-          git/sha: '{{ env "GITHUB_SHA" | default "unknown" }}'
+        secrets: [ backend-services ]
+        configMaps: [ backend-services ]
+        vcs:
+          branch: '{{ env "GITHUB_REF" | default "latest" }}'
+          commit: '{{ env "GITHUB_SHA" | default "unknown" }}'

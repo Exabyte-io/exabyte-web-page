@@ -4,3 +4,7 @@ globalEnvVars:
     value: production
   - key: PORT
     value: '5000'
+fileExistenceTests:
+  - shouldExist: true
+    name: build
+    path: /usr/local/src/build

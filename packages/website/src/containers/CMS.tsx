@@ -5,7 +5,7 @@ import { ContentQuery, useWebsiteQuery } from '../graphql'
 const Content = createContext({})
 
 const CMS: FC = ({ children }) => {
-  const domain = window.location.hostname
+  const domain = 'enfabrica'
   const { data, loading } = useWebsiteQuery({ variables: { domain } })
   return loading ? (
     <Loader />
