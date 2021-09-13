@@ -2,9 +2,14 @@ schemaVersion: 2.0.0
 globalEnvVars:
   - key: NODE_ENV
     value: production
-  - key: PORT
-    value: '5000'
 fileExistenceTests:
   - shouldExist: true
     name: build
     path: /usr/local/src/build
+metadataTest:
+  exposedPorts:
+    - '5000'
+  workdir: /usr/local/src
+  env:
+    - key: NODE_ENV
+      value: production

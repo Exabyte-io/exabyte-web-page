@@ -18,7 +18,7 @@ releases:
     labels:
       app: website
     values:
-      - image: dcr.bndigital.dev/exabyte/website:latest
+      - image: '{{ env "IMAGE_REPOSITORY" | default "dcr.bndigital.dev/app" }}/website:{{ env "IMAGE_TAG" | default "latest" }}'
         imagePullSecrets: [ container-registry ]
         vcs:
           branch: '{{ env "GITHUB_REF" | default "latest" }}'
@@ -38,7 +38,7 @@ releases:
     labels:
       app: cms
     values:
-      - image: dcr.bndigital.dev/exabyte/cms:latest
+      - image: '{{ env "IMAGE_REPOSITORY" | default "dcr.bndigital.dev/app" }}/cms:{{ env "IMAGE_TAG" | default "latest" }}'
         imagePullSecrets: [ container-registry ]
         secrets: [ backend-services ]
         configMaps: [ backend-services ]

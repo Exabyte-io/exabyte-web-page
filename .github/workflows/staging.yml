@@ -39,6 +39,7 @@ jobs:
             infrastructure/data/staging/harbor-registry/docker url | docker_url ;
             infrastructure/data/staging/harbor-registry/docker username | docker_username ;
             infrastructure/data/staging/harbor-registry/docker password | docker_password ;
+
       - name: Login Docker registry
         uses: docker/login-action@v1
         with:
@@ -58,6 +59,7 @@ jobs:
         uses: hiberbee/github-action-skaffold@1.6.0
         with:
           command: build
+          skip-tests: false
           default-repo: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
 
       - name: Release Helm charts
