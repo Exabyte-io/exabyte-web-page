@@ -108,7 +108,7 @@ const config = {
     new CleanWebpackPlugin(),
     new ESLintWebpackPlugin({
       useEslintrc: true,
-      extensions: ['.ts', '.js', '.jsx', '.tsx'],
+      extensions: ['.ts', '.tsx'],
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
