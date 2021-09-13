@@ -15,6 +15,10 @@ on:
       - packages/cms/extensions/**/*
       - packages/website/src/**/*
 
+concurrency:
+  cancel-in-progress: true
+  group: deploy
+
 jobs:
   deploy:
     name: Deploy applications
