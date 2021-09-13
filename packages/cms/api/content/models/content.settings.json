@@ -75,6 +75,14 @@
       "required": true,
       "unique": false,
       "maxLength": 255
+    },
+    "subtitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

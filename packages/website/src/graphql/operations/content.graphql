@@ -1,6 +1,5 @@
-query content($where: JSON) {
-  contents(where: $where, publicationState: LIVE) {
-    id
+query content($slug: ID!) {
+  content(id: $slug, publicationState: LIVE) {
     ...Content
   }
 }

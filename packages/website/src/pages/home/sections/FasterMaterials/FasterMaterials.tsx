@@ -10,26 +10,19 @@ import RightNotActiveArrow from '../Customer/images/right-not-active-arrow.svg'
 import RightActiveArrow from '../Customer/images/right-active-arrow.svg'
 import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
 import { NavLink } from 'react-router-dom'
-
-const fasterMaterialsCards = [
-  {
-    title: 'SEMICONDUCTOR',
-    text: 'Emerging memory technology and TCAD: speed up material selection and process optimization for next-generation devices.',
-  },
-  {
-    title: 'MANUFACTURING',
-    text: 'Predict and assess the stability of lightweight metallic alloys, thin-film oxide compounds, composite materials.',
-  },
-  {
-    title: 'ENERGY',
-    text: 'IT engineers, materials- and data scientists collaborate to speed up the design of new compounds from atoms up.',
-  },
-]
+import { useContentQuery } from '../../../../graphql'
 
 const FasterMaterials: FC = () => {
   const [cardNumber, setCardNumber] = useState<number>(1)
   // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const carousel = useRef<any>(null)
+
+  const { data } = useContentQuery({
+    variables: {
+      slug: 'main-customer-stories',
+    },
+  })
+  const content = data?.content
 
   const onCarouselChange = (cardIndex: number) => {
     setCardNumber(cardIndex + 1)
@@ -48,13 +41,13 @@ const FasterMaterials: FC = () => {
       <img src={BackgroundLg} alt='' className={'background-img'} />
       <img src={LaptopDecoration} alt='' className={'laptop-decoration'} />
       <div className='faster-materials-content'>
-        <div className='faster-materials-content-title'>Faster Materials R&D For</div>
+        <div className='faster-materials-content-title'>{content?.title}</div>
         {window.innerWidth > 426 ? (
           <div className='faster-materials-content-info'>
-            {fasterMaterialsCards.map(card => (
+            {content?.sections?.map(card => (
               <div className='faster-materials-content-info-card'>
-                <div className='faster-materials-content-info-card-title'>{card.title}</div>
-                <div className='faster-materials-content-info-card-text'>{card.text}</div>
+                <div className='faster-materials-content-info-card-title'>{card?.title}</div>
+                <div className='faster-materials-content-info-card-text'>{card?.subTitle}</div>
               </div>
             ))}
           </div>
@@ -67,10 +60,10 @@ const FasterMaterials: FC = () => {
               infinite={false}
               className={'faster-materials-content-carousel'}
             >
-              {fasterMaterialsCards.map(card => (
+              {content?.sections?.map(card => (
                 <div className='faster-materials-content-info-card'>
-                  <div className='faster-materials-content-info-card-title'>{card.title}</div>
-                  <div className='faster-materials-content-info-card-text'>{card.text}</div>
+                  <div className='faster-materials-content-info-card-title'>{card?.title}</div>
+                  <div className='faster-materials-content-info-card-text'>{card?.subTitle}</div>
                 </div>
               ))}
             </Carousel>

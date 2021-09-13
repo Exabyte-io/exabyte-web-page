@@ -3,6 +3,7 @@ fragment Content on Content {
   title
   description
   slug
+  subtitle
   button {
     ...Button
   }

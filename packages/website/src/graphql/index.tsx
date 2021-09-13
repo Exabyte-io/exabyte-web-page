@@ -477,6 +477,7 @@ export type Content = {
   section?: Maybe<ComponentOrganismsSection>;
   sections?: Maybe<Array<Maybe<ComponentOrganismsSection>>>;
   slug: Scalars['String'];
+  subtitle?: Maybe<Scalars['String']>;
   table?: Maybe<Array<Maybe<ComponentMoleculesMap>>>;
   title: Scalars['String'];
 };
@@ -532,6 +533,12 @@ export type ContentConnectionSlug = {
   key?: Maybe<Scalars['String']>;
 };
 
+export type ContentConnectionSubtitle = {
+  __typename?: 'ContentConnectionSubtitle';
+  connection?: Maybe<ContentConnection>;
+  key?: Maybe<Scalars['String']>;
+};
+
 export type ContentConnectionTitle = {
   __typename?: 'ContentConnectionTitle';
   connection?: Maybe<ContentConnection>;
@@ -545,6 +552,7 @@ export type ContentGroupBy = {
   id?: Maybe<Array<Maybe<ContentConnectionId>>>;
   locale?: Maybe<Array<Maybe<ContentConnectionLocale>>>;
   slug?: Maybe<Array<Maybe<ContentConnectionSlug>>>;
+  subtitle?: Maybe<Array<Maybe<ContentConnectionSubtitle>>>;
   title?: Maybe<Array<Maybe<ContentConnectionTitle>>>;
 };
 
@@ -557,6 +565,7 @@ export type ContentInput = {
   published_at?: Maybe<Scalars['DateTime']>;
   sections?: Maybe<Array<Maybe<ComponentOrganismsSectionInput>>>;
   slug: Scalars['String'];
+  subtitle?: Maybe<Scalars['String']>;
   table?: Maybe<Array<Maybe<ComponentMoleculesMapInput>>>;
   title?: Maybe<Scalars['String']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -748,7 +757,7 @@ export type LocaleInput = {
   updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type Morph = BlogCategory | BlogCategoryAggregator | BlogCategoryConnection | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogCategoryGroupBy | BlogPost | BlogPostAggregator | BlogPostConnection | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionSlug | BlogPostConnectionSubtitle | BlogPostConnectionText | BlogPostGroupBy | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection | ContactFormRequest | ContactFormRequestAggregator | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMax | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorSum | ContactFormRequestConnection | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionId | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | ContactFormRequestGroupBy | Content | ContentAggregator | ContentConnection | ContentConnectionButton | ContentConnectionDescription | ContentConnectionId | ContentConnectionLocale | ContentConnectionSlug | ContentConnectionTitle | ContentGroupBy | EmailDesignerEmailTemplate | Employee | I18NLocale | IntlCountry | IntlCountryAggregator | IntlCountryConnection | IntlCountryConnectionCode | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryGroupBy | IntlCurrency | IntlCurrencyAggregator | IntlCurrencyConnection | IntlCurrencyConnectionCode | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | Website | WebsiteAggregator | WebsiteConnection | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | WebsiteConnectionId | WebsiteGroupBy | CreateContactFormRequestPayload | CreateContentPayload | CreateRolePayload | CreateUserPayload | CreateWebsitePayload | DeleteContactFormRequestPayload | DeleteContentPayload | DeleteFilePayload | DeleteRolePayload | DeleteUserPayload | DeleteWebsitePayload | UpdateContactFormRequestPayload | UpdateContentPayload | UpdateRolePayload | UpdateUserPayload | UpdateWebsitePayload;
+export type Morph = BlogCategory | BlogCategoryAggregator | BlogCategoryConnection | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogCategoryGroupBy | BlogPost | BlogPostAggregator | BlogPostConnection | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionSlug | BlogPostConnectionSubtitle | BlogPostConnectionText | BlogPostGroupBy | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection | ContactFormRequest | ContactFormRequestAggregator | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMax | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorSum | ContactFormRequestConnection | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionId | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | ContactFormRequestGroupBy | Content | ContentAggregator | ContentConnection | ContentConnectionButton | ContentConnectionDescription | ContentConnectionId | ContentConnectionLocale | ContentConnectionSlug | ContentConnectionSubtitle | ContentConnectionTitle | ContentGroupBy | EmailDesignerEmailTemplate | Employee | I18NLocale | IntlCountry | IntlCountryAggregator | IntlCountryConnection | IntlCountryConnectionCode | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryGroupBy | IntlCurrency | IntlCurrencyAggregator | IntlCurrencyConnection | IntlCurrencyConnectionCode | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | Website | WebsiteAggregator | WebsiteConnection | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | WebsiteConnectionId | WebsiteGroupBy | CreateContactFormRequestPayload | CreateContentPayload | CreateRolePayload | CreateUserPayload | CreateWebsitePayload | DeleteContactFormRequestPayload | DeleteContentPayload | DeleteFilePayload | DeleteRolePayload | DeleteUserPayload | DeleteWebsitePayload | UpdateContactFormRequestPayload | UpdateContentPayload | UpdateRolePayload | UpdateUserPayload | UpdateWebsitePayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -1903,6 +1912,7 @@ export type EditContentInput = {
   published_at?: Maybe<Scalars['DateTime']>;
   sections?: Maybe<Array<Maybe<EditComponentOrganismsSectionInput>>>;
   slug?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
   table?: Maybe<Array<Maybe<EditComponentMoleculesMapInput>>>;
   title?: Maybe<Scalars['String']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -2065,7 +2075,7 @@ export type UpdateWebsitePayload = {
 
 export type ButtonFragment = { __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> };
 
-export type ContentFragment = { __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> };
+export type ContentFragment = { __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> };
 
 export type EntryFragment = { __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> };
 
@@ -2086,11 +2096,11 @@ export type TextFragment = { __typename?: 'ComponentAtomsText', id: string, valu
 export type WebsiteFragment = { __typename?: 'Website', id: string, domain: string, googleAnalyticsCode?: Maybe<string>, navigation?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMenu', id: string, slug: string, links?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }>>> }>>>, meta?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>>, redirects?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> };
 
 export type ContentQueryVariables = Exact<{
-  where?: Maybe<Scalars['JSON']>;
+  slug: Scalars['ID'];
 }>;
 
 
-export type ContentQuery = { __typename?: 'Query', contents?: Maybe<Array<Maybe<{ __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> }>>> };
+export type ContentQuery = { __typename?: 'Query', content?: Maybe<{ __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> }> };
 
 export type CreateContactFormRequestMutationVariables = Exact<{
   input?: Maybe<CreateContactFormRequestInput>;
@@ -2202,6 +2212,7 @@ export const ContentFragmentDoc = gql`
   title
   description
   slug
+  subtitle
   button {
     ...Button
   }
@@ -2277,14 +2288,13 @@ export const WebsiteFragmentDoc = gql`
     ${LinkFragmentDoc}
 ${EntryFragmentDoc}`;
 export const ContentDocument = gql`
-    query content($where: JSON) {
-  contents(where: $where, publicationState: LIVE) {
-    id
+    query content($slug: ID!) {
+  content(id: $slug, publicationState: LIVE) {
     ...Content
   }
 }
     ${ContentFragmentDoc}`;
-export type ContentComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ContentQuery, ContentQueryVariables>, 'query'>;
+export type ContentComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ContentQuery, ContentQueryVariables>, 'query'> & ({ variables: ContentQueryVariables; skip?: boolean; } | { skip: boolean; });
 
     export const ContentComponent = (props: ContentComponentProps) => (
       <ApolloReactComponents.Query<ContentQuery, ContentQueryVariables> query={ContentDocument} {...props} />
@@ -2303,11 +2313,11 @@ export type ContentComponentProps = Omit<ApolloReactComponents.QueryComponentOpt
  * @example
  * const { data, loading, error } = useContentQuery({
  *   variables: {
- *      where: // value for 'where'
+ *      slug: // value for 'slug'
  *   },
  * });
  */
-export function useContentQuery(baseOptions?: Apollo.QueryHookOptions<ContentQuery, ContentQueryVariables>) {
+export function useContentQuery(baseOptions: Apollo.QueryHookOptions<ContentQuery, ContentQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<ContentQuery, ContentQueryVariables>(ContentDocument, options);
       }

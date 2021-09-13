@@ -11,6 +11,7 @@ import { useMediaQuery } from 'react-responsive'
 import { ActionButton } from '../../../../components/button/ActionButton'
 import './Hero.less'
 import { AccessButton } from '../../../../components/button/AccessButton'
+import { useContentQuery } from '../../../../graphql'
 
 const Hero: FC = () => {
   const [isVideoActive, setIsVideoActive] = useState(false)
@@ -18,6 +19,13 @@ const Hero: FC = () => {
 
   const video = useRef<HTMLVideoElement>(null)
   const md = useMediaQuery({ maxWidth: 768 })
+
+  const { data } = useContentQuery({
+    variables: {
+      slug: 'main-page-hero',
+    },
+  })
+  const content = data?.content
 
   const showVideo = () => {
     if (isVideoActive) {
@@ -42,11 +50,8 @@ const Hero: FC = () => {
       <img src={md ? heroMb : heroLg} alt='' className='background-img' />
       <div className='content'>
         <div className='text-content' style={{ display: isVideoActive ? 'none' : 'block' }}>
-          <div className='title'>Materials Modeling 2.0</div>
-          <div className='text'>
-            Exabyte.io is a cloud-native digital materials R&D platform. Design structures, run simulations, and build
-            models online alongside scientists on your team and worldwide.
-          </div>
+          <div className='title'>{content?.title}</div>
+          <div className='text'>{content?.description}</div>
           <div className='buttons'>
             <ActionButton
               title={'GET STARTED NOW'}
