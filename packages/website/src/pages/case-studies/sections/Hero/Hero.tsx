@@ -42,16 +42,7 @@ const caseStudiesSlidesContent: CaseStudiesSlide[] = [
     image: Slide3Image,
     title: 'STRONGER COMPOSITE MATERIALS',
     text: 'Tokyo University of Science team together with ITOCHU Techno-solutions successfully demonstrated a computational evaluation of the mechanical properties of carbon fiber/polymer resin interfaces.',
-    tags: [
-      '2019',
-      'Materials-Science',
-      'Molecular Dynamics',
-      'GROMACS',
-      'Carbon Fiber',
-      'Graphene',
-      'Polyimide',
-      'Vinylester',
-    ],
+    tags: ['2019', 'Materials-Science', 'Molecular Dynamics', 'GROMACS', 'Carbon Fiber', 'Graphene', 'Polyimide', 'Vinylester'],
     link: '#',
   },
   {

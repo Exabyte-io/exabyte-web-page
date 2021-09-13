@@ -12,15 +12,7 @@ const communityCarousels: communityCarousel[] = [
     title: 'GLOBAL 2000',
     carouselSlides: [
       {
-        paragraphs: [
-          'GE Water',
-          'IBM',
-          'Intel',
-          'ITOCHU Techno-Solutions',
-          'Johnson Matthey',
-          'Micron',
-          'Samsung SDI.',
-        ],
+        paragraphs: ['GE Water', 'IBM', 'Intel', 'ITOCHU Techno-Solutions', 'Johnson Matthey', 'Micron', 'Samsung SDI.'],
       },
       {
         paragraphs: ['Shell', 'SK Hynix', 'Toyota Research Institute', 'TSMC', 'Western Digital'],
@@ -228,9 +220,9 @@ const Community: FC = () => {
       <div className='content'>
         <div className='case-studies-community-title'>Community</div>
         <div className='case-studies-community-text'>
-          Below is a list of institutional affiliations as submitted by users who attempted to register on our platform.
-          This list is included for informational purposes only and has no implication about any potential relationship
-          between our company and the organizations included.
+          Below is a list of institutional affiliations as submitted by users who attempted to register on our platform. This list is
+          included for informational purposes only and has no implication about any potential relationship between our company and the
+          organizations included.
         </div>
         <div className='carousels'>
           {communityCarousels.map((carousel, index) => (

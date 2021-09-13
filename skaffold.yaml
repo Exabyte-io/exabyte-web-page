@@ -1,18 +1,24 @@
 # nonk8s
 apiVersion: skaffold/v2beta21
 kind: Config
-metadata:
-  name: app
 build:
   artifacts:
-  - image: website
-    context: packages/website
-  - image: cms
-    context: packages/cms
+    - image: website
+      context: packages/website
+      docker:
+        cacheFrom:
+          - dcr.bndigital.dev/exabyte/website:latest
+    - image: cms
+      context: packages/cms
+      docker:
+        cacheFrom:
+          - dcr.bndigital.dev/exabyte/cms:latest
   tagPolicy:
-    sha256: {}
+    gitCommit:
+      variant: CommitSha
+      ignoreChanges: true
   local:
-    push: false
+    push: true
     useBuildkit: true
     concurrency: 0
 test:
@@ -23,15 +29,6 @@ test:
     structureTests:
       - container-structure-test.yaml
 profiles:
-- name: staging
-  activation:
-  - kubeContext: do-fra1-bndigital
-  build:
-    local:
-      push: true
-      useBuildkit: true
-      concurrency: 0
-    tagPolicy:
-      gitCommit:
-        variant: CommitSha
-        ignoreChanges: true
+  - name: staging
+    activation:
+      - kubeContext: do-fra1-bndigital

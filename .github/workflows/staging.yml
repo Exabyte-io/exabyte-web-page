@@ -58,7 +58,7 @@ jobs:
       - name: Build Skaffold artifacts
         uses: hiberbee/github-action-skaffold@1.6.0
         with:
-          command: build
+          command: run
           skip-tests: false
           default-repo: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
 

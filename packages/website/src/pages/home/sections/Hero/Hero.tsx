@@ -6,7 +6,6 @@ import PlayButtonImage from './images/play-button.svg'
 import PlayButtonMbImage from './images/play-button-mb.svg'
 import PauseButtonImage from './images/pause-button.svg'
 import CloseImage from './images/close.svg'
-import MainVideo from './videos/main-video.mp4'
 import { useMediaQuery } from 'react-responsive'
 import { ActionButton } from '../../../../components/button/ActionButton'
 import './Hero.less'
@@ -44,16 +43,11 @@ const Hero: FC = () => {
         <div className='text-content' style={{ display: isVideoActive ? 'none' : 'block' }}>
           <div className='title'>Materials Modeling 2.0</div>
           <div className='text'>
-            Exabyte.io is a cloud-native digital materials R&D platform. Design structures, run simulations, and build
-            models online alongside scientists on your team and worldwide.
+            Exabyte.io is a cloud-native digital materials R&D platform. Design structures, run simulations, and build models online
+            alongside scientists on your team and worldwide.
           </div>
           <div className='buttons'>
-            <ActionButton
-              title={'GET STARTED NOW'}
-              type={'default'}
-              size={'medium'}
-              src={'https://platform.exabyte.io/register'}
-            />
+            <ActionButton title={'GET STARTED NOW'} type={'default'} size={'medium'} src={'https://platform.exabyte.io/register'} />
             <AccessButton />
           </div>
         </div>
@@ -67,11 +61,7 @@ const Hero: FC = () => {
         </div>
 
         <div className='full-video' style={{ display: isVideoActive ? 'flex' : 'none' }}>
-          <button
-            onClick={changeVideoState}
-            className='play-button'
-            style={{ display: md && isVideoPaused ? 'flex' : 'none' }}
-          >
+          <button onClick={changeVideoState} className='play-button' style={{ display: md && isVideoPaused ? 'flex' : 'none' }}>
             <img src={PlayButtonMbImage} alt='' />
           </button>
 
@@ -84,7 +74,7 @@ const Hero: FC = () => {
           </div>
 
           <video ref={video} className='video' onClick={changeVideoState}>
-            <source src={MainVideo} />
+            <source src={'video/videoplayback.mp4'} />
           </video>
         </div>
       </div>

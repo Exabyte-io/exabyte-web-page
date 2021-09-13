@@ -1,5 +1,4 @@
 import { FC, useState } from 'react'
-import { Row } from 'antd'
 import IconSearch from './images/icon-search.svg'
 import NewsCard from './NewsCard/NewsCard'
 import BackgroundLg from './images/background-lg.svg'
@@ -54,7 +53,7 @@ const Main: FC = () => {
     <div className='news'>
       <img src={md ? BackgroundLg : BackgroundMb} alt='' className='background-lg' />
       <div className='content'>
-        <Row className='title-wrapper' style={{ marginBottom: 64 }}>
+        <div className='title-wrapper'>
           <div className='title'>News</div>
           <form
             //onSubmit={handleFilterFormSubmit}
@@ -65,17 +64,10 @@ const Main: FC = () => {
               <img src={IconSearch} alt='' />
             </button>
           </form>
-        </Row>
+        </div>
         <div className='news-cards'>
           {content?.map((card, index) => (
-            <NewsCard
-              key={index}
-              cover={card.cover}
-              name={card?.name}
-              text={card?.text}
-              section={card?.section}
-              subtitle={card?.subtitle}
-            />
+            <NewsCard {...card} key={index} />
           ))}
         </div>
         <div className='stay-tuned'>Stay Tuned</div>

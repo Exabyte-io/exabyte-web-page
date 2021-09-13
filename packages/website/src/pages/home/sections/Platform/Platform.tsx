@@ -14,22 +14,15 @@ const Platform: FC = () => {
     <Layout className={'section platform-wrapper'}>
       <img src={!md ? PlatformBgMb : PlatformBgLg} alt={'Matera'} className={'home-hero-img'} />
       <div className={'platform-wrapper-content'}>
-        <Typography.Paragraph className={'platform-wrapper-content-title'}>
-          The Exabyte.io Platform{' '}
-        </Typography.Paragraph>
+        <Typography.Paragraph className={'platform-wrapper-content-title'}>The Exabyte.io Platform </Typography.Paragraph>
         <Typography.Paragraph className={'platform-wrapper-content-description'}>
-          Exabyte.io helps chemists and materials scientists organize their work and collaborate in a single easy-to-use
-          cloud environment, allowing to rapidly learn and deploy a variety of modeling tools able to accelerate the R&D
-          phase and provide the foundation for faster product development.
+          Exabyte.io helps chemists and materials scientists organize their work and collaborate in a single easy-to-use cloud environment,
+          allowing to rapidly learn and deploy a variety of modeling tools able to accelerate the R&D phase and provide the foundation for
+          faster product development.
         </Typography.Paragraph>
       </div>
       <div className={'platform-wrapper-button'}>
-        <ActionButton
-          title={'CREATE A FREE ACCOUNT'}
-          type={'default'}
-          size={'medium'}
-          src={'https://platform.exabyte.io/register'}
-        />
+        <ActionButton title={'CREATE A FREE ACCOUNT'} type={'default'} size={'medium'} src={'https://platform.exabyte.io/register'} />
       </div>
     </Layout>
   )

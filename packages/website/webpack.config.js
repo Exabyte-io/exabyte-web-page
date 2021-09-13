@@ -14,23 +14,21 @@ const config = {
     historyApiFallback: true,
     open: true,
     hot: true,
+    liveReload: true,
     proxy: {
       '/graphql': 'http://localhost:1337',
     },
-    port: 3000,
   },
   mode: process.env.NODE_ENV ?? 'development',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.join(__dirname, 'build'),
   },
-  cache: true,
-  stats: 'minimal',
+  cache: { type: 'memory' },
   resolve: {
     alias: {
       src: path.resolve(__dirname, 'src/'),
-      'react-dom': '@hot-loader/react-dom',
     },
-    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    extensions: ['.tsx', '.jsx', '.ts', '.js', '.json'],
   },
   module: {
     rules: [
@@ -66,10 +64,6 @@ const config = {
         },
       },
       {
-        test: /\.mp4$/,
-        use: 'file-loader?name=videos/[name].[ext]',
-      },
-      {
         test: /\.(css|less)$/,
         exclude: /\.module\.(css|less)$/,
         use: [
@@ -80,7 +74,7 @@ const config = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              importLoaders: 3,
+              importLoaders: 2,
             },
           },
           {
@@ -108,7 +102,6 @@ const config = {
     ],
   },
   plugins: [
-    new DotEnvWebpack(),
     new webpack.ProvidePlugin({
       process: 'process/browser',
     }),

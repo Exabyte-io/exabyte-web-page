@@ -15,8 +15,7 @@ const { Panel } = Collapse
 
 const publicationsPerformedDropdowns: PublicationsDropdown[] = [
   {
-    title:
-      'Evaluation of interface properties of carbon fiber/resin using the full atomistic model considering the electric charge state',
+    title: 'Evaluation of interface properties of carbon fiber/resin using the full atomistic model considering the electric charge state',
     paragraphs: [
       'Shohei Kasahara, Jun Koyanagi, Kazuki Mori & Makoto Yabe',
       'Tokyo University of Science, ITOCHU Techno-solutions,',

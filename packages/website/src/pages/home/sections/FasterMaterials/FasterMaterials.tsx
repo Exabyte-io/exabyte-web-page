@@ -51,8 +51,8 @@ const FasterMaterials: FC = () => {
         <div className='faster-materials-content-title'>Faster Materials R&D For</div>
         {window.innerWidth > 426 ? (
           <div className='faster-materials-content-info'>
-            {fasterMaterialsCards.map(card => (
-              <div className='faster-materials-content-info-card'>
+            {fasterMaterialsCards.map((card, index) => (
+              <div key={index} className='faster-materials-content-info-card'>
                 <div className='faster-materials-content-info-card-title'>{card.title}</div>
                 <div className='faster-materials-content-info-card-text'>{card.text}</div>
               </div>
@@ -100,12 +100,7 @@ const FasterMaterials: FC = () => {
           </>
         )}
         <div className='faster-materials-content-buttons'>
-          <ActionButton
-            title={'Get started now'}
-            type={'default'}
-            size={'medium'}
-            src={'https://platform.exabyte.io/register'}
-          />
+          <ActionButton title={'Get started now'} type={'default'} size={'medium'} src={'https://platform.exabyte.io/register'} />
           <NavLink to={'/contact-us'} className='faster-materials-content-button'>
             Contact us
           </NavLink>

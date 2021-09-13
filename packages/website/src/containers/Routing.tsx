@@ -1,5 +1,5 @@
 import { FC, lazy } from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from '../components/layout/DefaultLayout'
 import { Menu } from 'antd'
 
@@ -54,7 +54,7 @@ function withNavigation<T>(Wrapped: FC<T>, placement: NavigationPlacement): FC<T
         ([path, { name, placements = [] }]) =>
           placements?.find(it => it === placement) && (
             <Menu.Item key={path}>
-              <NavLink activeClassName='selected-navlink' to={path}>
+              <NavLink className={({ isActive }) => (isActive ? 'selected-navlink' : '')} to={path}>
                 {name}
               </NavLink>
             </Menu.Item>
@@ -65,13 +65,15 @@ function withNavigation<T>(Wrapped: FC<T>, placement: NavigationPlacement): FC<T
 }
 
 const Routing: FC = () => (
-  <Routes>
-    <Route element={<DefaultLayout />}>
-      {Object.entries(routeMap).map(([path, { component }]) => {
-        const Page = component
-        return <Route key={path} path={path} element={<Page />} />
-      })}
-    </Route>
-  </Routes>
+  <Router>
+    <Routes>
+      <Route element={<DefaultLayout />}>
+        {Object.entries(routeMap).map(([path, { component }]) => {
+          const Page = component
+          return <Route key={path} path={path} element={<Page />} />
+        })}
+      </Route>
+    </Routes>
+  </Router>
 )
 export { Routing, withNavigation }

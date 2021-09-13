@@ -11,12 +11,7 @@ const TouchForm: FC = () => {
     <div className={'touch-form-wrapper'}>
       <Typography.Paragraph className={'touch-form-label'}>Get in touch</Typography.Paragraph>
       <form className={'touch-form'}>
-        <input
-          placeholder={'Email'}
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          className={'touch-form-input'}
-        />
+        <input placeholder={'Email'} value={email} onChange={e => setEmail(e.target.value)} className={'touch-form-input'} />
         <NavLink to={`/contact-us?email=${email}`} className={'touch-form-btn'}>
           <img alt='img' src={GetInTouchBtnImg} />
         </NavLink>

@@ -40,9 +40,7 @@ const ContactForm: FC = () => {
       .then(() =>
         createContactFormRequest({ variables: { input: { data } } })
           .then(
-            (result: {
-              data: { createContactFormRequest: { contactFormRequest: { firstName: string; email: string } } }
-            }) =>
+            (result: { data: { createContactFormRequest: { contactFormRequest: { firstName: string; email: string } } } }) =>
               result?.data &&
               message.success(
                 {
@@ -82,9 +80,7 @@ const ContactForm: FC = () => {
           placeholder='Search to Select'
           optionFilterProp='children'
           filterOption={(input, option) => option?.children?.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-          filterSort={(optionA, optionB) =>
-            optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-          }
+          filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}
         >
           {data?.countries?.map(({ id, name }: countries) => (
             <Select.Option key={id} value={id}>

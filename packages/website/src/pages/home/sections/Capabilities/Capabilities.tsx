@@ -52,8 +52,7 @@ const capabilitiesCollapseItems: capabilitiesCollapseItem[] = [
   {
     name: 'Advanced data analytics and machine learning infrastructure',
     image: Dropdown5,
-    githubLink:
-      'https://github.com/Exabyte-io/exabyte-api-examples/blob/master/examples/job/ml-train-model-predict-properties.ipynb',
+    githubLink: 'https://github.com/Exabyte-io/exabyte-api-examples/blob/master/examples/job/ml-train-model-predict-properties.ipynb',
     infoLink: 'https://docs.exabyte.io/materials/actions/advanced-search/',
   },
   {
@@ -107,14 +106,8 @@ const Capabilities: FC = () => {
 
   return (
     <Layout className={'section capabilities-wrapper'}>
-      <Row
-        align={'middle'}
-        justify={'space-between'}
-        className={'container'}
-        gutter={[48, 48]}
-        style={{ width: '100%', margin: '0 auto' }}
-      >
-        <Col style={{ padding: '0' }} xl={24} className={'top-wrapper'}>
+      <Row align={'middle'} justify={'space-between'} className={'container'} gutter={[48, 48]}>
+        <Col style={{ padding: 0 }} xl={24} className={'top-wrapper'}>
           <Typography.Paragraph className={'top-wrapper-title'}>Platform Capabilities</Typography.Paragraph>
           <Typography.Paragraph className={'top-wrapper-description'}>
             From idea to result - let's get there faster together!
