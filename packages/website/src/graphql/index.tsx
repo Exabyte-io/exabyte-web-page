@@ -2092,6 +2092,11 @@ export type ContentQueryVariables = Exact<{
 
 export type ContentQuery = { __typename?: 'Query', contents?: Maybe<Array<Maybe<{ __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> }>>> };
 
+export type CountriesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CountriesQuery = { __typename?: 'Query', countries?: Maybe<Array<Maybe<{ __typename?: 'IntlCountry', id: string, name: string }>>> };
+
 export type CreateContactFormRequestMutationVariables = Exact<{
   input?: Maybe<CreateContactFormRequestInput>;
 }>;
@@ -2318,6 +2323,47 @@ export function useContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Co
 export type ContentQueryHookResult = ReturnType<typeof useContentQuery>;
 export type ContentLazyQueryHookResult = ReturnType<typeof useContentLazyQuery>;
 export type ContentQueryResult = Apollo.QueryResult<ContentQuery, ContentQueryVariables>;
+export const CountriesDocument = gql`
+    query countries {
+  countries(limit: 250) {
+    id
+    name
+  }
+}
+    `;
+export type CountriesComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<CountriesQuery, CountriesQueryVariables>, 'query'>;
+
+    export const CountriesComponent = (props: CountriesComponentProps) => (
+      <ApolloReactComponents.Query<CountriesQuery, CountriesQueryVariables> query={CountriesDocument} {...props} />
+    );
+    
+
+/**
+ * __useCountriesQuery__
+ *
+ * To run a query within a React component, call `useCountriesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useCountriesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCountriesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useCountriesQuery(baseOptions?: Apollo.QueryHookOptions<CountriesQuery, CountriesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, options);
+      }
+export function useCountriesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CountriesQuery, CountriesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, options);
+        }
+export type CountriesQueryHookResult = ReturnType<typeof useCountriesQuery>;
+export type CountriesLazyQueryHookResult = ReturnType<typeof useCountriesLazyQuery>;
+export type CountriesQueryResult = Apollo.QueryResult<CountriesQuery, CountriesQueryVariables>;
 export const CreateContactFormRequestDocument = gql`
     mutation createContactFormRequest($input: createContactFormRequestInput) {
   createContactFormRequest(input: $input) {

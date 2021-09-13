@@ -2,7 +2,7 @@ schemaVersion: 2.0.0
 fileExistenceTests:
   - shouldExist: true
     name: build
-    path: /usr/local/src/build
+    path: /usr/local/src/build/
 metadataTest:
   exposedPorts:
     - '5000'

@@ -10,10 +10,9 @@ const Form: FC<FormProps> = ({ incomingEmail = '' }) => {
   const [email, setEmail] = useState<string>(incomingEmail)
 
   useEffect(() => {
-    if (params.has('email')) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      setEmail(params.get('email'))
+    const email = params.has('email') && params.get('email')
+    if (typeof email === 'string') {
+      setEmail(email)
     }
   }, [])
 

@@ -1,0 +1,6 @@
+query countries {
+  countries(limit: 250) {
+    id
+    name
+  }
+}
