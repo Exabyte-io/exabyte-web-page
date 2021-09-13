@@ -108,6 +108,7 @@ const config = {
     new CleanWebpackPlugin(),
     new ESLintWebpackPlugin({
       useEslintrc: true,
+      failOnError: true,
       extensions: ['.ts', '.tsx'],
     }),
     new HtmlWebpackPlugin({

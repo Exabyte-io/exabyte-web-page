@@ -1,19 +1,19 @@
 name: Staging
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: { }
   push:
     branches:
       - latest
     paths:
-      - .github/workflows/staging.yml
-      - helmfile.yaml
-      - packages/*/Dockerfile
-      - packages/*/package.json
-      - packages/cms/api/**/*
-      - packages/cms/components/**/*
-      - packages/cms/config/**/*
-      - packages/cms/extensions/**/*
-      - packages/website/src/**/*
+      - '.github/workflows/staging.yml'
+      - 'helmfile.yaml'
+      - '**/*/Dockerfile'
+      - '**/*/package.json'
+      - 'packages/cms/api/**/*'
+      - 'packages/cms/components/**/*'
+      - 'packages/cms/config/**/*'
+      - 'packages/cms/extensions/**/*'
+      - 'packages/website/src/**/*'
 
 concurrency:
   cancel-in-progress: true
@@ -43,6 +43,14 @@ jobs:
             infrastructure/data/staging/harbor-registry/docker url | docker_url ;
             infrastructure/data/staging/harbor-registry/docker username | docker_username ;
             infrastructure/data/staging/harbor-registry/docker password | docker_password ;
+            infrastructure/data/staging/sonarqube host | sonarqube_host ;
+            infrastructure/data/staging/sonarqube token | sonarqube_token ;
+
+      - name: Run Sonar scanner
+        uses: kitabisa/sonarqube-action@master
+        with:
+          host: ${{ steps.secrets.outputs.sonarqube_host }}
+          login: ${{ steps.secrets.outputs.sonarqube_token }}
 
       - name: Login Docker registry
         uses: docker/login-action@v1
@@ -62,15 +70,11 @@ jobs:
       - name: Build Skaffold artifacts
         uses: hiberbee/github-action-skaffold@1.6.0
         with:
-          command: run
-          skip-tests: false
+          command: build
           default-repo: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
 
       - name: Release Helm charts
         uses: hiberbee/github-action-helm@1.3.0
-        env:
-          IMAGE_REPOSITORY: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
-          IMAGE_TAG: ${{ github.sha }}
         with:
           helmfile-command: apply
           environment: ${{ steps.secrets.outputs.kubernetes_namespace }}

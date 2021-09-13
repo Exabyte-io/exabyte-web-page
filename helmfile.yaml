@@ -10,9 +10,10 @@ helmDefaults:
 environments:
   default:
     values:
-      - imageRepository: dcr.bndigital.dev
+      - imageRepository: dcr.bndigital.dev/exabyte
   staging:
-    values: [ ]
+    values:
+      - imageRepository: dcr.bndigital.dev/exabyte
 
 releases:
   - name: exabyte-website

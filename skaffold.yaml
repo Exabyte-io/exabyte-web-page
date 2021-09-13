@@ -1,5 +1,5 @@
 # nonk8s
-apiVersion: skaffold/v2beta21
+apiVersion: skaffold/v2beta22
 kind: Config
 build:
   artifacts:
@@ -14,9 +14,7 @@ build:
         cacheFrom:
           - dcr.bndigital.dev/exabyte/cms:latest
   tagPolicy:
-    gitCommit:
-      variant: CommitSha
-      ignoreChanges: true
+    sha256: { }
   local:
     push: true
     useBuildkit: true
@@ -32,3 +30,8 @@ profiles:
   - name: staging
     activation:
       - kubeContext: do-fra1-bndigital
+    build:
+      tagPolicy:
+        gitCommit:
+          variant: CommitSha
+          ignoreChanges: true
