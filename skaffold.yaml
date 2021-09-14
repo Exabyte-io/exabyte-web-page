@@ -5,14 +5,11 @@ build:
   artifacts:
     - image: website
       context: packages/website
-      docker:
-        cacheFrom:
-          - dcr.bndigital.dev/exabyte/website:latest
     - image: cms
       context: packages/cms
       docker:
-        cacheFrom:
-          - dcr.bndigital.dev/exabyte/cms:latest
+        buildArgs:
+          ENV: '{{ .ENV }}'
   tagPolicy:
     sha256: { }
   local:

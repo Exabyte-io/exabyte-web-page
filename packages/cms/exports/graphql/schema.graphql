@@ -183,8 +183,6 @@ type Content {
   table: [ComponentMoleculesMap]
   button: ComponentAtomsButton
   slug: String!
-  locale: String
-  localizations(sort: String, limit: Int, start: Int, where: JSON): [Content]
   section: ComponentOrganismsSection
 }
 
@@ -205,7 +203,6 @@ type ContentGroupBy {
   description: [ContentConnectionDescription]
   button: [ContentConnectionButton]
   slug: [ContentConnectionSlug]
-  locale: [ContentConnectionLocale]
 }
 
 type ContentConnectionId {
@@ -233,11 +230,6 @@ type ContentConnectionSlug {
   connection: ContentConnection
 }
 
-type ContentConnectionLocale {
-  key: String
-  connection: ContentConnection
-}
-
 input ContentInput {
   title: String
   description: String
@@ -245,8 +237,6 @@ input ContentInput {
   table: [ComponentMoleculesMapInput]
   button: ComponentAtomsButtonInput
   slug: String!
-  localizations: [ID]
-  locale: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -259,8 +249,6 @@ input editContentInput {
   table: [editComponentMoleculesMapInput]
   button: editComponentAtomsButtonInput
   slug: String
-  localizations: [ID]
-  locale: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -381,6 +369,7 @@ type EmailDesignerEmailTemplate {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
+  sourceCodeToTemplateId: Int
   design: JSON
   name: String
   subject: String
@@ -391,6 +380,7 @@ type EmailDesignerEmailTemplate {
 }
 
 input EmailTemplateInput {
+  sourceCodeToTemplateId: Int
   design: JSON
   name: String
   subject: String
@@ -403,6 +393,7 @@ input EmailTemplateInput {
 }
 
 input editEmailTemplateInput {
+  sourceCodeToTemplateId: Int
   design: JSON
   name: String
   subject: String
@@ -410,28 +401,6 @@ input editEmailTemplateInput {
   bodyText: String
   enabled: Boolean
   tags: JSON
-  created_by: ID
-  updated_by: ID
-}
-
-type I18NLocale {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  name: String
-  code: String
-}
-
-input LocaleInput {
-  name: String
-  code: String
-  created_by: ID
-  updated_by: ID
-}
-
-input editLocaleInput {
-  name: String
-  code: String
   created_by: ID
   updated_by: ID
 }
@@ -1348,7 +1317,7 @@ input editComponentOrganismsSectionInput {
   slug: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Employee | ContactFormRequest | ContactFormRequestConnection | ContactFormRequestAggregator | ContactFormRequestAggregatorSum | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorMax | ContactFormRequestGroupBy | ContactFormRequestConnectionId | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | createContactFormRequestPayload | updateContactFormRequestPayload | deleteContactFormRequestPayload | Content | ContentConnection | ContentAggregator | ContentGroupBy | ContentConnectionId | ContentConnectionTitle | ContentConnectionDescription | ContentConnectionButton | ContentConnectionSlug | ContentConnectionLocale | createContentPayload | updateContentPayload | deleteContentPayload | Website | WebsiteConnection | WebsiteAggregator | WebsiteGroupBy | WebsiteConnectionId | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | createWebsitePayload | updateWebsitePayload | deleteWebsitePayload | EmailDesignerEmailTemplate | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | createUserPayload | updateUserPayload | deleteUserPayload | BlogCategory | BlogCategoryConnection | BlogCategoryAggregator | BlogCategoryGroupBy | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogPost | BlogPostConnection | BlogPostAggregator | BlogPostGroupBy | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionText | BlogPostConnectionSlug | BlogPostConnectionSubtitle | IntlCountry | IntlCountryConnection | IntlCountryAggregator | IntlCountryGroupBy | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryConnectionCode | IntlCurrency | IntlCurrencyConnection | IntlCurrencyAggregator | IntlCurrencyGroupBy | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyConnectionCode | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Employee | ContactFormRequest | ContactFormRequestConnection | ContactFormRequestAggregator | ContactFormRequestAggregatorSum | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorMax | ContactFormRequestGroupBy | ContactFormRequestConnectionId | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | createContactFormRequestPayload | updateContactFormRequestPayload | deleteContactFormRequestPayload | Content | ContentConnection | ContentAggregator | ContentGroupBy | ContentConnectionId | ContentConnectionTitle | ContentConnectionDescription | ContentConnectionButton | ContentConnectionSlug | createContentPayload | updateContentPayload | deleteContentPayload | Website | WebsiteConnection | WebsiteAggregator | WebsiteGroupBy | WebsiteConnectionId | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | createWebsitePayload | updateWebsitePayload | deleteWebsitePayload | EmailDesignerEmailTemplate | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | createUserPayload | updateUserPayload | deleteUserPayload | BlogCategory | BlogCategoryConnection | BlogCategoryAggregator | BlogCategoryGroupBy | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogPost | BlogPostConnection | BlogPostAggregator | BlogPostGroupBy | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionText | BlogPostConnectionSlug | BlogPostConnectionSubtitle | IntlCountry | IntlCountryConnection | IntlCountryAggregator | IntlCountryGroupBy | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryConnectionCode | IntlCurrency | IntlCurrencyConnection | IntlCurrencyAggregator | IntlCurrencyGroupBy | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyConnectionCode | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection
 
 input InputID {
   id: ID!
@@ -1371,8 +1340,8 @@ type Query {
   contactFormRequests(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [ContactFormRequest]
   contactFormRequestsConnection(sort: String, limit: Int, start: Int, where: JSON): ContactFormRequestConnection
   content(id: ID!, publicationState: PublicationState): Content
-  contents(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState, locale: String): [Content]
-  contentsConnection(sort: String, limit: Int, start: Int, where: JSON, locale: String): ContentConnection
+  contents(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Content]
+  contentsConnection(sort: String, limit: Int, start: Int, where: JSON): ContentConnection
   website(id: ID!, publicationState: PublicationState): Website
   websites(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Website]
   websitesConnection(sort: String, limit: Int, start: Int, where: JSON): WebsiteConnection
@@ -1437,7 +1406,6 @@ type Mutation {
 
   """Delete an existing user"""
   deleteUser(input: deleteUserInput): deleteUserPayload
-  createContentLocalization(input: updateContentInput!): Content!
   upload(refId: ID, ref: String, field: String, source: String, info: FileInfoInput, file: Upload!): UploadFile!
   multipleUpload(refId: ID, ref: String, field: String, source: String, files: [Upload]!): [UploadFile]!
   updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!

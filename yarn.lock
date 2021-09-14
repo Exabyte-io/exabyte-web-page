@@ -1899,10 +1899,8 @@ __metadata:
     strapi-plugin-content-manager: ^3.6.8
     strapi-plugin-content-type-builder: ^3.6.8
     strapi-plugin-email: ^3.6.8
-    strapi-plugin-email-designer: ^1.1.4
-    strapi-plugin-entity-relationship-chart: ^3.1.0
+    strapi-plugin-email-designer: ^1.1.6
     strapi-plugin-graphql: ^3.6.8
-    strapi-plugin-i18n: ^3.6.8
     strapi-plugin-import-export-content: ^0.4.1
     strapi-plugin-responsive-image: ^0.5.0
     strapi-plugin-sentry: ^3.6.8
@@ -6833,15 +6831,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"closest@npm:^0.0.1":
-  version: 0.0.1
-  resolution: "closest@npm:0.0.1"
-  dependencies:
-    matches-selector: 0.0.1
-  checksum: 438e81c151cd8ed1066794d349eec1d76d3a08b1eaf2b85b9f43e49d5234a4e1c4de085f0af2c5787d23a73038a47ef38c3e333c81045696aca908642f27a3f2
-  languageName: node
-  linkType: hard
-
 "cls-bluebird@npm:^2.1.0":
   version: 2.1.0
   resolution: "cls-bluebird@npm:2.1.0"
@@ -7702,16 +7691,6 @@ __metadata:
   version: 1.0.1
   resolution: "cyclist@npm:1.0.1"
   checksum: 3cc2fdeb358599ca0ea96f5ecf2fc530ccab7ed1f8aa1a894aebfacd2009281bd7380cb9b30db02a18cdd00b3ed1d7ce81a3b11fe56e33a6a0fe4424dc592fbe
-  languageName: node
-  linkType: hard
-
-"dagre@npm:^0.8.5":
-  version: 0.8.5
-  resolution: "dagre@npm:0.8.5"
-  dependencies:
-    graphlib: ^2.1.8
-    lodash: ^4.17.15
-  checksum: b9fabd425466d7b662381c2e457b1adda996bc4169aa60121d4de50250d83a6bb4b77d559e2f887c9c564caea781c2a377fd4de2a76c15f8f04ec3d086ca95f9
   languageName: node
   linkType: hard
 
@@ -10639,15 +10618,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"graphlib@npm:^2.1.8":
-  version: 2.1.8
-  resolution: "graphlib@npm:2.1.8"
-  dependencies:
-    lodash: ^4.17.15
-  checksum: 1e0db4dea1c8187d59103d5582ecf32008845ebe2103959a51d22cb6dae495e81fb9263e22c922bca3aaecb56064a45cd53424e15a4626cfb5a0c52d0aff61a8
-  languageName: node
-  linkType: hard
-
 "graphql-config@npm:^3.0.2":
   version: 3.4.1
   resolution: "graphql-config@npm:3.4.1"
@@ -11054,13 +11024,6 @@ fsevents@^1.2.7:
     capital-case: ^1.0.4
     tslib: ^2.0.3
   checksum: 571c83eeb25e8130d172218712f807c0b96d62b020981400bccc1503a7cf14b09b8b10498a962d2739eccf231d950e3848ba7d420b58a6acd2f9283439546cd9
-  languageName: node
-  linkType: hard
-
-"heap@npm:0.2.5":
-  version: 0.2.5
-  resolution: "heap@npm:0.2.5"
-  checksum: 1f178a62cef3a29c1dc19783b2a478f4b8f1b85bd2ceb70fa535cf368fdd8fee141f08af0af5c55cd32e1b8a6b1ed200d8d18cd33fa4700ba97476d9c27162d3
   languageName: node
   linkType: hard
 
@@ -14247,13 +14210,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"matches-selector@npm:0.0.1":
-  version: 0.0.1
-  resolution: "matches-selector@npm:0.0.1"
-  checksum: 672b2921d9d87266955f93d99799c57edd1e796a48a01267b79b0290c7355b7058b61b5784ef46c91241f42fd4341705ffc9f73bc6ed25bfe07f17c28a2f89be
-  languageName: node
-  linkType: hard
-
 "matchmediaquery@npm:^0.3.0":
   version: 0.3.1
   resolution: "matchmediaquery@npm:0.3.1"
@@ -16442,22 +16398,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pathfinding@npm:^0.4.18":
-  version: 0.4.18
-  resolution: "pathfinding@npm:0.4.18"
-  dependencies:
-    heap: 0.2.5
-  checksum: 2d08ee0b28a337d7daa4c5b4fafb2add203d868372a928dd7b81db1ce69de427267bdb12863c9285ac0c92b901350cd407b4dfa943784fe6a0f28279c1aefb43
-  languageName: node
-  linkType: hard
-
-"paths-js@npm:^0.4.7":
-  version: 0.4.11
-  resolution: "paths-js@npm:0.4.11"
-  checksum: a2e968450d4c02a3aed2866c28766e6d386afd9a4ed5f8fe9c4f87e6867ef57d94d0e7a184f8987dfa7c59fed2519e10052320505b5bd1fd7a28dea7bb94995d
-  languageName: node
-  linkType: hard
-
 "pause@npm:0.0.1":
   version: 0.0.1
   resolution: "pause@npm:0.0.1"
@@ -16662,7 +16602,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pluralize@npm:8.0.0, pluralize@npm:^8.0.0":
+"pluralize@npm:^8.0.0":
   version: 8.0.0
   resolution: "pluralize@npm:8.0.0"
   checksum: 08931d4a6a4a5561a7f94f67a31c17e6632cb21e459ab3ff4f6f629d9a822984cf8afef2311d2005fbea5d7ef26016ebb090db008e2d8bce39d0a9a9d218736e
@@ -18699,7 +18639,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react@npm:^16.14.0, react@npm:^16.3.2":
+"react@npm:^16.14.0":
   version: 16.14.0
   resolution: "react@npm:16.14.0"
   dependencies:
@@ -20820,19 +20760,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"storm-react-diagrams@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "storm-react-diagrams@npm:5.2.1"
-  dependencies:
-    closest: ^0.0.1
-    lodash: ^4.17.10
-    pathfinding: ^0.4.18
-    paths-js: ^0.4.7
-    react: ^16.3.2
-  checksum: 640531ee2e89cbbf3778597e9ce67a35240ebd64acec0eaa99f70359c4889d3458c7ecc5da35807c7f46ecbc4f79451588bf672f1eb9560a7592d4c5a1891585
-  languageName: node
-  linkType: hard
-
 "strapi-admin@npm:^3.6.8":
   version: 3.6.8
   resolution: "strapi-admin@npm:3.6.8"
@@ -21182,7 +21109,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"strapi-plugin-email-designer@npm:^1.1.4":
+"strapi-plugin-email-designer@npm:^1.1.6":
   version: 1.1.6
   resolution: "strapi-plugin-email-designer@npm:1.1.6"
   dependencies:
@@ -21208,16 +21135,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"strapi-plugin-entity-relationship-chart@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "strapi-plugin-entity-relationship-chart@npm:3.1.0"
-  dependencies:
-    dagre: ^0.8.5
-    storm-react-diagrams: ^5.2.1
-  checksum: 55ee5b8b79be34dfa9c9cd6cba18c50ff4a3d0d84f9d319e20d8174882ad5e364a00d931dafb71889cd2d20dbbb9e4ff620a9b4dfa7a66d7b53323af884b73f4
-  languageName: node
-  linkType: hard
-
 "strapi-plugin-graphql@npm:^3.6.8":
   version: 3.6.8
   resolution: "strapi-plugin-graphql@npm:3.6.8"
@@ -21240,18 +21157,6 @@ resolve@^2.0.0-next.3:
     pluralize: ^8.0.0
     strapi-utils: 3.6.8
   checksum: d92d4f10bedb3d550d350b84214c6ae706526520d9e3853cbb030cba755ff80124788b718e9dfb730159e86fa8fbee3373895a64eb72c19af9ac606519368143
-  languageName: node
-  linkType: hard
-
-"strapi-plugin-i18n@npm:^3.6.8":
-  version: 3.6.8
-  resolution: "strapi-plugin-i18n@npm:3.6.8"
-  dependencies:
-    lodash: 4.17.21
-    p-map: 4.0.0
-    pluralize: 8.0.0
-    strapi-utils: 3.6.8
-  checksum: 0b3f7bbe54585534df195ee0e5a8f836fadeab2935250278098d4d43a1969250dbf79e13644c34ce47443fdd1ab8ece95497529fbe618a7a10e7b2f39c87024e
   languageName: node
   linkType: hard
 
