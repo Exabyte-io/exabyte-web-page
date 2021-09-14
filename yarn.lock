@@ -1951,6 +1951,7 @@ __metadata:
     react-dom: ^17.0.2
     react-ga: ^3.3.0
     react-helmet: ^6.1.0
+    react-icons: ^4.2.0
     react-intl: ^5.20.10
     react-markdown: ^6.0.2
     react-responsive: ^9.0.0-beta.4
@@ -18165,6 +18166,15 @@ fsevents@^1.2.7:
   peerDependencies:
     react: ">=16.3.0"
   checksum: a4998479dab7fc1c2799eddefb1870a9d881b5f71cfdf97979a9882e42f4bb50402d55335f308f461e735e01a06f46b16cc7b4e6bcb22c7a4a6f85a753c5c106
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "react-icons@npm:4.2.0"
+  peerDependencies:
+    react: "*"
+  checksum: 2b42d9b0ac85a57f8de28819b5f452b2c851f4caec09a855596d47557b775a434802fce1f3dc3811eebf46cf4d7c79fa4650330d5772345d6839f86c83afc01d
   languageName: node
   linkType: hard
 
