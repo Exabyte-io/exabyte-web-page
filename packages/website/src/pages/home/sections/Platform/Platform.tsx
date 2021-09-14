@@ -23,17 +23,10 @@ const Platform: FC = () => {
       <img src={!md ? PlatformBgMb : PlatformBgLg} alt={'Matera'} className={'home-hero-img'} />
       <div className={'platform-wrapper-content'}>
         <Typography.Paragraph className={'platform-wrapper-content-title'}>{content?.title}</Typography.Paragraph>
-        <Typography.Paragraph className={'platform-wrapper-content-description'}>
-          {content?.subTitle}
-        </Typography.Paragraph>
+        <Typography.Paragraph className={'platform-wrapper-content-description'}>{content?.subTitle}</Typography.Paragraph>
       </div>
       <div className={'platform-wrapper-button'}>
-        <ActionButton
-          title={'CREATE A FREE ACCOUNT'}
-          type={'default'}
-          size={'medium'}
-          src={'https://platform.exabyte.io/register'}
-        />
+        <ActionButton title={'CREATE A FREE ACCOUNT'} type={'default'} size={'medium'} src={'https://platform.exabyte.io/register'} />
       </div>
     </Layout>
   )

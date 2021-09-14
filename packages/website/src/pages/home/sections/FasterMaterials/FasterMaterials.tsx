@@ -93,12 +93,7 @@ const FasterMaterials: FC = () => {
           </>
         )}
         <div className='faster-materials-content-buttons'>
-          <ActionButton
-            title={'Get started now'}
-            type={'default'}
-            size={'medium'}
-            src={'https://platform.exabyte.io/register'}
-          />
+          <ActionButton title={'Get started now'} type={'default'} size={'medium'} src={'https://platform.exabyte.io/register'} />
           <NavLink to={'/contact-us'} className='faster-materials-content-button'>
             Contact us
           </NavLink>

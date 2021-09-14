@@ -43,13 +43,7 @@ const Capabilities: FC = () => {
 
   return (
     <Layout className={'section capabilities-wrapper'}>
-      <Row
-        align={'middle'}
-        justify={'space-between'}
-        className={'container'}
-        gutter={[48, 48]}
-        style={{ width: '100%', margin: '0 auto' }}
-      >
+      <Row align={'middle'} justify={'space-between'} className={'container'} gutter={[48, 48]} style={{ width: '100%', margin: '0 auto' }}>
         <Col style={{ padding: '0' }} xl={24} className={'top-wrapper'}>
           <Typography.Paragraph className={'top-wrapper-title'}>{content?.title}</Typography.Paragraph>
           <Typography.Paragraph className={'top-wrapper-description'}>{content?.description}</Typography.Paragraph>

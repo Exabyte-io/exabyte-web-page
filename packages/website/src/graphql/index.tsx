@@ -472,22 +472,12 @@ export type Content = {
   button?: Maybe<ComponentAtomsButton>;
   description?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
-  locale?: Maybe<Scalars['String']>;
-  localizations?: Maybe<Array<Maybe<Content>>>;
   section?: Maybe<ComponentOrganismsSection>;
   sections?: Maybe<Array<Maybe<ComponentOrganismsSection>>>;
   slug: Scalars['String'];
   subtitle?: Maybe<Scalars['String']>;
   table?: Maybe<Array<Maybe<ComponentMoleculesMap>>>;
   title: Scalars['String'];
-};
-
-
-export type ContentLocalizationsArgs = {
-  limit?: Maybe<Scalars['Int']>;
-  sort?: Maybe<Scalars['String']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
 };
 
 export type ContentAggregator = {
@@ -521,12 +511,6 @@ export type ContentConnectionId = {
   key?: Maybe<Scalars['ID']>;
 };
 
-export type ContentConnectionLocale = {
-  __typename?: 'ContentConnectionLocale';
-  connection?: Maybe<ContentConnection>;
-  key?: Maybe<Scalars['String']>;
-};
-
 export type ContentConnectionSlug = {
   __typename?: 'ContentConnectionSlug';
   connection?: Maybe<ContentConnection>;
@@ -550,7 +534,6 @@ export type ContentGroupBy = {
   button?: Maybe<Array<Maybe<ContentConnectionButton>>>;
   description?: Maybe<Array<Maybe<ContentConnectionDescription>>>;
   id?: Maybe<Array<Maybe<ContentConnectionId>>>;
-  locale?: Maybe<Array<Maybe<ContentConnectionLocale>>>;
   slug?: Maybe<Array<Maybe<ContentConnectionSlug>>>;
   subtitle?: Maybe<Array<Maybe<ContentConnectionSubtitle>>>;
   title?: Maybe<Array<Maybe<ContentConnectionTitle>>>;
@@ -560,8 +543,6 @@ export type ContentInput = {
   button?: Maybe<ComponentAtomsButtonInput>;
   created_by?: Maybe<Scalars['ID']>;
   description?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   sections?: Maybe<Array<Maybe<ComponentOrganismsSectionInput>>>;
   slug: Scalars['String'];
@@ -596,6 +577,7 @@ export type EmailDesignerEmailTemplate = {
   enabled?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  sourceCodeToTemplateId?: Maybe<Scalars['Int']>;
   subject?: Maybe<Scalars['String']>;
   tags?: Maybe<Scalars['JSON']>;
   updated_at: Scalars['DateTime'];
@@ -608,6 +590,7 @@ export type EmailTemplateInput = {
   design?: Maybe<Scalars['JSON']>;
   enabled?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
+  sourceCodeToTemplateId?: Maybe<Scalars['Int']>;
   subject?: Maybe<Scalars['String']>;
   tags?: Maybe<Scalars['JSON']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -645,15 +628,6 @@ export type FileInput = {
   updated_by?: Maybe<Scalars['ID']>;
   url: Scalars['String'];
   width?: Maybe<Scalars['Int']>;
-};
-
-export type I18NLocale = {
-  __typename?: 'I18NLocale';
-  code?: Maybe<Scalars['String']>;
-  created_at: Scalars['DateTime'];
-  id: Scalars['ID'];
-  name?: Maybe<Scalars['String']>;
-  updated_at: Scalars['DateTime'];
 };
 
 export type InputId = {
@@ -750,20 +724,12 @@ export type IntlCurrencyGroupBy = {
   name?: Maybe<Array<Maybe<IntlCurrencyConnectionName>>>;
 };
 
-export type LocaleInput = {
-  code?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  name?: Maybe<Scalars['String']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type Morph = BlogCategory | BlogCategoryAggregator | BlogCategoryConnection | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogCategoryGroupBy | BlogPost | BlogPostAggregator | BlogPostConnection | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionSlug | BlogPostConnectionSubtitle | BlogPostConnectionText | BlogPostGroupBy | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection | ContactFormRequest | ContactFormRequestAggregator | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMax | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorSum | ContactFormRequestConnection | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionId | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | ContactFormRequestGroupBy | Content | ContentAggregator | ContentConnection | ContentConnectionButton | ContentConnectionDescription | ContentConnectionId | ContentConnectionLocale | ContentConnectionSlug | ContentConnectionSubtitle | ContentConnectionTitle | ContentGroupBy | EmailDesignerEmailTemplate | Employee | I18NLocale | IntlCountry | IntlCountryAggregator | IntlCountryConnection | IntlCountryConnectionCode | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryGroupBy | IntlCurrency | IntlCurrencyAggregator | IntlCurrencyConnection | IntlCurrencyConnectionCode | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | Website | WebsiteAggregator | WebsiteConnection | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | WebsiteConnectionId | WebsiteGroupBy | CreateContactFormRequestPayload | CreateContentPayload | CreateRolePayload | CreateUserPayload | CreateWebsitePayload | DeleteContactFormRequestPayload | DeleteContentPayload | DeleteFilePayload | DeleteRolePayload | DeleteUserPayload | DeleteWebsitePayload | UpdateContactFormRequestPayload | UpdateContentPayload | UpdateRolePayload | UpdateUserPayload | UpdateWebsitePayload;
+export type Morph = BlogCategory | BlogCategoryAggregator | BlogCategoryConnection | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogCategoryGroupBy | BlogPost | BlogPostAggregator | BlogPostConnection | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionSlug | BlogPostConnectionSubtitle | BlogPostConnectionText | BlogPostGroupBy | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection | ContactFormRequest | ContactFormRequestAggregator | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMax | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorSum | ContactFormRequestConnection | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionId | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | ContactFormRequestGroupBy | Content | ContentAggregator | ContentConnection | ContentConnectionButton | ContentConnectionDescription | ContentConnectionId | ContentConnectionSlug | ContentConnectionSubtitle | ContentConnectionTitle | ContentGroupBy | EmailDesignerEmailTemplate | Employee | IntlCountry | IntlCountryAggregator | IntlCountryConnection | IntlCountryConnectionCode | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryGroupBy | IntlCurrency | IntlCurrencyAggregator | IntlCurrencyConnection | IntlCurrencyConnectionCode | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | Website | WebsiteAggregator | WebsiteConnection | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | WebsiteConnectionId | WebsiteGroupBy | CreateContactFormRequestPayload | CreateContentPayload | CreateRolePayload | CreateUserPayload | CreateWebsitePayload | DeleteContactFormRequestPayload | DeleteContentPayload | DeleteFilePayload | DeleteRolePayload | DeleteUserPayload | DeleteWebsitePayload | UpdateContactFormRequestPayload | UpdateContentPayload | UpdateRolePayload | UpdateUserPayload | UpdateWebsitePayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
   createContactFormRequest?: Maybe<CreateContactFormRequestPayload>;
   createContent?: Maybe<CreateContentPayload>;
-  createContentLocalization: Content;
   /** Create a new role */
   createRole?: Maybe<CreateRolePayload>;
   /** Create a new user */
@@ -803,11 +769,6 @@ export type MutationCreateContactFormRequestArgs = {
 
 export type MutationCreateContentArgs = {
   input?: Maybe<CreateContentInput>;
-};
-
-
-export type MutationCreateContentLocalizationArgs = {
-  input: UpdateContentInput;
 };
 
 
@@ -1048,7 +1009,6 @@ export type QueryContentArgs = {
 
 export type QueryContentsArgs = {
   limit?: Maybe<Scalars['Int']>;
-  locale?: Maybe<Scalars['String']>;
   publicationState?: Maybe<PublicationState>;
   sort?: Maybe<Scalars['String']>;
   start?: Maybe<Scalars['Int']>;
@@ -1058,7 +1018,6 @@ export type QueryContentsArgs = {
 
 export type QueryContentsConnectionArgs = {
   limit?: Maybe<Scalars['Int']>;
-  locale?: Maybe<Scalars['String']>;
   sort?: Maybe<Scalars['String']>;
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
@@ -1907,8 +1866,6 @@ export type EditContentInput = {
   button?: Maybe<EditComponentAtomsButtonInput>;
   created_by?: Maybe<Scalars['ID']>;
   description?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-  localizations?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   sections?: Maybe<Array<Maybe<EditComponentOrganismsSectionInput>>>;
   slug?: Maybe<Scalars['String']>;
@@ -1941,6 +1898,7 @@ export type EditEmailTemplateInput = {
   design?: Maybe<Scalars['JSON']>;
   enabled?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
+  sourceCodeToTemplateId?: Maybe<Scalars['Int']>;
   subject?: Maybe<Scalars['String']>;
   tags?: Maybe<Scalars['JSON']>;
   updated_by?: Maybe<Scalars['ID']>;
@@ -1964,13 +1922,6 @@ export type EditFileInput = {
   updated_by?: Maybe<Scalars['ID']>;
   url?: Maybe<Scalars['String']>;
   width?: Maybe<Scalars['Int']>;
-};
-
-export type EditLocaleInput = {
-  code?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  name?: Maybe<Scalars['String']>;
-  updated_by?: Maybe<Scalars['ID']>;
 };
 
 export type EditPostInput = {

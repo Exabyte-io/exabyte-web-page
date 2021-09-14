@@ -38,13 +38,7 @@ const Customer: FC = () => {
         <div className='customer-content-carousel-wrapper'>
           <div className='customer-content-carousel-slide-number'>0{slideNumber}</div>
 
-          <Carousel
-            ref={carousel}
-            afterChange={onCarouselChange}
-            dots={false}
-            infinite={false}
-            className={'customer-content-carousel'}
-          >
+          <Carousel ref={carousel} afterChange={onCarouselChange} dots={false} infinite={false} className={'customer-content-carousel'}>
             {content?.sections?.map(slide => (
               <div className={'customer-content-carousel-slide'}>
                 <div className='customer-content-carousel-slide-content'>
