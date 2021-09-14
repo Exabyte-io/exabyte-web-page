@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
         host: env('DATABASE_HOST', 'bndigital-postgresql.production.svc.cluster.local'),
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'staging'),
-        schema: env('DATABASE_SCHEMA', 'bndigital'),
+        schema: env('DATABASE_SCHEMA', 'exabyte'),
         username: env('DATABASE_USERNAME', 'bn'),
         password: env('DATABASE_PASSWORD'),
       },

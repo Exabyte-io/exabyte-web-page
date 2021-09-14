@@ -1,14 +1,7 @@
 import { FC } from 'react'
 import { Button, Form, FormProps, Input, message, Select } from 'antd'
 import { ValidateMessages } from 'rc-field-form/lib/interface'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { useCreateContactFormRequestMutation, useCountriesQuery, ContactFormRequestInput } from '../../graphql'
-
-interface countries {
-  name: string
-  id: number
-}
 
 const formProps: FormProps = {
   labelCol: { span: 8 },
@@ -40,9 +33,7 @@ const ContactForm: FC = () => {
       .then(() =>
         createContactFormRequest({ variables: { input: { data } } })
           .then(
-            (result: {
-              data: { createContactFormRequest: { contactFormRequest: { firstName: string; email: string } } }
-            }) =>
+            result =>
               result?.data &&
               message.success(
                 {
@@ -52,7 +43,7 @@ const ContactForm: FC = () => {
                 2000,
               ),
           )
-          .catch((reason: never) =>
+          .catch(reason =>
             messageApi.error(
               {
                 content: `Error sending your request: ${reason}`,
@@ -82,15 +73,16 @@ const ContactForm: FC = () => {
           placeholder='Search to Select'
           optionFilterProp='children'
           filterOption={(input, option) => option?.children?.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-          filterSort={(optionA, optionB) =>
-            optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-          }
+          filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}
         >
-          {data?.countries?.map(({ id, name }: countries) => (
-            <Select.Option key={id} value={id}>
-              {name}
-            </Select.Option>
-          ))}
+          {data?.countries?.map(
+            it =>
+              it && (
+                <Select.Option key={it.id} value={it.id}>
+                  {it.name}
+                </Select.Option>
+              ),
+          )}
         </Select>
       </Form.Item>
       <Form.Item name={'message'} label='Message' rules={[{ required: false, type: 'string' }]}>

@@ -2,9 +2,9 @@ import { FC, useState } from 'react'
 import './NewsCard.less'
 import { useMediaQuery } from 'react-responsive'
 import ReactMarkdown from 'react-markdown'
-import { BlogPost } from '../../../../../graphql'
+import { PostFragment } from '../../../../../graphql'
 
-const NewsCard: FC<BlogPost> = ({ cover, section, text, subtitle, name }) => {
+const NewsCard: FC<PostFragment> = ({ cover, section, text, subtitle, name }) => {
   const [isReadMore, setIsReadMore] = useState<boolean>(false)
   const md = useMediaQuery({ minWidth: 768 })
 
@@ -36,9 +36,9 @@ const NewsCard: FC<BlogPost> = ({ cover, section, text, subtitle, name }) => {
 
       <div className='more-content' style={isReadMore ? { display: 'block' } : { display: 'none' }}>
         <div className='paragraphs'>
-          <p className='paragraph'>
+          <div className='paragraph'>
             <ReactMarkdown children={text ?? ''} />
-          </p>
+          </div>
         </div>
         <div className='read-less read' onClick={() => setIsReadMore(false)}>
           Read less

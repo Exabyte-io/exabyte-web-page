@@ -7,13 +7,7 @@ const Content = createContext({})
 const CMS: FC = ({ children }) => {
   const domain = 'enfabrica'
   const { data, loading } = useWebsiteQuery({ variables: { domain } })
-  return loading ? (
-    <Loader />
-  ) : data?.website ? (
-    <Content.Provider value={data.website}>{children}</Content.Provider>
-  ) : (
-    <>{children}</>
-  )
+  return loading ? <Loader /> : data?.website ? <Content.Provider value={data.website}>{children}</Content.Provider> : <>{children}</>
 }
 
 const useContent: () => ContentQuery = () => useContext(Content)

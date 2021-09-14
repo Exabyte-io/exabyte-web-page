@@ -8,21 +8,20 @@ helmDefaults:
   cleanupOnFail: true
 
 environments:
+  default:
+    values:
+      - imageRepository: dcr.bndigital.dev/exabyte
   staging:
-    values: [ ]
+    values:
+      - imageRepository: dcr.bndigital.dev/exabyte
 
 releases:
   - name: exabyte-website
     namespace: '{{ .Environment.Name }}'
     chart: bndigital/nodejs
-    labels:
-      app: website
     values:
-      - image: '{{ env "IMAGE_REPOSITORY" | default "dcr.bndigital.dev/app" }}/website:{{ env "IMAGE_TAG" | default "latest" }}'
+      - image: '{{ .Values.imageRepository }}/website:{{ env "GITHUB_SHA" | default "latest" }}'
         imagePullSecrets: [ container-registry ]
-        vcs:
-          branch: '{{ env "GITHUB_REF" | default "latest" }}'
-          commit: '{{ env "GITHUB_SHA" | default "unknown" }}'
         ingress:
           host: exabyte.bndigital.dev
           proxy:
@@ -34,14 +33,11 @@ releases:
   - name: exabyte-cms
     namespace: '{{ .Environment.Name }}'
     chart: bndigital/nodejs
-    installed: true
-    labels:
-      app: cms
     values:
-      - image: '{{ env "IMAGE_REPOSITORY" | default "dcr.bndigital.dev/app" }}/cms:{{ env "IMAGE_TAG" | default "latest" }}'
+      - image: '{{ .Values.imageRepository }}/cms:{{ env "GITHUB_SHA" | default "latest" }}'
         imagePullSecrets: [ container-registry ]
         secrets: [ backend-services ]
         configMaps: [ backend-services ]
-        vcs:
-          branch: '{{ env "GITHUB_REF" | default "latest" }}'
-          commit: '{{ env "GITHUB_SHA" | default "unknown" }}'
+        app:
+          env:
+            DATABASE_CLIENT: sqlite

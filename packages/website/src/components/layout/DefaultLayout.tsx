@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, Suspense, useState } from 'react'
 import { Button, Col, Layout, Row, Space, Typography } from 'antd'
 import { Logo } from '../logo/Logo'
 import { TopNavigation } from '../menu/TopNavigation'
@@ -9,6 +9,7 @@ import { TouchForm } from '../form/TouchForm'
 import './DefaultLayout.less'
 import CloseIcon from './images/close-icon.svg'
 import BurgerIcon from './images/burger-icon.svg'
+import { Loader } from '../../containers'
 
 const DefaultLayout: FC = () => {
   // const md = useMediaQuery({ minWidth: '768px' })
@@ -75,13 +76,7 @@ const DefaultLayout: FC = () => {
             {xl && (
               <Row align={'middle'} wrap={false}>
                 <Col>
-                  <Button
-                    style={{ color: '#fff' }}
-                    size={'large'}
-                    block
-                    type={'link'}
-                    href={'https://platform.exabyte.io/login'}
-                  >
+                  <Button style={{ color: '#fff' }} size={'large'} block type={'link'} href={'https://platform.exabyte.io/login'}>
                     Sign In
                   </Button>
                 </Col>
@@ -103,7 +98,9 @@ const DefaultLayout: FC = () => {
       </Layout.Header>
 
       <Layout.Content style={{ width: '100%', minHeight: 'unset' }}>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </Layout.Content>
 
       <Layout.Footer>
@@ -127,7 +124,6 @@ const DefaultLayout: FC = () => {
               <BottomNavigation />
             </Col>
           </Row>
-
           <Typography.Paragraph className={'all-rights'}>
             ©{new Date().getFullYear()} Exabyte Inc. All rights reserved.
           </Typography.Paragraph>
