@@ -4,8 +4,8 @@ import logoSrc from './Logo.svg'
 import './Logo.less'
 
 const Logo: FC = () => (
-  <Link to={'/'}>
-    <img alt={'Matera'} src={logoSrc} className={'logo'} />
+  <Link to={'/'} className={'logo'}>
+    <img alt={'Matera'} src={logoSrc} />
   </Link>
 )
 

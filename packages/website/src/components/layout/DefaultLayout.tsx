@@ -86,6 +86,7 @@ const DefaultLayout: FC = () => {
                     type={'primary'}
                     size={'large'}
                     href={'https://platform.exabyte.io/login'}
+                    style={{ padding: 0 }}
                   >
                     Sign Up
                   </Button>
