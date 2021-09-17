@@ -1,0 +1,70 @@
+@import 'src/styles/variables';
+
+.title {
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding-bottom: 54px;
+  }
+
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+      padding: 48px 20px 0;
+    }
+
+    @media (min-width: 768px) {
+      padding-top: 120px;
+    }
+
+    &-title {
+      color: @secondary-color;
+      font-weight: 600;
+      font-size: 48px;
+      font-family: @secondary-font;
+      font-style: normal;
+      line-height: 60px;
+      @media (max-width: 768px) {
+        margin-bottom: 24px !important;
+      }
+
+      @media (min-width: 768px) {
+        margin-bottom: 96px !important;
+        font-size: 72px;
+        line-height: 90px;
+      }
+    }
+
+    &-description {
+      color: @secondary-color;
+      font-weight: normal;
+      font-size: 16px;
+      font-family: @primary-font;
+      font-style: normal;
+      line-height: 24px;
+
+      @media (min-width: 768px) {
+        max-width: 883px;
+        font-size: 22px;
+        line-height: 40px;
+      }
+    }
+  }
+
+  &-bg-lg {
+    @media (max-width: 768px) {
+      display: none;
+    }
+    margin-bottom: 100px;
+  }
+
+  &-bg-mb {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
