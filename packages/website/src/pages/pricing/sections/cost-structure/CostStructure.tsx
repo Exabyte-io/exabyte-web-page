@@ -21,11 +21,11 @@ export const CostStructure: FC = () => {
       <div className={'container'}>
         <Row gutter={{ sm: 0, md: 151 }}>
           {content?.sections?.map(it => (
-            <Col sm={24} md={12}>
+            <Col sm={24} md={8}>
               <article className={'item'}>
                 <div className={'number'}>
                   <span>{it?.title} </span>
-                  <span className={'cost-title'}>{it?.subTitle}</span>
+                  {/*<span className={'cost-title'}>{it?.subTitle}</span>*/}
                 </div>
                 <div className={'belief'}>{it?.description}</div>
               </article>
