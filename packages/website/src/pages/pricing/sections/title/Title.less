@@ -13,12 +13,17 @@
     left: 50%;
     transform: translateX(-50%);
 
+    @media (max-width: 1024px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
     @media (max-width: 767px) {
-      padding: 48px 20px 0;
+      padding-top: 48px;
     }
 
     @media (min-width: 768px) {
-      padding: 120px 20px 0;
+      padding-top: 120px;
     }
 
     &-title {

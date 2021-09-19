@@ -94,7 +94,11 @@ const DefaultLayout: FC = () => {
               </Row>
             )}
           </Col>
-          <Col> {!xl && <img src={BurgerIcon} alt='' onClick={() => setIsOpen(true)} />}</Col>
+          {!xl && (
+            <Col>
+              <img src={BurgerIcon} alt='' onClick={() => setIsOpen(true)} />
+            </Col>
+          )}
         </Row>
       </Layout.Header>
 

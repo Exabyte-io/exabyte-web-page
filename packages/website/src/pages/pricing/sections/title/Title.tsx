@@ -14,15 +14,6 @@ export const Title: FC = () => {
   const content = data?.content
 
   return (
-    // <section className={'title-section'}>
-    //   <Typography.Title className={'page-title'}>{content?.title}</Typography.Title>
-    //   <p className={'subtitle'} style={{ maxWidth: 880 }}>
-    //     {content?.description}
-    //   </p>
-    //   <p className={'content'} style={{ paddingRight: 170 }}>
-    //     {content?.subtitle}
-    //   </p>
-    // </section>
     <section className={'title'}>
       <div className={'container title-content'}>
         <Typography.Paragraph className={'title-content-title'}>{content?.title}</Typography.Paragraph>
