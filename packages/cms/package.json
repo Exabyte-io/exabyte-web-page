@@ -5,8 +5,9 @@
   "private": true,
   "license": "proprietary",
   "scripts": {
-    "build": "vault-env && strapi build --clean",
+    "build": "strapi build --clean",
     "run": "strapi start",
+    "env": "vault-env",
     "start": "vault-env && strapi develop"
   },
   "dependencies": {
@@ -20,7 +21,7 @@
     "strapi-plugin-content-manager": "^3.6.8",
     "strapi-plugin-content-type-builder": "^3.6.8",
     "strapi-plugin-email": "^3.6.8",
-    "strapi-plugin-email-designer": "^1.1.6",
+    "strapi-plugin-email-designer": "^1.1.7",
     "strapi-plugin-graphql": "^3.6.8",
     "strapi-plugin-import-export-content": "^0.4.1",
     "strapi-plugin-responsive-image": "^0.5.0",

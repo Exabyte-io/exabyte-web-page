@@ -51,8 +51,11 @@
     "cms": "yarn workspace @exabyte/cms run start",
     "website": "yarn workspace @exabyte/website run start",
     "upgrade": "yarn up '*'",
+    "env": "yarn workspaces foreaach run env",
+    "build": "yarn workspaces foreaach run build",
     "fix": "prettier --write packages/*/src && eslint --fix packages/*/src && stylelint --fix packages/*/src/**/*.less",
     "lint": "prettier --check packages/*/src && eslint packages/*/src && stylelint --fix packages/*/src/**/*.less",
     "start": "concurrently 'yarn:generate' 'yarn:strapi' 'yarn:website'"
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }

@@ -3,32 +3,30 @@ apiVersion: skaffold/v2beta22
 kind: Config
 build:
   artifacts:
-    - image: website
-      context: packages/website
     - image: cms
-      context: packages/cms
       docker:
+        target: cms
         buildArgs:
-          ENV: '{{ .ENV }}'
+          profile: "{{ .SKAFFOLD_PROFILE }}"
+          token: "{{ .GITHUB_TOKEN }}"
+          endpoint: "{{ .VAULT_ENDPOINT }}"
+    - image: website
+      docker:
+        target: website
+        buildArgs:
+          profile: "{{ .SKAFFOLD_PROFILE }}"
+          token: "{{ .GITHUB_TOKEN }}"
+          endpoint: "{{ .VAULT_ENDPOINT }}"
   tagPolicy:
     sha256: { }
   local:
+    concurrency: 0
     push: true
     useBuildkit: true
-    concurrency: 0
-test:
-  - image: website
-    structureTests:
-      - container-structure-test.yaml
-  - image: cms
-    structureTests:
-      - container-structure-test.yaml
 profiles:
   - name: staging
-    activation:
-      - kubeContext: do-fra1-bndigital
     build:
       tagPolicy:
         gitCommit:
-          variant: CommitSha
           ignoreChanges: true
+          variant: CommitSha
