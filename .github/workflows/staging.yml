@@ -36,13 +36,13 @@ jobs:
           method: github
           githubToken: ${{ secrets.gh_token }}
           secrets: |
-            infrastructure/data/bn-digital/staging/kubernetes cluster | kubernetes_cluster ;
-            infrastructure/data/bn-digital/staging/digitalocean/api token | digitalocean_api_token ;
-            infrastructure/data/bn-digital/staging/registry docker-url | docker_url ;
-            infrastructure/data/bn-digital/staging/registry docker-username | docker_username ;
-            infrastructure/data/bn-digital/staging/registry docker-password | docker_password ;
-            infrastructure/data/bn-digital/staging/sonarqube host | sonarqube_host ;
-            infrastructure/data/bn-digital/staging/sonarqube token | sonarqube_token ;
+            infrastructure/data/bndigital/staging/kubernetes cluster | kubernetes_cluster ;
+            infrastructure/data/bndigital/staging/digitalocean/api token | digitalocean_api_token ;
+            infrastructure/data/bndigital/staging/registry docker-url | docker_url ;
+            infrastructure/data/bndigital/staging/registry docker-username | docker_username ;
+            infrastructure/data/bndigital/staging/registry docker-password | docker_password ;
+            infrastructure/data/bndigital/staging/sonarqube host | sonarqube_host ;
+            infrastructure/data/bndigital/staging/sonarqube token | sonarqube_token ;
 
       - name: Run Sonar scanner
         uses: kitabisa/sonarqube-action@master
