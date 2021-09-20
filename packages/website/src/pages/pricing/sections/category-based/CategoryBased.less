@@ -24,17 +24,44 @@
 
   .category-row {
     width: 100%;
+
+    @media (min-width: 992px) {
+      justify-content: center;
+    }
+
+    &-title {
+      color: @text-title;
+      font-weight: normal;
+      font-size: 13px;
+      font-family: @primary-font;
+      font-style: normal;
+      line-height: 24px;
+
+      @media (min-width: 992px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
   }
 
   .category-number {
     color: @text-color;
     font-weight: 700;
-    font-size: 42px;
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (min-width: 992px) {
+      font-size: 42px;
+    }
   }
 
   .category-info {
     color: @text-color;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 14px;
+
+    @media (min-width: 992px) {
+      font-size: 22px;
+    }
   }
 }
