@@ -16,14 +16,15 @@ const ClusterPricing: FC = () => {
 
   return (
     <Layout className={'section cluster'}>
-      {/*<img src={Background} alt='' className='cluster-background-img' />*/}
-      <img src={Image} alt={''} className={'cluster-img'} />
-      <div className='cluster-content'>
-        <Typography.Paragraph className={'cluster-content-title'}>{content?.title}</Typography.Paragraph>
-        <div className='cluster-content-links'>
-          <p className='cluster-content-p'>
-            <ReactMarkdown children={content?.text ?? ''} />
-          </p>
+      <div className={'container cluster-wrapper'}>
+        <img src={Image} alt={''} className={'cluster-img'} />
+        <div className='cluster-content'>
+          <Typography.Paragraph className={'cluster-content-title'}>{content?.title}</Typography.Paragraph>
+          <div className='cluster-content-links'>
+            <p className='cluster-content-p'>
+              <ReactMarkdown children={content?.text ?? ''} />
+            </p>
+          </div>
         </div>
       </div>
     </Layout>
