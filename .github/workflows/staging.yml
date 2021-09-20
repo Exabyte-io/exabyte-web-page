@@ -15,9 +15,8 @@ on:
       - 'packages/cms/extensions/**/*'
       - 'packages/website/src/**/*'
 
-concurrency:
-  cancel-in-progress: true
-  group: deploy
+env:
+  SKAFFOLD_PROFILE: staging
 
 jobs:
   deploy:
@@ -37,14 +36,13 @@ jobs:
           method: github
           githubToken: ${{ secrets.gh_token }}
           secrets: |
-            infrastructure/data/staging/digitalocean/kubernetes cluster | kubernetes_cluster ;
-            infrastructure/data/staging/digitalocean/kubernetes namespace | kubernetes_namespace ;
-            infrastructure/data/staging/digitalocean/api token | digitalocean_api_token ;
-            infrastructure/data/staging/harbor-registry/docker url | docker_url ;
-            infrastructure/data/staging/harbor-registry/docker username | docker_username ;
-            infrastructure/data/staging/harbor-registry/docker password | docker_password ;
-            infrastructure/data/staging/sonarqube host | sonarqube_host ;
-            infrastructure/data/staging/sonarqube token | sonarqube_token ;
+            infrastructure/data/bn-digital/staging/kubernetes cluster | kubernetes_cluster ;
+            infrastructure/data/bn-digital/staging/digitalocean/api token | digitalocean_api_token ;
+            infrastructure/data/bn-digital/staging/registry docker-url | docker_url ;
+            infrastructure/data/bn-digital/staging/registry docker-username | docker_username ;
+            infrastructure/data/bn-digital/staging/registry docker-password | docker_password ;
+            infrastructure/data/bn-digital/staging/sonarqube host | sonarqube_host ;
+            infrastructure/data/bn-digital/staging/sonarqube token | sonarqube_token ;
 
       - name: Run Sonar scanner
         uses: kitabisa/sonarqube-action@master
@@ -68,13 +66,13 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save ${{ steps.secrets.outputs.kubernetes_cluster }} --set-current-context
 
       - name: Build Skaffold artifacts
-        uses: hiberbee/github-action-skaffold@1.6.0
+        uses: hiberbee/github-action-skaffold@1.7.0
         with:
           command: build
           default-repo: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
 
       - name: Release Helm charts
-        uses: hiberbee/github-action-helm@1.3.0
+        uses: hiberbee/github-action-helm@1.4.0
         with:
           helmfile-command: apply
-          environment: ${{ steps.secrets.outputs.kubernetes_namespace }}
+          environment: ${{ env.SKAFFOLD_PROFILE }}
