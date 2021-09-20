@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { Layout, Typography } from 'antd'
-import Background from './images/Rectangle_252.svg'
-// import Molecules from './images/Molecules.svg'
+// import Background from './images/Rectangle_252.svg'
 import Image from './images/image.svg'
 import './ClusterPricing.less'
 import { useContentQuery } from '../../../../graphql'
@@ -17,7 +16,7 @@ const ClusterPricing: FC = () => {
 
   return (
     <Layout className={'section cluster'}>
-      <img src={Background} alt='' className='cluster-background-img' />
+      {/*<img src={Background} alt='' className='cluster-background-img' />*/}
       <img src={Image} alt={''} className={'cluster-img'} />
       <div className='cluster-content'>
         <Typography.Paragraph className={'cluster-content-title'}>{content?.title}</Typography.Paragraph>
