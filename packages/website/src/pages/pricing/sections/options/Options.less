@@ -1,24 +1,37 @@
 @import 'src/styles/index';
 
 .option-section {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1180px;
-  margin: 140px auto;
+  padding: 98px 20px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 140px 0;
+  }
 }
 
 .option-title {
   color: @text-title;
   font-weight: 400;
   font-size: 22px;
+  line-height: 22px;
+  line-height: 32px;
   text-transform: uppercase;
+
+  @media (max-width: 991px) {
+    margin-bottom: 29px;
+  }
 
   @media (min-width: 992px) {
     display: flex;
     max-width: 390px;
 
     img {
+      width: 60px;
+      height: 60px;
       margin-right: 25px;
     }
   }
@@ -29,4 +42,5 @@
   color: @text-title;
   font-weight: 400;
   font-size: 16px;
+  line-height: 30px;
 }
