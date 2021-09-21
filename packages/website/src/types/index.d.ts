@@ -4,7 +4,7 @@ declare namespace App {
   }
 }
 
-export type NewsCardType = {
+type NewsCardType = {
   image: string
   imageMb: string
   title: string
@@ -13,18 +13,18 @@ export type NewsCardType = {
   paragraphs: string[]
 }
 
-export type PublicationsDropdown = {
+type PublicationsDropdown = {
   title: string
   paragraphs: string[]
   tags: string[]
   image: string
 }
 
-type communitySlide = {
+type CommunitySlide = {
   paragraphs: string[]
 }
 
-export type communityCarousel = {
+type CommunityCarousel = {
   title: string
-  carouselSlides: communitySlide[]
+  carouselSlides: CommunitySlide[]
 }

@@ -1,11 +1,10 @@
 import { FC, useRef, useState } from 'react'
 import { Carousel } from 'antd'
-import { communityCarousel } from '../../types'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
 import './CaseStudiesCarousel.less'
 import { CarouselRef } from 'antd/lib/carousel'
 
-const CaseStudiesCarousel: FC<communityCarousel> = ({ title, carouselSlides }) => {
+const CaseStudiesCarousel: FC<CommunityCarousel> = ({ title, carouselSlides }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
   const carousel = useRef<CarouselRef>(null)
 

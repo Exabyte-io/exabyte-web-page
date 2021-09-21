@@ -1,0 +1,53 @@
+{
+  "listeners": {
+    "*:8000": {
+      "pass": "routes"
+    },
+    "*:1337": {
+      "pass": "applications/cms"
+    }
+  },
+  "routes": [
+    {
+      "match": {
+        "uri": [
+          "/admin",
+          "/graphql",
+          "/auth",
+          "/import-export-content",
+          "/callback",
+          "/connect",
+          "/content-manager",
+          "content-type-builder",
+          "/email",
+          "/email-designer",
+          "/entity-relationship-chart",
+          "/i18n",
+          "/register",
+          "/responsive-image",
+          "/users-permissions",
+          "/upload",
+          "/uploads"
+        ]
+      },
+      "action": {
+        "proxy": "http://127.0.0.1:1337"
+      }
+    },
+    {
+      "action": {
+        "share": "/usr/local/src/packages/website/"
+      }
+    }
+  ],
+  "applications": {
+    "cms": {
+      "type": "external",
+      "working_directory": "/usr/local/src/packages/cms/",
+      "user": "unit",
+      "group": "unit",
+      "executable": "/usr/bin/env",
+      "arguments": ["node", "node_modules/.bin/strapi", "start"]
+    }
+  }
+}

@@ -8,7 +8,7 @@ import LeftNotActiveArrow from '../Customer/images/left-not-active-arrow.svg'
 import LeftActiveArrow from '../Customer/images/left-active-arrow.svg'
 import RightNotActiveArrow from '../Customer/images/right-not-active-arrow.svg'
 import RightActiveArrow from '../Customer/images/right-active-arrow.svg'
-import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import CustomBackTop from '../../../../components/back/CustomBackTop'
 import { NavLink } from 'react-router-dom'
 import { useContentQuery } from '../../../../graphql'
 

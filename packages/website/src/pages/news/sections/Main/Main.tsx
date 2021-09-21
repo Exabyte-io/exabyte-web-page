@@ -9,7 +9,7 @@ import DecorationRightBottom from './images/decoration-right-bottom.svg'
 import DecorationRightBottomMb from './images/decoration-right-bottom-mb.svg'
 import './Main.less'
 import { useMediaQuery } from 'react-responsive'
-import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import CustomBackTop from '../../../../components/back/CustomBackTop'
 import { usePostsQuery } from '../../../../graphql'
 
 /*const newsCards: NewsCardType[] = [

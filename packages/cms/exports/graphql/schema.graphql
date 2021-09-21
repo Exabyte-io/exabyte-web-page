@@ -374,46 +374,6 @@ type deleteWebsitePayload {
   website: Website
 }
 
-type EmailDesignerEmailTemplate {
-  id: ID!
-  created_at: DateTime!
-  updated_at: DateTime!
-  sourceCodeToTemplateId: Int
-  design: JSON
-  name: String
-  subject: String
-  bodyHtml: String
-  bodyText: String
-  enabled: Boolean
-  tags: JSON
-}
-
-input EmailTemplateInput {
-  sourceCodeToTemplateId: Int
-  design: JSON
-  name: String
-  subject: String
-  bodyHtml: String
-  bodyText: String
-  enabled: Boolean
-  tags: JSON
-  created_by: ID
-  updated_by: ID
-}
-
-input editEmailTemplateInput {
-  sourceCodeToTemplateId: Int
-  design: JSON
-  name: String
-  subject: String
-  bodyHtml: String
-  bodyText: String
-  enabled: Boolean
-  tags: JSON
-  created_by: ID
-  updated_by: ID
-}
-
 type UploadFile {
   id: ID!
   created_at: DateTime!
@@ -998,114 +958,6 @@ input editPostInput {
   updated_by: ID
 }
 
-type IntlCountry {
-  id: ID!
-  name: String!
-  code: String!
-}
-
-type IntlCountryConnection {
-  values: [IntlCountry]
-  groupBy: IntlCountryGroupBy
-  aggregate: IntlCountryAggregator
-}
-
-type IntlCountryAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type IntlCountryGroupBy {
-  id: [IntlCountryConnectionId]
-  name: [IntlCountryConnectionName]
-  code: [IntlCountryConnectionCode]
-}
-
-type IntlCountryConnectionId {
-  key: ID
-  connection: IntlCountryConnection
-}
-
-type IntlCountryConnectionName {
-  key: String
-  connection: IntlCountryConnection
-}
-
-type IntlCountryConnectionCode {
-  key: String
-  connection: IntlCountryConnection
-}
-
-input CountryInput {
-  name: String!
-  code: String!
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editCountryInput {
-  name: String
-  code: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-type IntlCurrency {
-  id: ID!
-  name: String!
-  code: String!
-}
-
-type IntlCurrencyConnection {
-  values: [IntlCurrency]
-  groupBy: IntlCurrencyGroupBy
-  aggregate: IntlCurrencyAggregator
-}
-
-type IntlCurrencyAggregator {
-  count: Int
-  totalCount: Int
-}
-
-type IntlCurrencyGroupBy {
-  id: [IntlCurrencyConnectionId]
-  name: [IntlCurrencyConnectionName]
-  code: [IntlCurrencyConnectionCode]
-}
-
-type IntlCurrencyConnectionId {
-  key: ID
-  connection: IntlCurrencyConnection
-}
-
-type IntlCurrencyConnectionName {
-  key: String
-  connection: IntlCurrencyConnection
-}
-
-type IntlCurrencyConnectionCode {
-  key: String
-  connection: IntlCurrencyConnection
-}
-
-input CurrencyInput {
-  name: String!
-  code: String!
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
-input editCurrencyInput {
-  name: String
-  code: String
-  published_at: DateTime
-  created_by: ID
-  updated_by: ID
-}
-
 type ComponentAtomsButton {
   id: ID!
   link: ComponentAtomsLink
@@ -1326,7 +1178,7 @@ input editComponentOrganismsSectionInput {
   slug: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Employee | ContactFormRequest | ContactFormRequestConnection | ContactFormRequestAggregator | ContactFormRequestAggregatorSum | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorMax | ContactFormRequestGroupBy | ContactFormRequestConnectionId | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | createContactFormRequestPayload | updateContactFormRequestPayload | deleteContactFormRequestPayload | Content | ContentConnection | ContentAggregator | ContentGroupBy | ContentConnectionId | ContentConnectionTitle | ContentConnectionDescription | ContentConnectionButton | ContentConnectionSlug | ContentConnectionSubtitle | createContentPayload | updateContentPayload | deleteContentPayload | Website | WebsiteConnection | WebsiteAggregator | WebsiteGroupBy | WebsiteConnectionId | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | createWebsitePayload | updateWebsitePayload | deleteWebsitePayload | EmailDesignerEmailTemplate | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | createUserPayload | updateUserPayload | deleteUserPayload | BlogCategory | BlogCategoryConnection | BlogCategoryAggregator | BlogCategoryGroupBy | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogPost | BlogPostConnection | BlogPostAggregator | BlogPostGroupBy | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionText | BlogPostConnectionSlug | BlogPostConnectionSubtitle | IntlCountry | IntlCountryConnection | IntlCountryAggregator | IntlCountryGroupBy | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryConnectionCode | IntlCurrency | IntlCurrencyConnection | IntlCurrencyAggregator | IntlCurrencyGroupBy | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyConnectionCode | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Employee | ContactFormRequest | ContactFormRequestConnection | ContactFormRequestAggregator | ContactFormRequestAggregatorSum | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorMax | ContactFormRequestGroupBy | ContactFormRequestConnectionId | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | createContactFormRequestPayload | updateContactFormRequestPayload | deleteContactFormRequestPayload | Content | ContentConnection | ContentAggregator | ContentGroupBy | ContentConnectionId | ContentConnectionTitle | ContentConnectionDescription | ContentConnectionButton | ContentConnectionSlug | ContentConnectionSubtitle | createContentPayload | updateContentPayload | deleteContentPayload | Website | WebsiteConnection | WebsiteAggregator | WebsiteGroupBy | WebsiteConnectionId | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | createWebsitePayload | updateWebsitePayload | deleteWebsitePayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | createUserPayload | updateUserPayload | deleteUserPayload | BlogCategory | BlogCategoryConnection | BlogCategoryAggregator | BlogCategoryGroupBy | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogPost | BlogPostConnection | BlogPostAggregator | BlogPostGroupBy | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionText | BlogPostConnectionSlug | BlogPostConnectionSubtitle | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection
 
 input InputID {
   id: ID!
@@ -1372,12 +1224,6 @@ type Query {
   post(id: ID!, publicationState: PublicationState): BlogPost
   posts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [BlogPost]
   postsConnection(sort: String, limit: Int, start: Int, where: JSON): BlogPostConnection
-  country(id: ID!, publicationState: PublicationState): IntlCountry
-  countries(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [IntlCountry]
-  countriesConnection(sort: String, limit: Int, start: Int, where: JSON): IntlCountryConnection
-  currency(id: ID!, publicationState: PublicationState): IntlCurrency
-  currencies(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [IntlCurrency]
-  currenciesConnection(sort: String, limit: Int, start: Int, where: JSON): IntlCurrencyConnection
   me: UsersPermissionsMe
   postBySlug(slug: String!): BlogPost
   categoryBySlug(slug: String!): BlogCategory

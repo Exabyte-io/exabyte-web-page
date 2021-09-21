@@ -552,50 +552,6 @@ export type ContentInput = {
   updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type CountryInput = {
-  code: Scalars['String'];
-  created_by?: Maybe<Scalars['ID']>;
-  name: Scalars['String'];
-  published_at?: Maybe<Scalars['DateTime']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type CurrencyInput = {
-  code: Scalars['String'];
-  created_by?: Maybe<Scalars['ID']>;
-  name: Scalars['String'];
-  published_at?: Maybe<Scalars['DateTime']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EmailDesignerEmailTemplate = {
-  __typename?: 'EmailDesignerEmailTemplate';
-  bodyHtml?: Maybe<Scalars['String']>;
-  bodyText?: Maybe<Scalars['String']>;
-  created_at: Scalars['DateTime'];
-  design?: Maybe<Scalars['JSON']>;
-  enabled?: Maybe<Scalars['Boolean']>;
-  id: Scalars['ID'];
-  name?: Maybe<Scalars['String']>;
-  sourceCodeToTemplateId?: Maybe<Scalars['Int']>;
-  subject?: Maybe<Scalars['String']>;
-  tags?: Maybe<Scalars['JSON']>;
-  updated_at: Scalars['DateTime'];
-};
-
-export type EmailTemplateInput = {
-  bodyHtml?: Maybe<Scalars['String']>;
-  bodyText?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  design?: Maybe<Scalars['JSON']>;
-  enabled?: Maybe<Scalars['Boolean']>;
-  name?: Maybe<Scalars['String']>;
-  sourceCodeToTemplateId?: Maybe<Scalars['Int']>;
-  subject?: Maybe<Scalars['String']>;
-  tags?: Maybe<Scalars['JSON']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
 export type Employee = {
   __typename?: 'Employee';
   firstName?: Maybe<Scalars['String']>;
@@ -634,97 +590,7 @@ export type InputId = {
   id: Scalars['ID'];
 };
 
-export type IntlCountry = {
-  __typename?: 'IntlCountry';
-  code: Scalars['String'];
-  id: Scalars['ID'];
-  name: Scalars['String'];
-};
-
-export type IntlCountryAggregator = {
-  __typename?: 'IntlCountryAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
-};
-
-export type IntlCountryConnection = {
-  __typename?: 'IntlCountryConnection';
-  aggregate?: Maybe<IntlCountryAggregator>;
-  groupBy?: Maybe<IntlCountryGroupBy>;
-  values?: Maybe<Array<Maybe<IntlCountry>>>;
-};
-
-export type IntlCountryConnectionCode = {
-  __typename?: 'IntlCountryConnectionCode';
-  connection?: Maybe<IntlCountryConnection>;
-  key?: Maybe<Scalars['String']>;
-};
-
-export type IntlCountryConnectionId = {
-  __typename?: 'IntlCountryConnectionId';
-  connection?: Maybe<IntlCountryConnection>;
-  key?: Maybe<Scalars['ID']>;
-};
-
-export type IntlCountryConnectionName = {
-  __typename?: 'IntlCountryConnectionName';
-  connection?: Maybe<IntlCountryConnection>;
-  key?: Maybe<Scalars['String']>;
-};
-
-export type IntlCountryGroupBy = {
-  __typename?: 'IntlCountryGroupBy';
-  code?: Maybe<Array<Maybe<IntlCountryConnectionCode>>>;
-  id?: Maybe<Array<Maybe<IntlCountryConnectionId>>>;
-  name?: Maybe<Array<Maybe<IntlCountryConnectionName>>>;
-};
-
-export type IntlCurrency = {
-  __typename?: 'IntlCurrency';
-  code: Scalars['String'];
-  id: Scalars['ID'];
-  name: Scalars['String'];
-};
-
-export type IntlCurrencyAggregator = {
-  __typename?: 'IntlCurrencyAggregator';
-  count?: Maybe<Scalars['Int']>;
-  totalCount?: Maybe<Scalars['Int']>;
-};
-
-export type IntlCurrencyConnection = {
-  __typename?: 'IntlCurrencyConnection';
-  aggregate?: Maybe<IntlCurrencyAggregator>;
-  groupBy?: Maybe<IntlCurrencyGroupBy>;
-  values?: Maybe<Array<Maybe<IntlCurrency>>>;
-};
-
-export type IntlCurrencyConnectionCode = {
-  __typename?: 'IntlCurrencyConnectionCode';
-  connection?: Maybe<IntlCurrencyConnection>;
-  key?: Maybe<Scalars['String']>;
-};
-
-export type IntlCurrencyConnectionId = {
-  __typename?: 'IntlCurrencyConnectionId';
-  connection?: Maybe<IntlCurrencyConnection>;
-  key?: Maybe<Scalars['ID']>;
-};
-
-export type IntlCurrencyConnectionName = {
-  __typename?: 'IntlCurrencyConnectionName';
-  connection?: Maybe<IntlCurrencyConnection>;
-  key?: Maybe<Scalars['String']>;
-};
-
-export type IntlCurrencyGroupBy = {
-  __typename?: 'IntlCurrencyGroupBy';
-  code?: Maybe<Array<Maybe<IntlCurrencyConnectionCode>>>;
-  id?: Maybe<Array<Maybe<IntlCurrencyConnectionId>>>;
-  name?: Maybe<Array<Maybe<IntlCurrencyConnectionName>>>;
-};
-
-export type Morph = BlogCategory | BlogCategoryAggregator | BlogCategoryConnection | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogCategoryGroupBy | BlogPost | BlogPostAggregator | BlogPostConnection | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionSlug | BlogPostConnectionSubtitle | BlogPostConnectionText | BlogPostGroupBy | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection | ContactFormRequest | ContactFormRequestAggregator | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMax | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorSum | ContactFormRequestConnection | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionId | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | ContactFormRequestGroupBy | Content | ContentAggregator | ContentConnection | ContentConnectionButton | ContentConnectionDescription | ContentConnectionId | ContentConnectionSlug | ContentConnectionSubtitle | ContentConnectionTitle | ContentGroupBy | EmailDesignerEmailTemplate | Employee | IntlCountry | IntlCountryAggregator | IntlCountryConnection | IntlCountryConnectionCode | IntlCountryConnectionId | IntlCountryConnectionName | IntlCountryGroupBy | IntlCurrency | IntlCurrencyAggregator | IntlCurrencyConnection | IntlCurrencyConnectionCode | IntlCurrencyConnectionId | IntlCurrencyConnectionName | IntlCurrencyGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | Website | WebsiteAggregator | WebsiteConnection | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | WebsiteConnectionId | WebsiteGroupBy | CreateContactFormRequestPayload | CreateContentPayload | CreateRolePayload | CreateUserPayload | CreateWebsitePayload | DeleteContactFormRequestPayload | DeleteContentPayload | DeleteFilePayload | DeleteRolePayload | DeleteUserPayload | DeleteWebsitePayload | UpdateContactFormRequestPayload | UpdateContentPayload | UpdateRolePayload | UpdateUserPayload | UpdateWebsitePayload;
+export type Morph = BlogCategory | BlogCategoryAggregator | BlogCategoryConnection | BlogCategoryConnectionId | BlogCategoryConnectionName | BlogCategoryConnectionSlug | BlogCategoryGroupBy | BlogPost | BlogPostAggregator | BlogPostConnection | BlogPostConnectionId | BlogPostConnectionName | BlogPostConnectionSlug | BlogPostConnectionSubtitle | BlogPostConnectionText | BlogPostGroupBy | ComponentAtomsButton | ComponentAtomsEntry | ComponentAtomsLink | ComponentAtomsNumeric | ComponentAtomsParagraph | ComponentAtomsText | ComponentMoleculesMap | ComponentMoleculesMenu | ComponentOrganismsArticle | ComponentOrganismsPage | ComponentOrganismsSection | ContactFormRequest | ContactFormRequestAggregator | ContactFormRequestAggregatorAvg | ContactFormRequestAggregatorMax | ContactFormRequestAggregatorMin | ContactFormRequestAggregatorSum | ContactFormRequestConnection | ContactFormRequestConnectionEmail | ContactFormRequestConnectionFirstName | ContactFormRequestConnectionId | ContactFormRequestConnectionLastName | ContactFormRequestConnectionMessage | ContactFormRequestConnectionRating | ContactFormRequestGroupBy | Content | ContentAggregator | ContentConnection | ContentConnectionButton | ContentConnectionDescription | ContentConnectionId | ContentConnectionSlug | ContentConnectionSubtitle | ContentConnectionTitle | ContentGroupBy | Employee | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionFirstName | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionLastName | UsersPermissionsUserConnectionPhoto | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | Website | WebsiteAggregator | WebsiteConnection | WebsiteConnectionDomain | WebsiteConnectionGoogleAnalyticsCode | WebsiteConnectionId | WebsiteGroupBy | CreateContactFormRequestPayload | CreateContentPayload | CreateRolePayload | CreateUserPayload | CreateWebsitePayload | DeleteContactFormRequestPayload | DeleteContentPayload | DeleteFilePayload | DeleteRolePayload | DeleteUserPayload | DeleteWebsitePayload | UpdateContactFormRequestPayload | UpdateContentPayload | UpdateRolePayload | UpdateUserPayload | UpdateWebsitePayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -923,12 +789,6 @@ export type Query = {
   content?: Maybe<Content>;
   contents?: Maybe<Array<Maybe<Content>>>;
   contentsConnection?: Maybe<ContentConnection>;
-  countries?: Maybe<Array<Maybe<IntlCountry>>>;
-  countriesConnection?: Maybe<IntlCountryConnection>;
-  country?: Maybe<IntlCountry>;
-  currencies?: Maybe<Array<Maybe<IntlCurrency>>>;
-  currenciesConnection?: Maybe<IntlCurrencyConnection>;
-  currency?: Maybe<IntlCurrency>;
   employees: Array<Maybe<Employee>>;
   files?: Maybe<Array<Maybe<UploadFile>>>;
   filesConnection?: Maybe<UploadFileConnection>;
@@ -1021,52 +881,6 @@ export type QueryContentsConnectionArgs = {
   sort?: Maybe<Scalars['String']>;
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
-};
-
-
-export type QueryCountriesArgs = {
-  limit?: Maybe<Scalars['Int']>;
-  publicationState?: Maybe<PublicationState>;
-  sort?: Maybe<Scalars['String']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-};
-
-
-export type QueryCountriesConnectionArgs = {
-  limit?: Maybe<Scalars['Int']>;
-  sort?: Maybe<Scalars['String']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-};
-
-
-export type QueryCountryArgs = {
-  id: Scalars['ID'];
-  publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryCurrenciesArgs = {
-  limit?: Maybe<Scalars['Int']>;
-  publicationState?: Maybe<PublicationState>;
-  sort?: Maybe<Scalars['String']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-};
-
-
-export type QueryCurrenciesConnectionArgs = {
-  limit?: Maybe<Scalars['Int']>;
-  sort?: Maybe<Scalars['String']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-};
-
-
-export type QueryCurrencyArgs = {
-  id: Scalars['ID'];
-  publicationState?: Maybe<PublicationState>;
 };
 
 
@@ -1875,35 +1689,6 @@ export type EditContentInput = {
   updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type EditCountryInput = {
-  code?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  name?: Maybe<Scalars['String']>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditCurrencyInput = {
-  code?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  name?: Maybe<Scalars['String']>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditEmailTemplateInput = {
-  bodyHtml?: Maybe<Scalars['String']>;
-  bodyText?: Maybe<Scalars['String']>;
-  created_by?: Maybe<Scalars['ID']>;
-  design?: Maybe<Scalars['JSON']>;
-  enabled?: Maybe<Scalars['Boolean']>;
-  name?: Maybe<Scalars['String']>;
-  sourceCodeToTemplateId?: Maybe<Scalars['Int']>;
-  subject?: Maybe<Scalars['String']>;
-  tags?: Maybe<Scalars['JSON']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
 export type EditFileInput = {
   alternativeText?: Maybe<Scalars['String']>;
   caption?: Maybe<Scalars['String']>;
@@ -2052,11 +1837,6 @@ export type ContentQueryVariables = Exact<{
 
 
 export type ContentQuery = { __typename?: 'Query', content?: Maybe<{ __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> }> };
-
-export type CountriesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type CountriesQuery = { __typename?: 'Query', countries?: Maybe<Array<Maybe<{ __typename?: 'IntlCountry', id: string, name: string }>>> };
 
 export type CreateContactFormRequestMutationVariables = Exact<{
   input?: Maybe<CreateContactFormRequestInput>;
@@ -2284,47 +2064,6 @@ export function useContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Co
 export type ContentQueryHookResult = ReturnType<typeof useContentQuery>;
 export type ContentLazyQueryHookResult = ReturnType<typeof useContentLazyQuery>;
 export type ContentQueryResult = Apollo.QueryResult<ContentQuery, ContentQueryVariables>;
-export const CountriesDocument = gql`
-    query countries {
-  countries(limit: 250) {
-    id
-    name
-  }
-}
-    `;
-export type CountriesComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<CountriesQuery, CountriesQueryVariables>, 'query'>;
-
-    export const CountriesComponent = (props: CountriesComponentProps) => (
-      <ApolloReactComponents.Query<CountriesQuery, CountriesQueryVariables> query={CountriesDocument} {...props} />
-    );
-    
-
-/**
- * __useCountriesQuery__
- *
- * To run a query within a React component, call `useCountriesQuery` and pass it any options that fit your needs.
- * When your component renders, `useCountriesQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useCountriesQuery({
- *   variables: {
- *   },
- * });
- */
-export function useCountriesQuery(baseOptions?: Apollo.QueryHookOptions<CountriesQuery, CountriesQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, options);
-      }
-export function useCountriesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CountriesQuery, CountriesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<CountriesQuery, CountriesQueryVariables>(CountriesDocument, options);
-        }
-export type CountriesQueryHookResult = ReturnType<typeof useCountriesQuery>;
-export type CountriesLazyQueryHookResult = ReturnType<typeof useCountriesLazyQuery>;
-export type CountriesQueryResult = Apollo.QueryResult<CountriesQuery, CountriesQueryVariables>;
 export const CreateContactFormRequestDocument = gql`
     mutation createContactFormRequest($input: createContactFormRequestInput) {
   createContactFormRequest(input: $input) {

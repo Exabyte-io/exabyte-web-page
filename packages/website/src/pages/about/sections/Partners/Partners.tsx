@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { ActionButton } from '../../../../components/button/ActionButton'
 import './Partners.less'
 import CustomCarousel from '../../components/CustomCarousel'
-import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import CustomBackTop from '../../../../components/back/CustomBackTop'
 import { NavLink } from 'react-router-dom'
 import { useContentQuery } from '../../../../graphql'
 

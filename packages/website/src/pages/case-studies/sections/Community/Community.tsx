@@ -1,13 +1,12 @@
 import { FC } from 'react'
 import './Community.less'
-import { communityCarousel } from '../../../../types'
-import { CaseStudiesCarousel } from '../../../../components/CaseStudiesCarousel/CaseStudiesCarousel'
+import { CaseStudiesCarousel } from '../../../../components/carousel/CaseStudiesCarousel'
 import BackgroundLg from './images/background-lg.svg'
 import BackgroundMb from './images/background-mb.svg'
 import { useMediaQuery } from 'react-responsive'
-import CustomBackTop from '../../../../components/CustomBackTop/CustomBackTop'
+import CustomBackTop from '../../../../components/back/CustomBackTop'
 
-const communityCarousels: communityCarousel[] = [
+const communityCarousels: CommunityCarousel[] = [
   {
     title: 'GLOBAL 2000',
     carouselSlides: [
