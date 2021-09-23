@@ -6,17 +6,9 @@ build:
     - image: cms
       docker:
         target: cms
-        buildArgs:
-          profile: "{{ .SKAFFOLD_PROFILE }}"
-          token: "{{ .GITHUB_TOKEN }}"
-          endpoint: "{{ .VAULT_ENDPOINT }}"
     - image: website
       docker:
         target: website
-        buildArgs:
-          profile: "{{ .SKAFFOLD_PROFILE }}"
-          token: "{{ .GITHUB_TOKEN }}"
-          endpoint: "{{ .VAULT_ENDPOINT }}"
   tagPolicy:
     sha256: { }
   local:
