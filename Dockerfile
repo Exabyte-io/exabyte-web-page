@@ -7,7 +7,6 @@ ARG endpoint=""
 ENV VAULT_ENDPOINT=${endpoint}
 ENV GITHUB_TOKEN=${token}
 RUN yarn \
- && yarn env --dist=".env.${profile}" \
  && yarn build
 
 FROM ghcr.io/bn-digital/docker/nodejs:1.0.0 AS cms
