@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Layout, Typography } from 'antd'
-// import Background from './images/Rectangle_252.svg'
 import Image from './images/image.svg'
 import './ClusterPricing.less'
 import { useContentQuery } from '../../../../graphql'

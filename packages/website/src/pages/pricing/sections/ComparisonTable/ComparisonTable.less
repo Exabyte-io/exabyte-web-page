@@ -1,4 +1,8 @@
+@import 'src/styles/index';
+
 .comparison-table {
+  position: relative;
+
   &-bg-mb {
     @media (min-width: 768px) {
       display: none;
@@ -8,6 +12,97 @@
   &-bg-lg {
     @media (max-width: 767px) {
       display: none;
+    }
+  }
+
+  &-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 263px 0 0;
+    transform: translateX(-50%);
+
+    .title {
+      margin-bottom: 50px;
+      color: @secondary-color;
+      font-weight: bold;
+      font-size: 42px;
+      font-family: @primary-font;
+      font-style: normal;
+      line-height: 90px;
+    }
+
+    .description {
+      margin-bottom: 80px;
+      color: @secondary-color;
+      font-weight: normal;
+      font-size: 22px;
+      font-family: @primary-font;
+      font-style: normal;
+      line-height: 40px;
+    }
+
+    .content-wrapper {
+      &-aside {
+        max-width: 226px;
+
+        .feature-wrapper {
+          padding: 45px 0 60px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          img {
+            margin-bottom: 28px;
+          }
+
+          &-title {
+            color: #c2c1d6;
+            font-weight: normal;
+            font-size: 16px;
+            font-family: @primary-font;
+            font-style: normal;
+            line-height: 16px;
+          }
+        }
+
+        .private-data {
+          padding: 32px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          &-title {
+            margin: 0;
+            color: #c2c1d6;
+            font-weight: normal;
+            font-size: 14px;
+            font-family: @primary-font;
+            font-style: normal;
+            line-height: 16px;
+
+            &:not(:last-of-type) {
+              margin-bottom: 32px;
+            }
+          }
+        }
+
+        .disc-space {
+          padding: 32px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          &-title {
+            margin: 0;
+            color: #c2c1d6;
+            font-weight: normal;
+            font-size: 14px;
+            font-family: @primary-font;
+            font-style: normal;
+            line-height: 16px;
+
+            &:not(:last-of-type) {
+              margin-bottom: 32px;
+            }
+          }
+        }
+      }
     }
   }
 }

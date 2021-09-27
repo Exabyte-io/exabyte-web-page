@@ -5,6 +5,7 @@ import { ContactUs } from './sections/contact-us/ContactUs'
 import { ClusterPricing } from './sections/cluster-pricing/ClusterPricing'
 import { Options } from './sections/options/Options'
 import { CategoryBased } from './sections/category-based/CategoryBased'
+// import { Cards } from './sections/cards/Cards'
 import { ComparisonTable } from './sections/ComparisonTable/ComparisonTable'
 // import { Cards } from './sections/cards/Cards'
 
