@@ -8,6 +8,7 @@ import Features from './images/features.svg'
 import Line from './images/line.svg'
 import Check from './images/check.svg'
 import { Link } from 'react-router-dom'
+import Chat from './images/chat.svg'
 
 const ComparisonTable: FC = () => {
   const { data } = useContentQuery({
@@ -116,6 +117,21 @@ const ComparisonTable: FC = () => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className={'bottom-content'}>
+          <Link to={'/'} className={'link'}>
+            {' '}
+            Less info about plans
+          </Link>
+          <Typography.Paragraph className={'title'}>ENTERPRISE+</Typography.Paragraph>
+          <Typography.Paragraph className={'description'}>Need private clusters, managed cloud, and extended privacy?</Typography.Paragraph>
+          <div className={'chat'}>
+            <img src={Chat} alt={'img'} />
+            <Typography.Paragraph className={'chat-title'}>Contact us about the "Enterprise+" option.</Typography.Paragraph>
+          </div>
+          <Link to={'/'} className={'contact'}>
+            Contact us
+          </Link>
         </div>
       </div>
     </Layout>
