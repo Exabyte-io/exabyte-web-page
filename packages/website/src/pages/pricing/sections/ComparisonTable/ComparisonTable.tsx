@@ -5,6 +5,9 @@ import BackgroundLg from './images/bg-lg.svg'
 import './ComparisonTable.less'
 import { useContentQuery } from '../../../../graphql'
 import Features from './images/features.svg'
+import Line from './images/line.svg'
+import Check from './images/check.svg'
+import { Link } from 'react-router-dom'
 
 const ComparisonTable: FC = () => {
   const { data } = useContentQuery({
@@ -48,6 +51,71 @@ const ComparisonTable: FC = () => {
               <Typography.Paragraph className={'disc-space-title'}>Ordinary Compute Price - Core-Hour </Typography.Paragraph>
             </div>
           </div>
+          <ul className={'content-wrapper-list'}>
+            {content?.sections?.map((value, index) => (
+              <li className={'content-wrapper-list-item'} key={index}>
+                <div className={'top'}>
+                  <Typography.Paragraph className={'title'}>{value.title}</Typography.Paragraph>
+                  <Typography.Paragraph className={'description'}>{value.description}</Typography.Paragraph>
+                </div>
+                <div className={'under-top'}>
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index !== 0 && <img src={Check} alt={'image'} />}
+                  {index !== 2 && <Typography.Paragraph className={'number'}>1</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>5</Typography.Paragraph>}
+                  {index === 0 && <Typography.Paragraph className={'text'}>Normal</Typography.Paragraph>}
+                  {index === 1 && <Typography.Paragraph className={'text'}>High</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'text'}>Urgent</Typography.Paragraph>}
+                  {index === 0 && <Typography.Paragraph className={'number'}>1</Typography.Paragraph>}
+                  {index === 1 && <Typography.Paragraph className={'number'}>2</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>10</Typography.Paragraph>}
+                </div>
+                <div className={'center'}>
+                  {index === 0 && <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>}
+                  {index === 1 && <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>}
+                  {index === 0 && <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>}
+                  {index === 1 && <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index !== 0 && <img src={Check} alt={'image'} />}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <Typography.Paragraph className={'number'}>$ 10</Typography.Paragraph>}
+                  {index === 2 && <img src={Line} alt={'image'} />}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <Typography.Paragraph className={'number'}>$ 100</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 1000</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <img src={Line} alt={'image'} />}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 1000</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <img src={Line} alt={'image'} />}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 20</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <img src={Line} alt={'image'} />}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 200</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>}
+                  {index === 0 && <img src={Line} alt={'image'} />}
+                  {index === 1 && <Typography.Paragraph className={'number'}>$ 0,12</Typography.Paragraph>}
+                  {index === 2 && <Typography.Paragraph className={'number'}>$ 0,12</Typography.Paragraph>}
+                </div>
+                <div className={'bottom'}>
+                  <p className={'number'}>
+                    ${`${value.subTitle}`}
+                    <span className={'year'}> / year</span>
+                  </p>
+                  <Link to={'/'} className={'link'}>
+                    GET STARTED
+                  </Link>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </Layout>
