@@ -9,7 +9,7 @@ ENV GITHUB_TOKEN=${token}
 RUN yarn \
  && yarn build
 
-FROM ghcr.io/bn-digital/docker/nodejs:1.0.0 AS cms
+FROM dcr.bndigital.dev/library/nodejs:latest AS cms
 COPY --from=build /usr/local/src/packages/cms .
 ENTRYPOINT ["yarn"]
 CMD ["strapi", "start"]

@@ -18,7 +18,8 @@ environments:
 releases:
   - name: exabyte-website
     namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
+    chart: bndigital/app
+    version: 1.0.0
     values:
       - image: '{{ .Values.imageRepository }}/website:{{ env "GITHUB_SHA" | default "latest" }}'
         imagePullSecrets: [ container-registry ]
@@ -26,13 +27,14 @@ releases:
           host: exabyte.bndigital.dev
           proxy:
             enabled: true
-            path: /(admin|auth|import-export-content|callback|connect|content-manager|content-type-builder|email|email-designer|entity-relationship-chart|i18n|graphql|register|responsive-image|users-permissions|upload|uploads)(.*)
+            implementation: strapi
             backend:
-              service: exabyte-cms-nodejs
+              service: exabyte-cms-app
 
   - name: exabyte-cms
     namespace: '{{ .Environment.Name }}'
-    chart: bndigital/nodejs
+    chart: bndigital/app
+    version: 1.0.0
     values:
       - image: '{{ .Values.imageRepository }}/cms:{{ env "GITHUB_SHA" | default "latest" }}'
         imagePullSecrets: [ container-registry ]
