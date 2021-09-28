@@ -24,7 +24,7 @@ export const CostStructure: FC = () => {
       <div className={'container'}>
         <Row gutter={{ sm: 0, md: 151 }}>
           {content?.sections?.map((it, index) => (
-            <Col sm={24} md={8}>
+            <Col sm={24} md={8} key={index}>
               <article className={'item'}>
                 {index === 0 && <img src={One} alt={'image'} />}
                 {index === 1 && <img src={Two} alt={'image'} />}

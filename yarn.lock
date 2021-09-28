@@ -1948,6 +1948,7 @@ __metadata:
     react-responsive: ^9.0.0-beta.4
     react-router-dom: ^6.0.0-beta.4
     style-loader: ^3.3.0
+    swiper: ^7.0.6
     terser-webpack-plugin: ^5.2.4
     typescript: ^4.4.3
     url-loader: ^4.1.1
@@ -8062,6 +8063,15 @@ __metadata:
     domhandler: ^4.2.0
     entities: ^2.0.0
   checksum: bff48714944d67b160db71ba244fb0f3fe72e77ef2ec8414e2eeb56f2d926e404a13456b8b83a5392e217ba47dec2ec0c368801b31481813e94d185276c3e964
+  languageName: node
+  linkType: hard
+
+"dom7@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "dom7@npm:4.0.0"
+  dependencies:
+    ssr-window: ^4.0.0
+  checksum: eaa2f4bbcecd75f1a92b6c0076831919093a2eca8a7343c4e824e987f2f99be1f31095a07bcfc14688d55a82236739f0dfe1ea074f63093e6a867fdccdf5dc08
   languageName: node
   linkType: hard
 
@@ -19767,6 +19777,13 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"ssr-window@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "ssr-window@npm:4.0.0"
+  checksum: a79cc8f1bb50083f065248c5a50959fc4ac108be10e0815f65f9850c1157825402772ca217652c5d4e916deab9bed501d22645f87d4143a12f926f88c9eec8a3
+  languageName: node
+  linkType: hard
+
 "ssri@npm:^6.0.1":
   version: 6.0.2
   resolution: "ssri@npm:6.0.2"
@@ -21051,6 +21068,16 @@ resolve@^2.0.0-next.3:
   dependencies:
     tslib: ^2.0.3
   checksum: 6e21c9e1b3cd5735eb2af679a99ec3efc78a14e3d4d5e3fd594e254b91cfd37185b3d1c6e41b22f53a2cdf5d1b963ce30c0fe8b78337e3fd43d0137084670a5f
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^7.0.6":
+  version: 7.0.6
+  resolution: "swiper@npm:7.0.6"
+  dependencies:
+    dom7: ^4.0.0
+    ssr-window: ^4.0.0
+  checksum: da12b8a9158352a9a2b8df2cdda71cff2638123aa5653d57b3e292092304dc21433126c6002852740052c32881ba52410022702724f99146e9468bc477261592
   languageName: node
   linkType: hard
 
