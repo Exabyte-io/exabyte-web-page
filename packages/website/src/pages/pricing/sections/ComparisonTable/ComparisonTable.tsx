@@ -12,7 +12,6 @@ import Chat from './images/chat.svg'
 import { useMediaQuery } from 'react-responsive'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-
 const ComparisonTable: FC = () => {
   const { data } = useContentQuery({
     variables: {
@@ -52,16 +51,11 @@ const ComparisonTable: FC = () => {
               <Typography.Paragraph className={'disc-space-title'}>Monthly Subscription Fee</Typography.Paragraph>
               <Typography.Paragraph className={'disc-space-title'}>Yearly Subscription</Typography.Paragraph>
               <Typography.Paragraph className={'disc-space-title'}>Minimum Compute Allocation</Typography.Paragraph>
-              <Typography.Paragraph className={'disc-space-title'}>Additional Account Members -
-                Member/Month</Typography.Paragraph>
-              <Typography.Paragraph className={'disc-space-title'}>Additional Account Members -
-                Member/Year</Typography.Paragraph>
-              <Typography.Paragraph className={'disc-space-title'}>Additional Disk Space -
-                GB/Month</Typography.Paragraph>
-              <Typography.Paragraph className={'disc-space-title'}>Additional Dropbox Space -
-                GB/Month</Typography.Paragraph>
-              <Typography.Paragraph className={'disc-space-title'}>Ordinary Compute Price -
-                Core-Hour </Typography.Paragraph>
+              <Typography.Paragraph className={'disc-space-title'}>Additional Account Members - Member/Month</Typography.Paragraph>
+              <Typography.Paragraph className={'disc-space-title'}>Additional Account Members - Member/Year</Typography.Paragraph>
+              <Typography.Paragraph className={'disc-space-title'}>Additional Disk Space - GB/Month</Typography.Paragraph>
+              <Typography.Paragraph className={'disc-space-title'}>Additional Dropbox Space - GB/Month</Typography.Paragraph>
+              <Typography.Paragraph className={'disc-space-title'}>Ordinary Compute Price - Core-Hour </Typography.Paragraph>
             </div>
           </div>
           {lg ? (
@@ -132,42 +126,41 @@ const ComparisonTable: FC = () => {
             </ul>
           ) : (
             <Swiper slidesPerView={1} className={'content-wrapper-list'}>
-                <SwiperSlide className={'content-wrapper-list-item'}>
-                  <div className={'top'}>
-                    <Typography.Paragraph className={'title'}>{sections?.[0].title}</Typography.Paragraph>
-                    <Typography.Paragraph className={'description'}>{sections?.[0].description}</Typography.Paragraph>
-                  </div>
-                  <div className={'under-top'}>
-                    <img src={Line} alt={'image'} />
-                    <Typography.Paragraph className={'text'}>Normal</Typography.Paragraph>
-                    <Typography.Paragraph className={'number'}>1</Typography.Paragraph>
-                  </div>
-                  <div className={'center'}>
-                    <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
-                    <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                    <img src={Line} alt={'image'} />
-                  </div>
-                  <div className={'bottom'}>
-                    <p className={'number'}>
-                      ${`${sections?.[0].subTitle}`}
-                      <span className={'year'}>/ year</span>
-                    </p>
-                    <Link to={'/'} className={'link'}>
-                      GET STARTED
-                    </Link>
-                  </div>
-                </SwiperSlide>
+              <SwiperSlide className={'content-wrapper-list-item'}>
+                <div className={'top'}>
+                  <Typography.Paragraph className={'title'}>{sections?.[0].title}</Typography.Paragraph>
+                  <Typography.Paragraph className={'description'}>{sections?.[0].description}</Typography.Paragraph>
+                </div>
+                <div className={'under-top'}>
+                  <img src={Line} alt={'image'} />
+                  <Typography.Paragraph className={'text'}>Normal</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>1</Typography.Paragraph>
+                </div>
+                <div className={'center'}>
+                  <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                </div>
+                <div className={'bottom'}>
+                  <p className={'number'}>
+                    ${`${sections?.[0].subTitle}`}
+                    <span className={'year'}>/ year</span>
+                  </p>
+                  <Link to={'/'} className={'link'}>
+                    GET STARTED
+                  </Link>
+                </div>
+              </SwiperSlide>
             </Swiper>
           )}
-
         </div>
         <div className={'bottom-content'}>
           <Link to={'/'} className={'link'}>
@@ -175,12 +168,10 @@ const ComparisonTable: FC = () => {
             Less info about plans
           </Link>
           <Typography.Paragraph className={'title'}>ENTERPRISE+</Typography.Paragraph>
-          <Typography.Paragraph className={'description'}>Need private clusters, managed cloud, and extended
-            privacy?</Typography.Paragraph>
+          <Typography.Paragraph className={'description'}>Need private clusters, managed cloud, and extended privacy?</Typography.Paragraph>
           <div className={'chat'}>
             <img src={Chat} alt={'img'} />
-            <Typography.Paragraph className={'chat-title'}>Contact us about the "Enterprise+"
-              option.</Typography.Paragraph>
+            <Typography.Paragraph className={'chat-title'}>Contact us about the "Enterprise+" option.</Typography.Paragraph>
           </div>
           <Link to={'/'} className={'contact'}>
             Contact us
