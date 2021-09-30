@@ -176,7 +176,6 @@
           display: flex;
           justify-content: space-between;
           width: 100%;
-          height: 1220px;
           margin: 0;
         }
 
@@ -245,7 +244,6 @@
           padding: 40px 14px;
           background: rgba(255, 255, 255, 0.1);
           border-radius: 8px;
-          transition: height 250ms linear;
 
           @media (max-width: 991px) {
             padding: 24px 16px 16px;
@@ -398,7 +396,7 @@
             max-height: 625px;
             padding: 36px 0 36px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: height 250ms linear;
+            //transition: height 250ms linear;
 
             @media (max-width: 991px) {
               max-height: 625px;
@@ -473,7 +471,11 @@
 
         .short {
           height: 443px !important;
-          transition: height 250ms linear;
+          //transition: height 250ms linear;
+
+          @media (min-width: 992px) {
+            height: 561px !important;
+          }
         }
       }
 
@@ -481,7 +483,7 @@
         height: 0 !important;
         padding: 0 !important;
         overflow: hidden;
-        transition: height 250ms linear;
+        //transition: height 250ms linear;
       }
     }
 

@@ -3,6 +3,7 @@ import { Layout, Typography } from 'antd'
 import BackgroundMb from './images/bg-mb.svg'
 import BackgroundMbShort from './images/bg-mb-short.svg'
 import BackgroundLg from './images/bg-lg.svg'
+import BackgroundLgShort from './images/bg-lg-short.svg'
 import './ComparisonTable.less'
 import { useContentQuery } from '../../../../graphql'
 import Features from './images/features.svg'
@@ -55,7 +56,7 @@ const ComparisonTable: FC = () => {
   return (
     <Layout className={'comparison-table'}>
       <img className={'comparison-table-bg-mb'} src={open ? BackgroundMb : BackgroundMbShort} alt={'img'} />
-      <img className={'comparison-table-bg-lg'} src={BackgroundLg} alt={'img'} />
+      <img className={'comparison-table-bg-lg'} src={open ? BackgroundLg : BackgroundLgShort} alt={'img'} />
       <div className={'comparison-table-wrapper container'}>
         <Typography.Paragraph className={'title'}>{content?.title}</Typography.Paragraph>
         <Typography.Paragraph className={'description'}>{content?.description}</Typography.Paragraph>
