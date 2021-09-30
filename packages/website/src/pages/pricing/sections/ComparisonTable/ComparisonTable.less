@@ -4,13 +4,13 @@
   position: relative;
 
   &-bg-mb {
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       display: none;
     }
   }
 
   &-bg-lg {
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
       display: none;
     }
   }
@@ -63,7 +63,7 @@
         margin-right: 14px;
 
         @media (max-width: 991px) {
-          max-width: 50%;
+          max-width: 40%;
         }
 
         @media (min-width: 992px) {
@@ -169,7 +169,7 @@
 
       &-list {
         @media (max-width: 767px) {
-          width: 50%;
+          max-width: 60%;
         }
 
         @media (min-width: 992px) {
@@ -205,7 +205,7 @@
             }
 
             .under-top {
-              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+              border-bottom: 1px solid #848998;
 
               .number {
                 color: #091432;
@@ -219,7 +219,7 @@
             }
 
             .center {
-              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+              border-bottom: 1px solid #848998;
 
               .number {
                 color: #091432;
@@ -273,6 +273,7 @@
               font-style: normal;
 
               @media (max-width: 991px) {
+                max-width: 159px;
                 font-size: 13px;
                 line-height: 16px;
               }
@@ -292,6 +293,15 @@
             max-height: 227px;
             padding: 41px 0 37px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            @media (max-width: 991px) {
+              max-height: 184px;
+              padding: 34px 0 27px;
+
+              @media (max-width: 767px) {
+                max-height: 199px;
+              }
+            }
 
             .number {
               margin: 0;
@@ -325,6 +335,11 @@
             max-height: 625px;
             padding: 36px 0 36px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            @media (max-width: 991px) {
+              max-height: 560px;
+              padding: 28px 0 29px;
+            }
 
             .number {
               margin: 0;

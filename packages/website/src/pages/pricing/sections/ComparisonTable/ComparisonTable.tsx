@@ -12,6 +12,9 @@ import Chat from './images/chat.svg'
 import { useMediaQuery } from 'react-responsive'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+// Import Swiper styles
+import 'swiper/less'
+
 const ComparisonTable: FC = () => {
   const { data } = useContentQuery({
     variables: {
@@ -125,7 +128,7 @@ const ComparisonTable: FC = () => {
               ))}
             </ul>
           ) : (
-            <Swiper slidesPerView={1} className={'content-wrapper-list'}>
+            <Swiper slidesPerView={1} spaceBetween={10} className={'content-wrapper-list'}>
               <SwiperSlide className={'content-wrapper-list-item'}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[0].title}</Typography.Paragraph>
@@ -133,6 +136,7 @@ const ComparisonTable: FC = () => {
                 </div>
                 <div className={'under-top'}>
                   <img src={Line} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>1</Typography.Paragraph>
                   <Typography.Paragraph className={'text'}>Normal</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>1</Typography.Paragraph>
                 </div>
@@ -152,6 +156,75 @@ const ComparisonTable: FC = () => {
                 <div className={'bottom'}>
                   <p className={'number'}>
                     ${`${sections?.[0].subTitle}`}
+                    <span className={'year'}>/ year</span>
+                  </p>
+                  <Link to={'/'} className={'link'}>
+                    GET STARTED
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={'content-wrapper-list-item'}>
+                <div className={'top'}>
+                  <Typography.Paragraph className={'title'}>{sections?.[1].title}</Typography.Paragraph>
+                  <Typography.Paragraph className={'description'}>{sections?.[1].description}</Typography.Paragraph>
+                </div>
+                <div className={'under-top'}>
+                  <img src={Check} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>1</Typography.Paragraph>
+                  <Typography.Paragraph className={'text'}>High</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>2</Typography.Paragraph>
+                </div>
+                <div className={'center'}>
+                  <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
+                  <img src={Check} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>$ 10</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 100</Typography.Paragraph>
+                  <img src={Line} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>$ 1000</Typography.Paragraph>
+                  <img src={Line} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 0,12</Typography.Paragraph>
+                </div>
+                <div className={'bottom'}>
+                  <p className={'number'}>
+                    ${`${sections?.[1].subTitle}`}
+                    <span className={'year'}>/ year</span>
+                  </p>
+                  <Link to={'/'} className={'link'}>
+                    GET STARTED
+                  </Link>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className={'content-wrapper-list-item'}>
+                <div className={'top'}>
+                  <Typography.Paragraph className={'title'}>{sections?.[2].title}</Typography.Paragraph>
+                  <Typography.Paragraph className={'description'}>{sections?.[2].description}</Typography.Paragraph>
+                </div>
+                <div className={'under-top'}>
+                  <img src={Check} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>5</Typography.Paragraph>
+                  <Typography.Paragraph className={'text'}>Urgent</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>10</Typography.Paragraph>
+                </div>
+                <div className={'center'}>
+                  <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
+                  <img src={Check} alt={'image'} />
+                  <img src={Line} alt={'image'} />
+                  <Typography.Paragraph className={'number'}>$ 1000</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 1000</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 20</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 200</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 0,2</Typography.Paragraph>
+                  <Typography.Paragraph className={'number'}>$ 0,12</Typography.Paragraph>
+                </div>
+                <div className={'bottom'}>
+                  <p className={'number'}>
+                    ${`${sections?.[2].subTitle}`}
                     <span className={'year'}>/ year</span>
                   </p>
                   <Link to={'/'} className={'link'}>
