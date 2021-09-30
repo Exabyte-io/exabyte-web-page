@@ -1,6 +1,7 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Layout, Typography } from 'antd'
 import BackgroundMb from './images/bg-mb.svg'
+import BackgroundMbShort from './images/bg-mb-short.svg'
 import BackgroundLg from './images/bg-lg.svg'
 import './ComparisonTable.less'
 import { useContentQuery } from '../../../../graphql'
@@ -30,9 +31,30 @@ const ComparisonTable: FC = () => {
 
   const lg = useMediaQuery({ minWidth: 992 })
 
+  const list = document.querySelector('.content-wrapper-list')
+  const discSpace = document.querySelector('.disc-space')
+
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (!open) {
+      discSpace?.classList.add('close')
+      list?.querySelectorAll('.content-wrapper-list-item').forEach(value => {
+        value.querySelector('.center')?.classList.add('close')
+        value.classList.add('short')
+      })
+    } else {
+      discSpace?.classList.remove('close')
+      list?.querySelectorAll('.content-wrapper-list-item').forEach(value => {
+        value.querySelector('.center')?.classList.remove('close')
+        value.classList.remove('short')
+      })
+    }
+  }, [open])
+
   return (
     <Layout className={'comparison-table'}>
-      <img className={'comparison-table-bg-mb'} src={BackgroundMb} alt={'img'} />
+      <img className={'comparison-table-bg-mb'} src={open ? BackgroundMb : BackgroundMbShort} alt={'img'} />
       <img className={'comparison-table-bg-lg'} src={BackgroundLg} alt={'img'} />
       <div className={'comparison-table-wrapper container'}>
         <Typography.Paragraph className={'title'}>{content?.title}</Typography.Paragraph>
@@ -49,7 +71,7 @@ const ComparisonTable: FC = () => {
               <Typography.Paragraph className={'private-data-title'}>Support Severity</Typography.Paragraph>
               <Typography.Paragraph className={'private-data-title'}>Entity Limits: Projects</Typography.Paragraph>
             </div>
-            <div className={'disc-space'}>
+            <div className={'disc-space close'}>
               <Typography.Paragraph className={'disc-space-title'}>Disk Space</Typography.Paragraph>
               <Typography.Paragraph className={'disc-space-title'}>Dropbox Space</Typography.Paragraph>
               <Typography.Paragraph className={'disc-space-title'}>Command-line Access</Typography.Paragraph>
@@ -66,7 +88,7 @@ const ComparisonTable: FC = () => {
           {lg ? (
             <ul className={'content-wrapper-list'}>
               {content?.sections?.map((value, index) => (
-                <li className={'content-wrapper-list-item'} key={index}>
+                <li className={'content-wrapper-list-item short'} key={index}>
                   <div className={'top'}>
                     <Typography.Paragraph className={'title'}>{value.title}</Typography.Paragraph>
                     <Typography.Paragraph className={'description'}>{value.description}</Typography.Paragraph>
@@ -83,7 +105,7 @@ const ComparisonTable: FC = () => {
                     {index === 1 && <Typography.Paragraph className={'number'}>2</Typography.Paragraph>}
                     {index === 2 && <Typography.Paragraph className={'number'}>10</Typography.Paragraph>}
                   </div>
-                  <div className={'center'}>
+                  <div className={'center close'}>
                     {index === 0 && <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>}
                     {index === 1 && <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>}
                     {index === 2 && <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>}
@@ -130,8 +152,15 @@ const ComparisonTable: FC = () => {
               ))}
             </ul>
           ) : (
-            <Swiper modules={[Navigation, A11y]} slidesPerView={1} spaceBetween={10} navigation className={'content-wrapper-list'}>
-              <SwiperSlide className={'content-wrapper-list-item'}>
+            <Swiper
+              modules={[Navigation, A11y]}
+              slidesPerView={1}
+              spaceBetween={10}
+              navigation
+              className={'content-wrapper-list'}
+              onSlideChange={slide => console.log(slide)}
+            >
+              <SwiperSlide className={'content-wrapper-list-item short'}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[0].title}</Typography.Paragraph>
                   <Typography.Paragraph className={'description'}>{sections?.[0].description}</Typography.Paragraph>
@@ -142,7 +171,7 @@ const ComparisonTable: FC = () => {
                   <Typography.Paragraph className={'text'}>Normal</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>1</Typography.Paragraph>
                 </div>
-                <div className={'center'}>
+                <div className={'center close'}>
                   <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
                   <img src={Line} alt={'image'} />
@@ -165,7 +194,7 @@ const ComparisonTable: FC = () => {
                   </Link>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className={'content-wrapper-list-item'}>
+              <SwiperSlide className={'content-wrapper-list-item short'}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[1].title}</Typography.Paragraph>
                   <Typography.Paragraph className={'description'}>{sections?.[1].description}</Typography.Paragraph>
@@ -176,7 +205,7 @@ const ComparisonTable: FC = () => {
                   <Typography.Paragraph className={'text'}>High</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>2</Typography.Paragraph>
                 </div>
-                <div className={'center'}>
+                <div className={'center close'}>
                   <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
                   <img src={Check} alt={'image'} />
@@ -200,7 +229,7 @@ const ComparisonTable: FC = () => {
                   </Link>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className={'content-wrapper-list-item'}>
+              <SwiperSlide className={'content-wrapper-list-item short'}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[2].title}</Typography.Paragraph>
                   <Typography.Paragraph className={'description'}>{sections?.[2].description}</Typography.Paragraph>
@@ -211,7 +240,7 @@ const ComparisonTable: FC = () => {
                   <Typography.Paragraph className={'text'}>Urgent</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>10</Typography.Paragraph>
                 </div>
-                <div className={'center'}>
+                <div className={'center close'}>
                   <Typography.Paragraph className={'number'}>10 GB</Typography.Paragraph>
                   <Typography.Paragraph className={'number'}>1 GB</Typography.Paragraph>
                   <img src={Check} alt={'image'} />
@@ -234,7 +263,6 @@ const ComparisonTable: FC = () => {
                   </Link>
                 </div>
               </SwiperSlide>
-
               <div className='prev'>
                 <img src={Arrow} alt={'img'} />
               </div>
@@ -245,10 +273,10 @@ const ComparisonTable: FC = () => {
           )}
         </div>
         <div className={'bottom-content'}>
-          <Link to={'/'} className={'link'}>
+          <button className={'link'} onClick={() => setOpen(prevState => !prevState)}>
             {' '}
             Less info about plans
-          </Link>
+          </button>
           <Typography.Paragraph className={'title'}>ENTERPRISE+</Typography.Paragraph>
           <Typography.Paragraph className={'description'}>Need private clusters, managed cloud, and extended privacy?</Typography.Paragraph>
           <div className={'chat'}>
