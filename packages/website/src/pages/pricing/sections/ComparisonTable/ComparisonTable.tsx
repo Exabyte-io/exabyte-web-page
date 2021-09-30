@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import Chat from './images/chat.svg'
 import { useMediaQuery } from 'react-responsive'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import Arrow from './images/arrow.svg'
 
 // Import Swiper styles
 import 'swiper/less'
@@ -232,6 +233,13 @@ const ComparisonTable: FC = () => {
                   </Link>
                 </div>
               </SwiperSlide>
+
+              <div className='swiper-button-prev'>
+                <img src={Arrow} alt={'img'} />
+              </div>
+              <div className='swiper-button-next'>
+                <img src={Arrow} alt={'img'} />
+              </div>
             </Swiper>
           )}
         </div>
