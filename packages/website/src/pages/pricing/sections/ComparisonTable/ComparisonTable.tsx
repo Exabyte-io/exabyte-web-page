@@ -153,15 +153,8 @@ const ComparisonTable: FC = () => {
               ))}
             </ul>
           ) : (
-            <Swiper
-              modules={[Navigation, A11y]}
-              slidesPerView={1}
-              spaceBetween={10}
-              navigation
-              className={'content-wrapper-list'}
-              onSlideChange={slide => console.log(slide)}
-            >
-              <SwiperSlide className={'content-wrapper-list-item short'}>
+            <Swiper modules={[Navigation, A11y]} slidesPerView={1} spaceBetween={10} navigation className={'content-wrapper-list'}>
+              <SwiperSlide className={`${open ? 'content-wrapper-list-item' : 'content-wrapper-list-item short'}`}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[0].title}</Typography.Paragraph>
                   <Typography.Paragraph className={'description'}>{sections?.[0].description}</Typography.Paragraph>
@@ -195,7 +188,7 @@ const ComparisonTable: FC = () => {
                   </Link>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className={'content-wrapper-list-item short'}>
+              <SwiperSlide className={`${open ? 'content-wrapper-list-item' : 'content-wrapper-list-item short'}`}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[1].title}</Typography.Paragraph>
                   <Typography.Paragraph className={'description'}>{sections?.[1].description}</Typography.Paragraph>
@@ -230,7 +223,7 @@ const ComparisonTable: FC = () => {
                   </Link>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className={'content-wrapper-list-item short'}>
+              <SwiperSlide className={`${open ? 'content-wrapper-list-item' : 'content-wrapper-list-item short'}`}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[2].title}</Typography.Paragraph>
                   <Typography.Paragraph className={'description'}>{sections?.[2].description}</Typography.Paragraph>
