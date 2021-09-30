@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 import Chat from './images/chat.svg'
 import { useMediaQuery } from 'react-responsive'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, A11y } from 'swiper'
 import Arrow from './images/arrow.svg'
 
 // Import Swiper styles
@@ -129,7 +130,7 @@ const ComparisonTable: FC = () => {
               ))}
             </ul>
           ) : (
-            <Swiper slidesPerView={1} spaceBetween={10} className={'content-wrapper-list'}>
+            <Swiper modules={[Navigation, A11y]} slidesPerView={1} spaceBetween={10} navigation className={'content-wrapper-list'}>
               <SwiperSlide className={'content-wrapper-list-item'}>
                 <div className={'top'}>
                   <Typography.Paragraph className={'title'}>{sections?.[0].title}</Typography.Paragraph>
@@ -234,10 +235,10 @@ const ComparisonTable: FC = () => {
                 </div>
               </SwiperSlide>
 
-              <div className='swiper-button-prev'>
+              <div className='prev'>
                 <img src={Arrow} alt={'img'} />
               </div>
-              <div className='swiper-button-next'>
+              <div className='next'>
                 <img src={Arrow} alt={'img'} />
               </div>
             </Swiper>
