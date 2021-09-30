@@ -168,6 +168,8 @@
       }
 
       &-list {
+        height: 1073px;
+
         @media (max-width: 767px) {
           max-width: 60%;
         }
@@ -337,7 +339,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
             @media (max-width: 991px) {
-              max-height: 560px;
+              max-height: 625px;
               padding: 28px 0 29px;
             }
 
@@ -367,7 +369,10 @@
               font-size: 42px;
               font-family: @primary-font;
               font-style: normal;
-              line-height: 90px;
+
+              @media (max-width: 767px) {
+                font-size: 38px;
+              }
 
               .year {
                 margin-left: 10px;
@@ -377,6 +382,10 @@
                 font-family: @primary-font;
                 font-style: normal;
                 line-height: 40px;
+
+                @media (max-width: 767px) {
+                  font-size: 16px;
+                }
               }
             }
 
