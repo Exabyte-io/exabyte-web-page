@@ -6,6 +6,7 @@ import InfoIcon from '../Capabilities/images/info-icon.svg'
 import ClosedArrow from './images/closed-arrow.svg'
 import OpenArrow from './images/open-arrow.svg'
 import { useContentQuery } from '../../../../graphql'
+// import Close from './images/close.svg'
 
 const { Panel } = Collapse
 
@@ -40,6 +41,8 @@ const Capabilities: FC = () => {
       setOpenedCollapseItem(index)
     }
   }
+
+  // const [modal, setModal] = useState(false)
 
   return (
     <Layout className={'section capabilities-wrapper'}>
@@ -99,6 +102,12 @@ const Capabilities: FC = () => {
           ))}
         </Collapse>
       </Row>
+
+      {/*<div className={'modal'}>*/}
+      {/*  <button className={'modal-btn'}>*/}
+      {/*    <img src={Close} alt={'image'} />*/}
+      {/*  </button>*/}
+      {/*</div>*/}
     </Layout>
   )
 }

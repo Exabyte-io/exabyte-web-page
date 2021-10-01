@@ -45,7 +45,7 @@ const FasterMaterials: FC = () => {
         {window.innerWidth > 426 ? (
           <div className='faster-materials-content-info'>
             {content?.sections?.map(card => (
-              <div className='faster-materials-content-info-card'>
+              <div className='faster-materials-content-info-card' key={card.id}>
                 <div className='faster-materials-content-info-card-title'>{card?.title}</div>
                 <div className='faster-materials-content-info-card-text'>{card?.subTitle}</div>
               </div>
@@ -61,7 +61,7 @@ const FasterMaterials: FC = () => {
               className={'faster-materials-content-carousel'}
             >
               {content?.sections?.map(card => (
-                <div className='faster-materials-content-info-card'>
+                <div className='faster-materials-content-info-card' key={card.id}>
                   <div className='faster-materials-content-info-card-title'>{card?.title}</div>
                   <div className='faster-materials-content-info-card-text'>{card?.subTitle}</div>
                 </div>

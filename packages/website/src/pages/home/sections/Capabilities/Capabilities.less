@@ -132,6 +132,25 @@
       }
     }
   }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+
+    &-btn {
+      position: absolute;
+      top: 23px;
+      right: 24px;
+      background: transparent;
+      border: none;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {

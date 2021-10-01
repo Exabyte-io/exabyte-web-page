@@ -40,7 +40,7 @@ const Customer: FC = () => {
 
           <Carousel ref={carousel} afterChange={onCarouselChange} dots={false} infinite={false} className={'customer-content-carousel'}>
             {content?.sections?.map(slide => (
-              <div className={'customer-content-carousel-slide'}>
+              <div className={'customer-content-carousel-slide'} key={slide.id}>
                 <div className='customer-content-carousel-slide-content'>
                   <div className='customer-content-carousel-slide-content-text'>
                     <div className='customer-content-carousel-slide-content-text-paragraph'>{slide?.title}</div>
