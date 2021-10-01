@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, MouseEventHandler, useEffect, useState } from 'react'
 import './Capabilities.less'
 import { Col, Collapse, Layout, Row, Typography, Carousel } from 'antd'
 import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
@@ -7,6 +7,7 @@ import ClosedArrow from './images/closed-arrow.svg'
 import OpenArrow from './images/open-arrow.svg'
 import { useContentQuery } from '../../../../graphql'
 import Close from './images/close.svg'
+import ArrowBtn from './images/arrow-btn.svg'
 
 const { Panel } = Collapse
 
@@ -47,6 +48,29 @@ const Capabilities: FC = () => {
   useEffect(() => {
     console.log(openedItem)
   }, [modal])
+
+  const SampleNextArrow = (props: { onClick?: MouseEventHandler<HTMLButtonElement> }) => {
+    const { onClick } = props
+    return (
+      <button className={'modal-navigation-btn'} onClick={onClick}>
+        <img src={ArrowBtn} alt={'image'} />
+      </button>
+    )
+  }
+
+  const SamplePrevArrow = (props: { onClick?: MouseEventHandler<HTMLButtonElement> }) => {
+    const { onClick } = props
+    return (
+      <button className={'modal-navigation-btn'} onClick={onClick}>
+        <img src={ArrowBtn} alt={'image'} />
+      </button>
+    )
+  }
+
+  const settings = {
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  }
 
   return (
     <Layout className={'section capabilities-wrapper'}>
@@ -111,7 +135,7 @@ const Capabilities: FC = () => {
         <button className={'modal-btn'} onClick={() => setModal(false)}>
           <img src={Close} alt={'image'} />
         </button>
-        <Carousel>
+        <Carousel dots={false} arrows {...settings}>
           <img className='modal-image' src={openedItem} alt='' />
           <img className='modal-image' src={openedItem} alt='' />
         </Carousel>

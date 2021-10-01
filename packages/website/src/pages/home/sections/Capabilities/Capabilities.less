@@ -168,7 +168,38 @@
     }
 
     &-image {
-      max-height: 700px;
+      max-height: 620px;
+    }
+
+    &-navigation-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 31px;
+      height: 31px;
+      background: transparent;
+      border: 1px solid #b9c6cd;
+      border-radius: 50%;
+
+      &:hover {
+        border: 1px solid #747bc8;
+      }
+
+      &:first-of-type {
+        position: absolute;
+        bottom: -10%;
+        left: 46.5%;
+      }
+
+      &:last-of-type {
+        position: absolute;
+        right: 46.5%;
+        bottom: -10%;
+
+        img {
+          transform: rotate(-180deg);
+        }
+      }
     }
   }
 }
