@@ -1,12 +1,12 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import './Capabilities.less'
-import { Col, Collapse, Layout, Row, Typography } from 'antd'
+import { Col, Collapse, Layout, Row, Typography, Carousel } from 'antd'
 import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
 import InfoIcon from '../Capabilities/images/info-icon.svg'
 import ClosedArrow from './images/closed-arrow.svg'
 import OpenArrow from './images/open-arrow.svg'
 import { useContentQuery } from '../../../../graphql'
-// import Close from './images/close.svg'
+import Close from './images/close.svg'
 
 const { Panel } = Collapse
 
@@ -42,7 +42,11 @@ const Capabilities: FC = () => {
     }
   }
 
-  // const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false)
+
+  useEffect(() => {
+    console.log(openedItem)
+  }, [modal])
 
   return (
     <Layout className={'section capabilities-wrapper'}>
@@ -71,7 +75,7 @@ const Capabilities: FC = () => {
               })}
             </div>
           )}
-          <div className='collapse-image-wrapper' style={{ display: openedItem !== '' ? 'flex' : 'none' }}>
+          <div className='collapse-image-wrapper' style={{ display: openedItem !== '' ? 'flex' : 'none' }} onClick={() => setModal(true)}>
             <img className='collapse-image' src={openedItem} alt='' />
             <div className='icons' style={{ display: 'flex' }}>
               <a href={infoLink}>
@@ -103,11 +107,15 @@ const Capabilities: FC = () => {
         </Collapse>
       </Row>
 
-      {/*<div className={'modal'}>*/}
-      {/*  <button className={'modal-btn'}>*/}
-      {/*    <img src={Close} alt={'image'} />*/}
-      {/*  </button>*/}
-      {/*</div>*/}
+      <div className={`modal ${modal ? 'modal-open' : 'modal-close'}`}>
+        <button className={'modal-btn'} onClick={() => setModal(false)}>
+          <img src={Close} alt={'image'} />
+        </button>
+        <Carousel>
+          <img className='modal-image' src={openedItem} alt='' />
+          <img className='modal-image' src={openedItem} alt='' />
+        </Carousel>
+      </div>
     </Layout>
   )
 }

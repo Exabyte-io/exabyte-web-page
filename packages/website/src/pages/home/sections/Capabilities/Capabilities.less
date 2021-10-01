@@ -117,6 +117,7 @@
         align-items: center;
         width: 505px;
         height: 100%;
+        cursor: pointer;
 
         .collapse-image {
           max-width: 505px;
@@ -137,11 +138,25 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
     display: block;
     width: 100vw;
     height: 100vh;
     background-color: white;
+    transition: all 250ms linear;
+
+    @media (min-width: 768px) {
+      padding: 118px 153px 157px 106px;
+    }
+
+    &-open {
+      z-index: 100;
+      opacity: 1;
+    }
+
+    &-close {
+      z-index: -100;
+      opacity: 0;
+    }
 
     &-btn {
       position: absolute;
@@ -149,6 +164,11 @@
       right: 24px;
       background: transparent;
       border: none;
+      cursor: pointer;
+    }
+
+    &-image {
+      max-height: 700px;
     }
   }
 }
