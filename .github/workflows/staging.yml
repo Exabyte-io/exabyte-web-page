@@ -69,6 +69,7 @@ jobs:
         uses: hiberbee/github-action-skaffold@1.8.0
         with:
           command: build
+          concurrency: 1
           repository: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
 
       - name: Release Helm charts
