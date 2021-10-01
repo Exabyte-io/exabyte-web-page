@@ -6,7 +6,10 @@ RUN yarn \
 
 FROM dcr.bndigital.dev/library/nodejs:1.0.0 AS cms
 COPY --from=build --chown=node /usr/local/src/packages/cms .
+ENTRYPOINT ["yarn"]
 CMD ["strapi", "start"]
 
 FROM dcr.bndigital.dev/library/nodejs:1.0.0 AS website
 COPY --from=build --chown=node /usr/local/src/packages/website/build .
+ENTRYPOINT ["yarn"]
+CMD ["exec", "serve", "--single"]
