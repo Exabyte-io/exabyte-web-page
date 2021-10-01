@@ -4,9 +4,9 @@ COPY . .
 RUN yarn \
  && yarn build
 
-FROM ghcr.io/bn-digital/docker/nodejs:latest AS cms
+FROM ghcr.io/bn-digital/docker/nodejs:1.0.0 AS cms
 COPY --from=build --chown=node /usr/local/src/packages/cms .
 CMD ["strapi", "start"]
 
-FROM ghcr.io/bn-digital/docker/html:1.0.0 AS website
+FROM ghcr.io/bn-digital/docker/nodejs:1.0.0 AS website
 COPY --from=build --chown=node /usr/local/src/packages/website/build .
