@@ -10,7 +10,7 @@ type ActionButtonProps = {
 }
 
 const ActionButton: FC<ActionButtonProps> = ({ title, src, styles, type, size }) => (
-  <a href={src} style={styles} className={`action-btn action-btn-${type} action-btn-${size}`}>
+  <a href={src} style={styles} className={`action-btn action-btn-${type} action-btn-${size}`} target={'_blank'}>
     {title}
   </a>
 )
