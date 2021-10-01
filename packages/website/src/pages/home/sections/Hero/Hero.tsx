@@ -34,7 +34,7 @@ const Hero: FC = () => {
           <div className='wistia_responsive_padding' style={{ padding: ((56.25 % 0) % 0) % 0, position: 'relative', width: '100%' }}>
             <div className='wistia_responsive_wrapper' style={{ height: '100%', left: 0, position: 'absolute', top: 0, width: '100%' }}>
               <div
-                className='wistia_embed wistia_async_1ahn5osgio videoFoam=true'
+                className='wistia_embed wistia_async_1ahn5osgio videoFoam=true autoPlay=true'
                 style={{ height: '100%', position: 'relative', width: '100%' }}
               >
                 <div
