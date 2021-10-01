@@ -1,11 +1,6 @@
-import { FC, useRef, useState } from 'react'
+import { FC } from 'react'
 import heroMb from './images/home-hero-mb.svg'
 import heroLg from './images/home-hero-lg.svg'
-import VideoPreviewImage from './images/video-preview.svg'
-import PlayButtonImage from './images/play-button.svg'
-import PlayButtonMbImage from './images/play-button-mb.svg'
-import PauseButtonImage from './images/pause-button.svg'
-import CloseImage from './images/close.svg'
 import { useMediaQuery } from 'react-responsive'
 import { ActionButton } from '../../../../components/button/ActionButton'
 import './Hero.less'
@@ -13,10 +8,6 @@ import { AccessButton } from '../../../../components/button/AccessButton'
 import { useContentQuery } from '../../../../graphql'
 
 const Hero: FC = () => {
-  const [isVideoActive, setIsVideoActive] = useState(false)
-  const [isVideoPaused, setIsVideoPaused] = useState(true)
-
-  const video = useRef<HTMLVideoElement>(null)
   const md = useMediaQuery({ maxWidth: 768 })
 
   const { data } = useContentQuery({
@@ -26,29 +17,11 @@ const Hero: FC = () => {
   })
   const content = data?.content
 
-  const showVideo = () => {
-    if (isVideoActive) {
-      video.current?.pause()
-      setIsVideoPaused(true)
-    }
-    setIsVideoActive(!isVideoActive)
-  }
-
-  const changeVideoState = () => {
-    if (video.current?.paused) {
-      video.current?.play()
-      setIsVideoPaused(false)
-    } else {
-      video.current?.pause()
-      setIsVideoPaused(true)
-    }
-  }
-
   return (
     <div className='home-hero-section'>
       <img src={md ? heroMb : heroLg} alt='' className='background-img' />
       <div className='content'>
-        <div className='text-content' style={{ display: isVideoActive ? 'none' : 'block' }}>
+        <div className='text-content'>
           <div className='title'>{content?.title}</div>
           <div className='text'>{content?.description}</div>
           <div className='buttons'>
@@ -57,30 +30,36 @@ const Hero: FC = () => {
           </div>
         </div>
 
-        <div className='video-preview' style={{ display: isVideoActive ? 'none' : 'flex' }}>
-          <img src={VideoPreviewImage} alt='' className='video-preview-img' />
-          <button onClick={showVideo} className='play-button'>
-            <img src={PlayButtonImage} alt='' />
-            <div className='duration'>Duration: 4 minutes</div>
-          </button>
-        </div>
-
-        <div className='full-video' style={{ display: isVideoActive ? 'flex' : 'none' }}>
-          <button onClick={changeVideoState} className='play-button' style={{ display: md && isVideoPaused ? 'flex' : 'none' }}>
-            <img src={PlayButtonMbImage} alt='' />
-          </button>
-
-          <div className='close-button' onClick={showVideo}>
-            <img src={CloseImage} alt='' />
+        <div className='full-video'>
+          <div className='wistia_responsive_padding' style={{ padding: ((56.25 % 0) % 0) % 0, position: 'relative', width: '100%' }}>
+            <div className='wistia_responsive_wrapper' style={{ height: '100%', left: 0, position: 'absolute', top: 0, width: '100%' }}>
+              <div
+                className='wistia_embed wistia_async_1ahn5osgio videoFoam=true'
+                style={{ height: '100%', position: 'relative', width: '100%' }}
+              >
+                <div
+                  className='wistia_swatch'
+                  style={{
+                    height: '100%',
+                    left: 0,
+                    opacity: 0,
+                    overflow: 'hidden',
+                    position: 'absolute',
+                    top: 0,
+                    transition: 'opacity 200ms',
+                    width: '100%',
+                  }}
+                >
+                  <img
+                    src='https://fast.wistia.com/embed/medias/1ahn5osgio/swatch'
+                    style={{ filter: 'blur(5px)', height: '100%', objectFit: 'contain', width: '100%' }}
+                    alt=''
+                    aria-hidden='true'
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div className='pause-button'>
-            <img src={isVideoPaused ? PlayButtonImage : PauseButtonImage} alt='' />
-          </div>
-
-          <video ref={video} className='video' onClick={changeVideoState}>
-            <source src={'video/videoplayback.mp4'} />
-          </video>
         </div>
       </div>
     </div>
