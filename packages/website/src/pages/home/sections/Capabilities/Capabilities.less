@@ -172,6 +172,7 @@
     }
 
     &-navigation-btn {
+      z-index: 111;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -186,15 +187,15 @@
       }
 
       &:first-of-type {
-        position: absolute;
-        bottom: -10%;
+        position: fixed;
+        bottom: 5%;
         left: 46.5%;
       }
 
       &:last-of-type {
-        position: absolute;
+        position: fixed;
         right: 46.5%;
-        bottom: -10%;
+        bottom: 5%;
 
         img {
           transform: rotate(-180deg);
