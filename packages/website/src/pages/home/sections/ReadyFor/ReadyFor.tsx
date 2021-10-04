@@ -8,11 +8,11 @@ type CardProps = Content & {
   media?: {
     id?: string
     url?: string
-  }
+  }[]
 }
 
 const ReadyForCard: FC<CardProps> = ({ title, media, subTitle }) => (
-  <Card bordered={false} cover={<Avatar src={media?.url} shape={'square'} size={52} style={{ marginBottom: 24 }} />}>
+  <Card bordered={false} cover={<Avatar src={media?.[0].url} shape={'square'} size={52} style={{ marginBottom: 24 }} />}>
     <Card.Meta title={title} description={subTitle} />
   </Card>
 )

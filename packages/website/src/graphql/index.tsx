@@ -335,11 +335,19 @@ export type ComponentOrganismsSection = {
   description?: Maybe<Scalars['String']>;
   extra?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
-  media?: Maybe<UploadFile>;
+  media?: Maybe<Array<Maybe<UploadFile>>>;
   slug?: Maybe<Scalars['String']>;
   subTitle?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+};
+
+
+export type ComponentOrganismsSectionMediaArgs = {
+  limit?: Maybe<Scalars['Int']>;
+  sort?: Maybe<Scalars['String']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 export type ComponentOrganismsSectionInput = {
@@ -347,7 +355,7 @@ export type ComponentOrganismsSectionInput = {
   backgroundColor?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   extra?: Maybe<Scalars['String']>;
-  media?: Maybe<Scalars['ID']>;
+  media?: Maybe<Array<Maybe<Scalars['ID']>>>;
   slug?: Maybe<Scalars['String']>;
   subTitle?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
@@ -1658,7 +1666,7 @@ export type EditComponentOrganismsSectionInput = {
   description?: Maybe<Scalars['String']>;
   extra?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['ID']>;
-  media?: Maybe<Scalars['ID']>;
+  media?: Maybe<Array<Maybe<Scalars['ID']>>>;
   slug?: Maybe<Scalars['String']>;
   subTitle?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
@@ -1811,7 +1819,7 @@ export type UpdateWebsitePayload = {
 
 export type ButtonFragment = { __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> };
 
-export type ContentFragment = { __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> };
+export type ContentFragment = { __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> };
 
 export type EntryFragment = { __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> };
 
@@ -1823,9 +1831,9 @@ export type MapFragment = { __typename?: 'ComponentMoleculesMap', id: string, sl
 
 export type NumericFragment = { __typename?: 'ComponentAtomsNumeric', id: string, value: number, unit?: Maybe<string> };
 
-export type PostFragment = { __typename?: 'BlogPost', id: string, name: string, slug: string, text: string, subtitle?: Maybe<string>, section?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, cover?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, url: string }>>> };
+export type PostFragment = { __typename?: 'BlogPost', id: string, name: string, slug: string, text: string, subtitle?: Maybe<string>, section?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>>>, cover?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, url: string }>>> };
 
-export type SectionFragment = { __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> };
+export type SectionFragment = { __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> };
 
 export type TextFragment = { __typename?: 'ComponentAtomsText', id: string, value: string };
 
@@ -1836,7 +1844,7 @@ export type ContentQueryVariables = Exact<{
 }>;
 
 
-export type ContentQuery = { __typename?: 'Query', content?: Maybe<{ __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> }> };
+export type ContentQuery = { __typename?: 'Query', content?: Maybe<{ __typename?: 'Content', id: string, title: string, description?: Maybe<string>, slug: string, subtitle?: Maybe<string>, button?: Maybe<{ __typename?: 'ComponentAtomsButton', id: string, simpleIcon?: Maybe<string>, link?: Maybe<{ __typename?: 'ComponentAtomsLink', id: string, text: string, extra?: Maybe<string>, url: string }> }>, section?: Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>, sections?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>>>, table?: Maybe<Array<Maybe<{ __typename?: 'ComponentMoleculesMap', id: string, slug: string, entries?: Maybe<Array<Maybe<{ __typename?: 'ComponentAtomsEntry', id: string, key: string, value?: Maybe<string> }>>> }>>> }> };
 
 export type CreateContactFormRequestMutationVariables = Exact<{
   input?: Maybe<CreateContactFormRequestInput>;
@@ -1857,14 +1865,14 @@ export type PostQueryVariables = Exact<{
 }>;
 
 
-export type PostQuery = { __typename?: 'Query', post?: Maybe<{ __typename?: 'BlogPost', id: string, name: string, slug: string, text: string, subtitle?: Maybe<string>, section?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, cover?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, url: string }>>> }> };
+export type PostQuery = { __typename?: 'Query', post?: Maybe<{ __typename?: 'BlogPost', id: string, name: string, slug: string, text: string, subtitle?: Maybe<string>, section?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>>>, cover?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, url: string }>>> }> };
 
 export type PostsQueryVariables = Exact<{
   where?: Maybe<Scalars['JSON']>;
 }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts?: Maybe<Array<Maybe<{ __typename?: 'BlogPost', id: string, name: string, slug: string, text: string, subtitle?: Maybe<string>, section?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }> }>>>, cover?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, url: string }>>> }>>> };
+export type PostsQuery = { __typename?: 'Query', posts?: Maybe<Array<Maybe<{ __typename?: 'BlogPost', id: string, name: string, slug: string, text: string, subtitle?: Maybe<string>, section?: Maybe<Array<Maybe<{ __typename?: 'ComponentOrganismsSection', id: string, title?: Maybe<string>, subTitle?: Maybe<string>, active?: Maybe<boolean>, description?: Maybe<string>, extra?: Maybe<string>, backgroundColor?: Maybe<string>, text?: Maybe<string>, slug?: Maybe<string>, media?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, alternativeText?: Maybe<string>, caption?: Maybe<string>, name: string, previewUrl?: Maybe<string>, size: number, url: string, height?: Maybe<number>, width?: Maybe<number> }>>> }>>>, cover?: Maybe<Array<Maybe<{ __typename?: 'UploadFile', id: string, url: string }>>> }>>> };
 
 export type RegisterMutationVariables = Exact<{
   user: UsersPermissionsRegisterInput;

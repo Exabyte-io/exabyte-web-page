@@ -1147,10 +1147,10 @@ type ComponentOrganismsSection {
   description: String
   extra: String
   text: String
-  media: UploadFile
   active: Boolean
   backgroundColor: String
   slug: String
+  media(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
 }
 
 input ComponentOrganismsSectionInput {
@@ -1159,7 +1159,7 @@ input ComponentOrganismsSectionInput {
   description: String
   extra: String
   text: String
-  media: ID
+  media: [ID]
   active: Boolean
   backgroundColor: String
   slug: String
@@ -1172,7 +1172,7 @@ input editComponentOrganismsSectionInput {
   description: String
   extra: String
   text: String
-  media: ID
+  media: [ID]
   active: Boolean
   backgroundColor: String
   slug: String
