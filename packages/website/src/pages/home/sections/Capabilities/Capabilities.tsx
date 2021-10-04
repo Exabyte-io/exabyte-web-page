@@ -109,7 +109,9 @@ const Capabilities: FC = () => {
           >
             {openedItem &&
               openedItem.map((value, index) => (
-                <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
+                index < 2 && (
+                  <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
+                )
               ))}
             <div className='icons' style={{ display: 'flex' }}>
               <a href={infoLink}>
@@ -127,7 +129,9 @@ const Capabilities: FC = () => {
             <Panel key={index} header={item?.title}>
               <div className='collapse-menu-mobile-image-wrapper'>
                 {item?.media?.map((value, index1) => (
-                  <img className={'mobile-img'} src={`http://localhost:1337${value.url}`} alt='image' key={index1} />
+                  index < 2 && (
+                    <img className={'mobile-img'} src={`http://localhost:1337${value.url}`} alt='image' key={index1} />
+                  )
                 ))}
                 <div className='collapse-menu-mobile-icons'>
                   <a href={item?.subTitle}>
