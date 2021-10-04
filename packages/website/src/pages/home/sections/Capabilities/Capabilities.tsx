@@ -1,5 +1,4 @@
 import React, { FC, MouseEventHandler, useEffect, useState } from 'react'
-import './Capabilities.less'
 import { Col, Collapse, Layout, Row, Typography, Carousel } from 'antd'
 import GitHubIcon from '../Capabilities/images/git-hub-icon.svg'
 import InfoIcon from '../Capabilities/images/info-icon.svg'
@@ -8,11 +7,12 @@ import OpenArrow from './images/open-arrow.svg'
 import { useContentQuery } from '../../../../graphql'
 import Close from './images/close.svg'
 import ArrowBtn from './images/arrow-btn.svg'
+import './Capabilities.less'
 
 const { Panel } = Collapse
 
 const Capabilities: FC = () => {
-  const [openedItem, setOpenedItem] = useState('')
+  const [openedItem, setOpenedItem] = useState([{ url: '' }])
   const [githubLink, setGithubLink] = useState('')
   const [infoLink, setInfoLink] = useState('')
   const [openedCollapseItem, setOpenedCollapseItem] = useState(-1)
@@ -24,10 +24,10 @@ const Capabilities: FC = () => {
   })
   const content = data?.content
 
-  const changeOpenedItem = (image?: string, ghLink?: string, infLink?: string, index: number) => {
+  const changeOpenedItem = (image?: { url: string }[], ghLink?: string, infLink?: string, index: number) => {
     if (image) {
       if (openedItem === image) {
-        setOpenedItem('')
+        setOpenedItem([])
       } else {
         setOpenedItem(image)
       }
@@ -88,7 +88,7 @@ const Capabilities: FC = () => {
                   <div
                     className='collapse-menu-item'
                     key={index}
-                    onClick={() => changeOpenedItem(item?.media?.url, item?.subTitle, item?.description, index)}
+                    onClick={() => changeOpenedItem(item?.media, item?.subTitle, item?.description, index)}
                   >
                     <span>{item.title}</span>
                     <div className={index === openedCollapseItem ? 'active' : ''}>
@@ -99,8 +99,11 @@ const Capabilities: FC = () => {
               })}
             </div>
           )}
-          <div className='collapse-image-wrapper' style={{ display: openedItem !== '' ? 'flex' : 'none' }} onClick={() => setModal(true)}>
-            <img className='collapse-image' src={openedItem} alt='' />
+          <div className='collapse-image-wrapper' style={{ display: openedItem.length !== 1 ? 'flex' : 'none' }} onClick={() => setModal(true)}>
+            {openedItem &&
+              openedItem.map((value, index) => (
+                <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
+              ))}
             <div className='icons' style={{ display: 'flex' }}>
               <a href={infoLink}>
                 <img width={25} height={25} src={InfoIcon} alt='' />
@@ -116,7 +119,7 @@ const Capabilities: FC = () => {
           {content?.sections?.map((item, index) => (
             <Panel key={index} header={item?.title}>
               <div className='collapse-menu-mobile-image-wrapper'>
-                <img src={item?.media?.url} alt='' />
+                <img src={item?.media?.[0].url} alt='' />
                 <div className='collapse-menu-mobile-icons'>
                   <a href={item?.subTitle}>
                     <img width={25} height={25} src={InfoIcon} alt='' />
@@ -136,7 +139,6 @@ const Capabilities: FC = () => {
           <img src={Close} alt={'image'} />
         </button>
         <Carousel dots={false} arrows {...settings}>
-          <img className='modal-image' src={openedItem} alt='' />
           <img className='modal-image' src={openedItem} alt='' />
         </Carousel>
       </div>
