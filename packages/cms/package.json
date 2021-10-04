@@ -7,7 +7,7 @@
   "scripts": {
     "build": "strapi build --clean",
     "run": "strapi start",
-    "start": "strapi develop"
+    "start": "vault-env && strapi develop"
   },
   "dependencies": {
     "knex": "^0.95.11",
@@ -26,5 +26,8 @@
     "strapi-provider-email-sendmail": "^3.6.8",
     "strapi-provider-upload-local": "^3.6.8",
     "strapi-utils": "^3.6.8"
+  },
+  "devDependencies": {
+    "@bn-digital/vault-env": "^1.4.0"
   }
 }

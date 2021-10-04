@@ -1611,6 +1611,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bn-digital/vault-env@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@bn-digital/vault-env@npm:1.4.0"
+  dependencies:
+    chalk: ^4.1.1
+    commander: ^7.2.0
+    dotenv: ^10.0.0
+    node-vault: ^0.9.21
+  bin:
+    vault-env: build/cli.js
+  checksum: 7ef18d061479b559a8f50e843445fe4e8d6ad2f9cfc2c65b2361b716a4f8d076fe9b657cf81661d4df04aa0304966cefb9c0372ceabd93857b52bbdd825a1959
+  languageName: node
+  linkType: hard
+
 "@buffetjs/core@npm:3.3.8, @buffetjs/core@npm:^3.3.8":
   version: 3.3.8
   resolution: "@buffetjs/core@npm:3.3.8"
@@ -1886,6 +1900,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@exabyte/cms@workspace:packages/cms"
   dependencies:
+    "@bn-digital/vault-env": ^1.4.0
     knex: ^0.95.11
     sqlite3: ^5.0.2
     strapi: ^3.6.8
@@ -6804,7 +6819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^7.0.0, commander@npm:^7.1.0":
+"commander@npm:^7.0.0, commander@npm:^7.1.0, commander@npm:^7.2.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: 53501cbeee61d5157546c0bef0fedb6cdfc763a882136284bed9a07225f09a14b82d2a84e7637edfd1a679fb35ed9502fd58ef1d091e6287f60d790147f68ddc
@@ -10494,7 +10509,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"har-validator@npm:~5.1.3":
+"har-validator@npm:~5.1.0, har-validator@npm:~5.1.3":
   version: 5.1.5
   resolution: "har-validator@npm:5.1.5"
   dependencies:
@@ -14478,6 +14493,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"mustache@npm:^2.2.1":
+  version: 2.3.2
+  resolution: "mustache@npm:2.3.2"
+  bin:
+    mustache: ./bin/mustache
+  checksum: e3073355fe8efc4c36eb18af9985812aa7ab216d2b07246b407320b0f93acebeae14719ade700e817393c27e2168a4a1092d6c2f65efb3e26f0be84747a81e78
+  languageName: node
+  linkType: hard
+
 "mute-stream@npm:0.0.7":
   version: 0.0.7
   resolution: "mute-stream@npm:0.0.7"
@@ -14793,6 +14817,19 @@ fsevents@^1.2.7:
     long-timeout: 0.1.1
     sorted-array-functions: ^1.0.0
   checksum: eee93f5d1c2425ef67b39bc8096a5c9647c03acbd41b84ffc96f2f2eee559ed2f94307ad97af63886a59403a9fedac2ef80ed6ed5eaca12a0e5b25b1a69c75d3
+  languageName: node
+  linkType: hard
+
+"node-vault@npm:^0.9.21":
+  version: 0.9.22
+  resolution: "node-vault@npm:0.9.22"
+  dependencies:
+    debug: 3.1.0
+    mustache: ^2.2.1
+    request: 2.88.0
+    request-promise-native: 1.0.7
+    tv4: ^1.2.7
+  checksum: 86a820682be560fff9b916367af7697b8331bfae3f4ff6070cf38580238ef5c985e817145c7bdb8b40ae3a0602d4c0767d623182334b7b91eb3de38fe9f7b4e9
   languageName: node
   linkType: hard
 
@@ -16486,7 +16523,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"psl@npm:^1.1.28":
+"psl@npm:^1.1.24, psl@npm:^1.1.28":
   version: 1.8.0
   resolution: "psl@npm:1.8.0"
   checksum: 6150048ed2da3f919478bee8a82f3828303bc0fc730fb015a48f83c9977682c7b28c60ab01425a72d82a2891a1681627aa530a991d50c086b48a3be27744bde7
@@ -16545,7 +16582,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"punycode@npm:^1.2.4":
+"punycode@npm:^1.2.4, punycode@npm:^1.4.1":
   version: 1.4.1
   resolution: "punycode@npm:1.4.1"
   checksum: fa6e698cb53db45e4628559e557ddaf554103d2a96a1d62892c8f4032cd3bc8871796cae9eabc1bc700e2b6677611521ce5bb1d9a27700086039965d0cf34518
@@ -18481,6 +18518,58 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"request-promise-core@npm:1.1.2":
+  version: 1.1.2
+  resolution: "request-promise-core@npm:1.1.2"
+  dependencies:
+    lodash: ^4.17.11
+  peerDependencies:
+    request: ^2.34
+  checksum: 4946886b8dd9d40c4ea0ca39e25093a52f66d43a6442a30f7978ac45619cb312c067a44aabb300157adef6d6407a5f03daf4f621349a88329ca453c3b6bbd0fa
+  languageName: node
+  linkType: hard
+
+"request-promise-native@npm:1.0.7":
+  version: 1.0.7
+  resolution: "request-promise-native@npm:1.0.7"
+  dependencies:
+    request-promise-core: 1.1.2
+    stealthy-require: ^1.1.1
+    tough-cookie: ^2.3.3
+  peerDependencies:
+    request: ^2.34
+  checksum: 92d87afe6d8fb65083880e375d320e3febefc2f8cc91c89aa2bf1c7654b3b4ba14efd54f80a6539368fa63eb389fcef8e73ea51dad151b8f507ad957ed9317a1
+  languageName: node
+  linkType: hard
+
+"request@npm:2.88.0":
+  version: 2.88.0
+  resolution: "request@npm:2.88.0"
+  dependencies:
+    aws-sign2: ~0.7.0
+    aws4: ^1.8.0
+    caseless: ~0.12.0
+    combined-stream: ~1.0.6
+    extend: ~3.0.2
+    forever-agent: ~0.6.1
+    form-data: ~2.3.2
+    har-validator: ~5.1.0
+    http-signature: ~1.2.0
+    is-typedarray: ~1.0.0
+    isstream: ~0.1.2
+    json-stringify-safe: ~5.0.1
+    mime-types: ~2.1.19
+    oauth-sign: ~0.9.0
+    performance-now: ^2.1.0
+    qs: ~6.5.2
+    safe-buffer: ^5.1.2
+    tough-cookie: ~2.4.3
+    tunnel-agent: ^0.6.0
+    uuid: ^3.3.2
+  checksum: aecf4f8cdb0ebd5feac5e29b748d6ab376ac5717ddcbc5a6bb24cc3808bde755ff0fa3a8379a2d25f6c4b969ced1ac065d22a615c71747cd305731efa643e30d
+  languageName: node
+  linkType: hard
+
 "request@npm:^2.83.0, request@npm:^2.87.0":
   version: 2.88.2
   resolution: "request@npm:2.88.2"
@@ -19846,6 +19935,13 @@ resolve@^2.0.0-next.3:
   dependencies:
     ci-info: ^3.0.0
   checksum: da0b81e217d920770448e53d660b6b0800d3f6fde201812cb7f5505a6fffe578b21188301214fecc227cc2db6849eb736f6d1975e5fa7ee179e9240da81fc88b
+  languageName: node
+  linkType: hard
+
+"stealthy-require@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "stealthy-require@npm:1.1.1"
+  checksum: 6805b857a9f3a6a1079fc6652278038b81011f2a5b22cbd559f71a6c02087e6f1df941eb10163e3fdc5391ab5807aa46758d4258547c1f5ede31e6d9bfda8dd3
   languageName: node
   linkType: hard
 
@@ -21508,13 +21604,23 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tough-cookie@npm:~2.5.0":
+"tough-cookie@npm:^2.3.3, tough-cookie@npm:~2.5.0":
   version: 2.5.0
   resolution: "tough-cookie@npm:2.5.0"
   dependencies:
     psl: ^1.1.28
     punycode: ^2.1.1
   checksum: 16a8cd090224dd176eee23837cbe7573ca0fa297d7e468ab5e1c02d49a4e9a97bb05fef11320605eac516f91d54c57838a25864e8680e27b069a5231d8264977
+  languageName: node
+  linkType: hard
+
+"tough-cookie@npm:~2.4.3":
+  version: 2.4.3
+  resolution: "tough-cookie@npm:2.4.3"
+  dependencies:
+    psl: ^1.1.24
+    punycode: ^1.4.1
+  checksum: af5c7b03f22fc60b7a03339414d7e5b4d68aea84bcc591b4bfab73d85f71e218ff9ebdf94042205051faf980bdb2eeec5c8cf6ea5368fd9f878d2c3f718640b7
   languageName: node
   linkType: hard
 
@@ -21686,6 +21792,13 @@ resolve@^2.0.0-next.3:
   dependencies:
     safe-buffer: ^5.0.1
   checksum: 05f6510358f8afc62a057b8b692f05d70c1782b70db86d6a1e0d5e28a32389e52fa6e7707b6c5ecccacc031462e4bc35af85ecfe4bbc341767917b7cf6965711
+  languageName: node
+  linkType: hard
+
+"tv4@npm:^1.2.7":
+  version: 1.3.0
+  resolution: "tv4@npm:1.3.0"
+  checksum: 075096cf3bc2db5727650e16717a343954625c5fde6b2bb5553c86a9a5ca7b9fd287c0f5ab7ac03094f39e982fe9288dc715c7223a90e1684fd2263460a74bbd
   languageName: node
   linkType: hard
 
