@@ -18,7 +18,7 @@ const Investors: FC = () => {
           {content?.sections?.map(card => (
             <div className='investors-content-cards-card'>
               <div className='content'>
-                <img src={card?.media?.url} alt='' />
+                <img src={card?.media?.[0].url} alt='' />
                 <div className='hidden-content'>
                   <div className='card-name'>{card?.title}</div>
                   <div className='pre-seed'>Pre-seed</div>

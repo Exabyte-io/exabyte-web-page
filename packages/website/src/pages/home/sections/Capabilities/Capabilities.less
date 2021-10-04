@@ -147,12 +147,9 @@
     display: block;
     width: 100vw;
     height: 100vh;
+    padding: inherit;
     background-color: white;
     transition: all 250ms linear;
-
-    @media (min-width: 768px) {
-      padding: 118px 153px 157px 106px;
-    }
 
     &-open {
       z-index: 100;
@@ -174,7 +171,8 @@
     }
 
     &-image {
-      max-height: 620px;
+      width: auto !important;
+      max-height: 75vh;
     }
 
     &-navigation-btn {
@@ -226,7 +224,20 @@
         flex-direction: column;
         align-items: center;
 
+        .mobile-img {
+          width: 90%;
+
+          &:first-of-type {
+            transform: translateX(10%) translateY(40%);
+          }
+
+          &:last-of-type {
+            transform: translateX(-10%);
+          }
+        }
+
         .collapse-menu-mobile-icons {
+          display: flex;
           margin-top: 32px;
 
           img:first-child {

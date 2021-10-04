@@ -70,6 +70,9 @@ const Capabilities: FC = () => {
   const settings = {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    centerMode: true,
+    centerPadding: '130px',
+    infinite: false,
   }
 
   return (
@@ -99,7 +102,11 @@ const Capabilities: FC = () => {
               })}
             </div>
           )}
-          <div className='collapse-image-wrapper' style={{ display: openedItem.length !== 1 ? 'flex' : 'none' }} onClick={() => setModal(true)}>
+          <div
+            className='collapse-image-wrapper'
+            style={{ display: openedItem.length !== 1 ? 'flex' : 'none' }}
+            onClick={() => setModal(true)}
+          >
             {openedItem &&
               openedItem.map((value, index) => (
                 <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
@@ -119,7 +126,9 @@ const Capabilities: FC = () => {
           {content?.sections?.map((item, index) => (
             <Panel key={index} header={item?.title}>
               <div className='collapse-menu-mobile-image-wrapper'>
-                <img src={item?.media?.[0].url} alt='' />
+                {item?.media?.map((value, index1) => (
+                  <img className={'mobile-img'} src={`http://localhost:1337${value.url}`} alt='image' key={index1} />
+                ))}
                 <div className='collapse-menu-mobile-icons'>
                   <a href={item?.subTitle}>
                     <img width={25} height={25} src={InfoIcon} alt='' />
@@ -139,7 +148,9 @@ const Capabilities: FC = () => {
           <img src={Close} alt={'image'} />
         </button>
         <Carousel dots={false} arrows {...settings}>
-          <img className='modal-image' src={openedItem} alt='' />
+          {openedItem.map((value, index) => (
+            <img className='modal-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
+          ))}
         </Carousel>
       </div>
     </Layout>

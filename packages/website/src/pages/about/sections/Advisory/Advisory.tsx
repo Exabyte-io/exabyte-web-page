@@ -20,7 +20,7 @@ const Advisory: FC = () => {
         <div className='advisory-content-cards'>
           {content?.sections?.map(card => (
             <div className='advisory-content-cards-card'>
-              <img src={card?.media?.url} alt='' className='advisory-content-cards-card-photo' />
+              <img src={card?.media?.[0].url} alt='' className='advisory-content-cards-card-photo' />
               <div className='advisory-content-cards-card-name'>{card?.title}</div>
               <div className='advisory-content-cards-card-position'>{card?.subTitle}</div>
               <a href={card?.text} className='advisory-content-cards-card-link'>
