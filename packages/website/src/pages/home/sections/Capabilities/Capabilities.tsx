@@ -46,7 +46,7 @@ const Capabilities: FC = () => {
   const [modal, setModal] = useState(false)
 
   useEffect(() => {
-    console.log(openedItem)
+    modal ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = 'visible')
   }, [modal])
 
   const SampleNextArrow = (props: { onClick?: MouseEventHandler<HTMLButtonElement> }) => {
