@@ -24,6 +24,8 @@ const Capabilities: FC = () => {
   })
   const content = data?.content
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const changeOpenedItem = (image?: { url: string }[], ghLink?: string, infLink?: string, index: number) => {
     if (image) {
       if (openedItem === image) {
@@ -33,7 +35,11 @@ const Capabilities: FC = () => {
       }
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     setGithubLink(ghLink)
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     setInfoLink(infLink)
 
     if (index === openedCollapseItem) {
