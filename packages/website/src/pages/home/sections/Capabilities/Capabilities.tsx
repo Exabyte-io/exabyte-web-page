@@ -8,7 +8,6 @@ import { useContentQuery } from '../../../../graphql'
 import Close from './images/close.svg'
 import ArrowBtn from './images/arrow-btn.svg'
 import './Capabilities.less'
-import { log } from 'util'
 
 const { Panel } = Collapse
 
@@ -109,12 +108,13 @@ const Capabilities: FC = () => {
             onClick={() => setModal(true)}
           >
             {openedItem &&
-              openedItem.map((value, index) => (
-                index < 2 && (
-                  // <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
-                  <img className='collapse-image' src={value.url} alt='image' key={index} />
-                )
-              ))}
+              openedItem.map(
+                (value, index) =>
+                  index < 2 && (
+                    // <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
+                    <img className='collapse-image' src={value.url} alt='image' key={index} />
+                  ),
+              )}
             <div className='icons' style={{ display: 'flex' }}>
               <a href={infoLink}>
                 <img width={25} height={25} src={InfoIcon} alt='' />
@@ -131,10 +131,8 @@ const Capabilities: FC = () => {
             <Panel key={index} header={item?.title}>
               <div className='collapse-menu-mobile-image-wrapper'>
                 {item?.media?.map((value, index1) => (
-                  index < 2 && (
-                    // <img className={'mobile-img'} src={`http://localhost:1337${value.url}`} alt='image' key={index1} />
-                    <img className={'mobile-img'} src={value.url} alt='image' key={index1} />
-                  )
+                  // <img className={'mobile-img'} src={`http://localhost:1337${value.url}`} alt='image' key={index1} />
+                  <img className={'mobile-img'} src={value.url} alt='image' key={index1} />
                 ))}
                 <div className='collapse-menu-mobile-icons'>
                   <a href={item?.subTitle}>
