@@ -81,6 +81,8 @@ const Capabilities: FC = () => {
     infinite: false,
   }
 
+  const location = 'http://localhost:1337'
+
   return (
     <Layout className={'section capabilities-wrapper'}>
       <Row align={'middle'} justify={'space-between'} className={'container'} gutter={[48, 48]} style={{ width: '100%', margin: '0 auto' }}>
@@ -117,8 +119,7 @@ const Capabilities: FC = () => {
               openedItem.map(
                 (value, index) =>
                   index < 2 && (
-                    // <img className='collapse-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
-                    <img className='collapse-image' src={value.url} alt='image' key={index} />
+                    <img className='collapse-image' src={`${location}${value.url}`} alt='image' key={index} />
                   ),
               )}
             <div className='icons' style={{ display: 'flex' }}>
@@ -137,8 +138,7 @@ const Capabilities: FC = () => {
             <Panel key={index} header={item?.title}>
               <div className='collapse-menu-mobile-image-wrapper'>
                 {item?.media?.map((value, index1) => (
-                  // <img className={'mobile-img'} src={`http://localhost:1337${value.url}`} alt='image' key={index1} />
-                  <img className={'mobile-img'} src={value.url} alt='image' key={index1} />
+                  <img className={'mobile-img'} src={`${location}${value.url}`} alt='image' key={index1} />
                 ))}
                 <div className='collapse-menu-mobile-icons'>
                   <a href={item?.subTitle}>
@@ -160,8 +160,7 @@ const Capabilities: FC = () => {
         </button>
         <Carousel dots={false} arrows {...settings}>
           {openedItem.map((value, index) => (
-            // <img className='modal-image' src={`http://localhost:1337${value.url}`} alt='image' key={index} />
-            <img className='modal-image' src={value.url} alt='image' key={index} />
+            <img className='modal-image' src={`${location}${value.url}`} alt='image' key={index} />
           ))}
         </Carousel>
       </div>
