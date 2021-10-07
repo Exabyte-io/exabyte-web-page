@@ -22,8 +22,12 @@ const Partners: FC = () => {
         <div className='partners-content-cards'>
           {content?.sections?.map(card => (
             <div className='partners-content-cards-card'>
-              <img src={card?.media?.url} alt='' className='partners-content-cards-card-photo' />
-              <div className='partners-content-cards-card-title'>{card?.title}</div>
+              <a href={card.description} target={'_blank'}>
+                <img src={card?.media?.[0].url} alt='' className='partners-content-cards-card-photo' />
+              </a>
+              <a href={card.slug} target={'_blank'}>
+                <div className='partners-content-cards-card-title'>{card?.title}</div>
+              </a>
               <div className='partners-content-cards-card-text'>{card?.subTitle}</div>
             </div>
           ))}
@@ -33,8 +37,12 @@ const Partners: FC = () => {
           <CustomCarousel>
             {content?.sections?.map(card => (
               <div className='partners-content-cards-card'>
-                <img src={card?.media?.url} alt='' className='partners-content-cards-card-photo' />
-                <div className='partners-content-cards-card-title'>{card?.title}</div>
+                <a href={card.description} target={'_blank'}>
+                  <img src={card?.media?.[0].url} alt='' className='partners-content-cards-card-photo' />
+                </a>
+                <a href={card.slug} target={'_blank'}>
+                  <div className='partners-content-cards-card-title'>{card?.title}</div>
+                </a>
                 <div className='partners-content-cards-card-text'>{card?.subTitle}</div>
               </div>
             ))}
