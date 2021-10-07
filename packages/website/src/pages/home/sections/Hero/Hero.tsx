@@ -8,7 +8,7 @@ import { AccessButton } from '../../../../components/button/AccessButton'
 import { useContentQuery } from '../../../../graphql'
 
 const Hero: FC = () => {
-  const md = useMediaQuery({ maxWidth: 768 })
+  const md = useMediaQuery({ maxWidth: 767 })
 
   const { data } = useContentQuery({
     variables: {
