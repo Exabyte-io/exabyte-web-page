@@ -10,9 +10,10 @@ import './DefaultLayout.less'
 import CloseIcon from './images/close-icon.svg'
 import BurgerIcon from './images/burger-icon.svg'
 import { Loader } from '../../containers'
+import { useContentQuery } from '../../graphql'
+import ReactMarkdown from 'react-markdown'
 
 const DefaultLayout: FC = () => {
-  // const md = useMediaQuery({ minWidth: '768px' })
   const xl = useMediaQuery({ minWidth: '992px' })
 
   const mobileNavMenuItems = [
@@ -43,6 +44,16 @@ const DefaultLayout: FC = () => {
   ]
 
   const [isOpen, setIsOpen] = useState(false)
+
+  const { data } = useContentQuery({
+    variables: {
+      slug: 'header-footer',
+    },
+  })
+  const content = data?.content
+
+  const header = content?.sections?.[0]
+  const footer = content?.sections?.[1]
 
   return (
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
@@ -76,19 +87,20 @@ const DefaultLayout: FC = () => {
             {xl && (
               <Row align={'middle'} wrap={false}>
                 <Col>
-                  <Button style={{ color: '#fff' }} size={'large'} block type={'link'} href={'https://platform.exabyte.io/login'}>
-                    Sign In
+                  <Button target={'_blank'} style={{ color: '#fff' }} size={'large'} block type={'link'} href={header?.subTitle}>
+                    {header?.title}
                   </Button>
                 </Col>
                 <Col>
                   <Button
+                    target={'_blank'}
                     className={'action-btn-default action-btn-small'}
                     type={'primary'}
                     size={'large'}
-                    href={'https://platform.exabyte.io/login'}
+                    href={header?.slug}
                     style={{ padding: 0 }}
                   >
-                    Sign Up
+                    {header?.description}
                   </Button>
                 </Col>
               </Row>
@@ -115,10 +127,9 @@ const DefaultLayout: FC = () => {
               <Space className={'top-left-wrapper'} direction={'vertical'} size={32}>
                 <Logo />
                 <Space className={'address-info'} direction={'vertical'} size={8}>
-                  <Typography.Text>1161 Mission street, suite 505</Typography.Text>
-                  <Typography.Text>San Francisco, CA 94103</Typography.Text>
-                  <Typography.Text>+1 (510) 473-7770</Typography.Text>
-                  <Typography.Text>info@exabyte.io</Typography.Text>
+                  <Typography.Text>
+                    <ReactMarkdown>{footer?.text || ''}</ReactMarkdown>
+                  </Typography.Text>
                 </Space>
               </Space>
             </Col>
