@@ -47,7 +47,7 @@ const Customer: FC = () => {
                     <div className='customer-content-carousel-slide-content-text-sign'>{slide?.subTitle}</div>
                   </div>
                   <div className='customer-content-carousel-slide-content-image'>
-                    <img src={slide?.media?.url} alt='' />
+                    <img src={slide?.media?.[0].url} alt='' />
                   </div>
                 </div>
               </div>
