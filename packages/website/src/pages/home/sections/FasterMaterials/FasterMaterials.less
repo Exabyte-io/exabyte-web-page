@@ -68,8 +68,16 @@
       }
 
       &-title {
-        font-weight: 700;
-        font-size: 42px;
+        max-width: 300px;
+        margin-bottom: 48px;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 50px;
+
+        @media (min-width: 992px) {
+          font-weight: 700;
+          font-size: 42px;
+        }
       }
 
       &-info {
@@ -82,9 +90,9 @@
           color: white;
 
           &-title {
-            margin-bottom: 48px;
+            margin-bottom: 16px;
             font-weight: 600;
-            font-size: 22px;
+            font-size: 16px;
           }
 
           &-text {
@@ -103,9 +111,13 @@
         justify-content: center;
         margin-top: 96px;
 
-        @media (max-width: 426px) {
+        @media (max-width: 768px) {
           flex-direction: column;
           gap: 32px;
+
+          a:first-of-type {
+            width: 100%;
+          }
         }
 
         .faster-materials-content-button {
@@ -113,9 +125,9 @@
           align-items: center;
           justify-content: center;
           box-sizing: border-box;
-          width: 261px;
+          //width: 261px;
+          width: 100%;
           height: 56px;
-          margin-left: 44px;
           color: @secondary-color;
           font-weight: 700;
           font-size: 16px;

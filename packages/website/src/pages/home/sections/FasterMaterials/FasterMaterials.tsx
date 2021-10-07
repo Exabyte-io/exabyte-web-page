@@ -2,7 +2,6 @@ import { FC, useRef, useState } from 'react'
 import { Carousel, Layout } from 'antd'
 import BackgroundLg from './images/background-lg.svg'
 import LaptopDecoration from './images/laptop.svg'
-import './FasterMaterials.less'
 import { ActionButton } from '../../../../components/button/ActionButton'
 import LeftNotActiveArrow from '../Customer/images/left-not-active-arrow.svg'
 import LeftActiveArrow from '../Customer/images/left-active-arrow.svg'
@@ -11,6 +10,7 @@ import RightActiveArrow from '../Customer/images/right-active-arrow.svg'
 import CustomBackTop from '../../../../components/back/CustomBackTop'
 import { NavLink } from 'react-router-dom'
 import { useContentQuery } from '../../../../graphql'
+import './FasterMaterials.less'
 
 const FasterMaterials: FC = () => {
   const [cardNumber, setCardNumber] = useState<number>(1)

@@ -1,30 +1,28 @@
 .home-page-unique-style {
   .home-hero-section {
     position: relative;
-    min-height: 1500px;
 
     .background-img {
-      position: absolute;
       min-width: 100%;
       height: auto;
     }
 
     .content {
+      position: absolute;
+      top: 48px;
+      left: 50%;
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      width: calc(100vw - 40px);
       max-width: 1200px;
       margin: 0 auto;
+      transform: translateX(-50%);
 
-      @media (min-width: 768px) {
-        padding: 30px 20px 0;
+      @media (min-width: 992px) {
+        top: 30px;
 
-        @media (min-width: 1200px) {
-          padding: 80px 0 0;
-
-          @media (min-width: 1440px) {
-            padding: 120px 0 0;
-          }
+        @media (min-width: 1280px) {
+          top: 120px;
         }
       }
 
@@ -98,15 +96,6 @@
 @media screen and (max-width: 768px) {
   .home-page-unique-style {
     .home-hero-section {
-      position: relative;
-      min-height: 1267px;
-
-      .background-img {
-        position: absolute;
-        min-width: 100%;
-        height: auto;
-      }
-
       .content {
         display: flex;
         flex-direction: column;
@@ -120,7 +109,6 @@
           z-index: 1;
           width: 100%;
           max-width: 582px;
-          padding-top: 48px;
           color: #ffffff;
 
           .title {

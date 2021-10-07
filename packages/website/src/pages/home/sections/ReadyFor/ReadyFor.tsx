@@ -36,7 +36,9 @@ const ReadyFor: FC = () => {
         <Col className={'top-wrapper'} md={10} lg={8}>
           <Typography.Paragraph className={'top-wrapper-title'}>{content?.title}</Typography.Paragraph>
           <Typography.Paragraph className={'top-wrapper-under-title'}>{content?.subtitle}</Typography.Paragraph>
-          <Typography.Paragraph className={'top-wrapper-description'}>{content?.description}</Typography.Paragraph>
+          <Typography.Paragraph className={'top-wrapper-description'} style={{ marginBottom: '0' }}>
+            {content?.description}
+          </Typography.Paragraph>
         </Col>
         <Row gutter={[32, 32]} justify={'space-around'}>
           {content?.sections?.map((obj, index) => (
