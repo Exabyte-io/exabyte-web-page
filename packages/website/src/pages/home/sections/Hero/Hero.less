@@ -11,6 +11,7 @@
 
     .content {
       display: flex;
+      justify-content: space-between;
       width: 100%;
       max-width: 1440px;
       margin: 0 auto;
@@ -19,75 +20,37 @@
       .text-content {
         position: relative;
         z-index: 1;
-        max-width: 582px;
-        //padding-top: 120px;
+        max-width: 350px;
         color: #ffffff;
 
         .title {
+          max-width: 300px;
           margin-bottom: 24px;
           font-weight: 600;
-          font-size: 72px;
+          font-size: 39px;
           font-family: Kanit, 'Open Sans', sans-serif;
-          line-height: 90px;
         }
 
         .text {
           margin-bottom: 62px;
           font-size: 20px;
-          line-height: 40px;
         }
 
         .buttons {
-          display: flex;
-
           a {
             margin-right: 36px;
-          }
-        }
-      }
 
-      .video-preview {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        margin-left: 180px;
-        padding-top: 66px;
-
-        &-img {
-          position: absolute;
-          left: 72px;
-        }
-
-        .play-button {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          background: transparent;
-          border: none;
-          outline: none;
-          cursor: pointer;
-
-          img {
-            margin-bottom: 21;
-          }
-
-          .duration {
-            padding: 2px 15px;
-            color: #ffffff;
-            background: #030a46;
-            border-radius: 29px;
+            &:first-of-type {
+              margin-bottom: 20px;
+            }
           }
         }
       }
 
       .full-video {
         width: 100%;
-        max-height: 542px;
-        padding: 53px 0;
+        max-width: 730px;
+        max-height: 400px;
 
         .close-button {
           position: absolute;
