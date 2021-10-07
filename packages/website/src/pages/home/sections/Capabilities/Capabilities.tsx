@@ -117,10 +117,7 @@ const Capabilities: FC = () => {
           >
             {openedItem &&
               openedItem.map(
-                (value, index) =>
-                  index < 2 && (
-                    <img className='collapse-image' src={`${location}${value.url}`} alt='image' key={index} />
-                  ),
+                (value, index) => index < 2 && <img className='collapse-image' src={`${location}${value.url}`} alt='image' key={index} />,
               )}
             <div className='icons' style={{ display: 'flex' }}>
               <a href={infoLink}>
