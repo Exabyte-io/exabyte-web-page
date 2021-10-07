@@ -22,7 +22,7 @@ const Investors: FC = () => {
                 <div className='hidden-content'>
                   <div className='card-name'>{card?.title}</div>
                   <div className='pre-seed'>Pre-seed</div>
-                  <a href={card?.subTitle} className='read-more'>
+                  <a href={card?.subTitle} className='read-more' target={'_blank'}>
                     READ MORE
                   </a>
                 </div>
