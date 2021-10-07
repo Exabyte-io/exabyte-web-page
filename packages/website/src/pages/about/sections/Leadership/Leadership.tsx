@@ -42,7 +42,7 @@ const Leadership: FC = () => {
           <CustomCarousel>
             {content?.sections?.map(card => (
               <div className='leadership-content-cards-card'>
-                <img src={card?.media?.url} alt='' className='leadership-content-cards-card-photo' />
+                <img src={card?.media?.[0].url} alt='' className='leadership-content-cards-card-photo' />
                 <div className='leadership-content-cards-card-name'>{card?.title}</div>
                 <div className='leadership-content-cards-card-position'>{card?.subTitle}</div>
                 <div className='leadership-content-cards-card-links'>
