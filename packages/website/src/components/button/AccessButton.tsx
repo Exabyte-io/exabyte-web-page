@@ -5,7 +5,7 @@ import './AccessButton.less'
 
 type AccessBtnProps = {
   style?: CSSProperties
-  url: string
+  url: string | undefined
 }
 
 const AccessButton: FC<AccessBtnProps> = ({ style, url }) => (

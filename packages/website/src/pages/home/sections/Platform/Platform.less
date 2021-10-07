@@ -11,6 +11,14 @@
       width: 100vw;
       padding: 0 20px;
 
+      @media (min-width: 768px) {
+        top: 110px;
+      }
+
+      @media (min-width: 1024px) {
+        top: 200px;
+      }
+
       @media (min-width: 1220px) {
         left: 50%;
         max-width: 1200px;
@@ -48,7 +56,76 @@
       }
 
       @media (min-width: 768px) {
-        bottom: 23%;
+        bottom: 20%;
+      }
+
+      @media (min-width: 1280px) {
+        bottom: 27%;
+      }
+
+      .cards-list {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: minmax(160px, 220px) minmax(160px, 220px);
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 48px;
+
+        @media (min-width: 768px) {
+          grid-template-columns: minmax(160px, 220px) minmax(160px, 220px) minmax(160px, 220px) minmax(160px, 220px);
+        }
+
+        @media (min-width: 1280px) {
+          grid-template-columns: 220px 220px 220px 220px;
+        }
+
+        &-item {
+          width: 100%;
+          max-width: 220px;
+          height: 128px;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 5.78531px;
+          box-shadow: 0px 2.89266px 7.23164px rgba(0, 0, 0, 0.25);
+
+          @media (min-width: 1280px) {
+            height: 177px;
+            padding: 30px;
+
+            .number {
+              margin-bottom: 15px;
+              font-size: 42px;
+              line-height: 90px;
+            }
+
+            .description {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+
+          .number {
+            color: @secondary-color;
+            font-weight: bold;
+            font-size: 32px;
+            font-family: @primary-font;
+            font-style: normal;
+            line-height: 50px;
+          }
+
+          .description {
+            color: @secondary-color;
+            font-weight: normal;
+            font-size: 16px;
+            font-family: @primary-font;
+            font-style: normal;
+            line-height: 24px;
+          }
+        }
+      }
+
+      a {
+        margin: 0 auto;
       }
     }
   }

@@ -25,8 +25,8 @@ const Hero: FC = () => {
           <div className='title'>{content?.title}</div>
           <div className='text'>{content?.description}</div>
           <div className='buttons'>
-            <ActionButton title={'GET STARTED NOW'} type={'default'} size={'medium'} src={'https://platform.exabyte.io/register'} />
-            <AccessButton url={' https://platform.exabyte.io/shared-externally'} />
+            <ActionButton title={content?.sections?.[0].title} type={'default'} size={'medium'} src={content?.sections?.[0].subTitle} />
+            <AccessButton url={content?.sections?.[1].subTitle} />
           </div>
         </div>
 
