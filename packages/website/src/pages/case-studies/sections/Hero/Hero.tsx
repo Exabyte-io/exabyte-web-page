@@ -1,9 +1,7 @@
 import { FC, useRef, useState } from 'react'
 import { Carousel, Layout } from 'antd'
-import BackgroundLg from './images/background-lg.svg'
-import BackgroundMb from './images/background-mb.svg'
-import BackgroundDecorationLg from './images/background-decor-lg.svg'
-import BackgroundDecorationMb from './images/background-decor-mb.svg'
+import BackgroundLg from './images/lg.svg'
+import BackgroundMb from './images/mb.svg'
 import LeftNotActiveArrow from '../../../home/sections/Customer/images/left-not-active-arrow.svg'
 import LeftActiveArrow from '../../../home/sections/Customer/images/left-active-arrow.svg'
 import RightNotActiveArrow from '../../../home/sections/Customer/images/right-not-active-arrow.svg'
@@ -29,7 +27,7 @@ const Hero: FC = () => {
     carousel.current?.next()
   }
 
-  const md = useMediaQuery({ maxWidth: 768 })
+  const md = useMediaQuery({ maxWidth: 767 })
 
   const { data } = useContentQuery({
     variables: {
@@ -41,7 +39,6 @@ const Hero: FC = () => {
   return (
     <Layout className='case-studies-hero'>
       <img src={md ? BackgroundMb : BackgroundLg} alt='' className='background-img' />
-      <img src={md ? BackgroundDecorationMb : BackgroundDecorationLg} alt='' className='background-decoration-img' />
       <div className='case-studies-hero-content'>
         <div className='case-studies-hero-content-title'>{content?.title}</div>
         <div className='case-studies-hero-content-carousel-wrapper'>

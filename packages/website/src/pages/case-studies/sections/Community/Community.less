@@ -3,8 +3,11 @@
 .case-studies-unique-style {
   .case-studies-community {
     position: relative;
-    height: 1412px;
     overflow: hidden;
+
+    @media (min-width: 768px) {
+      padding-bottom: 120px;
+    }
 
     .back-top {
       position: absolute;
@@ -15,6 +18,7 @@
     .background-img {
       position: absolute;
       width: 100%;
+      height: 100%;
     }
 
     .content {

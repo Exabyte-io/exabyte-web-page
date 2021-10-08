@@ -15,22 +15,30 @@
       width: 100%;
       max-width: 1440px;
       margin: 0 auto;
-      padding: 0 130px;
+      padding: 0 20px;
       color: @secondary-color;
       font-size: 72px;
       line-height: 125%;
+
+      @media (min-width: 992px) {
+        margin-top: -23%;
+        padding: 0 130px;
+      }
 
       &-title {
         position: absolute;
         top: 0;
         width: 200px;
-        margin: 132px 0 0 0;
+        margin: 70px 0 0 0;
         font-weight: bold;
+
+        @media (min-width: 1280px) {
+          margin: 132px 0 0 0;
+        }
       }
 
       &-carousel-wrapper {
-        width: 623px;
-        margin: 46px 0 0 0;
+        max-width: 623px;
 
         .case-studies-hero-content-carousel {
           &-slide {
@@ -87,6 +95,7 @@
           }
 
           &-slide-number {
+            max-width: 574px;
             margin-bottom: 37px;
             padding-bottom: 18px;
             color: #5032b1;
@@ -120,11 +129,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .case-studies-unique-style {
     .case-studies-hero {
       position: relative;
-      margin-bottom: 200px;
+      margin-bottom: 116px;
       padding: 0;
 
       .background-decoration-img {
@@ -154,7 +163,7 @@
         &-carousel-wrapper {
           width: 100%;
           max-width: 345px;
-          margin: 280px 0 0 0;
+          margin: 69px 0 0 0;
 
           .case-studies-hero-content-carousel {
             &-slide {
