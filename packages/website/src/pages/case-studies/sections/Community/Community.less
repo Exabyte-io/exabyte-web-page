@@ -40,6 +40,7 @@
 
       .carousels {
         display: flex;
+        overflow-x: scroll;
       }
 
       .join-community {
@@ -114,7 +115,10 @@
 
         .carousels {
           display: flex;
-          overflow-x: scroll;
+
+          @media (max-width: 767px) {
+            margin-right: -20px;
+          }
         }
 
         .join-community {

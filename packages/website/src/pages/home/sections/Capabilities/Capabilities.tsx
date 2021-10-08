@@ -29,7 +29,7 @@ const Capabilities: FC = () => {
   const changeOpenedItem = (image?: { url: string }[], ghLink?: string, infLink?: string, index: number) => {
     if (image) {
       if (openedItem === image) {
-        setOpenedItem([])
+        setOpenedItem([{ url: '' }])
       } else {
         setOpenedItem(image)
       }

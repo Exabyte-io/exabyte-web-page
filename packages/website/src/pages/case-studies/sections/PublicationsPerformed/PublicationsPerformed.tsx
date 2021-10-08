@@ -38,7 +38,7 @@ const PublicationsPerformed: FC = () => {
                 </div>
 
                 <div className='dropdown-image-box'>
-                  <img src={dropdown?.media?.url} alt='' />
+                  <img src={dropdown?.media?.[0].url} alt='' />
                 </div>
               </div>
             </Panel>
