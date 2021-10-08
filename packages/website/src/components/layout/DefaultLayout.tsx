@@ -57,7 +57,7 @@ const DefaultLayout: FC = () => {
 
   return (
     <Layout style={{ minHeight: '100vh', width: '100%' }}>
-      <div style={{ display: isOpen ? 'flex' : 'none' }} className='burger-menu'>
+      <div className={!isOpen ? 'burger-menu' : 'burger-menu burger-menu-open'}>
         <div className='content'>
           <div onClick={() => setIsOpen(false)} className='close-icon'>
             <img src={CloseIcon} alt='' />

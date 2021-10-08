@@ -55,6 +55,7 @@
       .address-info {
         ul {
           list-style: none;
+
           li {
             margin: 0;
           }
@@ -117,12 +118,19 @@
 
 .burger-menu {
   position: fixed;
-  top: 0;
+  top: -100%;
   right: 0;
   z-index: 1000;
   min-width: 303px;
   min-height: 500px;
   background-color: #ffffff;
+  opacity: 0;
+  transition: all 250ms linear;
+
+  &-open {
+    top: 0;
+    opacity: 1;
+  }
 
   .close-icon {
     position: absolute;
