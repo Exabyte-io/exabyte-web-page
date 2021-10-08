@@ -81,7 +81,7 @@ const Capabilities: FC = () => {
     infinite: false,
   }
 
-  const location = 'http://localhost:1337'
+  const location = window.location.href.includes('localhost') ? 'http://localhost:1337' : ''
 
   return (
     <Layout className={'section capabilities-wrapper'}>

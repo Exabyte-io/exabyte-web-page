@@ -13,7 +13,7 @@ const Related: FC = () => {
   })
   const content = data?.content
 
-  const location = 'http://localhost:1337'
+  const location = window.location.href.includes('localhost') ? 'http://localhost:1337' : ''
 
   return (
     <Layout className={'section related'}>
