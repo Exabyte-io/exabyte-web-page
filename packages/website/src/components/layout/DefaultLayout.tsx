@@ -79,7 +79,7 @@ const DefaultLayout: FC = () => {
             <Logo />
           </Col>
           {xl && (
-            <Col lg={13} xl={13}>
+            <Col lg={14} xl={15}>
               <TopNavigation />
             </Col>
           )}

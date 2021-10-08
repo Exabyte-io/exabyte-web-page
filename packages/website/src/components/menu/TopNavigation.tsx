@@ -3,7 +3,7 @@ import { Menu } from 'antd'
 import { withNavigation } from '../../containers/Routing'
 
 const Navigation: FC = ({ children }) => (
-  <Menu style={{ backgroundColor: 'transparent' }} mode='horizontal'>
+  <Menu style={{ backgroundColor: 'transparent' }} mode='horizontal' selectable={false}>
     {children}
   </Menu>
 )

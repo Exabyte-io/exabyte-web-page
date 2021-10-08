@@ -26,6 +26,11 @@ const routeMap: RouteNavigationMap = {
     name: 'Case Studies',
     placements: ['top'],
   },
+  '/pricing': {
+    component: Pricing,
+    name: 'Pricing',
+    placements: ['top'],
+  },
   '/news': {
     component: News,
     name: 'News',
@@ -44,12 +49,6 @@ const routeMap: RouteNavigationMap = {
   '/our_vision': {
     component: OurVision,
     name: 'Our Vision',
-    placements: ['top'],
-  },
-  '/pricing': {
-    component: Pricing,
-    name: 'Pricing',
-    placements: ['top'],
   },
 }
 
