@@ -20,8 +20,11 @@
       font-size: 72px;
       line-height: 125%;
 
-      @media (min-width: 992px) {
+      @media (min-width: 768px) {
         margin-top: -23%;
+      }
+
+      @media (min-width: 992px) {
         padding: 0 130px;
       }
 
@@ -102,6 +105,10 @@
             font-weight: 700;
             font-size: 22px;
             border-bottom: 1px solid rgba(9, 20, 50, 0.5);
+
+            @media (max-width: 1279px) {
+              max-width: 460px;
+            }
           }
 
           &-arrows {

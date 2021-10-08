@@ -23,7 +23,7 @@ const Related: FC = () => {
         <Typography.Paragraph className={'related-content-title'}>{content?.title}</Typography.Paragraph>
         <div className='related-content-links'>
           {content?.sections?.map((value, index) => (
-            <a href={value.subTitle} className='related-content-link' target={'_blank'} key={index}>
+            <a href={value.subTitle} className='related-content-link' target={value.subTitle?.includes('http') ? '_blank' : ''} key={index}>
               <img src={`${location}${value?.media?.[0].url}`} alt='' />
               <span>{value.title}</span>
             </a>
