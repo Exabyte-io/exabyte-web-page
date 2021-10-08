@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Col, Menu, Row, Typography } from 'antd'
-import { NavLink } from 'react-router-dom'
 import './BottomNavigation.less'
 
 const BottomNavigation: FC = () => {
@@ -79,7 +78,9 @@ const BottomNavigation: FC = () => {
         <Menu style={{ backgroundColor: 'transparent' }} mode='vertical'>
           {footerPages.company.map((value, index) => (
             <Menu.Item key={index} style={{ padding: '0px' }}>
-              {index < 3 ? <NavLink to={value.path}>{value.name}</NavLink> : <a href={value.path}>{value.name}</a>}
+              <a href={value.path} target={value.path?.includes('http') ? '_blank' : ''}>
+                {value.name}
+              </a>
             </Menu.Item>
           ))}
         </Menu>
@@ -89,7 +90,9 @@ const BottomNavigation: FC = () => {
         <Menu style={{ backgroundColor: 'transparent' }} mode='vertical'>
           {footerPages.product.map((value, index) => (
             <Menu.Item key={index} style={{ padding: '0px' }}>
-              <a href={value.path}>{value.name}</a>
+              <a href={value.path} target={value.path?.includes('http') ? '_blank' : ''}>
+                {value.name}
+              </a>
             </Menu.Item>
           ))}
         </Menu>
