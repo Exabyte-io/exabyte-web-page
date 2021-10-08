@@ -40,7 +40,9 @@
 
       .carousels {
         display: flex;
-        overflow-x: scroll;
+        @media (min-width: 1439px) {
+          overflow-x: scroll;
+        }
       }
 
       .join-community {
