@@ -13,9 +13,13 @@
 
     &-content {
       width: 100%;
-      max-width: 1440px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 130px;
+
+      @media (max-width: 1239px) {
+        padding: 0 20px;
+      }
+
       color: @secondary-color;
       font-size: 72px;
       line-height: 125%;
@@ -35,7 +39,7 @@
         .case-studies-hero-content-carousel {
           &-slide {
             height: 527px;
-            background-color: #ffffff;
+            background-color: transparent;
 
             &-content {
               position: relative;
@@ -107,6 +111,15 @@
             }
           }
         }
+      }
+    }
+
+    .ant-carousel {
+      margin-bottom: 48px;
+      background: transparent;
+
+      @media (min-width: 992px) {
+        margin-bottom: 80px;
       }
     }
   }

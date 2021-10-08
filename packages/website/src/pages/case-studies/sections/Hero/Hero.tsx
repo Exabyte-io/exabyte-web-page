@@ -39,7 +39,7 @@ const Hero: FC = () => {
   const content = data?.content
 
   return (
-    <Layout className='section case-studies-hero'>
+    <Layout className='case-studies-hero'>
       <img src={md ? BackgroundMb : BackgroundLg} alt='' className='background-img' />
       <img src={md ? BackgroundDecorationMb : BackgroundDecorationLg} alt='' className='background-decoration-img' />
       <div className='case-studies-hero-content'>
@@ -58,7 +58,7 @@ const Hero: FC = () => {
               <div className='case-studies-hero-content-carousel-slide' key={index}>
                 <div className='case-studies-hero-content-carousel-slide-content'>
                   <div className='case-studies-hero-content-carousel-slide-content-image'>
-                    <img src={slide?.media?.url} alt='' />
+                    <img src={slide?.media?.[0].url} alt='' />
                   </div>
                   <div className='case-studies-hero-content-carousel-slide-content-title'>{slide?.title}</div>
                   <div className='case-studies-hero-content-carousel-slide-content-text'>{slide?.description}</div>
