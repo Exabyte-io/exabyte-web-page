@@ -66,14 +66,13 @@ jobs:
         run: doctl kubernetes cluster kubeconfig save ${{ steps.secrets.outputs.kubernetes_cluster }} --set-current-context
 
       - name: Build Skaffold artifacts
-        uses: hiberbee/github-action-skaffold@1.8.0
+        uses: hiberbee/github-action-skaffold@1.9.0
         with:
           command: build
-          concurrency: 1
           repository: ${{ steps.secrets.outputs.docker_url }}/${{ github.event.repository.name }}
 
       - name: Release Helm charts
-        uses: hiberbee/github-action-helm@1.4.0
+        uses: hiberbee/github-action-helm@1.6.0
         with:
-          helmfile-command: apply
+          helmfile: apply
           environment: ${{ env.SKAFFOLD_PROFILE }}
