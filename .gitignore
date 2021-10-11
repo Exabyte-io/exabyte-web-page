@@ -1,3 +1,6 @@
+_attic/
+.idea
+
 # macOS
 .DS_Store
 
