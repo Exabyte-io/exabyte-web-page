@@ -1,0 +1,10 @@
+version: v0.140.1
+dependencies:
+- name: app
+  repository: https://dcr.bndigital.dev/chartrepo/library
+  version: 1.0.0
+- name: app
+  repository: https://dcr.bndigital.dev/chartrepo/library
+  version: 1.0.0
+digest: sha256:85a97bf2313c2b7eb15d8c95983ee1b5dfda944895b9f643e5ee4b0f192bd46f
+generated: "2021-09-27T13:59:33.3449927+03:00"
