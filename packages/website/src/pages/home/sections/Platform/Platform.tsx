@@ -22,33 +22,36 @@ const Platform: FC = () => {
 
   // SETTINGS
   const PLATFORM_HOST_AND_PORT = 'platform.exabyte.io'
-//const PLATFORM_HOST_AND_PORT = "localhost:4000";  // uncomment for local development
+  //const PLATFORM_HOST_AND_PORT = "localhost:4000";  // uncomment for local development
   const REST_API_URL = `https://${PLATFORM_HOST_AND_PORT}/api/2018-10-01`
 
-// FUNCTIONS
+  // FUNCTIONS
 
   const animateNumberCountBySelector = (count, selector) => {
-    $({ countNum: $(selector).html() }).animate({ countNum: count }, {
-      duration: 2000,
-      easing: 'swing',
-      step: function() {
-        const count = parseFloat(Math.floor(this.countNum)).toLocaleString()
-        $(selector).html(count + '+')
+    $({ countNum: $(selector).html() }).animate(
+      { countNum: count },
+      {
+        duration: 2000,
+        easing: 'swing',
+        step: function () {
+          const count = parseFloat(Math.floor(this.countNum)).toLocaleString()
+          $(selector).html(count + '+')
+        },
+        complete: function () {
+          const count = parseFloat(this.countNum).toLocaleString()
+          console.log(count)
+          $(selector).html(this.countNum.toLocaleString())
+        },
       },
-      complete: function() {
-        const count = parseFloat(this.countNum).toLocaleString()
-        console.log(count)
-        $(selector).html(this.countNum.toLocaleString())
-      },
-    })
+    )
   }
 
   const getTotalEntityCounts = () => {
     $.ajax({
       url: `${REST_API_URL}/other/entity-counts`,
-    }).then(function(data) {
+    }).then(function (data) {
       const array = data.data
-      const getCountByName = (name) => (array.find(o => o.name === name) || { count: 'N/A' }).count
+      const getCountByName = name => (array.find(o => o.name === name) || { count: 'N/A' }).count
       animateNumberCountBySelector(getCountByName('Jobs'), '#total-count-jobs h2')
       animateNumberCountBySelector(getCountByName('Materials'), '#total-count-materials h2')
       animateNumberCountBySelector(getCountByName('Workflows'), '#total-count-workflows h2')
@@ -64,7 +67,7 @@ const Platform: FC = () => {
   // Получаем нужный элемент
   const element = document.querySelector('#total-entity-counts')
 
-  const Visible = function(target) {
+  const Visible = function (target) {
     // Все позиции элемента
     const targetPosition = {
         top: window.pageYOffset + target.getBoundingClientRect().top,
@@ -80,10 +83,13 @@ const Platform: FC = () => {
         bottom: window.pageYOffset + document.documentElement.clientHeight,
       }
 
-    if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+    if (
+      targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
       targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
       targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-      targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+      targetPosition.left < windowPosition.right
+    ) {
+      // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
       // Если элемент полностью видно, то запускаем следующий код
       console.clear()
       setVisible(true)
@@ -94,8 +100,8 @@ const Platform: FC = () => {
     }
   }
 
-// Запускаем функцию при прокрутке страницы
-  window.addEventListener('scroll', function() {
+  // Запускаем функцию при прокрутке страницы
+  window.addEventListener('scroll', function () {
     Visible(element)
   })
 
@@ -108,8 +114,7 @@ const Platform: FC = () => {
       <img src={!md ? PlatformBgMb : PlatformBgLg} alt={'Matera'} className={'home-hero-img'} />
       <div className={'platform-wrapper-content'}>
         <Typography.Paragraph className={'platform-wrapper-content-title'}>{content?.title}</Typography.Paragraph>
-        <Typography.Paragraph
-          className={'platform-wrapper-content-description'}>{content?.description}</Typography.Paragraph>
+        <Typography.Paragraph className={'platform-wrapper-content-description'}>{content?.description}</Typography.Paragraph>
       </div>
       <div className={'platform-wrapper-button'}>
         <ul className={'cards-list'} id='total-entity-counts'>
@@ -120,8 +125,7 @@ const Platform: FC = () => {
             </li>
           ))}
         </ul>
-        <ActionButton title={content?.button?.link?.text} type={'default'} size={'medium'}
-                      src={content?.button?.link?.url} />
+        <ActionButton title={content?.button?.link?.text} type={'default'} size={'medium'} src={content?.button?.link?.url} />
       </div>
     </Layout>
   )
