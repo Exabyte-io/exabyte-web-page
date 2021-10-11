@@ -1929,6 +1929,7 @@ __metadata:
     "@babel/preset-env": ^7.15.6
     "@babel/preset-react": ^7.14.5
     "@babel/preset-typescript": ^7.15.0
+    "@types/jquery": ^3.5.6
     "@types/node": ^16.9.6
     "@types/react": ^17.0.24
     "@types/react-dom": ^17.0.9
@@ -1948,6 +1949,7 @@ __metadata:
     graphql: ^15.6.0
     history: ^5.0.1
     html-webpack-plugin: ^5.3.2
+    jquery: ^3.6.0
     less: ^4.1.1
     less-loader: ^10.0.1
     mini-css-extract-plugin: ^2.3.0
@@ -3406,6 +3408,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jquery@npm:^3.5.6":
+  version: 3.5.6
+  resolution: "@types/jquery@npm:3.5.6"
+  dependencies:
+    "@types/sizzle": "*"
+  checksum: 0ff97741ed79463545e2fd6969639579d112aeb316b70a9928c39ae031d68386e8096755d4b3c1b3aa252e024ae11d30a4ba47bc454e4fb9e232d5ded09f8f81
+  languageName: node
+  linkType: hard
+
 "@types/js-yaml@npm:^4.0.0":
   version: 4.0.3
   resolution: "@types/js-yaml@npm:4.0.3"
@@ -3704,6 +3715,13 @@ __metadata:
     "@types/mime": ^1
     "@types/node": "*"
   checksum: eaca858739483e3ded254cad7d7a679dc2c8b3f52c8bb0cd845b3b7eb1984bde0371fdcb0a5c83aa12e6daf61b6beb762545021f520f08a1fe882a3fa4ea5554
+  languageName: node
+  linkType: hard
+
+"@types/sizzle@npm:*":
+  version: 2.3.3
+  resolution: "@types/sizzle@npm:2.3.3"
+  checksum: 586a9fb1f6ff3e325e0f2cc1596a460615f0bc8a28f6e276ac9b509401039dd242fa8b34496d3a30c52f5b495873922d09a9e76c50c2ab2bcc70ba3fb9c4e160
   languageName: node
   linkType: hard
 
@@ -12312,6 +12330,13 @@ fsevents@^1.2.7:
     merge-stream: ^2.0.0
     supports-color: ^8.0.0
   checksum: 2189649c8ce67c9e3f09f20943872a24486546a81216d698986763708610232c6e942de41c10cdefee1a6abfcc7a64208de88d5a8c5cff55cb52f5da16688733
+  languageName: node
+  linkType: hard
+
+"jquery@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "jquery@npm:3.6.0"
+  checksum: 8fd5fef4aa48fd374ec716dd1c1df1af407814a228e15c1260ca140de3a697c2a77c30c54ff1d238b6a3ab4ddc445ddeef9adce6c6d28e4869d85eb9d3951c0e
   languageName: node
   linkType: hard
 
