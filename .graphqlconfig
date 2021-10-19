@@ -1,0 +1,16 @@
+{
+  "name": "Exabyte",
+  "schemaPath": "./packages/cms/exports/graphql/schema.graphql",
+  "includes": [
+    "./packages/website/src/graphql/fragments/*.graphql",
+    "./packages/website/src/graphql/operations/*.graphql",
+    "./packages/cms/exports/graphql/fragments/*.graphql"
+  ],
+  "extensions": {
+    "endpoints": {
+      "development": {
+        "url": "http://localhost:1337/graphql"
+      }
+    }
+  }
+}

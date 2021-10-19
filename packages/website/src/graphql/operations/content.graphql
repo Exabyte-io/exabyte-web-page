@@ -1,0 +1,5 @@
+query content($slug: ID!) {
+  content(id: $slug, publicationState: LIVE) {
+    ...Content
+  }
+}

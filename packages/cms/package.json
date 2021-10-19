@@ -1,0 +1,33 @@
+{
+  "name": "@exabyte/cms",
+  "description": "A Strapi application",
+  "version": "3.6.8",
+  "private": true,
+  "license": "proprietary",
+  "scripts": {
+    "build": "strapi build --clean",
+    "run": "strapi start",
+    "start": "vault-env && strapi develop"
+  },
+  "dependencies": {
+    "knex": "^0.95.11",
+    "sqlite3": "^5.0.2",
+    "strapi": "^3.6.8",
+    "strapi-admin": "^3.6.8",
+    "strapi-connector-bookshelf": "^3.6.8",
+    "strapi-plugin-content-manager": "^3.6.8",
+    "strapi-plugin-content-type-builder": "^3.6.8",
+    "strapi-plugin-email": "^3.6.8",
+    "strapi-plugin-graphql": "^3.6.8",
+    "strapi-plugin-import-export-content": "^0.4.1",
+    "strapi-plugin-responsive-image": "^0.5.0",
+    "strapi-plugin-upload": "^3.6.8",
+    "strapi-plugin-users-permissions": "^3.6.8",
+    "strapi-provider-email-sendmail": "^3.6.8",
+    "strapi-provider-upload-local": "^3.6.8",
+    "strapi-utils": "^3.6.8"
+  },
+  "devDependencies": {
+    "@bn-digital/vault-env": "^1.4.0"
+  }
+}

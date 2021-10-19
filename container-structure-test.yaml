@@ -1,0 +1,8 @@
+schemaVersion: 2.0.0
+metadataTest:
+  exposedPorts:
+    - '5000'
+  workdir: /usr/local/src
+  env:
+    - key: NODE_ENV
+      value: production

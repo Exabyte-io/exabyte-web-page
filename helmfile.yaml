@@ -1,0 +1,45 @@
+repositories:
+  - name: bndigital
+    url: https://dcr.bndigital.dev/chartrepo/library
+
+helmDefaults:
+  kubeContext: do-fra1-bndigital
+  createNamespace: true
+  cleanupOnFail: true
+
+environments:
+  default:
+    values:
+      - imageRepository: dcr.bndigital.dev/exabyte
+  staging:
+    values:
+      - imageRepository: dcr.bndigital.dev/exabyte
+
+releases:
+  - name: exabyte-website
+    namespace: '{{ .Environment.Name }}'
+    chart: bndigital/app
+    version: 1.0.0
+    values:
+      - image: '{{ .Values.imageRepository }}/website:{{ env "GITHUB_SHA" | default "latest" }}'
+        imagePullSecrets: [ container-registry ]
+        ingress:
+          host: exabyte.bndigital.dev
+          proxy:
+            enabled: true
+            implementation: strapi
+            backend:
+              service: exabyte-cms-app
+
+  - name: exabyte-cms
+    namespace: '{{ .Environment.Name }}'
+    chart: bndigital/app
+    version: 1.0.0
+    values:
+      - image: '{{ .Values.imageRepository }}/cms:{{ env "GITHUB_SHA" | default "latest" }}'
+        imagePullSecrets: [ container-registry ]
+        secrets: [ backend-services ]
+        configMaps: [ backend-services ]
+        app:
+          env:
+            DATABASE_CLIENT: sqlite

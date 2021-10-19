@@ -1,0 +1,68 @@
+@import 'src/styles/index';
+
+.home-page-unique-style {
+  .ready-for-wrapper {
+    padding-top: 50px;
+
+    @media (min-width: 768px) {
+      margin-top: -23%;
+      margin-bottom: 23%;
+    }
+
+    @media (min-width: 1600px) {
+      margin-top: 0;
+    }
+
+    .top-wrapper {
+      margin-bottom: 64px;
+
+      @media (min-width: 992px) {
+        margin-bottom: 120px;
+      }
+
+      &-title {
+        margin-bottom: 24px;
+        color: @text-title;
+        font-weight: bold;
+        font-size: @font-1xl;
+        font-family: @primary-font;
+      }
+
+      &-under-title {
+        margin-bottom: 16px;
+        color: @text-title;
+        font-weight: 600;
+        font-size: @font-bigger;
+        font-family: @primary-font;
+      }
+
+      &-description {
+        color: @text-title;
+        font-size: @font-small;
+        font-family: @primary-font;
+      }
+    }
+
+    .ant-card {
+      &-body {
+        padding: 0;
+
+        .ant-card-meta {
+          &-title {
+            margin-bottom: 16px;
+            color: @text-title;
+            font-weight: 600;
+            font-size: @font-bigger;
+            font-family: @primary-font;
+          }
+
+          &-description {
+            color: @text-title;
+            font-size: @font-small;
+            font-family: @primary-font;
+          }
+        }
+      }
+    }
+  }
+}

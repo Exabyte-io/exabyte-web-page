@@ -1,0 +1,24 @@
+# nonk8s
+apiVersion: skaffold/v2beta22
+kind: Config
+build:
+  artifacts:
+    - image: cms
+      docker:
+        target: cms
+    - image: website
+      docker:
+        target: website
+  tagPolicy:
+    sha256: { }
+  local:
+    concurrency: 0
+    push: true
+    useBuildkit: true
+profiles:
+  - name: staging
+    build:
+      tagPolicy:
+        gitCommit:
+          ignoreChanges: true
+          variant: CommitSha

@@ -1,0 +1,147 @@
+@import 'src/styles/index';
+
+.about-page-unique-style {
+  .investors {
+    padding-top: 90px;
+    padding-bottom: 220px;
+
+    &-content {
+      box-sizing: border-box;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 130px;
+
+      &-title {
+        margin-bottom: 48px;
+        color: @text-title;
+        font-weight: 700;
+        font-size: 42px;
+        text-align: center;
+      }
+
+      &-cards {
+        display: flex;
+
+        &-card {
+          position: relative;
+          width: 394px;
+          height: 360px;
+          padding: 50px;
+          border: 1px solid #c4c4c4;
+          transition: all 250ms linear;
+
+          &:first-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+          }
+
+          &:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+          }
+
+          &:nth-of-type(2) {
+            .content {
+              img {
+                top: 10px;
+              }
+            }
+          }
+
+          &:hover {
+            background-color: #2effec;
+          }
+
+          .content {
+            img {
+              position: absolute;
+              top: 50px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+
+            .hidden-content {
+              position: absolute;
+              bottom: 50px;
+              left: 50px;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+
+              .card-name {
+                color: #091432;
+                font-size: 22px;
+              }
+
+              .pre-seed {
+                margin-top: 16px;
+                color: #091432;
+                font-size: 16px;
+              }
+
+              .read-more {
+                margin-top: 24px;
+                padding-bottom: 6px;
+                color: #003d92;
+                font-weight: 600;
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-page-unique-style {
+    .investors {
+      padding-top: 0;
+      padding-bottom: 100px;
+
+      &-content {
+        box-sizing: border-box;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        &-title {
+          margin-bottom: 48px;
+          color: @text-title;
+          font-weight: 700;
+          font-size: 32px;
+          text-align: start;
+        }
+
+        &-cards {
+          display: flex;
+          width: 100%;
+          max-width: 335px;
+          overflow-x: scroll;
+
+          &-card {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 360px;
+            border: 1px solid #c4c4c4;
+
+            &:first-child {
+              border-top-left-radius: 8px;
+              border-bottom-left-radius: 8px;
+            }
+
+            &:last-child {
+              border-top-right-radius: 8px;
+              border-bottom-right-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

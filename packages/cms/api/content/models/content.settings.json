@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content",
+  "info": {
+    "name": "Content",
+    "description": ""
+  },
+  "options": {
+    "populateCreatorFields": false,
+    "increments": false,
+    "timestamps": false,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "-"
+    },
+    "description": {
+      "type": "text"
+    },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.section"
+    },
+    "table": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.map"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "maxLength": 255
+    },
+    "subtitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

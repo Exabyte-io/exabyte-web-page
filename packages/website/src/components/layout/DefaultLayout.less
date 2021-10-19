@@ -1,0 +1,155 @@
+@import 'node_modules/antd/dist/antd';
+@import '../../styles/index';
+
+#root,
+#root > * {
+  height: 100%;
+}
+
+.ant-layout {
+  &-header {
+    height: 64px;
+    padding: 0 20px;
+
+    a {
+      font-size: 21px;
+      line-height: 21px;
+    }
+
+    .ant-menu-title-content {
+      a {
+        font-size: 21px;
+        line-height: 21px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .selected-navlink {
+      box-sizing: border-box;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    @media (min-width: 992px) {
+      height: 103px;
+    }
+  }
+
+  &-footer {
+    padding: 64px 20px 32px;
+    background-color: @primary-color;
+
+    .footer-content-wrapper {
+      //
+    }
+
+    .top-left-wrapper {
+      margin-bottom: 48px;
+      @media (min-width: 992px) {
+        margin-bottom: 0;
+      }
+
+      .address-info {
+        ul {
+          list-style: none;
+
+          li {
+            margin: 0;
+          }
+        }
+
+        .ant-typography {
+          color: @secondary-color;
+          font-size: @font-small;
+          font-family: @primary-font;
+        }
+      }
+    }
+
+    .all-rights {
+      color: @secondary-color;
+      font-size: @font-very-small;
+      font-family: @primary-font;
+
+      @media (min-width: 992px) {
+        font-size: @font-extra-small;
+      }
+    }
+  }
+}
+
+.ant-menu {
+  border: none;
+
+  &-item {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+
+  &-title-content {
+    a {
+      color: @secondary-color !important;
+      font-size: @font-small;
+      font-family: @primary-font;
+      line-height: 20px;
+    }
+  }
+}
+
+.section {
+  padding: 0 20px;
+
+  @media (min-width: 1230px) {
+    padding: 0;
+  }
+}
+
+.container {
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.burger-menu {
+  position: fixed;
+  top: -100%;
+  right: 0;
+  z-index: 1000;
+  min-width: 303px;
+  min-height: 500px;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: all 250ms linear;
+
+  &-open {
+    top: 0;
+    opacity: 1;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  ul {
+    margin: 64px 0 0 51px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      color: #11214a;
+      font-size: 18px;
+
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

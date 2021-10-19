@@ -1,4 +1,53 @@
 _attic/
-*/.DS_Store
 .idea
+
+# macOS
 .DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Process management
+*.pid
+*.seed
+*.pid.lock
+
+# Test coverage
+coverage
+*.lcov
+lib-cov
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+*cache
+
+# Dependency management
+node_modules
+.npm
+.pnp.*
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/cache
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# Environmnet
+.env
+
+# Strapi
+build
+.cache
+.strapi-updater.json
+
+# Gradle
+.gradle
+
+# SonarQube
+.scannerwork
+
+# Terraform
+.ter

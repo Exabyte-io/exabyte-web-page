@@ -1,0 +1,46 @@
+@import 'src/styles/index';
+
+.our-vision-page-unique-style {
+  .contact-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto 130px;
+    text-align: center;
+
+    @media (max-width: 426px) {
+      margin-bottom: 120px;
+    }
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+    color: @text-title;
+    font-weight: 700;
+    font-size: 42px;
+
+    @media (max-width: 426px) {
+      margin-bottom: 24px;
+      font-size: @font-1xl;
+    }
+  }
+
+  .subheading {
+    margin-bottom: 64px;
+    color: @text-title;
+    font-size: @font-lg;
+
+    @media (max-width: 426px) {
+      margin-bottom: 48px;
+      font-size: @font-small;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .action-button-wrapper {
+      width: 100%;
+      max-width: 345px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import 'src/styles/index';
+
+.cards-title {
+  margin-bottom: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+.cards-text {
+  max-width: 900px;
+  color: white;
+  font-size: 22px;
+}
+
+.cards-container {
+  width: 100%;
+  margin-top: 78px;
+}
+
+.card-block {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px;
+  color: white;
+  background-color: #2b2c6c;
+  border-radius: 10px;
+
+  .card-type,
+  .card-price span {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 40px;
+  }
+
+  .card-type {
+    text-transform: uppercase;
+  }
+
+  .card-price {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 90px;
+  }
+  .card-info {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  ul {
+    height: 130px;
+    overflow: hidden;
+  }
+
+  .active-menu {
+    height: fit-content;
+  }
+  .card-item {
+    position: relative;
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  .check-item {
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    color: #4cca11;
+    font-size: 14px;
+  }
+
+  .show-button {
+    position: relative;
+    align-self: center;
+    width: fit-content;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 1px;
+      background-color: white;
+      content: '';
+    }
+  }
+}
+
+.white {
+  color: @text-color;
+  background-color: #fff;
+}
