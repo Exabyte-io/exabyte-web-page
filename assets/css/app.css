@@ -418,6 +418,7 @@ h3 {
 #main-content {
     opacity: 0;
     display: none;
+    padding-top: 150px;
 }
 
 #header {
@@ -3838,3 +3839,41 @@ section {
 .vision.section p {
     margin-bottom: 20px;
 }
+
+.top-banner {
+    background: #030a46;
+    position: fixed;
+    min-height: 150px;
+    z-index:99999999;
+    min-width:100%;
+}
+.top-banner img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top-banner p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+}
+
+.top-banner a {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+}
+
+.top-banner a:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
